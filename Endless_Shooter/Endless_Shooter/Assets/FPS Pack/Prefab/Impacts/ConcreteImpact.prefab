@@ -57,6 +57,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 408086}
+  - component: {fileID: 114447144092847386}
   m_Layer: 0
   m_Name: ConcreteImpact
   m_TagString: Untagged
@@ -163,7 +164,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108086}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -32.194794, y: 0.42675495, z: 7.502264}
+  m_LocalPosition: {x: 48.474453, y: 0.5, z: 2.4226675}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 429216}
@@ -13326,3 +13327,15 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 108086}
   m_IsPrefabParent: 1
+--- !u!114 &114447144092847386
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 108086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 937f666194822dd4e9ee3122dce86ca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  suicideTime: 3
