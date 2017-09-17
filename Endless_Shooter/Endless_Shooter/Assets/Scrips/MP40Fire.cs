@@ -8,6 +8,8 @@ using DG.Tweening;
 
 	// Use this for initialization
 		public GameObject muzzleFlash;
+		public AudioClip SmithWesson40calSFX;
+		private AudioSource MP40Source;
 		private Transform slide;
 		private Transform muzzle;
 		LineRenderer line;
@@ -20,6 +22,7 @@ using DG.Tweening;
 	protected void Start () {
 			slide = gameObject.transform.GetChild (2);
 			muzzle = gameObject.transform.GetChild (4);
+			MP40Source = gameObject.GetComponent<AudioSource> ();
 			line = gameObject.GetComponent<LineRenderer> ();
 			line.enabled = false;
 		}
@@ -53,6 +56,8 @@ using DG.Tweening;
 			slide.DOLocalMoveY (-43f, 0.07f);
 			Invoke ("SlideRetract", 0.07f);
 			Instantiate (muzzleFlash, muzzle.position, muzzle.rotation);
+			MP40Source.clip = SmithWesson40calSFX;
+			MP40Source.Play ();
 		}
 
 		private void SlideRetract() {

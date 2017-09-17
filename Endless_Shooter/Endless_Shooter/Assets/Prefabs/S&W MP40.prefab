@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 114618491055315746}
   - component: {fileID: 114870003058090566}
   - component: {fileID: 120956579131007624}
+  - component: {fileID: 82757707950036848}
   m_Layer: 0
   m_Name: S&W MP40
   m_TagString: Untagged
@@ -436,6 +437,86 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 30.591122, y: 158.15074, z: 28.393631}
   m_Center: {x: 1.96121e-14, y: 6.2816586, z: 41.230858}
+--- !u!82 &82757707950036848
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1219873264173000}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114070094985438416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -514,6 +595,7 @@ MonoBehaviour:
   allowedUseControllers: 0
   usingState: 0
   muzzleFlash: {fileID: 146992, guid: 24bc114e4759e464eab5d9664127a034, type: 2}
+  SmithWesson40calSFX: {fileID: 8300000, guid: 2923840eb4587ed45bfa5382515d3cb1, type: 3}
 --- !u!120 &120956579131007624
 LineRenderer:
   m_ObjectHideFlags: 1
