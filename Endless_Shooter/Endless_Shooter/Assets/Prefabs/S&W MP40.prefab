@@ -596,6 +596,7 @@ MonoBehaviour:
   usingState: 0
   muzzleFlash: {fileID: 146992, guid: 24bc114e4759e464eab5d9664127a034, type: 2}
   SmithWesson40calSFX: {fileID: 8300000, guid: 2923840eb4587ed45bfa5382515d3cb1, type: 3}
+  impactVFX: {fileID: 108086, guid: 547c2e12da8d4214098216299e70a3ba, type: 2}
 --- !u!120 &120956579131007624
 LineRenderer:
   m_ObjectHideFlags: 1
