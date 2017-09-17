@@ -9,6 +9,7 @@ using DG.Tweening;
 	// Use this for initialization
 		public GameObject muzzleFlash;
 		public AudioClip SmithWesson40calSFX;
+		public GameObject impactVFX;
 		private AudioSource MP40Source;
 		private Transform slide;
 		private Transform muzzle;
@@ -45,7 +46,9 @@ using DG.Tweening;
 				{
 					Hit.collider.GetComponent<Rigidbody>().AddExplosionForce(5f, Hit.point, 3f, 2f, ForceMode.Impulse);
 				}
-					
+
+				Instantiate (impactVFX, Hit.point, Quaternion.identity);
+
 			}
 			else{
 				line.SetPosition(1, beamRay.GetPoint(100));	
