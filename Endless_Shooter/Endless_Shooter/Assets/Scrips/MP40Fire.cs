@@ -10,6 +10,8 @@ using DG.Tweening;
 		public GameObject muzzleFlash;
 		public AudioClip SmithWesson40calSFX;
 		public GameObject impactVFX;
+        private GameObject player;
+        private GameObject world;
 		private AudioSource MP40Source;
 		private Transform slide;
 		private Transform muzzle;
