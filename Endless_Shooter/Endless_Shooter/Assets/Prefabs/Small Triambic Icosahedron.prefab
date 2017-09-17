@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4943207271667850}
+  - component: {fileID: 64890743443780256}
   m_Layer: 0
   m_Name: Small Triambic Icosahedron
   m_TagString: Untagged
@@ -63,7 +64,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1514306454535266}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7, y: 4.2, z: -30.703995}
+  m_LocalPosition: {x: 28.31752, y: 0.64999664, z: 7.0557194}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children:
   - {fileID: 4652674387747998}
@@ -109,3 +110,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1550504557040384}
   m_Mesh: {fileID: 4300000, guid: aa72742a0fd219547a2ab833192bdcf1, type: 3}
+--- !u!64 &64890743443780256
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1514306454535266}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 0}
