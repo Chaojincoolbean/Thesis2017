@@ -20,7 +20,7 @@ public class buildingGenerator : MonoBehaviour {
 		for (int i = 1; i < buildingNumbers; i++) {
 			GameObject generatedBuilding = Instantiate (building, gameObject.transform.position, Quaternion.identity);
 			float buildPosX = Random.Range ((gameObject.transform.position.x-lotScaleX/2),(gameObject.transform.position.x+lotScaleX/2));
-			float buildPosY = Random.Range ((gameObject.transform.position.z-lotScaleY/2),(gameObject.transform.position.z+lotScaleY/2));
+			float buildPosY = Random.Range ((gameObject.transform.position.z-lotScaleY/2),(gameObject.transform.position.z+lotScaleY/2)); 
 			generatedBuilding.transform.localScale = new Vector3 (Random.Range (0, buildingLength), Random.Range (0, buildingHeight), Random.Range (0, buildingWidth));
 			generatedBuilding.transform.localPosition = new Vector3 (buildPosX, generatedBuilding.transform.localScale.y/2, buildPosY);
 			generatedBuilding.transform.parent = gameObject.transform;

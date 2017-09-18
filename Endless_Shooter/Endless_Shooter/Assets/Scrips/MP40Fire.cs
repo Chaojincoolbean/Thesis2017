@@ -1,4 +1,4 @@
-﻿namespace VRTK.Examples {
+﻿ namespace VRTK.Examples {
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -47,6 +47,11 @@ using DG.Tweening;
 				if (Hit.collider.GetComponent<Rigidbody>() != null)
 				{
 					Hit.collider.GetComponent<Rigidbody>().AddExplosionForce(5f, Hit.point, 3f, 2f, ForceMode.Impulse);
+				}
+
+				if (Hit.collider.GetComponent<target> () != null) 
+				{
+					Hit.collider.GetComponent<target> ().health -= 1f;
 				}
 
 				Instantiate (impactVFX, Hit.point, Quaternion.Euler(Random.Range(0,360), Random.Range(0, 360), Random.Range(0, 360)));
