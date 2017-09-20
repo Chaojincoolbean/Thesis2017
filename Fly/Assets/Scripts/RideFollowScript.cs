@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RideFollowScript : MonoBehaviour {
 
-	GameObject PlayerCamera;
+	public GameObject PlayerCamera;
 	public float RidePositionX;
 	public float RidePositionY;
 	public float RidePositionZ;
@@ -12,8 +12,7 @@ public class RideFollowScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		PlayerCamera = GameObject.FindGameObjectWithTag ("MainCamera");
-		
+        Debug.Log(PlayerCamera.transform.position);
 	}
 	
 	// Update is called once per frame
