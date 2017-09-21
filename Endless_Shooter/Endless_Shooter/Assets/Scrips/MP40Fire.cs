@@ -51,6 +51,7 @@ using DG.Tweening;
                     
 				if (Hit.collider.GetComponent<target> () != null) 
 				{
+                    print(Hit.collider.name);
 					Hit.collider.GetComponent<target> ().health -= 1f;
                     print(Hit.collider.GetComponent<target>().health);
 				}
