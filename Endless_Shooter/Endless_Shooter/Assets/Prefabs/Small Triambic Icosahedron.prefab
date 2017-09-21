@@ -123,9 +123,9 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Convex: 1
-  m_InflateMesh: 0
+  m_InflateMesh: 1
   m_SkinWidth: 0.01
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 4300000, guid: aa72742a0fd219547a2ab833192bdcf1, type: 3}
 --- !u!82 &82495635811624548
 AudioSource:
   m_ObjectHideFlags: 1
@@ -175,7 +175,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

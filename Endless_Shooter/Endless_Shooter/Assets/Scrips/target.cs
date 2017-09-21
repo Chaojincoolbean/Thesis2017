@@ -33,7 +33,9 @@ public class target : MonoBehaviour {
 	void Die () {
 		Instantiate (explosionVFX [Random.Range (0, explosionVFX.Count - 1)], gameObject.transform.position, gameObject.transform.rotation);
 		explosionSource.clip = explosionSFX [Random.Range (0, explosionSFX.Count - 1)];
+        Debug.Log(explosionSource.clip.name);
 		explosionSource.Play ();
+        Debug.Log(explosionSource.isPlaying);
 		Destroy (gameObject);
 	}
 }

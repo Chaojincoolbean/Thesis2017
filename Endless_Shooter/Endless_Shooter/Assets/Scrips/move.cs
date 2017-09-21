@@ -8,12 +8,13 @@ public class move : MonoBehaviour {
 	public float speed = 1f;
 	// Use this for initialization
 	void Start () {
-		
+            
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		gameObject.transform.Translate (Vector3.forward * Time.deltaTime * speed);
+            speed = speed + Time.deltaTime;
+            gameObject.transform.Translate (Vector3.forward * Time.deltaTime * speed);
 	}
      
 	public virtual void SwipeLeft (){

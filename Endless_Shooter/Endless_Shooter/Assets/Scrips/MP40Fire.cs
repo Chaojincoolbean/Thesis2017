@@ -10,6 +10,8 @@ using DG.Tweening;
 		public GameObject muzzleFlash;
 		public AudioClip SmithWesson40calSFX;
 		public GameObject impactVFX;
+        public float slowMutiplier = 0.7f;
+
         private GameObject player;
         private GameObject world;
 		private AudioSource MP40Source;
@@ -21,6 +23,11 @@ using DG.Tweening;
 		{
 			base.StartUsing(usingObject);
 			FireRayCast();
+            player = GameObject.Find("[VRTK_SDKManager]");
+            if (player.GetComponent<move>() != null) 
+            {
+                player.GetComponent<move>().speed = player.GetComponent<move>().speed * slowMutiplier;
+            }
 		}
 	protected void Start () {
 			slide = gameObject.transform.GetChild (2);
