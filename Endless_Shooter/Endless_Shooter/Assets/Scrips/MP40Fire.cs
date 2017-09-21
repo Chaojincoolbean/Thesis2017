@@ -48,10 +48,11 @@ using DG.Tweening;
 				{
 					Hit.collider.GetComponent<Rigidbody>().AddExplosionForce(5f, Hit.point, 3f, 2f, ForceMode.Impulse);
 				}
-
+                    
 				if (Hit.collider.GetComponent<target> () != null) 
 				{
 					Hit.collider.GetComponent<target> ().health -= 1f;
+                    print(Hit.collider.GetComponent<target>().health);
 				}
 
 				Instantiate (impactVFX, Hit.point, Quaternion.Euler(Random.Range(0,360), Random.Range(0, 360), Random.Range(0, 360)));

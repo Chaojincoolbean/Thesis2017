@@ -12,10 +12,12 @@ public class target : MonoBehaviour {
 	{
 		get { return _health; }
 		set 
-		{ if (value <= 0f) {
+		{
+            _health = value;
+            if (value <= 0f) {
 				Die ();
-			} else
-				_health = value;
+			} 
+				
 		}
 	}
 	// Use this for initialization

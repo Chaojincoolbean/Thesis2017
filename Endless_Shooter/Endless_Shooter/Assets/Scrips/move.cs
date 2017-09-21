@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-	using DG.Tweening;
+using DG.Tweening;
 
 public class move : MonoBehaviour {
 	public float speed = 1f;
@@ -15,13 +15,16 @@ public class move : MonoBehaviour {
 	void Update () {
 		gameObject.transform.Translate (Vector3.forward * Time.deltaTime * speed);
 	}
+     
+	public virtual void SwipeLeft (){
+         print("Touchpad Swiped Left");
+		gameObject.transform.DORotate (gameObject.transform.rotation.eulerAngles + new Vector3 (0, 90, 0), 0.5f);
+	}
 
-		public virtual void SwipeLeft (){
-			gameObject.transform.DORotate (gameObject.transform.rotation.eulerAngles + new Vector3 (0, 90, 0), 0.5f);
-		}
-
-		public virtual void SwipeRight (){
-			gameObject.transform.DORotate (gameObject.transform.rotation.eulerAngles + new Vector3 (0, -90, 0), 0.5f);
-		}
+	public virtual void SwipeRight (){
+         print("Touchpad Swiped Right");
+		gameObject.transform.DORotate (gameObject.transform.rotation.eulerAngles + new Vector3 (0, -90, 0), 0.5f);
+	}
 }
+
 }
