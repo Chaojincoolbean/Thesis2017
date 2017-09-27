@@ -5,8 +5,11 @@ using UnityEngine;
 public class target : MonoBehaviour {
 	public List<AudioClip> explosionSFX;
 	public List<GameObject> explosionVFX;
+	public float value = 20;
 
 	private AudioSource explosionSource;
+	private GameObject scoreManagement;
+	private Component managerOfScore;
 	private float _health = 2f;
 	public float health
 	{
@@ -23,6 +26,8 @@ public class target : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		explosionSource = gameObject.GetComponent<AudioSource> ();
+		scoreManagement = GameObject.Find ("ScoreKeeper");
+		//managerOfScore = scoreManagement.GetComponent<scoreManager> ();
 	}
 	
 	// Update is called once per frame
@@ -36,6 +41,11 @@ public class target : MonoBehaviour {
         Debug.Log(explosionSource.clip.name);
 		explosionSource.Play ();
         Debug.Log(explosionSource.isPlaying);
+
+		if (scoreManagement.GetComponent<scoreManager> () != null) {
+			scoreManagement.GetComponent<scoreManager> ().score += value;
+		}
+
 		Destroy (gameObject);
 	}
 }
