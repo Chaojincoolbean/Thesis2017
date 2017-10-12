@@ -9,7 +9,10 @@
 		public AudioClip AK12SFX;
 		public GameObject impactVFX;
 		public float slowMutiplier = 0.7f;
+        public float range = 200f;
+        public float roundsPerMintue = 700;
 
+        private float timeToNextRound;
 		private GameObject player;
 		private GameObject world;
 		private AudioSource AK12Source;
@@ -17,18 +20,24 @@
 		private Transform muzzle;
 		LineRenderer line;
 
-			public override void StartUsing(VRTK_InteractUse usingObject)
-			{
+		public override void StartUsing(VRTK_InteractUse usingObject) {
 			base.StartUsing(usingObject);
-			FireRayCast();
+            InvokeRepeating("FireRayCast", 0f, timeToNextRound);
 			player = GameObject.Find("[VRTK_SDKManager]");
 			if (player.GetComponent<move>() != null) 
 			{
 				player.GetComponent<move>().speed = player.GetComponent<move>().speed * slowMutiplier;
 			}
-			}
-	// Use this for initialization
-			void Start () {
+		}
+
+        public override void StopUsing(VRTK_InteractUse usingObject)
+        {
+            base.StopUsing(usingObject);
+            CancelInvoke();
+        }
+        // Use this for initialization
+        void Start () {
+            timeToNextRound = 60f / roundsPerMintue;
 			bolt = gameObject.transform.GetChild (1).GetChild(0);
 			muzzle = gameObject.transform.GetChild (0);
 			AK12Source = gameObject.GetComponent<AudioSource> ();
@@ -41,12 +50,12 @@
 			line.enabled = true;
 			Vector3 pos = muzzle.position;
 
-			Ray beamRay = new Ray (pos, transform.up);
+			Ray beamRay = new Ray (pos, transform.right);
 
 			RaycastHit Hit;
 			line.SetPosition (0, beamRay.origin);
 
-			if (Physics.Raycast(beamRay, out Hit, 100))
+			if (Physics.Raycast(beamRay, out Hit, range))
 			{
 				line.SetPosition(1, Hit.point);
 				if (Hit.collider.GetComponent<Rigidbody>() != null)
@@ -65,7 +74,7 @@
 
 			}
 			else{
-				line.SetPosition(1, beamRay.GetPoint(100));	
+				line.SetPosition(1, beamRay.GetPoint(range));	
 			} 
 
 			Invoke ("BeamOff", 0.1f);
