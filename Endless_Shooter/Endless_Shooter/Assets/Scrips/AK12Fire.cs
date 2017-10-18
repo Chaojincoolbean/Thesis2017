@@ -86,11 +86,6 @@
 			AK12Source.Play ();
 		}
 	
-	// Update is called once per frame
-		void Update () {
-		
-		}
-
 		private void SlideRetract() {
 			bolt.DOLocalMoveX (-0.6606456f, 0.07f);
 		}
