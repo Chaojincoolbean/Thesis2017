@@ -66,7 +66,7 @@ public class target : MonoBehaviour {
     {
         float size = Random.Range(0.2f, 1f);
         float pellets = Random.Range(6f, 12f);
-        for (int i = 1; i <= pellets; i++)
+		for (int i = 1; i <= pellets; i++)
         {
             GameObject pellet = Instantiate(projectile, muzzle.position, Quaternion.identity) as GameObject;
             Rigidbody rb = pellet.GetComponent<Rigidbody>();
