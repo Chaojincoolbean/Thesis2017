@@ -777,7 +777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65eb64f0f2fd6d64faddbcf5d7d3bdbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useButton: 0
+  useButton: 3
   controllerEvents: {fileID: 88492721}
   interactTouch: {fileID: 88492720}
   interactGrab: {fileID: 88492719}
@@ -792,9 +792,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 947b27445602ed640b885db7e667dfc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabButton: 3
+  grabButton: 7
   grabPrecognition: 0
-  throwMultiplier: 1
+  throwMultiplier: 2
   createRigidBodyWhenNotTouching: 0
   controllerAttachPoint: {fileID: 0}
   controllerEvents: {fileID: 0}
@@ -3042,7 +3042,24 @@ Prefab:
     - target: {fileID: 114466112557903772, guid: 0f0c6a6db8079ae4a8e1a289a6575400,
         type: 2}
       propertyPath: useOverrideButton
-      value: 3
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114466112557903772, guid: 0f0c6a6db8079ae4a8e1a289a6575400,
+        type: 2}
+      propertyPath: XBRM7907GFireclip
+      value: 
+      objectReference: {fileID: 8300000, guid: 375c8551d87a8584a9c7ee7db8a0b177, type: 3}
+    - target: {fileID: 4497034222492082, guid: 0f0c6a6db8079ae4a8e1a289a6575400, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4497034222492082, guid: 0f0c6a6db8079ae4a8e1a289a6575400, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4497034222492082, guid: 0f0c6a6db8079ae4a8e1a289a6575400, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f0c6a6db8079ae4a8e1a289a6575400, type: 2}
@@ -3095,7 +3112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftController: 1
   rightController: 1
-  engageButton: 7
+  engageButton: 14
   controlOptions: 1
   directionMethod: 0
   speedScale: 2
@@ -4006,6 +4023,7 @@ GameObject:
   - component: {fileID: 524690289}
   - component: {fileID: 524690288}
   - component: {fileID: 524690287}
+  - component: {fileID: 524690290}
   m_Layer: 0
   m_Name: Camera (head)
   m_TagString: MainCamera
@@ -4088,6 +4106,18 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
+--- !u!114 &524690290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 524690285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 3a7e2fbdd4ad65044850c24e71afee1f, type: 2}
 --- !u!1 &528049950
 GameObject:
   m_ObjectHideFlags: 0
@@ -9097,10 +9127,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65eb64f0f2fd6d64faddbcf5d7d3bdbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useButton: 0
-  controllerEvents: {fileID: 0}
-  interactTouch: {fileID: 0}
-  interactGrab: {fileID: 0}
+  useButton: 3
+  controllerEvents: {fileID: 1332004027}
+  interactTouch: {fileID: 1332004026}
+  interactGrab: {fileID: 1332004025}
 --- !u!114 &1332004025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9112,9 +9142,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 947b27445602ed640b885db7e667dfc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabButton: 3
+  grabButton: 7
   grabPrecognition: 0
-  throwMultiplier: 1
+  throwMultiplier: 2
   createRigidBodyWhenNotTouching: 0
   controllerAttachPoint: {fileID: 0}
   controllerEvents: {fileID: 0}
@@ -11496,7 +11526,7 @@ Prefab:
     - target: {fileID: 114489480973435582, guid: 4c68a39aa7c0f1846881c1363acf7951,
         type: 2}
       propertyPath: useOverrideButton
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4c68a39aa7c0f1846881c1363acf7951, type: 2}
@@ -14411,7 +14441,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 469fa73ad5b9f0841ba2300cd596a43f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14974,6 +15004,7 @@ GameObject:
   - component: {fileID: 2119590976}
   - component: {fileID: 2119590979}
   - component: {fileID: 2119590978}
+  - component: {fileID: 2119590980}
   - component: {fileID: 2119590977}
   m_Layer: 0
   m_Name: Camera (eye)
@@ -14999,8 +15030,7 @@ Transform:
 --- !u!114 &2119590977
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114000012849300506, guid: 41c0760bd81dd084283814f0c432b466,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2119590975}
   m_Enabled: 1
@@ -15056,6 +15086,18 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
+--- !u!114 &2119590980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2119590975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 3a7e2fbdd4ad65044850c24e71afee1f, type: 2}
 --- !u!1 &2127015534
 GameObject:
   m_ObjectHideFlags: 0
