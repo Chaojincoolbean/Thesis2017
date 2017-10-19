@@ -5,11 +5,13 @@ using UnityEngine;
 public class target : MonoBehaviour {
 	public List<AudioClip> explosionSFX;
 	public List<GameObject> explosionVFX;
+    public GameObject projectile;
 	public float value = 20;
 
 	private AudioSource explosionSource;
 	private GameObject scoreManagement;
 	private Component managerOfScore;
+    private Transform player;
 	private float _health = 2f;
 	public float health
 	{
@@ -27,12 +29,13 @@ public class target : MonoBehaviour {
 	void Start () {
 		explosionSource = gameObject.GetComponent<AudioSource> ();
 		scoreManagement = GameObject.Find ("ScoreKeeper");
+        Invoke("TargetLockon", 0.5f);
 		//managerOfScore = scoreManagement.GetComponent<scoreManager> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (player != null) {transform.LookAt(player);}
 	}
 
 	void Die () {
@@ -48,4 +51,9 @@ public class target : MonoBehaviour {
 
 		Destroy (gameObject);
 	}
+
+    void TargetLockon()
+    {
+        player = GameObject.Find("[VRTK][AUTOGEN][HeadsetColliderContainer]").transform;
+    }
 }

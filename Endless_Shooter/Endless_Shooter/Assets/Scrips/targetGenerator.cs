@@ -30,7 +30,7 @@ public class targetGenerator : MonoBehaviour {
 			GameObject generatedTargets = Instantiate (targets, gameObject.transform.position, Quaternion.identity);
 			generatedTargets.transform.localPosition = new Vector3 (targetPosX, targetPosY, targetPosZ);
 			generatedTargets.transform.localScale = new Vector3 (targetLocalScale, targetLocalScale, targetLocalScale);
-			generatedTargets.transform.parent = gameObject.transform;
+			//generatedTargets.transform.parent = gameObject.transform;
 		}
 	}
 	
