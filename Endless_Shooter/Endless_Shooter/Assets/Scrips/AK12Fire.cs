@@ -11,6 +11,7 @@
 		public float slowMutiplier = 0.7f;
         public float range = 200f;
         public float roundsPerMintue = 700;
+		public float damage = 1f;
 
         private float timeToNextRound;
 		private GameObject player;
@@ -34,6 +35,7 @@
         {
             base.StopUsing(usingObject);
             CancelInvoke();
+			line.enabled = false;
         }
         // Use this for initialization
         void Start () {
@@ -66,7 +68,7 @@
 				if (Hit.collider.GetComponent<target> () != null) 
 				{
 					print(Hit.collider.name);
-					Hit.collider.GetComponent<target> ().health -= 1f;
+					Hit.collider.GetComponent<target> ().health -= damage;
 					print(Hit.collider.GetComponent<target>().health);
 				}
 
