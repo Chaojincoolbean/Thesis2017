@@ -7,7 +7,7 @@ public class target : MonoBehaviour {
 	public List<GameObject> explosionVFX;
     public GameObject projectile;
 	public float value = 20;
-    public float projectileForce = 100f;
+    //public float projectileForce = 100f;
     public float attackInterval = 5f;
 
 	private AudioSource explosionSource;
@@ -57,7 +57,7 @@ public class target : MonoBehaviour {
 		Destroy (gameObject);
 	}
 
-    void TargetLockon()
+    public void TargetLockon()
     {
         player = GameObject.Find("[VRTK][AUTOGEN][HeadsetColliderContainer]").transform;
     }
@@ -69,8 +69,9 @@ public class target : MonoBehaviour {
 		for (int i = 1; i <= pellets; i++)
         {
             GameObject pellet = Instantiate(projectile, muzzle.position, Quaternion.identity) as GameObject;
-            Rigidbody rb = pellet.GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * projectileForce);
+            //Rigidbody rb = pellet.GetComponent<Rigidbody>();
+            //rb.AddForce(transform.forward * projectileForce);
+			//pellet.transform.Translate(Vector3.forward*Time.deltaTime*projectileForce);
             pellet.transform.localScale = new Vector3(size, size, size);
         }
     }

@@ -59,13 +59,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1854472721814318}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.706, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4918149258418374}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &4918149258418374
 Transform:
   m_ObjectHideFlags: 1
@@ -325,10 +325,12 @@ MonoBehaviour:
   muzzleFlash: {fileID: 1807565637503748, guid: 6b5d73ee1a65db346a6240683ccf9e22,
     type: 2}
   reservoirCapacity: 5
+  damage: 5
   reservoirRechargeTime: 0.5
   range: 300
-  XBRM7907GFireclip: {fileID: 0}
-  beamImpactVFX: {fileID: 0}
+  XBRM7907GFireclip: {fileID: 8300000, guid: 375c8551d87a8584a9c7ee7db8a0b177, type: 3}
+  beamImpactVFX: {fileID: 1517121139725594, guid: a1d20dd72a6f8d348b634ad034c0c9f5,
+    type: 2}
 --- !u!114 &114731689495030394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -383,7 +385,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.2
+    widthMultiplier: 0.1
     widthCurve:
       serializedVersion: 2
       m_Curve:
