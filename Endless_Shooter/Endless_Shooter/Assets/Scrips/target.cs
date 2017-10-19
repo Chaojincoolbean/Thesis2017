@@ -7,7 +7,7 @@ public class target : MonoBehaviour {
 	public List<GameObject> explosionVFX;
     public GameObject projectile;
 	public float value = 20;
-    //public float projectileForce = 100f;
+    public float projectileForce = 100f;
     public float attackInterval = 5f;
 
 	private AudioSource explosionSource;
@@ -66,11 +66,11 @@ public class target : MonoBehaviour {
     {
         float size = Random.Range(0.2f, 1f);
         float pellets = Random.Range(6f, 12f);
-		for (int i = 1; i <= pellets; i++)
+		for (int i = 1; i <= 1; i++)
         {
             GameObject pellet = Instantiate(projectile, muzzle.position, Quaternion.identity) as GameObject;
-            //Rigidbody rb = pellet.GetComponent<Rigidbody>();
-            //rb.AddForce(transform.forward * projectileForce);
+            Rigidbody rb = pellet.GetComponent<Rigidbody>();
+            rb.AddForce(transform.forward * projectileForce);
 			//pellet.transform.Translate(Vector3.forward*Time.deltaTime*projectileForce);
             pellet.transform.localScale = new Vector3(size, size, size);
         }
