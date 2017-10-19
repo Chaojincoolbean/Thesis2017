@@ -7,11 +7,14 @@ public class target : MonoBehaviour {
 	public List<GameObject> explosionVFX;
     public GameObject projectile;
 	public float value = 20;
+    public float projectileForce = 100f;
+    public float attackInterval = 5f;
 
 	private AudioSource explosionSource;
 	private GameObject scoreManagement;
 	private Component managerOfScore;
     private Transform player;
+    private Transform muzzle;
 	private float _health = 2f;
 	public float health
 	{
@@ -30,6 +33,8 @@ public class target : MonoBehaviour {
 		explosionSource = gameObject.GetComponent<AudioSource> ();
 		scoreManagement = GameObject.Find ("ScoreKeeper");
         Invoke("TargetLockon", 0.5f);
+        muzzle = gameObject.transform.GetChild(1);
+        InvokeRepeating("FireAtPlayer", 3f, attackInterval);
 		//managerOfScore = scoreManagement.GetComponent<scoreManager> ();
 	}
 	
@@ -55,5 +60,18 @@ public class target : MonoBehaviour {
     void TargetLockon()
     {
         player = GameObject.Find("[VRTK][AUTOGEN][HeadsetColliderContainer]").transform;
+    }
+
+    void FireAtPlayer()
+    {
+        float size = Random.Range(0.2f, 1f);
+        float pellets = Random.Range(6f, 12f);
+        for (int i = 1; i <= pellets; i++)
+        {
+            GameObject pellet = Instantiate(projectile, muzzle.position, Quaternion.identity) as GameObject;
+            Rigidbody rb = pellet.GetComponent<Rigidbody>();
+            rb.AddForce(transform.forward * projectileForce);
+            pellet.transform.localScale = new Vector3(size, size, size);
+        }
     }
 }
