@@ -8,7 +8,7 @@ public class target : MonoBehaviour {
     public GameObject projectile;
 	public float value = 20;
     public float projectileForce = 100f;
-    public float attackInterval = 5f;
+    public float attackInterval;
 
 	private AudioSource explosionSource;
 	private GameObject scoreManagement;
@@ -30,6 +30,7 @@ public class target : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
+        attackInterval = Random.Range(0.5f, 3f);
 		explosionSource = gameObject.GetComponent<AudioSource> ();
 		scoreManagement = GameObject.Find ("ScoreKeeper");
         Invoke("TargetLockon", 0.5f);
@@ -41,6 +42,7 @@ public class target : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (player != null) {transform.LookAt(player);}
+
 	}
 
 	void Die () {
