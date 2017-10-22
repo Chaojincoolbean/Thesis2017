@@ -656,6 +656,8 @@ MonoBehaviour:
   impactVFX: {fileID: 108086, guid: 547c2e12da8d4214098216299e70a3ba, type: 2}
   slowMutiplier: 0.7
   range: 200
+  roundsPerMintue: 700
+  damage: 1
 --- !u!114 &114961525874118354
 MonoBehaviour:
   m_ObjectHideFlags: 1
