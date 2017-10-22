@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class buildingGenerator : MonoBehaviour {
 	public GameObject building;
-	public int buildingNumbers = 5;
+	public float buildingNumbers = 20;
 	public float buildingLength = 3;
 	public float buildingWidth = 3;
 	public float buildingHeight = 10;
@@ -14,6 +14,7 @@ public class buildingGenerator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        //buildingNumbers = GameObject.Find("buildingDensityManager").GetComponent<buildingDensityLog>().buildingDensity;
 		lotScaleX = gameObject.transform.localScale.x;
 		lotScaleY = gameObject.transform.localScale.z;
 

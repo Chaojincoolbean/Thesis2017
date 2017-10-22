@@ -14,6 +14,7 @@ public class extendSpine : MonoBehaviour {
 		for (int i = 0; i < spineCount; i++) {
 			GameObject spine = Instantiate (spines [Random.Range (0, spines.Length)], new Vector3 (spinePosX, 0, 0), Quaternion.identity);
 			spinePosX = spinePosX + 50f;
+            //GameObject.Find("buildingDensityManager").GetComponent<buildingDensityLog>().buildingDensity += 10f;
 		}
 		for (int i = 0; i < spineCount; i++) {
 			GameObject spine = Instantiate (spines [Random.Range (0, spines.Length)], new Vector3 (reverseSpinePosX, 0, 0), Quaternion.identity);

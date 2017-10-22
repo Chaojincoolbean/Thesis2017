@@ -14,12 +14,12 @@ public class extendRib : MonoBehaviour {
 		for (int i = 0; i < spineCount; i++) {
 			GameObject rib = Instantiate (ribs [Random.Range (0, ribs.Length)], new Vector3 (gameObject.transform.position.x, 0, spinePosZ), Quaternion.identity);
 			spinePosZ = spinePosZ + 50f;
-			rib.transform.parent = gameObject.transform;
+			//rib.transform.parent = gameObject.transform;
 		}
 		for (int i = 0; i < spineCount; i++) {
 			GameObject rib = Instantiate (ribs [Random.Range (0, ribs.Length)], new Vector3 (gameObject.transform.position.x, 0, reverseSpinePosZ), Quaternion.identity);
 			reverseSpinePosZ = reverseSpinePosZ - 50f;
-			rib.transform.parent = gameObject.transform;
+			//rib.transform.parent = gameObject.transform;
 		
 		}
 	}
