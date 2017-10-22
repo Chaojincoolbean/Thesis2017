@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 65639948357109812}
   - component: {fileID: 23223489284534364}
   - component: {fileID: 114617167616754394}
+  - component: {fileID: 114260618914584534}
   m_Layer: 0
   m_Name: spineOfWorld
   m_TagString: Untagged
@@ -94,6 +95,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114260618914584534
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1309835037688754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ddb1d823936d3146bff4806b4ec1821, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targets:
+  - {fileID: 1311209616387926, guid: c326fe0a23cfe984097d1845aa24bec4, type: 2}
+  - {fileID: 1514306454535266, guid: 31ed8c5abba52784eb88e1b71c5b1d48, type: 2}
+  targetsNumber: 5
+  targetMinHeight: 6
 --- !u!114 &114617167616754394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -107,5 +124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ribs:
   - {fileID: 1900108683463240, guid: c4e9cbbf98cebac45bb7da8d61480686, type: 2}
+  - {fileID: 1438557813407096, guid: 832fbb7adf5975347b872b1a70600a93, type: 2}
+  - {fileID: 1438557813407096, guid: 832fbb7adf5975347b872b1a70600a93, type: 2}
+  - {fileID: 1438557813407096, guid: 832fbb7adf5975347b872b1a70600a93, type: 2}
   - {fileID: 1438557813407096, guid: 832fbb7adf5975347b872b1a70600a93, type: 2}
   spineCount: 5

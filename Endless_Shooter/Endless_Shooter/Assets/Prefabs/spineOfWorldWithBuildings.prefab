@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23424439431549984}
   - component: {fileID: 114551231896530112}
   - component: {fileID: 114097170013411900}
+  - component: {fileID: 114923686367531964}
   m_Layer: 0
   m_Name: spineOfWorldWithBuildings
   m_TagString: Untagged
@@ -109,6 +110,9 @@ MonoBehaviour:
   ribs:
   - {fileID: 1900108683463240, guid: c4e9cbbf98cebac45bb7da8d61480686, type: 2}
   - {fileID: 1438557813407096, guid: 832fbb7adf5975347b872b1a70600a93, type: 2}
+  - {fileID: 1438557813407096, guid: 832fbb7adf5975347b872b1a70600a93, type: 2}
+  - {fileID: 1438557813407096, guid: 832fbb7adf5975347b872b1a70600a93, type: 2}
+  - {fileID: 1438557813407096, guid: 832fbb7adf5975347b872b1a70600a93, type: 2}
   spineCount: 5
 --- !u!114 &114551231896530112
 MonoBehaviour:
@@ -123,6 +127,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   building: {fileID: 1989238231815656, guid: c361cdd3703d40f428e26f2319d4f8b4, type: 2}
   buildingNumbers: 50
-  buildingLength: 3
-  buildingWidth: 3
-  buildingHeight: 10
+  buildingLength: 7
+  buildingWidth: 7
+  buildingHeight: 25
+--- !u!114 &114923686367531964
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1006582505558552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ddb1d823936d3146bff4806b4ec1821, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targets:
+  - {fileID: 1311209616387926, guid: c326fe0a23cfe984097d1845aa24bec4, type: 2}
+  - {fileID: 1514306454535266, guid: 31ed8c5abba52784eb88e1b71c5b1d48, type: 2}
+  targetsNumber: 4
+  targetMinHeight: 7
