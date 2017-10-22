@@ -67,7 +67,6 @@ GameObject:
   - component: {fileID: 4314683947977308}
   - component: {fileID: 95822992680622524}
   - component: {fileID: 54090543308906520}
-  - component: {fileID: 114961525874118354}
   - component: {fileID: 114333015101672944}
   - component: {fileID: 114117727249490838}
   - component: {fileID: 114333615196601406}
@@ -76,6 +75,9 @@ GameObject:
   - component: {fileID: 114489480973435582}
   - component: {fileID: 65824276212162660}
   - component: {fileID: 65376497433600798}
+  - component: {fileID: 65814741374852056}
+  - component: {fileID: 65686326237919654}
+  - component: {fileID: 114376754450500852}
   m_Layer: 0
   m_Name: AK12
   m_TagString: Untagged
@@ -267,7 +269,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1157089348410756}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.9, y: 0.797, z: -16.5}
+  m_LocalPosition: {x: 1.33, y: 0.797, z: -54}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_Children:
   - {fileID: 4349417587451516}
@@ -467,6 +469,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.49, y: 1.17, z: 0.3}
   m_Center: {x: -2.2, y: -0.59, z: 0}
+--- !u!65 &65686326237919654
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1157089348410756}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.49, y: 1.17, z: 0.3}
+  m_Center: {x: -2.2, y: -0.59, z: 0}
+--- !u!65 &65814741374852056
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1157089348410756}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.72, y: 0.52, z: 0.3}
+  m_Center: {x: -0.48, y: 0.23, z: 0}
 --- !u!65 &65824276212162660
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -615,11 +641,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec2ac476f2fc9a45a4e69712580a603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  precisionGrab: 0
+  precisionGrab: 1
   rightSnapHandle: {fileID: 0}
   leftSnapHandle: {fileID: 0}
   throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1
+  throwMultiplier: 3
+  onGrabCollisionDelay: 0
+--- !u!114 &114376754450500852
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1157089348410756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec2ac476f2fc9a45a4e69712580a603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 3
   onGrabCollisionDelay: 0
 --- !u!114 &114489480973435582
 MonoBehaviour:
@@ -642,7 +685,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114961525874118354}
+  grabAttachMechanicScript: {fileID: 114333615196601406}
   secondaryGrabActionScript: {fileID: 114117727249490838}
   isUsable: 1
   holdButtonToUse: 1
@@ -658,25 +701,6 @@ MonoBehaviour:
   range: 200
   roundsPerMintue: 700
   damage: 1
---- !u!114 &114961525874118354
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1157089348410756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1
-  onGrabCollisionDelay: 0
-  destroyImmediatelyOnThrow: 1
-  breakForce: 1500
 --- !u!120 &120418334482501494
 LineRenderer:
   m_ObjectHideFlags: 1

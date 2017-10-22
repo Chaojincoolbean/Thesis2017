@@ -6,7 +6,7 @@ public class targetGenerator : MonoBehaviour {
 	public GameObject[] targets;
 	public float targetsNumber = 2f;
 	public float targetMinHeight = 5f;
-	private float targetsHeight;
+	public float targetsHeight;
 	private float lotDimensionX;
 	private float lotDimensionZ;
 	private float lotPosX;
@@ -14,7 +14,7 @@ public class targetGenerator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		targetsHeight = GameObject.Find ("Boundry1").GetComponent<buildingGenerator> ().buildingHeight;
+		//targetsHeight = GameObject.Find ("Boundry1").GetComponent<buildingGenerator> ().buildingHeight;
 		lotDimensionX = gameObject.transform.localScale.x;
 		lotDimensionZ = gameObject.transform.localScale.z;
 		lotPosX = gameObject.transform.position.x;

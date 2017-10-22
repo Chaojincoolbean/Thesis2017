@@ -39,13 +39,13 @@ GameObject:
   - component: {fileID: 54896649094551542}
   - component: {fileID: 65457512198442968}
   - component: {fileID: 65530184339000524}
-  - component: {fileID: 114070094985438416}
   - component: {fileID: 114105722566822366}
   - component: {fileID: 114618491055315746}
   - component: {fileID: 114870003058090566}
   - component: {fileID: 120956579131007624}
   - component: {fileID: 82757707950036848}
   - component: {fileID: 114832780597279582}
+  - component: {fileID: 114192943159025438}
   m_Layer: 0
   m_Name: S&W MP40
   m_TagString: Untagged
@@ -547,25 +547,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114070094985438416
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1219873264173000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 0
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1
-  onGrabCollisionDelay: 0
-  destroyImmediatelyOnThrow: 1
-  breakForce: 1500
 --- !u!114 &114105722566822366
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -583,6 +564,23 @@ MonoBehaviour:
   customOutlineModels: []
   customOutlineModelPaths: []
   enableSubmeshHighlight: 0
+--- !u!114 &114192943159025438
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1219873264173000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec2ac476f2fc9a45a4e69712580a603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 3
+  onGrabCollisionDelay: 0
 --- !u!114 &114618491055315746
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -632,7 +630,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114070094985438416}
+  grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 114618491055315746}
   isUsable: 1
   holdButtonToUse: 1
