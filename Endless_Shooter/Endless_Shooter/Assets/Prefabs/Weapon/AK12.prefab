@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 65376497433600798}
   - component: {fileID: 65814741374852056}
   - component: {fileID: 65686326237919654}
-  - component: {fileID: 114503958258489918}
+  - component: {fileID: 114352170478357182}
   m_Layer: 0
   m_Name: AK12
   m_TagString: Untagged
@@ -658,6 +658,26 @@ MonoBehaviour:
   customOutlineModels: []
   customOutlineModelPaths: []
   enableSubmeshHighlight: 0
+--- !u!114 &114352170478357182
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1157089348410756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1ebaa51525b734287157cb3f53f958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 0
+  rightSnapHandle: {fileID: 4473792904340680}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0
+  detachDistance: 1
+  velocityLimit: Infinity
+  angularVelocityLimit: Infinity
 --- !u!114 &114489480973435582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -679,7 +699,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114503958258489918}
+  grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 114117727249490838}
   isUsable: 1
   holdButtonToUse: 1
@@ -695,27 +715,6 @@ MonoBehaviour:
   range: 200
   roundsPerMintue: 700
   damage: 1
---- !u!114 &114503958258489918
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1157089348410756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99490d2901160b540b6ce6a321816a4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 0
-  rightSnapHandle: {fileID: 4473792904340680}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 3
-  onGrabCollisionDelay: 0.5
-  destroyImmediatelyOnThrow: 1
-  breakForce: 1500
-  strength: 500
-  damper: 50
 --- !u!120 &120418334482501494
 LineRenderer:
   m_ObjectHideFlags: 1

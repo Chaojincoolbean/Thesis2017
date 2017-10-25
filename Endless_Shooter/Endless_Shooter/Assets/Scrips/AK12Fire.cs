@@ -12,6 +12,8 @@
         public float range = 200f;
         public float roundsPerMintue = 700;
 		public float damage = 1f;
+        public float recoil = 1f;
+        public float sway = 1f;
 
         private float timeToNextRound;
 		private GameObject player;
@@ -20,25 +22,28 @@
 		private Transform bolt;
 		private Transform muzzle;
 		LineRenderer line;
+        Rigidbody rb;
 
-		public override void StartUsing(VRTK_InteractUse usingObject) {
+        public override void StartUsing(VRTK_InteractUse usingObject) {
 			base.StartUsing(usingObject);
             InvokeRepeating("FireRayCast", 0f, timeToNextRound);
-			player = GameObject.Find("[VRTK_SDKManager]");
+            /*player = GameObject.Find("[VRTK_SDKManager]");
 			if (player.GetComponent<move>() != null) 
 			{
 				player.GetComponent<move>().speed = player.GetComponent<move>().speed * slowMutiplier;
-			}
-		}
+			}*/
+        }
 
         public override void StopUsing(VRTK_InteractUse usingObject)
         {
             base.StopUsing(usingObject);
+            bolt.DOLocalMoveX(0.6606456f, 0.07f);
             CancelInvoke();
 			line.enabled = false;
         }
         // Use this for initialization
         void Start () {
+            rb = gameObject.GetComponent<Rigidbody>();
             timeToNextRound = 60f / roundsPerMintue;
 			bolt = gameObject.transform.GetChild (1).GetChild(0);
 			muzzle = gameObject.transform.GetChild (0);
@@ -48,8 +53,9 @@
 			}
 
 			private void FireRayCast () {
-			print ("gun fired");
-			line.enabled = true;
+            //print ("gun fired");
+            
+            line.enabled = true;
 			Vector3 pos = muzzle.position;
 
 			Ray beamRay = new Ray (pos, transform.right);
@@ -77,9 +83,9 @@
 			}
 			else{
 				line.SetPosition(1, beamRay.GetPoint(range));	
-			} 
-
-			Invoke ("BeamOff", 0.1f);
+			}
+            rb.AddForceAtPosition(new Vector3(recoil, recoil, sway), muzzle.transform.position);
+            Invoke ("BeamOff", 0.1f);
 
 			bolt.DOLocalMoveX (0.6606456f, 0.07f);
 			Invoke ("SlideRetract", 0.07f);
