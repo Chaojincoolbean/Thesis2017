@@ -69,7 +69,6 @@ GameObject:
   - component: {fileID: 54090543308906520}
   - component: {fileID: 114333015101672944}
   - component: {fileID: 114117727249490838}
-  - component: {fileID: 114333615196601406}
   - component: {fileID: 82998881301098482}
   - component: {fileID: 120418334482501494}
   - component: {fileID: 114489480973435582}
@@ -77,7 +76,7 @@ GameObject:
   - component: {fileID: 65376497433600798}
   - component: {fileID: 65814741374852056}
   - component: {fileID: 65686326237919654}
-  - component: {fileID: 114376754450500852}
+  - component: {fileID: 114503958258489918}
   m_Layer: 0
   m_Name: AK12
   m_TagString: Untagged
@@ -172,6 +171,21 @@ GameObject:
   - component: {fileID: 23561724248215484}
   m_Layer: 0
   m_Name: MRARIronsights
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1683363312733692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4473792904340680}
+  m_Layer: 0
+  m_Name: snapHandle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -275,6 +289,7 @@ Transform:
   - {fileID: 4349417587451516}
   - {fileID: 4550156580113590}
   - {fileID: 4208661510443168}
+  - {fileID: 4473792904340680}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -344,6 +359,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4903606766915432}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4473792904340680
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1683363312733692}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.2, y: -0.53, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4314683947977308}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4550156580113590
 Transform:
@@ -630,40 +658,6 @@ MonoBehaviour:
   customOutlineModels: []
   customOutlineModelPaths: []
   enableSubmeshHighlight: 0
---- !u!114 &114333615196601406
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1157089348410756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec2ac476f2fc9a45a4e69712580a603, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 3
-  onGrabCollisionDelay: 0
---- !u!114 &114376754450500852
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1157089348410756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec2ac476f2fc9a45a4e69712580a603, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 3
-  onGrabCollisionDelay: 0
 --- !u!114 &114489480973435582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -685,7 +679,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114333615196601406}
+  grabAttachMechanicScript: {fileID: 114503958258489918}
   secondaryGrabActionScript: {fileID: 114117727249490838}
   isUsable: 1
   holdButtonToUse: 1
@@ -701,6 +695,27 @@ MonoBehaviour:
   range: 200
   roundsPerMintue: 700
   damage: 1
+--- !u!114 &114503958258489918
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1157089348410756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99490d2901160b540b6ce6a321816a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 0
+  rightSnapHandle: {fileID: 4473792904340680}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 3
+  onGrabCollisionDelay: 0.5
+  destroyImmediatelyOnThrow: 1
+  breakForce: 1500
+  strength: 500
+  damper: 50
 --- !u!120 &120418334482501494
 LineRenderer:
   m_ObjectHideFlags: 1

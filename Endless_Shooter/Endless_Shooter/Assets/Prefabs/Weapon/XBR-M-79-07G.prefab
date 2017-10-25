@@ -30,7 +30,6 @@ GameObject:
   - component: {fileID: 114731689495030394}
   - component: {fileID: 114466112557903772}
   - component: {fileID: 120115968555919254}
-  - component: {fileID: 114068861520822658}
   m_Layer: 0
   m_Name: XBR-M-79-07G
   m_TagString: Untagged
@@ -88,7 +87,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1124650679259842}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 2.330097, y: 1.53, z: 1.2450837}
+  m_LocalPosition: {x: -0.93198687, y: 1.513, z: -50.510178}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 4497034222492082}
@@ -102,13 +101,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1493800536687598}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.412, y: -0.264, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4918149258418374}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!23 &23362065427796312
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -291,23 +290,6 @@ MonoBehaviour:
   customOutlineModels: []
   customOutlineModelPaths: []
   enableSubmeshHighlight: 0
---- !u!114 &114068861520822658
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1124650679259842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec2ac476f2fc9a45a4e69712580a603, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 2
-  onGrabCollisionDelay: 0.5
 --- !u!114 &114431024737605112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -358,6 +340,8 @@ MonoBehaviour:
   XBRM7907GFireclip: {fileID: 8300000, guid: 375c8551d87a8584a9c7ee7db8a0b177, type: 3}
   beamImpactVFX: {fileID: 1517121139725594, guid: a1d20dd72a6f8d348b634ad034c0c9f5,
     type: 2}
+  recoil: 1
+  sway: 0.5
 --- !u!114 &114731689495030394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -369,8 +353,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec2ac476f2fc9a45a4e69712580a603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
+  precisionGrab: 0
+  rightSnapHandle: {fileID: 4926746993306424}
   leftSnapHandle: {fileID: 0}
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1

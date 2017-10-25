@@ -3039,9 +3039,46 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114466112557903772, guid: 0f0c6a6db8079ae4a8e1a289a6575400,
+        type: 2}
+      propertyPath: grabAttachMechanicScript
+      value: 
+      objectReference: {fileID: 446490647}
+    m_RemovedComponents:
+    - {fileID: 114731689495030394, guid: 0f0c6a6db8079ae4a8e1a289a6575400, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0f0c6a6db8079ae4a8e1a289a6575400, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &446490645 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1124650679259842, guid: 0f0c6a6db8079ae4a8e1a289a6575400,
+    type: 2}
+  m_PrefabInternal: {fileID: 446490644}
+--- !u!4 &446490646 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4926746993306424, guid: 0f0c6a6db8079ae4a8e1a289a6575400,
+    type: 2}
+  m_PrefabInternal: {fileID: 446490644}
+--- !u!114 &446490647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 446490645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99490d2901160b540b6ce6a321816a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 0
+  rightSnapHandle: {fileID: 446490646}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0
+  destroyImmediatelyOnThrow: 1
+  breakForce: 1500
+  strength: 500
+  damper: 50
 --- !u!1 &448564200
 GameObject:
   m_ObjectHideFlags: 0
@@ -10792,7 +10829,7 @@ Prefab:
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 1122
+      value: 1081
       objectReference: {fileID: 0}
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
@@ -11534,6 +11571,11 @@ Prefab:
     - target: {fileID: 4314683947977308, guid: 4c68a39aa7c0f1846881c1363acf7951, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114503958258489918, guid: 4c68a39aa7c0f1846881c1363acf7951,
+        type: 2}
+      propertyPath: breakForce
+      value: Infinity
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4c68a39aa7c0f1846881c1363acf7951, type: 2}
