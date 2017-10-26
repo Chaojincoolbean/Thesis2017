@@ -5,10 +5,12 @@ using UnityEngine;
 public class target : MonoBehaviour {
 	public List<AudioClip> explosionSFX;
 	public List<GameObject> explosionVFX;
+    public List<AudioClip> fireSFX;
     public GameObject projectile;
 	public float value = 20;
     public float projectileForce = 100f;
     public float attackInterval;
+    public float waitPeriod = 15f;
 
 	private AudioSource explosionSource;
 	private GameObject scoreManagement;
@@ -35,7 +37,8 @@ public class target : MonoBehaviour {
 		scoreManagement = GameObject.Find ("ScoreKeeper");
         Invoke("TargetLockon", 0.5f);
         muzzle = gameObject.transform.GetChild(1);
-        InvokeRepeating("FireAtPlayer", 3f, attackInterval);
+        InvokeRepeating("FireAtPlayer", waitPeriod, attackInterval);
+        //StartCoroutine(WaitAndGenerate(0.1f));
 		//managerOfScore = scoreManagement.GetComponent<scoreManager> ();
 	}
 	
@@ -66,6 +69,7 @@ public class target : MonoBehaviour {
 
     void FireAtPlayer()
     {
+        
         float size = Random.Range(0.2f, 1f);
         float pellets = Random.Range(6f, 12f);
 		for (int i = 1; i <= 1; i++)
@@ -73,8 +77,32 @@ public class target : MonoBehaviour {
             GameObject pellet = Instantiate(projectile, muzzle.position, Quaternion.identity) as GameObject;
             Rigidbody rb = pellet.GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * projectileForce);
+            explosionSource.clip = fireSFX[0];
+            explosionSource.Play();
 			//pellet.transform.Translate(Vector3.forward*Time.deltaTime*projectileForce);
             pellet.transform.localScale = new Vector3(size, size, size);
         }
+
+
     }
+
+    // every 2 seconds perform the print()
+    /*private IEnumerator WaitAndGenerate(float waitTime)
+    {
+        float size = Random.Range(0.2f, 1f);
+        float pellets = Random.Range(6f, 12f);
+        for (int i = 1; i <= 5; i++)
+        {
+            GameObject pellet = Instantiate(projectile, muzzle.position, Quaternion.identity) as GameObject;
+            Rigidbody rb = pellet.GetComponent<Rigidbody>();
+            rb.AddForce(transform.forward * projectileForce);
+            explosionSource.clip = fireSFX[0];
+            explosionSource.Play();
+            Debug.Log("in");
+            //pellet.transform.Translate(Vector3.forward*Time.deltaTime*projectileForce);
+            pellet.transform.localScale = new Vector3(size, size, size);
+            yield return new WaitForSeconds(waitTime);
+            //print("WaitAndPrint " + Time.time);
+        }
+    }*/
 }

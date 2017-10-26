@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 33115303295414312}
   - component: {fileID: 135046014217039398}
   - component: {fileID: 23854189854930658}
-  - component: {fileID: 114251020897043152}
   - component: {fileID: 114735780207208166}
   - component: {fileID: 54325056875616698}
+  - component: {fileID: 82081223253156808}
   m_Layer: 0
   m_Name: SphericalBullet
   m_TagString: Untagged
@@ -99,18 +99,86 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114251020897043152
-MonoBehaviour:
+--- !u!82 &82081223253156808
+AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1468413911184946}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 937f666194822dd4e9ee3122dce86ca6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  suicideTime: 3
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114735780207208166
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -124,6 +192,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   magentaBulletHit: {fileID: 1517121139725594, guid: a1d20dd72a6f8d348b634ad034c0c9f5,
     type: 2}
+  bulletClip: {fileID: 8300000, guid: 6db750008b0835b4dbcb54013e091ff3, type: 3}
+  bulletSource: {fileID: 0}
 --- !u!135 &135046014217039398
 SphereCollider:
   m_ObjectHideFlags: 1

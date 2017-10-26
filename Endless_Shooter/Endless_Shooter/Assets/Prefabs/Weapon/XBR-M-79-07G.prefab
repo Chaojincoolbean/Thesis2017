@@ -340,8 +340,8 @@ MonoBehaviour:
   XBRM7907GFireclip: {fileID: 8300000, guid: 375c8551d87a8584a9c7ee7db8a0b177, type: 3}
   beamImpactVFX: {fileID: 1517121139725594, guid: a1d20dd72a6f8d348b634ad034c0c9f5,
     type: 2}
-  recoil: 20
-  sway: 10
+  recoil: 100
+  sway: 5
 --- !u!114 &114626289901355562
 MonoBehaviour:
   m_ObjectHideFlags: 1

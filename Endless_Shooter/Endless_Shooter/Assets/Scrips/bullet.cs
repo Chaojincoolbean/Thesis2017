@@ -6,14 +6,19 @@ using DG.Tweening;
 public class bullet : MonoBehaviour {
 	//public float projectileSpeed = 50f;
 	public GameObject magentaBulletHit;
+    public AudioClip bulletClip;
 
+    [SerializeField]private AudioSource bulletSource;
 	private Transform player;
+    private GameObject playerCamera;
 	// Use this for initialization
 	void Start () {
-		//GameObject.Find<
-		//Invoke("TargetLockon", 0.5f);
-		//player = GameObject.Find("[VRTK][AUTOGEN][HeadsetColliderContainer]").transform;
+        //GameObject.Find<
+        //Invoke("TargetLockon", 0.5f);
+        //player = GameObject.Find("[VRTK][AUTOGEN][HeadsetColliderContainer]").transform;
+        playerCamera = GameObject.Find("Camera (eye)");
 		Invoke("SelfDestory", 3f);
+        bulletSource = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -30,8 +35,24 @@ public class bullet : MonoBehaviour {
 		Quaternion rot = Quaternion.FromToRotation (Vector3.up, contact.normal);
 		Vector3 pos = contact.point;
 		Instantiate (magentaBulletHit, pos, rot);
+        if (!bulletSource)
+        {
+            Debug.Log(this.name+"1");
+            bulletSource = GetComponent<AudioSource>();
+        }
+        bulletSource.clip = bulletClip;
+        bulletSource.Play();
 		Destroy (gameObject);
 	}
+
+    void OnTriggerEnter(Collider other) {
+        Debug.Log(other.name);
+        if (other.name == "[VRTK][AUTOGEN][HeadsetColliderContainer]")
+        {
+            playerCamera.GetComponent<playerHit>().CameraShake();
+            playerCamera.GetComponent<playerHit>().PlayHitSound();
+        }
+    }
 
 	void SelfDestory(){
 		gameObject.transform.DOScale (0, 1);

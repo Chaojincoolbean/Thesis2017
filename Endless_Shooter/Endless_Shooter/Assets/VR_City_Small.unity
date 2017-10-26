@@ -305,7 +305,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4327448678175048, guid: 56c59da2e396c2845a91a1bc7ca70b00, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 56c59da2e396c2845a91a1bc7ca70b00, type: 2}
@@ -392,7 +392,7 @@ Transform:
   m_LocalScale: {x: 50, y: 1, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &37426247
 MonoBehaviour:
@@ -503,7 +503,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4618116183022372, guid: 0f1a16831e5baf84ca76fd9afd07ecc4, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1786640163622928, guid: 0f1a16831e5baf84ca76fd9afd07ecc4, type: 2}
       propertyPath: m_IsActive
@@ -711,7 +711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToGrab: {fileID: 0}
   objectIsPrefab: 0
-  cloneGrabbedObject: 0
+  cloneGrabbedObject: 1
   alwaysCloneOnEnable: 0
   interactTouch: {fileID: 81457413}
   interactGrab: {fileID: 81457412}
@@ -1347,7 +1347,7 @@ Transform:
   - {fileID: 1082655488}
   - {fileID: 437694073}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &138364229
 MonoBehaviour:
@@ -1362,7 +1362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spines:
   - {fileID: 1006582505558552, guid: 1246ec95a0e4e4f47a3b9fe46c2850e2, type: 2}
-  - {fileID: 1309835037688754, guid: b43a7d03247f0dc48b9642a8f2e5c04a, type: 2}
+  - {fileID: 1006582505558552, guid: 1246ec95a0e4e4f47a3b9fe46c2850e2, type: 2}
   - {fileID: 1006582505558552, guid: 1246ec95a0e4e4f47a3b9fe46c2850e2, type: 2}
   - {fileID: 1006582505558552, guid: 1246ec95a0e4e4f47a3b9fe46c2850e2, type: 2}
   - {fileID: 1006582505558552, guid: 1246ec95a0e4e4f47a3b9fe46c2850e2, type: 2}
@@ -1379,7 +1379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ribs:
-  - {fileID: 1900108683463240, guid: c4e9cbbf98cebac45bb7da8d61480686, type: 2}
+  - {fileID: 1438557813407096, guid: 832fbb7adf5975347b872b1a70600a93, type: 2}
   - {fileID: 1438557813407096, guid: 832fbb7adf5975347b872b1a70600a93, type: 2}
   - {fileID: 1438557813407096, guid: 832fbb7adf5975347b872b1a70600a93, type: 2}
   - {fileID: 1438557813407096, guid: 832fbb7adf5975347b872b1a70600a93, type: 2}
@@ -2342,95 +2342,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 334331402}
---- !u!1 &340579191
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 340579196}
-  - component: {fileID: 340579195}
-  - component: {fileID: 340579194}
-  - component: {fileID: 340579193}
-  - component: {fileID: 340579192}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!81 &340579192
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 340579191}
-  m_Enabled: 1
---- !u!124 &340579193
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 340579191}
-  m_Enabled: 1
---- !u!92 &340579194
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 340579191}
-  m_Enabled: 1
---- !u!20 &340579195
-Camera:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 340579191}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
-  m_StereoMirrorMode: 0
---- !u!4 &340579196
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 340579191}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &352005424
 GameObject:
   m_ObjectHideFlags: 0
@@ -2899,7 +2810,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &397865155
 GameObject:
@@ -4305,7 +4216,7 @@ Transform:
   m_LocalScale: {x: 50, y: 1, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &710233852
 MonoBehaviour:
@@ -4438,7 +4349,7 @@ Transform:
   - {fileID: 81457407}
   - {fileID: 837945615}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &715932601
 GameObject:
@@ -4797,7 +4708,7 @@ Transform:
   m_LocalScale: {x: 50, y: 1, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &760880607
 MonoBehaviour:
@@ -6792,6 +6703,8 @@ GameObject:
   - component: {fileID: 1152897726}
   - component: {fileID: 1152897725}
   - component: {fileID: 1152897724}
+  - component: {fileID: 1152897727}
+  - component: {fileID: 1152897728}
   - component: {fileID: 1152897723}
   m_Layer: 0
   m_Name: Camera (eye)
@@ -6857,8 +6770,8 @@ Camera:
   m_GameObject: {fileID: 1152897721}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0.019607844}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -6885,6 +6798,102 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
+--- !u!114 &1152897727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1152897721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d69179098837c9b458c98a59960f513c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHitClip: {fileID: 8300000, guid: 3a05524a5dd6af449a9b858fd1d9b655, type: 3}
+  cameraShakeDuration: 0.5
+  cameraShakeStrength: 20
+  cameraVibrate: 10
+  cameraShakeRandomness: 40
+--- !u!82 &1152897728
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1152897721}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1166309528
 GameObject:
   m_ObjectHideFlags: 0
@@ -7716,7 +7725,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1338796397
 GameObject:
@@ -8928,7 +8937,7 @@ Transform:
   m_LocalScale: {x: 50, y: 1, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1639632822
 MonoBehaviour:
@@ -9931,7 +9940,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4918149258418374, guid: 0f0c6a6db8079ae4a8e1a289a6575400, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f0c6a6db8079ae4a8e1a289a6575400, type: 2}
@@ -9991,7 +10000,7 @@ Transform:
   - {fileID: 941292431}
   - {fileID: 1359774253}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1888438655
 GameObject:
@@ -10319,7 +10328,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1983272827
 MonoBehaviour:

@@ -111,6 +111,7 @@ MonoBehaviour:
   - {fileID: 1514306454535266, guid: 31ed8c5abba52784eb88e1b71c5b1d48, type: 2}
   targetsNumber: 5
   targetMinHeight: 6
+  targetsHeight: 0
 --- !u!114 &114617167616754394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -123,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ribs:
-  - {fileID: 1900108683463240, guid: c4e9cbbf98cebac45bb7da8d61480686, type: 2}
+  - {fileID: 1438557813407096, guid: 832fbb7adf5975347b872b1a70600a93, type: 2}
   - {fileID: 1438557813407096, guid: 832fbb7adf5975347b872b1a70600a93, type: 2}
   - {fileID: 1438557813407096, guid: 832fbb7adf5975347b872b1a70600a93, type: 2}
   - {fileID: 1438557813407096, guid: 832fbb7adf5975347b872b1a70600a93, type: 2}
