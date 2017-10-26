@@ -359,7 +359,7 @@ MonoBehaviour:
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
   onGrabCollisionDelay: 0
-  detachDistance: 1
+  detachDistance: 5
   velocityLimit: Infinity
   angularVelocityLimit: Infinity
 --- !u!120 &120115968555919254
