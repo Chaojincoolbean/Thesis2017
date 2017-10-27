@@ -3,6 +3,7 @@
     using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
+    using UnityEngine.SceneManagement;
 
     public class target : MonoBehaviour
     {
@@ -39,10 +40,13 @@
         {
             attackInterval = Random.Range(0.5f, 3f);
             explosionSource = gameObject.GetComponent<AudioSource>();
-            scoreManagement = GameObject.Find("ScoreKeeper");
+            scoreManagement = GameObject.Find("scoreManager");
             Invoke("TargetLockon", 0.5f);
             muzzle = gameObject.transform.GetChild(1);
-            InvokeRepeating("FireAtPlayer", waitPeriod, attackInterval);
+            if (SceneManager.GetActiveScene().name == "VR_City_Small")
+            {
+                InvokeRepeating("FireAtPlayer", waitPeriod, attackInterval);
+            }
             //StartCoroutine(WaitAndGenerate(0.1f));
             //managerOfScore = scoreManagement.GetComponent<scoreManager> ();
         }
@@ -50,7 +54,7 @@
         // Update is called once per frame
         void Update()
         {
-            if (player != null) { transform.LookAt(player); }
+            //if (player != null) { transform.LookAt(player); }
 
         }
 
@@ -80,7 +84,7 @@
 
             float size = Random.Range(0.2f, 1f);
             float pellets = Random.Range(6f, 12f);
-            for (int i = 1; i <= 1; i++)
+            for (int i = 1; i <= 5; i++)
             {
                 GameObject pellet = Instantiate(projectile, muzzle.position, Quaternion.identity) as GameObject;
                 Rigidbody rb = pellet.GetComponent<Rigidbody>();
@@ -89,6 +93,7 @@
                 explosionSource.Play();
                 //pellet.transform.Translate(Vector3.forward*Time.deltaTime*projectileForce);
                 pellet.transform.localScale = new Vector3(size, size, size);
+                //yield return new WaitForSeconds(0.2f);
             }
 
 

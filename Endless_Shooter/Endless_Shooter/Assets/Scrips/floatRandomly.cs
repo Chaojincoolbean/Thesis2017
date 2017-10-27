@@ -31,7 +31,13 @@ public class floatRandomly : MonoBehaviour {
 	Vector3 getNewRandomPosition () {
 		float x = Random.Range(-range, range);
 		float z = Random.Range(-range, range);
-		float y = Random.Range(-range, range);
+		float y = Random.Range(0, 50f);
+
+        if(transform.position.y > 50f)
+        {
+            transform.position = new Vector3(transform.position.x,50f,transform.position.z);
+            y = 0;
+        }
 
 		Vector3 pos = new Vector3(x, y, z);
 		return pos;

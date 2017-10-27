@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114006732528124138}
   m_Layer: 0
   m_Name: Fast Small Triambic Icosahedron
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToNextDestination: 3
-  range: 30
+  range: 1000
   speed: 15
 --- !u!114 &114066894316656182
 MonoBehaviour:
