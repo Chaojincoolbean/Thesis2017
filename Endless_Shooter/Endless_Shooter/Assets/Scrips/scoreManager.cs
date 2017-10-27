@@ -53,7 +53,7 @@
                 mintueCount++;
                 secondsCount = 0;
             }
-            if (SceneManager.GetActiveScene().name == "VR_City_Single block")
+            if (SceneManager.GetActiveScene().name == "VR_City_Single block" || SceneManager.GetActiveScene().name == "Handmade_Map")
             {
                 playerWatch.GetComponent<VRTK_ControllerTooltips>().UpdateText(VRTK_ControllerTooltips.TooltipButtons.TouchpadTooltip, mintueCount.ToString() + ":" + (Mathf.Round(secondsCount)).ToString());
             }
@@ -86,7 +86,7 @@
 
         void GetTheFuckingText()
         {
-            if (SceneManager.GetActiveScene().name == "VR_City_Single block")
+            if (SceneManager.GetActiveScene().name == "VR_City_Single block" || SceneManager.GetActiveScene().name == "Handmade_Map")
             {
                 scoreText = GameObject.Find("yourScore").GetComponent<Text>();
             }
