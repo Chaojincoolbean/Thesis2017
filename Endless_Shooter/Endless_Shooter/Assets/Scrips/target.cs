@@ -43,7 +43,7 @@
             scoreManagement = GameObject.Find("scoreManager");
             Invoke("TargetLockon", 0.5f);
             muzzle = gameObject.transform.GetChild(1);
-            if (SceneManager.GetActiveScene().name == "VR_City_Small")
+			if (SceneManager.GetActiveScene().name == "VR_City_Small" || SceneManager.GetActiveScene().name == "VR_City_Roguelike")
             {
                 InvokeRepeating("FireAtPlayer", waitPeriod, attackInterval);
             }
