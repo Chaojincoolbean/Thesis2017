@@ -8,10 +8,10 @@ public class displayScore : MonoBehaviour {
 	private GameObject Manager;
 	// Use this for initialization
 	void Start () {
-		Manager = GameObject.Find ("ScoreKeeper");
+		Manager = GameObject.Find ("scoreManager");
 
 		finalScoreText = GameObject.Find ("Final Score").GetComponent<Text> ();
-		finalScoreText.text = "Final Score: " + Manager.GetComponent<scoreManager> ().score;
+		//finalScoreText.text = "Final Score: " + Manager.GetComponent<scoreManager> ().score;
 	}
 	
 	// Update is called once per frame
