@@ -15,7 +15,7 @@
         public float projectileForce = 100f;
         public float attackInterval;
         public float waitPeriod = 15f;
-		public float pelletCount = 5f;
+		//public float pelletCount = 5f;
 
         private AudioSource explosionSource;
         private GameObject scoreManagement;
@@ -23,6 +23,7 @@
         private Transform player;
         private Transform muzzle;
 		float f = 0f;
+        float g = 0f;
         private float _health = 2f;
         public float health
         {
@@ -53,16 +54,18 @@
         // Update is called once per frame
         void Update()
         {
-			if (SceneManager.GetActiveScene().name == "VR_City_Small" || SceneManager.GetActiveScene().name == "VR_City_Roguelike")
+            gameObject.transform.LookAt(player);
+            g += Time.deltaTime;
+			if ((SceneManager.GetActiveScene().name == "VR_City_Small" || SceneManager.GetActiveScene().name == "VR_City_Roguelike") && g >= waitPeriod)
 			{
 				//print ("correct scene");
 				f += Time.deltaTime;
 				print (f);
-				if (f >= waitPeriod)
+				if (f >= attackInterval)
 				{
-					StartCoroutine ("FireAtPlayer");
+					StartCoroutine ("FirePelletsAtPlayer");
 					f = 0f;
-					print ("Coroutine Started");
+					//print ("Coroutine Started");
 				}
 
 			}
@@ -90,12 +93,12 @@
             player = GameObject.Find("[VRTK][AUTOGEN][HeadsetColliderContainer]").transform;
         }
 
-		IEnumerator FireAtPlayer()
+		IEnumerator FirePelletsAtPlayer()
         {
 
-            float size = Random.Range(0.2f, 1f);
+            float size = Random.Range(0.2f, 0.5f);
             float pellets = Random.Range(6f, 12f);
-			for (int i = 1; i <= pelletCount; i++)
+			for (int i = 1; i <= pellets; i++)
             {
                 GameObject pellet = Instantiate(projectile, muzzle.position, Quaternion.identity) as GameObject;
                 Rigidbody rb = pellet.GetComponent<Rigidbody>();
