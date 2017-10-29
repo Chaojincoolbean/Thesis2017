@@ -15,12 +15,14 @@
         public float projectileForce = 100f;
         public float attackInterval;
         public float waitPeriod = 15f;
+		public float pelletCount = 5f;
 
         private AudioSource explosionSource;
         private GameObject scoreManagement;
         private Component managerOfScore;
         private Transform player;
         private Transform muzzle;
+		float f = 0f;
         private float _health = 2f;
         public float health
         {
@@ -43,10 +45,7 @@
             scoreManagement = GameObject.Find("scoreManager");
             Invoke("TargetLockon", 0.5f);
             muzzle = gameObject.transform.GetChild(1);
-			if (SceneManager.GetActiveScene().name == "VR_City_Small" || SceneManager.GetActiveScene().name == "VR_City_Roguelike")
-            {
-                InvokeRepeating("FireAtPlayer", waitPeriod, attackInterval);
-            }
+
             //StartCoroutine(WaitAndGenerate(0.1f));
             //managerOfScore = scoreManagement.GetComponent<scoreManager> ();
         }
@@ -54,7 +53,19 @@
         // Update is called once per frame
         void Update()
         {
-            //if (player != null) { transform.LookAt(player); }
+			if (SceneManager.GetActiveScene().name == "VR_City_Small" || SceneManager.GetActiveScene().name == "VR_City_Roguelike")
+			{
+				//print ("correct scene");
+				f += Time.deltaTime;
+				print (f);
+				if (f >= waitPeriod)
+				{
+					StartCoroutine ("FireAtPlayer");
+					f = 0f;
+					print ("Coroutine Started");
+				}
+
+			}
 
         }
 
@@ -79,12 +90,12 @@
             player = GameObject.Find("[VRTK][AUTOGEN][HeadsetColliderContainer]").transform;
         }
 
-        void FireAtPlayer()
+		IEnumerator FireAtPlayer()
         {
 
             float size = Random.Range(0.2f, 1f);
             float pellets = Random.Range(6f, 12f);
-            for (int i = 1; i <= 5; i++)
+			for (int i = 1; i <= pelletCount; i++)
             {
                 GameObject pellet = Instantiate(projectile, muzzle.position, Quaternion.identity) as GameObject;
                 Rigidbody rb = pellet.GetComponent<Rigidbody>();
@@ -94,6 +105,7 @@
                 //pellet.transform.Translate(Vector3.forward*Time.deltaTime*projectileForce);
                 pellet.transform.localScale = new Vector3(size, size, size);
                 //yield return new WaitForSeconds(0.2f);
+				yield return null;
             }
 
 
