@@ -265,7 +265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToNextDestination: 3
   range: 1000
-  speed: 15
+  speed: 25
 --- !u!114 &114066894316656182
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -295,7 +295,9 @@ MonoBehaviour:
   fireSFX:
   - {fileID: 8300000, guid: 1475859eb85bf8f449ce777ad6e11b82, type: 3}
   projectile: {fileID: 1468413911184946, guid: 9143bfa5c33ddeb498b83a45491af378, type: 2}
-  value: 20
+  value: 30
   projectileForce: 8000
   attackInterval: 5
   waitPeriod: 10
+  roundsPerMintue: 600
+  attackPattern: FirePelletsAtPlayer

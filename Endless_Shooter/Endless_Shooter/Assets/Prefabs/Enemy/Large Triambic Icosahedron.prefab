@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 54875414074046012}
   - component: {fileID: 114647048594067434}
   m_Layer: 0
-  m_Name: Shotgun Triambic Icosahedron (1)
+  m_Name: Large Triambic Icosahedron
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1838094749745682}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 26.718067, y: 2.66, z: -62.637787}
+  m_LocalPosition: {x: 1.3756313, y: 7.04, z: -15.204811}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children:
   - {fileID: 4052804083543478}
@@ -98,7 +98,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1647073958521910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.1587}
+  m_LocalPosition: {x: 0, y: 0, z: 0.5}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.01}
   m_Children: []
   m_Father: {fileID: 4512177003086478}
@@ -280,11 +280,13 @@ MonoBehaviour:
   - {fileID: 198412, guid: 713398a148e185840a055a02d77722cf, type: 2}
   fireSFX:
   - {fileID: 8300000, guid: 1475859eb85bf8f449ce777ad6e11b82, type: 3}
-  projectile: {fileID: 1468413911184946, guid: 9143bfa5c33ddeb498b83a45491af378, type: 2}
+  projectile: {fileID: 1285713894886730, guid: afbe508e651a0d148b6b25188c3c2c73, type: 2}
   value: 20
   projectileForce: 8000
   attackInterval: 5
-  waitPeriod: 10
+  waitPeriod: 3
+  roundsPerMintue: 100
+  attackPattern: FireBigPellets
 --- !u!114 &114647048594067434
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -8,9 +8,9 @@ public class bullet : MonoBehaviour {
 	public GameObject magentaBulletHit;
     public AudioClip bulletClip;
 
-    [SerializeField]private AudioSource bulletSource;
-	private Transform player;
-    private GameObject playerCamera;
+    [SerializeField] private AudioSource bulletSource;
+    [SerializeField] private Transform player;
+    [SerializeField] private GameObject playerCamera;
 	// Use this for initialization
 	void Start () {
         //GameObject.Find<
@@ -47,15 +47,15 @@ public class bullet : MonoBehaviour {
 
     void OnTriggerEnter(Collider other) {
         Debug.Log(other.name);
-        if (other.name == "[VRTK][AUTOGEN][HeadsetColliderContainer]")
+        if (other.name == "[VRTK][AUTOGEN][HeadsetColliderContainer]" || other.name == "[VRTK][AUTOGEN][BodyColliderContainer]")
         {
-            playerCamera.GetComponent<playerHit>().CameraShake();
             playerCamera.GetComponent<playerHit>().PlayHitSound();
+            playerCamera.GetComponent<playerHit>().CameraShake();
         }
     }
 
 	void SelfDestory(){
 		gameObject.transform.DOScale (0, 1);
-		Destroy (gameObject);
+		Destroy (gameObject, 1f);
 	}
 }

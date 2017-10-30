@@ -72,7 +72,7 @@
             }
             else
             {
-                print(GameObject.FindGameObjectWithTag("enemy").name);
+                //print(GameObject.FindGameObjectWithTag("enemy").name);
             }
 
     }
