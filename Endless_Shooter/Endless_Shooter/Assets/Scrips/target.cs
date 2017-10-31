@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using UnityEngine;
     using UnityEngine.SceneManagement;
+    using DG.Tweening;
 
     public class target : MonoBehaviour
     {
@@ -77,6 +78,7 @@
         void Die()
         {
             Instantiate(explosionVFX[Random.Range(0, explosionVFX.Count - 1)], gameObject.transform.position, gameObject.transform.rotation);
+            gameObject.transform.DOScale(0f, 0.1f);
             explosionSource.clip = explosionSFX[Random.Range(0, explosionSFX.Count - 1)];
             Debug.Log(explosionSource.clip.name);
             explosionSource.Play();
@@ -87,7 +89,7 @@
                 scoreManagement.GetComponent<scoreManager>().score += value;
             }
 
-            Destroy(gameObject);
+            Destroy(gameObject, 1f);
         }
 
         public void TargetLockon()
@@ -104,7 +106,10 @@
             {
                 GameObject pellet = Instantiate(projectile, muzzle.position, Quaternion.identity) as GameObject;
                 Rigidbody rb = pellet.GetComponent<Rigidbody>();
-                rb.AddForce(transform.forward * projectileForce);
+                pellet.transform.parent = gameObject.transform;
+                pellet.transform.localScale = new Vector3(size, size, size);
+                rb.velocity = gameObject.transform.forward * projectileForce;
+
                 explosionSource.clip = fireSFX[0];
                 explosionSource.Play();
                 //pellet.transform.Translate(Vector3.forward*Time.deltaTime*projectileForce);
@@ -126,7 +131,10 @@
                 Rigidbody rb = pellet.GetComponent<Rigidbody>();
                 pellet.transform.parent = gameObject.transform;
                 pellet.transform.localScale = new Vector3(size, size, size);
-                rb.velocity = gameObject.transform.forward*400f;
+                rb.velocity = gameObject.transform.forward * projectileForce;
+
+                explosionSource.clip = fireSFX[0];
+                explosionSource.Play();
             }
 
             yield return new WaitForSeconds(timeToNextRound);

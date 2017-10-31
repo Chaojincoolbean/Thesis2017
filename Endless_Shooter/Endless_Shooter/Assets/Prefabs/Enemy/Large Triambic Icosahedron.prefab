@@ -282,7 +282,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1475859eb85bf8f449ce777ad6e11b82, type: 3}
   projectile: {fileID: 1285713894886730, guid: afbe508e651a0d148b6b25188c3c2c73, type: 2}
   value: 20
-  projectileForce: 8000
+  projectileForce: 200
   attackInterval: 5
   waitPeriod: 3
   roundsPerMintue: 100
