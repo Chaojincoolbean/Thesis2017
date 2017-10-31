@@ -106,15 +106,12 @@
             {
                 GameObject pellet = Instantiate(projectile, muzzle.position, Quaternion.identity) as GameObject;
                 Rigidbody rb = pellet.GetComponent<Rigidbody>();
-                pellet.transform.parent = gameObject.transform;
+                //pellet.transform.parent = gameObject.transform;
                 pellet.transform.localScale = new Vector3(size, size, size);
                 rb.velocity = gameObject.transform.forward * projectileForce;
 
                 explosionSource.clip = fireSFX[0];
                 explosionSource.Play();
-                //pellet.transform.Translate(Vector3.forward*Time.deltaTime*projectileForce);
-                pellet.transform.localScale = new Vector3(size, size, size);
-                //yield return new WaitForSeconds(0.2f);
 				yield return new WaitForSeconds(timeToNextRound);
             }
 
@@ -123,21 +120,21 @@
 
         IEnumerator FireBigPellets()
         {
-            float size = Random.Range(1f, 3f);
+            float size = Random.Range(2f, 5f);
             float pellets = Random.Range(1f, 4f);
             for (int i = 1; i <= pellets; i++)
             {
                 GameObject pellet = Instantiate(projectile, muzzle.position, Quaternion.identity) as GameObject;
                 Rigidbody rb = pellet.GetComponent<Rigidbody>();
-                pellet.transform.parent = gameObject.transform;
-                pellet.transform.localScale = new Vector3(size, size, size);
+                //pellet.transform.parent = gameObject.transform;
                 rb.velocity = gameObject.transform.forward * projectileForce;
-
+                pellet.transform.localScale = new Vector3(size, size, size);
                 explosionSource.clip = fireSFX[0];
                 explosionSource.Play();
+                yield return new WaitForSeconds(timeToNextRound);
             }
 
-            yield return new WaitForSeconds(timeToNextRound);
+            
         }
 
     }

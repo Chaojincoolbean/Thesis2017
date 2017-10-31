@@ -42,7 +42,7 @@ public class bullet : MonoBehaviour {
         }
         bulletSource.clip = bulletClip;
         bulletSource.Play();
-		Destroy (gameObject);
+		Destroy (gameObject, 0.1f);
 	}
 
     void OnTriggerEnter(Collider other) {
