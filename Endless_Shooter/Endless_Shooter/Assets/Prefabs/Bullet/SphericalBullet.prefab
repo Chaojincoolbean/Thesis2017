@@ -110,7 +110,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -193,6 +193,7 @@ MonoBehaviour:
   magentaBulletHit: {fileID: 1517121139725594, guid: a1d20dd72a6f8d348b634ad034c0c9f5,
     type: 2}
   bulletClip: {fileID: 8300000, guid: 6db750008b0835b4dbcb54013e091ff3, type: 3}
+  damage: 5
   bulletSource: {fileID: 0}
   player: {fileID: 0}
   playerCamera: {fileID: 0}

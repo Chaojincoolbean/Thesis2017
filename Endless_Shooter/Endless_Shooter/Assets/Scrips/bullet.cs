@@ -7,6 +7,7 @@ public class bullet : MonoBehaviour {
 	//public float projectileSpeed = 50f;
 	public GameObject magentaBulletHit;
     public AudioClip bulletClip;
+    public float damage = 10f;
 
     [SerializeField] private AudioSource bulletSource;
     [SerializeField] private Transform player;
@@ -51,6 +52,7 @@ public class bullet : MonoBehaviour {
         {
             playerCamera.GetComponent<playerHit>().PlayHitSound();
             playerCamera.GetComponent<playerHit>().CameraShake();
+            playerCamera.GetComponent<playerHit>().PlayerHealthDecrease(damage);
         }
     }
 

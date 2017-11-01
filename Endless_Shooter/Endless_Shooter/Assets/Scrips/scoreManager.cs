@@ -11,6 +11,7 @@
         public float timerMinValue = 90;
         public float score = 0;
 
+        public playerHit playerHit;
         private float timeLeft;
         private float secondsCount;
         private int mintueCount;
@@ -37,7 +38,9 @@
             //timerText = GameObject.Find ("Timer").GetComponent<Text> ();
             Invoke("LoadGameOverScene", timeLeft + 0.2f);
             Invoke("GetTheFuckingText", 0.2f);
-            
+           // Debug.Log(GameObject.Find("Camera (eye)"));
+           // playerHit = GameObject.Find("Camera (eye)").GetComponent<playerHit>();
+
         }
 
         // Update is called once per frame
@@ -61,7 +64,15 @@
             {
                 playerWatch.GetComponent<VRTK_ControllerTooltips>().UpdateText(VRTK_ControllerTooltips.TooltipButtons.TouchpadTooltip, "Time Left: " + (Mathf.Round(timeLeft)).ToString());
             }
-            playerWatch.GetComponent<VRTK_ControllerTooltips>().UpdateText(VRTK_ControllerTooltips.TooltipButtons.ButtonOneTooltip, "Score: " + score.ToString());
+           // Debug.Log(GameObject.Find("Camera (eye)"));
+
+            playerWatch.GetComponent<VRTK_ControllerTooltips>().UpdateText(VRTK_ControllerTooltips.TooltipButtons.ButtonOneTooltip, "Score: " + score.ToString() + '\n' + playerHit.playerHealth.ToString());
+
+            if (SceneManager.GetActiveScene().name == "Game_Over")
+            {
+                scoreText = GameObject.Find("yourScore").GetComponent<Text>();
+                scoreText.text = "Body desecrated" + '\n' + "Your Score: " + score;
+            }
 
             if (GameObject.FindGameObjectsWithTag("enemy").Length < 5)
             {
@@ -70,9 +81,11 @@
                 scoreText.text="Your Time: " + '\n' + mintueCount + ":" + Mathf.RoundToInt(secondsCount);
                 //Time.timeScale=0f;
             }
-            else
+
+            if (timeLeft <= 0f)
             {
-                //print(GameObject.FindGameObjectWithTag("enemy").name);
+                SceneManager.LoadScene("Game_Over", LoadSceneMode.Single);
+                scoreText.text = "Time Up" + '\n' + "Your Score: " + score;
             }
 
     }
