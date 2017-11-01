@@ -4601,6 +4601,7 @@ MonoBehaviour:
   timerMaxValue: 180
   timerMinValue: 90
   score: 0
+  playerHit: {fileID: 0}
 --- !u!4 &1013901913
 Transform:
   m_ObjectHideFlags: 0

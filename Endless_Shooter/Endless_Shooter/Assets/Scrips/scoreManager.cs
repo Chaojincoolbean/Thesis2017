@@ -66,7 +66,7 @@
             }
            // Debug.Log(GameObject.Find("Camera (eye)"));
 
-            playerWatch.GetComponent<VRTK_ControllerTooltips>().UpdateText(VRTK_ControllerTooltips.TooltipButtons.ButtonOneTooltip, "Score: " + score.ToString() + '\n' + playerHit.playerHealth.ToString());
+            playerWatch.GetComponent<VRTK_ControllerTooltips>().UpdateText(VRTK_ControllerTooltips.TooltipButtons.ButtonOneTooltip, "Score: " + score.ToString() + '\n' + "Health: " + playerHit.playerHealth.ToString());
 
             if (SceneManager.GetActiveScene().name == "Game_Over")
             {
