@@ -14,7 +14,7 @@
         public GameObject projectile;
         public float value = 20;
         public float projectileForce = 100f;
-        public float attackInterval;
+        [SerializeField] float attackInterval;
         public float waitPeriod = 15f;
         public float roundsPerMintue = 5f;
         public string attackPattern;
@@ -59,8 +59,9 @@
         {
             gameObject.transform.LookAt(player);
             g += Time.deltaTime;
-			if ((SceneManager.GetActiveScene().name == "VR_City_Small" || SceneManager.GetActiveScene().name == "VR_City_Roguelike") && g >= waitPeriod)
-			{
+			if ((SceneManager.GetActiveScene().name != "VR_City_Single block") && g >= waitPeriod)
+
+            {
 				//print ("correct scene");
 				f += Time.deltaTime;
 				//print (f);

@@ -34,10 +34,7 @@ public class buildingGenerator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            TweenBuildings(buildingNumbersAfterStart);
-        }
+        
 	}
 
     public void TweenBuildings(float buildingNumbersAfterStart)
@@ -47,26 +44,53 @@ public class buildingGenerator : MonoBehaviour {
             generatedBuilding = Instantiate(building, gameObject.transform.position, Quaternion.identity);
             float buildPosX = Random.Range((gameObject.transform.position.x - lotScaleX / 2), (gameObject.transform.position.x + lotScaleX / 2));
             float buildPosY = Random.Range((gameObject.transform.position.z - lotScaleY / 2), (gameObject.transform.position.z + lotScaleY / 2));
-            //generatedBuilding.transform.localScale = new Vector3 (Random.Range (0, buildingLength), Random.Range (0, buildingHeight), Random.Range (0, buildingWidth));
-            generatedBuilding.transform.DOScale(new Vector3(Random.Range(0, buildingLength / lotScaleX), Random.Range(0, buildingHeight), Random.Range(0, buildingWidth / lotScaleY)), 1f);
+            generatedBuilding.transform.localScale = new Vector3 (Random.Range (0, buildingLength), Random.Range (0, buildingHeight), Random.Range (0, buildingWidth));
+            //generatedBuilding.transform.DOScale(new Vector3(Random.Range(0, buildingLength / lotScaleX), Random.Range(0, buildingHeight), Random.Range(0, buildingWidth / lotScaleY)), 1f);
             //print(generatedBuilding.transform.localScale);
-            generatedBuilding.transform.localPosition = new Vector3(buildPosX, generatedBuilding.transform.lossyScale.y / 2, buildPosY);
+            generatedBuilding.transform.localPosition = new Vector3(buildPosX, -buildingHeight-5f, buildPosY);
             generatedBuilding.transform.parent = gameObject.transform;
-
+            generatedBuilding.transform.DOLocalMoveY(generatedBuilding.transform.localScale.y / 2, 1f);
         }
-        Invoke("GetThoseBuildingsInPlace", 0.6f);
+        //Invoke("GetThoseBuildingsInPlace", 0.6f);
     }
 
     void GetThoseBuildingsInPlace()
     {
+        generatedBuilding.transform.DOLocalMoveY(generatedBuilding.transform.localScale.y / 2, 1f);
         //print(generatedBuilding.transform.localScale);
         //GameObject.Find().transform.DOLocalMoveY(generatedBuilding.transform.localScale.y / 2, 0.5f);
-        foreach (GameObject gameObj in GameObject.FindObjectsOfType<GameObject>())
+        /*foreach (GameObject gameObj in GameObject.FindObjectsOfType<GameObject>())
         {
             if (gameObj.name == "Building(Clone)")
             {
-                gameObj.transform.DOLocalMoveY(gameObj.transform.localScale.y / 2, 1f);
+                gameObj.transform.DOLocalMoveY(gameObj.transform.localScale.y / 2, 2f);
             }
+        }*/
+    }
+
+    void LowerBuildings()
+    {
+        foreach (Transform child in transform)
+        {
+            child.DOLocalMoveY(-buildingHeight - 5f, 1f);
+            Destroy(child.gameObject, 1.5f);
+        }
+        
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.name == "[VRTK][AUTOGEN][HeadsetColliderContainer]")
+        {
+            TweenBuildings(buildingNumbersAfterStart);
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.name == "[VRTK][AUTOGEN][HeadsetColliderContainer]")
+        {
+            LowerBuildings();
         }
     }
 }

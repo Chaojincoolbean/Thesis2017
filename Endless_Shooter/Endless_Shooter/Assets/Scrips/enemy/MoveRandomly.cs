@@ -7,6 +7,7 @@ public class MoveRandomly : MonoBehaviour {
 	NavMeshAgent navMeshAgent;
 	NavMeshPath path;
 	public float timeForNewPath;
+    public float range = 50f;
 	bool inCoRoutine;
 	Vector3 target;
 	bool validPath;
@@ -25,9 +26,9 @@ public class MoveRandomly : MonoBehaviour {
 
 	Vector3 getNewRandomPosition ()
 	{
-		float x = Random.Range(-50, 50);
-		float z = Random.Range(-50, 50);
-		float y = Random.Range(-50, 50);
+		float x = Random.Range(-range, range);
+		float z = Random.Range(-range, range);
+		float y = Random.Range(-range, range);
 
 		Vector3 pos = new Vector3(x, y, z);
 		return pos;
