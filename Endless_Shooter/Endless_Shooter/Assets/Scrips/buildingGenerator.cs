@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class buildingGenerator : MonoBehaviour {
 	public GameObject building;
@@ -24,8 +25,8 @@ public class buildingGenerator : MonoBehaviour {
 			generatedBuilding = Instantiate (building, gameObject.transform.position, Quaternion.identity);
 			float buildPosX = Random.Range ((gameObject.transform.position.x-lotScaleX/2),(gameObject.transform.position.x+lotScaleX/2));
 			float buildPosY = Random.Range ((gameObject.transform.position.z-lotScaleY/2),(gameObject.transform.position.z+lotScaleY/2));
-            //generatedBuilding.transform.localScale = new Vector3 (Random.Range (0, buildingLength), Random.Range (0, buildingHeight), Random.Range (0, buildingWidth));
-            generatedBuilding.transform.DOScale(new Vector3(Random.Range(0, buildingLength/ lotScaleX), Random.Range(0, buildingHeight), Random.Range(0, buildingWidth/ lotScaleY)), 0.5f);
+            generatedBuilding.transform.localScale = new Vector3 (Random.Range (0, buildingLength), Random.Range (0, buildingHeight), Random.Range (0, buildingWidth));
+            //generatedBuilding.transform.DOScale(new Vector3(Random.Range(0, buildingLength/ lotScaleX), Random.Range(0, buildingHeight), Random.Range(0, buildingWidth/ lotScaleY)), 0.5f);
 			generatedBuilding.transform.localPosition = new Vector3 (buildPosX, generatedBuilding.transform.localScale.y/2, buildPosY);
 			generatedBuilding.transform.parent = gameObject.transform;
 
@@ -88,7 +89,7 @@ public class buildingGenerator : MonoBehaviour {
 
     void OnTriggerExit(Collider other)
     {
-        if (other.name == "[VRTK][AUTOGEN][HeadsetColliderContainer]")
+        if (other.name == "[VRTK][AUTOGEN][HeadsetColliderContainer]" && SceneManager.GetActiveScene().name == "VR_City_Experiment")
         {
             LowerBuildings();
         }
