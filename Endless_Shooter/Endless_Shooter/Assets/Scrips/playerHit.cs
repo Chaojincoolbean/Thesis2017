@@ -18,11 +18,13 @@ public class playerHit : MonoBehaviour {
     private Camera cam;
     private GameObject headColliderContainer;
     private AudioSource playerSource;
+    //private Rigidbody rb;
 	// Use this for initialization
 	void Start () {
         headColliderContainer = GameObject.Find("[VRTK][AUTOGEN][HeadsetColliderContainer]");
         cam = gameObject.GetComponent<Camera>();
         playerSource = gameObject.GetComponent<AudioSource>();
+        //rb = headColliderContainer.GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
@@ -32,6 +34,7 @@ public class playerHit : MonoBehaviour {
             SceneManager.LoadScene("Game_Over", LoadSceneMode.Single);
             //Invoke("PlayDeathSound", 0.2f);
         }
+        //print(VRPlayArea.GetComponent<>);
 	}
 
     public void CameraShake()

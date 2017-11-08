@@ -19,7 +19,8 @@
         //public Text finalScoreText;
         private GameObject playerWatch;
         private scoreManager managerInstance;
-        private Text scoreText;
+        public Text scoreText;
+        [SerializeField]private GameObject VRPlayArea;
         bool isGameEnd = false;
 
         void Awake() {
@@ -37,9 +38,10 @@
             playerWatch = GameObject.Find("LeftControllerTooltips");
             //timerText = GameObject.Find ("Timer").GetComponent<Text> ();
             Invoke("LoadGameOverScene", timeLeft + 0.2f);
-            Invoke("GetTheFuckingText", 0.2f);
-           // Debug.Log(GameObject.Find("Camera (eye)"));
-           // playerHit = GameObject.Find("Camera (eye)").GetComponent<playerHit>();
+            //Invoke("GetTheFuckingText", 0.2f);
+            VRPlayArea = GameObject.Find("PlayArea");
+            // Debug.Log(GameObject.Find("Camera (eye)"));
+            // playerHit = GameObject.Find("Camera (eye)").GetComponent<playerHit>();
 
         }
 
@@ -48,6 +50,14 @@
             if (isGameEnd)
                 return;
 
+            //Debug.Log(VRPlayArea.GetComponent<VRTK_MoveInPlace>().GetSpeed());
+            if (VRPlayArea.GetComponent<VRTK_MoveInPlace>().GetSpeed() > 0f)
+            {
+                VRPlayArea.GetComponent<VRTK_MoveInPlace>().speedScale += Time.deltaTime;
+            }else if (VRPlayArea.GetComponent<VRTK_MoveInPlace>().GetSpeed() == 0f)
+            {
+                VRPlayArea.GetComponent<VRTK_MoveInPlace>().speedScale = 5f;
+            }
             timeLeft -= Time.deltaTime;
             //timerText.text = "Time Left: " + (Mathf.Round (timeLeft));
             secondsCount += Time.deltaTime;
@@ -74,19 +84,20 @@
                 scoreText.text = "Body desecrated" + '\n' + "Your Score: " + score;
             }
 
-            if (GameObject.FindGameObjectsWithTag("enemy").Length < 5)
+            /*if (GameObject.FindGameObjectsWithTag("enemy").Length < 5)
             {
                 print("Enemy eliminated");
                 isGameEnd = true;
                 scoreText.text="Your Time: " + '\n' + mintueCount + ":" + Mathf.RoundToInt(secondsCount);
                 //Time.timeScale=0f;
-            }
+            }*/
 
             if (timeLeft <= 0f)
             {
                 SceneManager.LoadScene("Game_Over", LoadSceneMode.Single);
                 scoreText.text = "Time Up" + '\n' + "Your Score: " + score;
             }
+
 
     }
 
@@ -95,14 +106,6 @@
             /*finalScoreText = GameObject.Find ("Final Score").GetComponent<Text> ();
             Debug.Log (finalScoreText.name);
             finalScoreText.text = "Final Score: " + score;*/
-        }
-
-        void GetTheFuckingText()
-        {
-            if (SceneManager.GetActiveScene().name == "VR_City_Single block" || SceneManager.GetActiveScene().name == "Handmade_Map")
-            {
-                scoreText = GameObject.Find("yourScore").GetComponent<Text>();
-            }
         }
     }
 }
