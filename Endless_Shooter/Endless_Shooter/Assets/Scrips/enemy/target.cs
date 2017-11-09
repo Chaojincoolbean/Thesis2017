@@ -14,20 +14,20 @@
         public GameObject projectile;
         public float value = 20;
         public float projectileForce = 100f;
-        [SerializeField] float attackInterval;
+        [SerializeField] protected float attackInterval;
         public float waitPeriod = 15f;
         public float roundsPerMintue = 5f;
         public string attackPattern;
 
-        private float timeToNextRound;
-        private AudioSource explosionSource;
-        private GameObject scoreManagement;
-        private Component managerOfScore;
-        private Transform player;
-        private Transform muzzle;
-		float f = 0f;
-        float g = 0f;
-        private float _health = 2f;
+        protected float timeToNextRound;
+        protected AudioSource explosionSource;
+        protected GameObject scoreManagement;
+        //protected Component managerOfScore;
+        protected Transform player;
+        protected Transform muzzle;
+        protected float f = 0f;
+        protected float g = 0f;
+        protected float _health = 2f;
         public float health
         {
             get { return _health; }
@@ -42,7 +42,7 @@
             }
         }
         // Use this for initialization
-        void Start()
+       public virtual void Start()
         {
             attackInterval = Random.Range(2f, 5f);
             explosionSource = gameObject.GetComponent<AudioSource>();
@@ -55,7 +55,7 @@
         }
 
         // Update is called once per frame
-        void Update()
+        public virtual void Update()
         {
             gameObject.transform.LookAt(player);
             g += Time.deltaTime;
