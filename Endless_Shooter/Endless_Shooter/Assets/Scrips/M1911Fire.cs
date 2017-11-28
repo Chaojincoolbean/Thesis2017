@@ -15,8 +15,8 @@
 		public Vector3 slideMoveBack;
 		public Vector3 slideMoveForward;
 
-
-		private AudioSource source;
+        private VRTK_ControllerEvents controllerEvents;
+        private AudioSource source;
         private Transform slide;
         private Transform muzzle;
         LineRenderer line;
@@ -28,6 +28,18 @@
             source = gameObject.GetComponent<AudioSource>();
             /*line = gameObject.GetComponent<LineRenderer>();
             line.enabled = false;*/
+        }
+
+        public override void Grabbed(VRTK_InteractGrab currentGrabbingObject)
+        {
+            base.Grabbed(currentGrabbingObject);
+            controllerEvents = currentGrabbingObject.GetComponent<VRTK_ControllerEvents>();
+        }
+
+        public override void Ungrabbed(VRTK_InteractGrab previousGrabbingObject)
+        {
+            base.Ungrabbed(previousGrabbingObject);
+            controllerEvents = null;
         }
 
         public override void StartUsing(VRTK_InteractUse usingObject)
