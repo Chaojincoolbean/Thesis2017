@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 7
+  serializedVersion: 8
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -25,6 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
+  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -37,11 +38,11 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 7
+  serializedVersion: 11
   m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
@@ -53,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
-    serializedVersion: 4
+    serializedVersion: 9
     m_Resolution: 2
     m_BakeResolution: 40
     m_TextureWidth: 1024
@@ -66,13 +67,27 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_DirectLightInLightProbes: 1
     m_FinalGather: 0
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 1024
     m_ReflectionCompression: 2
+    m_MixedBakeMode: 1
+    m_BakeBackend: 0
+    m_PVRSampling: 1
+    m_PVRDirectSampleCount: 32
+    m_PVRSampleCount: 500
+    m_PVRBounces: 2
+    m_PVRFiltering: 0
+    m_PVRFilteringMode: 1
+    m_PVRCulling: 1
+    m_PVRFilteringGaussRadiusDirect: 1
+    m_PVRFilteringGaussRadiusIndirect: 5
+    m_PVRFilteringGaussRadiusAO: 2
+    m_PVRFilteringAtrousColorSigma: 1
+    m_PVRFilteringAtrousNormalSigma: 1
+    m_PVRFilteringAtrousPositionSigma: 1
   m_LightingDataAsset: {fileID: 0}
-  m_RuntimeCPUUsage: 25
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -89,6 +104,8 @@ NavMeshSettings:
     minRegionArea: 2
     manualCellSize: 0
     cellSize: 0.16666667
+    manualTileSize: 0
+    tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
 --- !u!1 &42264814
@@ -153,6 +170,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!136 &42264817
 CapsuleCollider:
@@ -376,6 +394,48 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 438460, guid: 75cf7c488a12f82458c40376897dec74, type: 2}
   m_PrefabInternal: {fileID: 117246021}
+--- !u!1001 &120769687
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4209322256855446, guid: e29ac8010eab755458cc2b833b00a73c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.571
+      objectReference: {fileID: 0}
+    - target: {fileID: 4209322256855446, guid: e29ac8010eab755458cc2b833b00a73c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 4209322256855446, guid: e29ac8010eab755458cc2b833b00a73c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4209322256855446, guid: e29ac8010eab755458cc2b833b00a73c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4209322256855446, guid: e29ac8010eab755458cc2b833b00a73c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4209322256855446, guid: e29ac8010eab755458cc2b833b00a73c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4209322256855446, guid: e29ac8010eab755458cc2b833b00a73c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4209322256855446, guid: e29ac8010eab755458cc2b833b00a73c, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e29ac8010eab755458cc2b833b00a73c, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &134153621
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,6 +497,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!65 &134153624
 BoxCollider:
@@ -457,6 +518,83 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 134153621}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &160027984
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4944519490838266, guid: 19886bd2bf66721498a00a4705b51240, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.8821
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944519490838266, guid: 19886bd2bf66721498a00a4705b51240, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.2067
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944519490838266, guid: 19886bd2bf66721498a00a4705b51240, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.6374
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944519490838266, guid: 19886bd2bf66721498a00a4705b51240, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.0022775547
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944519490838266, guid: 19886bd2bf66721498a00a4705b51240, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.000005902925
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944519490838266, guid: 19886bd2bf66721498a00a4705b51240, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.0025917662
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944519490838266, guid: 19886bd2bf66721498a00a4705b51240, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.99999404
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944519490838266, guid: 19886bd2bf66721498a00a4705b51240, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114728807272328278, guid: 19886bd2bf66721498a00a4705b51240,
+        type: 2}
+      propertyPath: muzzleFlash
+      value: 
+      objectReference: {fileID: 146992, guid: 24bc114e4759e464eab5d9664127a034, type: 2}
+    - target: {fileID: 114728807272328278, guid: 19886bd2bf66721498a00a4705b51240,
+        type: 2}
+      propertyPath: M1911A1SFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 2923840eb4587ed45bfa5382515d3cb1, type: 3}
+    - target: {fileID: 114728807272328278, guid: 19886bd2bf66721498a00a4705b51240,
+        type: 2}
+      propertyPath: impactVFX
+      value: 
+      objectReference: {fileID: 108086, guid: 547c2e12da8d4214098216299e70a3ba, type: 2}
+    - target: {fileID: 114728807272328278, guid: 19886bd2bf66721498a00a4705b51240,
+        type: 2}
+      propertyPath: slideMoveBack.y
+      value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 114728807272328278, guid: 19886bd2bf66721498a00a4705b51240,
+        type: 2}
+      propertyPath: slideMoveBack.z
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 114728807272328278, guid: 19886bd2bf66721498a00a4705b51240,
+        type: 2}
+      propertyPath: slideMoveForward.y
+      value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 114728807272328278, guid: 19886bd2bf66721498a00a4705b51240,
+        type: 2}
+      propertyPath: slideMoveForward.z
+      value: -0.06109286
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 19886bd2bf66721498a00a4705b51240, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &176236104
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,6 +655,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &176236107
 MeshFilter:
@@ -618,6 +757,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!136 &221277581
 CapsuleCollider:
@@ -761,7 +901,7 @@ Transform:
   - {fileID: 420827969}
   - {fileID: 1037401822}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &324299896
 Prefab:
@@ -876,6 +1016,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!65 &420827967
 BoxCollider:
@@ -1042,6 +1183,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &444867989
 MeshFilter:
@@ -1161,6 +1303,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!136 &456822506
 CapsuleCollider:
@@ -1448,7 +1591,7 @@ Transform:
   - {fileID: 1057027775}
   - {fileID: 464076871}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &586982470
 GameObject:
@@ -1541,6 +1684,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!65 &586982475
 BoxCollider:
@@ -1652,6 +1796,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!65 &642561105
 BoxCollider:
@@ -1733,6 +1878,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!65 &651463004
 BoxCollider:
@@ -2178,7 +2324,7 @@ Prefab:
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 660
+      value: 1122
       objectReference: {fileID: 0}
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
@@ -2501,6 +2647,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!65 &808822688
 BoxCollider:
@@ -2659,6 +2806,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!65 &865004449
 BoxCollider:
@@ -2719,7 +2867,7 @@ Transform:
   m_Children:
   - {fileID: 838683675}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &962788953
 GameObject:
@@ -2782,6 +2930,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!65 &962788956
 BoxCollider:
@@ -2863,6 +3012,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!136 &1005473432
 CapsuleCollider:
@@ -3162,6 +3312,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!65 &1103168060
 BoxCollider:
@@ -3211,7 +3362,7 @@ Transform:
   - {fileID: 686392164}
   - {fileID: 653501384}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1128634657
 MonoBehaviour:
@@ -3328,6 +3479,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!65 &1135670853
 BoxCollider:
@@ -3359,7 +3511,7 @@ Transform:
   m_LocalScale: {x: 20, y: 1, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1187940536
 GameObject:
@@ -3452,6 +3604,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!136 &1196519055
 CapsuleCollider:
@@ -3523,6 +3676,48 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 438460, guid: 75cf7c488a12f82458c40376897dec74, type: 2}
   m_PrefabInternal: {fileID: 1210278194}
+--- !u!1001 &1210813182
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4918766732018192, guid: d546688faf8e3c64f9215ebd50191a66, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.831
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918766732018192, guid: d546688faf8e3c64f9215ebd50191a66, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.217
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918766732018192, guid: d546688faf8e3c64f9215ebd50191a66, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918766732018192, guid: d546688faf8e3c64f9215ebd50191a66, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.14503427
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918766732018192, guid: d546688faf8e3c64f9215ebd50191a66, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918766732018192, guid: d546688faf8e3c64f9215ebd50191a66, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918766732018192, guid: d546688faf8e3c64f9215ebd50191a66, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9894266
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918766732018192, guid: d546688faf8e3c64f9215ebd50191a66, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d546688faf8e3c64f9215ebd50191a66, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1247725695
 Prefab:
   m_ObjectHideFlags: 0
@@ -3634,6 +3829,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!136 &1302758731
 CapsuleCollider:
@@ -4005,6 +4201,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!136 &1382309927
 CapsuleCollider:
@@ -4118,6 +4315,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &1402032658
 MeshFilter:
@@ -4382,6 +4580,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!65 &1573282292
 BoxCollider:
@@ -4513,6 +4712,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!65 &1740687005
 BoxCollider:
@@ -4644,6 +4844,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!136 &1761594489
 CapsuleCollider:
@@ -4768,6 +4969,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!65 &1804369141
 BoxCollider:
@@ -5108,6 +5310,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!65 &1965538485
 BoxCollider:
@@ -5176,6 +5379,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!65 &1985595248
 BoxCollider:
@@ -5323,7 +5527,7 @@ Light:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2123877843}
   m_Enabled: 1
-  serializedVersion: 7
+  serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
@@ -5348,6 +5552,8 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &2123877845

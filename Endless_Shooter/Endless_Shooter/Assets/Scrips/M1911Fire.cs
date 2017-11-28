@@ -12,7 +12,11 @@
         public int magazineCapacity = 8;
         public float damage = 1f;
 
-        private AudioSource source;
+		public Vector3 slideMoveBack;
+		public Vector3 slideMoveForward;
+
+
+		private AudioSource source;
         private Transform slide;
         private Transform muzzle;
         LineRenderer line;
@@ -76,8 +80,8 @@
 
             //Invoke("BeamOff", 0.1f);
 
-            slide.DOLocalMove(new Vector3(0, 0.807f, -0.207f), 0.03f).OnComplete(SlideRetract);
-            Invoke("SlideRetract", 0.07f);
+            slide.DOLocalMove(slideMoveBack, 0.03f).OnComplete(SlideRetract);
+            Invoke("SlideRetract", 0.03f);
             Instantiate(muzzleFlash, muzzle.position, muzzle.rotation);
             source.clip = M1911A1SFX;
             source.Play();
@@ -85,11 +89,11 @@
 
         private void SlideRetract()
         {
-            slide.DOLocalMove(new Vector3(0, 0.9273338f, -0.6073914f), 0.03f);
+            slide.DOLocalMove(slideMoveForward, 0.03f);
         }
         private void EmptyChamber()
         {
-            slide.DOLocalMove(new Vector3(0, 0.807f, -0.207f), 0.03f);
+            slide.DOLocalMove(slideMoveBack, 0.03f);
         }
         public void BeamOff()
         {
