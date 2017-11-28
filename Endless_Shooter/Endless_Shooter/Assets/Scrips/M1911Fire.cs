@@ -36,6 +36,7 @@
             if (magazineCapacity > 1)
             {
                 FireRayCast();
+                VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(controllerEvents.gameObject), 0.63f, 0.2f, 0.01f);
                 magazineCapacity -= 1;
             }
             if (magazineCapacity == 0)

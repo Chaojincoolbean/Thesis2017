@@ -303,6 +303,8 @@ MonoBehaviour:
   impactVFX: {fileID: 0}
   magazineCapacity: 8
   damage: 5
+  slideMoveBack: {x: 0, y: 0, z: 0}
+  slideMoveForward: {x: 0, y: 0, z: 0}
 --- !u!4 &21402107 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4415180937629644, guid: 19e2720cf143e7d4d8c2e9f015e57813,
@@ -5421,7 +5423,7 @@ Prefab:
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 1037
+      value: 1025
       objectReference: {fileID: 0}
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
