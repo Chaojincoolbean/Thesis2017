@@ -116,13 +116,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1731212433509502}
-  m_LocalRotation: {x: 0, y: 0.9659259, z: 0.258819, w: 0}
+  m_LocalRotation: {x: 0, y: 0.97629607, z: 0.21643952, w: 0}
   m_LocalPosition: {x: 0, y: 0.052, z: -0.003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4918766732018192}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -30, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: -25, y: 180, z: 0}
 --- !u!4 &4505712626393590
 Transform:
   m_ObjectHideFlags: 1
@@ -156,7 +156,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1246598782204806}
   m_LocalRotation: {x: -0.14503427, y: -0, z: -0, w: 0.9894266}
-  m_LocalPosition: {x: -0.831, y: 1.217, z: 0.64}
+  m_LocalPosition: {x: 0.055, y: 1.524, z: -0.705}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 4846371462815842}
@@ -408,7 +408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableWhenIdle: 1
-  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlightColor: {r: 0.72125643, g: 0.9264706, b: 0.39511245, a: 0}
   allowedTouchControllers: 0
   ignoredColliders: []
   isGrabbable: 1
@@ -420,10 +420,10 @@ MonoBehaviour:
   grabAttachMechanicScript: {fileID: 114670005558708920}
   secondaryGrabActionScript: {fileID: 0}
   isUsable: 1
-  holdButtonToUse: 0
+  holdButtonToUse: 1
   useOnlyIfGrabbed: 0
   pointerActivatesUseAction: 0
-  useOverrideButton: 0
+  useOverrideButton: 4
   allowedUseControllers: 0
   usingState: 0
   muzzleFlash: {fileID: 146992, guid: 24bc114e4759e464eab5d9664127a034, type: 2}
