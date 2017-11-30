@@ -52,11 +52,10 @@ GameObject:
   - component: {fileID: 33842521078877420}
   - component: {fileID: 65379825169754774}
   - component: {fileID: 23029090851980696}
-  - component: {fileID: 195834397295402452}
-  - component: {fileID: 114691747420138380}
   - component: {fileID: 82128511578882716}
   - component: {fileID: 54124865261855432}
   - component: {fileID: 114417492967525446}
+  - component: {fileID: 114301825299386302}
   m_Layer: 0
   m_Name: greenCubeEnemy
   m_TagString: enemy
@@ -251,6 +250,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &114301825299386302
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1738818560298696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a643349e03f79a48a48e49916f4e7b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToNextDestination: 3
+  range: 500
+  speed: 10
+  height: 4
 --- !u!114 &114417492967525446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -279,6 +293,11 @@ MonoBehaviour:
   - {fileID: 198412, guid: 713398a148e185840a055a02d77722cf, type: 2}
   fireSFX:
   - {fileID: 8300000, guid: 1475859eb85bf8f449ce777ad6e11b82, type: 3}
+  drop:
+  - {fileID: 1173279127803022, guid: ef58c3d640d2e014787c0e2130609d09, type: 2}
+  - {fileID: 1436445175661962, guid: e29ac8010eab755458cc2b833b00a73c, type: 2}
+  - {fileID: 1246598782204806, guid: d546688faf8e3c64f9215ebd50191a66, type: 2}
+  - {fileID: 1541598124809334, guid: 19886bd2bf66721498a00a4705b51240, type: 2}
   projectile: {fileID: 1468413911184946, guid: 9143bfa5c33ddeb498b83a45491af378, type: 2}
   value: 5
   projectileForce: 100
@@ -290,37 +309,3 @@ MonoBehaviour:
   bulletMat: {fileID: 2100000, guid: 43e3025e820376d409b0174f10b9f933, type: 2}
   bulletHitSpark: {fileID: 1206465423430768, guid: 214614ff12c611742b7c3298afdcf5c7,
     type: 2}
---- !u!114 &114691747420138380
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1738818560298696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67d9bc4c49d8dd746946d22ec2b769b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeForNewPath: 3
-  range: 500
---- !u!195 &195834397295402452
-NavMeshAgent:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1738818560298696}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 7
-  m_Acceleration: 10
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4

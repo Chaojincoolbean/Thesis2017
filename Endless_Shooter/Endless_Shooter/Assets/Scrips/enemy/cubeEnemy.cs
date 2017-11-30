@@ -14,6 +14,7 @@
         {
             base.Start();
             attackInterval = 2f;
+            _health = 9f;
         }
 
         // Update is called once per frame

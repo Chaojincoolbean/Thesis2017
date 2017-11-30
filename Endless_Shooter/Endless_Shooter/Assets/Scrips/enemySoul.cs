@@ -58,8 +58,8 @@
                 explosionSource.Play();
                 yield return new WaitForSeconds(timeToNextRound);
             }
-
-
+            transform.DOScale(0, 0.5f);
+            Destroy(gameObject, 0.7f);
         }
 
         IEnumerator fireLargePellets()
@@ -77,8 +77,8 @@
                 explosionSource.Play();
                 yield return new WaitForSeconds(timeToNextRound);
             }
-
-
+            transform.DOScale(0, 0.5f);
+            Destroy(gameObject, 0.7f);
         }
 
     }

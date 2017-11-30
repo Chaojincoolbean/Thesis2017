@@ -7,6 +7,7 @@ public class floatRandomly : MonoBehaviour {
 	public float timeToNextDestination = 3f;
 	public float range = 30f;
 	public float speed = 10f;
+    public float height = 50f;
 	private Vector3 newDestination;
 	private Rigidbody rb;
 	float timer = 0;
@@ -31,9 +32,9 @@ public class floatRandomly : MonoBehaviour {
 	Vector3 getNewRandomPosition () {
 		float x = Random.Range(-range, range);
 		float z = Random.Range(-range, range);
-		float y = Random.Range(0, 50f);
+		float y = Random.Range(0, height);
 
-        if(transform.position.y > 50f)
+        if(transform.position.y > height)
         {
             transform.position = new Vector3(transform.position.x,50f,transform.position.z);
             y = 0;
