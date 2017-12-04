@@ -38,8 +38,9 @@ public class fecesManagement : MonoBehaviour {
             Invoke("DisableSlogan", countdown - 1f);
             c = 0f;
         }
-        
-	}
+        asshole.GetComponent<ParticleSystem>().startSize = Random.Range(1, 5);
+        butthole.GetComponent<ParticleSystem>().startSize = Random.Range(1, 5);
+    }
 
     void DisplaySlogan(int i)
     {
