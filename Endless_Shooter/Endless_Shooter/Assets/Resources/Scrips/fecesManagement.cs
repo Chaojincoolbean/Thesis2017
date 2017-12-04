@@ -11,6 +11,7 @@ public class fecesManagement : MonoBehaviour {
     private int index;
     private GameObject playerBody;
     public GameObject anus;
+    public GameObject[] shit;
     float c = 0;
     // Use this for initialization
     void Start () {
@@ -44,6 +45,8 @@ public class fecesManagement : MonoBehaviour {
         Color c = Color.white - randomColor;
         c.a = 1;
         slogans[i].GetComponent<Text>().DOColor(c, 1f);
+
+
     }
 
     void DisableSlogan()
