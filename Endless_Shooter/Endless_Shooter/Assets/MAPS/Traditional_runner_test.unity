@@ -77,15 +77,17 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
-    m_PVRFiltering: 0
+    m_PVRFilterTypeDirect: 0
+    m_PVRFilterTypeIndirect: 0
+    m_PVRFilterTypeAO: 0
     m_PVRFilteringMode: 1
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
     m_PVRFilteringGaussRadiusAO: 2
-    m_PVRFilteringAtrousColorSigma: 1
-    m_PVRFilteringAtrousNormalSigma: 1
-    m_PVRFilteringAtrousPositionSigma: 1
+    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+    m_PVRFilteringAtrousPositionSigmaIndirect: 2
+    m_PVRFilteringAtrousPositionSigmaAO: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -746,7 +748,7 @@ Prefab:
     - target: {fileID: 224000012859001416, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000012859001416, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
@@ -756,7 +758,7 @@ Prefab:
     - target: {fileID: 224000012859001416, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000012504011746, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
@@ -776,7 +778,7 @@ Prefab:
     - target: {fileID: 224000012504011746, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000012504011746, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
@@ -786,7 +788,7 @@ Prefab:
     - target: {fileID: 224000012504011746, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 22
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000010358937380, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
@@ -956,7 +958,7 @@ Prefab:
     - target: {fileID: 224000012484682510, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -25.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000012484682510, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
@@ -966,7 +968,7 @@ Prefab:
     - target: {fileID: 224000012484682510, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 41
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000010031187690, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
@@ -986,7 +988,7 @@ Prefab:
     - target: {fileID: 224000010031187690, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -82
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000010031187690, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
@@ -996,7 +998,7 @@ Prefab:
     - target: {fileID: 224000010031187690, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 66
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
@@ -1198,9 +1200,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddb1d823936d3146bff4806b4ec1821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: {fileID: 1514306454535266, guid: 31ed8c5abba52784eb88e1b71c5b1d48, type: 2}
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   targetsNumber: 2
   targetMinHeight: 1
+  targetsHeight: 0
 --- !u!1 &177929304
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,9 +1547,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddb1d823936d3146bff4806b4ec1821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: {fileID: 1514306454535266, guid: 31ed8c5abba52784eb88e1b71c5b1d48, type: 2}
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   targetsNumber: 2
   targetMinHeight: 1
+  targetsHeight: 0
 --- !u!1 &245542760
 GameObject:
   m_ObjectHideFlags: 0
@@ -1797,6 +1807,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   building: {fileID: 1989238231815656, guid: c361cdd3703d40f428e26f2319d4f8b4, type: 2}
   buildingNumbers: 250
+  buildingNumbersAfterStart: 30
   buildingLength: 5
   buildingWidth: 5
   buildingHeight: 25
@@ -1967,9 +1978,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddb1d823936d3146bff4806b4ec1821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: {fileID: 1514306454535266, guid: 31ed8c5abba52784eb88e1b71c5b1d48, type: 2}
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   targetsNumber: 2
   targetMinHeight: 1
+  targetsHeight: 0
 --- !u!1 &311031393
 GameObject:
   m_ObjectHideFlags: 0
@@ -2189,9 +2204,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddb1d823936d3146bff4806b4ec1821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: {fileID: 1514306454535266, guid: 31ed8c5abba52784eb88e1b71c5b1d48, type: 2}
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   targetsNumber: 2
   targetMinHeight: 1
+  targetsHeight: 0
 --- !u!1 &356389352
 GameObject:
   m_ObjectHideFlags: 0
@@ -2286,9 +2305,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddb1d823936d3146bff4806b4ec1821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: {fileID: 1514306454535266, guid: 31ed8c5abba52784eb88e1b71c5b1d48, type: 2}
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   targetsNumber: 2
   targetMinHeight: 1
+  targetsHeight: 0
 --- !u!1 &382063897
 GameObject:
   m_ObjectHideFlags: 0
@@ -2863,6 +2886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   building: {fileID: 1989238231815656, guid: c361cdd3703d40f428e26f2319d4f8b4, type: 2}
   buildingNumbers: 250
+  buildingNumbersAfterStart: 30
   buildingLength: 5
   buildingWidth: 5
   buildingHeight: 25
@@ -3033,6 +3057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   building: {fileID: 1989238231815656, guid: c361cdd3703d40f428e26f2319d4f8b4, type: 2}
   buildingNumbers: 250
+  buildingNumbersAfterStart: 30
   buildingLength: 5
   buildingWidth: 5
   buildingHeight: 25
@@ -3285,9 +3310,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddb1d823936d3146bff4806b4ec1821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: {fileID: 1514306454535266, guid: 31ed8c5abba52784eb88e1b71c5b1d48, type: 2}
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   targetsNumber: 2
   targetMinHeight: 1
+  targetsHeight: 0
 --- !u!1 &453192406
 GameObject:
   m_ObjectHideFlags: 0
@@ -3552,9 +3581,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddb1d823936d3146bff4806b4ec1821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: {fileID: 1514306454535266, guid: 31ed8c5abba52784eb88e1b71c5b1d48, type: 2}
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   targetsNumber: 2
   targetMinHeight: 1
+  targetsHeight: 0
 --- !u!1 &460935553
 GameObject:
   m_ObjectHideFlags: 0
@@ -4064,6 +4097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   building: {fileID: 1989238231815656, guid: c361cdd3703d40f428e26f2319d4f8b4, type: 2}
   buildingNumbers: 250
+  buildingNumbersAfterStart: 30
   buildingLength: 5
   buildingWidth: 5
   buildingHeight: 25
@@ -4620,6 +4654,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   building: {fileID: 1989238231815656, guid: c361cdd3703d40f428e26f2319d4f8b4, type: 2}
   buildingNumbers: 250
+  buildingNumbersAfterStart: 30
   buildingLength: 5
   buildingWidth: 5
   buildingHeight: 25
@@ -4821,9 +4856,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddb1d823936d3146bff4806b4ec1821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: {fileID: 1514306454535266, guid: 31ed8c5abba52784eb88e1b71c5b1d48, type: 2}
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   targetsNumber: 2
   targetMinHeight: 1
+  targetsHeight: 0
 --- !u!1 &655229714
 GameObject:
   m_ObjectHideFlags: 0
@@ -5114,6 +5153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   building: {fileID: 1989238231815656, guid: c361cdd3703d40f428e26f2319d4f8b4, type: 2}
   buildingNumbers: 250
+  buildingNumbersAfterStart: 30
   buildingLength: 5
   buildingWidth: 5
   buildingHeight: 25
@@ -5327,9 +5367,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddb1d823936d3146bff4806b4ec1821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: {fileID: 1514306454535266, guid: 31ed8c5abba52784eb88e1b71c5b1d48, type: 2}
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   targetsNumber: 2
   targetMinHeight: 1
+  targetsHeight: 0
 --- !u!1 &756688457
 GameObject:
   m_ObjectHideFlags: 0
@@ -5652,9 +5696,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddb1d823936d3146bff4806b4ec1821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: {fileID: 1514306454535266, guid: 31ed8c5abba52784eb88e1b71c5b1d48, type: 2}
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   targetsNumber: 2
   targetMinHeight: 1
+  targetsHeight: 0
 --- !u!1 &792898572
 GameObject:
   m_ObjectHideFlags: 0
@@ -6020,9 +6068,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddb1d823936d3146bff4806b4ec1821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: {fileID: 1514306454535266, guid: 31ed8c5abba52784eb88e1b71c5b1d48, type: 2}
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   targetsNumber: 2
   targetMinHeight: 1
+  targetsHeight: 0
 --- !u!1 &797953163
 GameObject:
   m_ObjectHideFlags: 0
@@ -6254,9 +6306,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddb1d823936d3146bff4806b4ec1821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: {fileID: 1514306454535266, guid: 31ed8c5abba52784eb88e1b71c5b1d48, type: 2}
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   targetsNumber: 2
   targetMinHeight: 1
+  targetsHeight: 0
 --- !u!1 &841056336
 GameObject:
   m_ObjectHideFlags: 0
@@ -6546,9 +6602,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddb1d823936d3146bff4806b4ec1821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: {fileID: 1514306454535266, guid: 31ed8c5abba52784eb88e1b71c5b1d48, type: 2}
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   targetsNumber: 2
   targetMinHeight: 1
+  targetsHeight: 0
 --- !u!1 &920126829
 GameObject:
   m_ObjectHideFlags: 0
@@ -7125,6 +7185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   building: {fileID: 1989238231815656, guid: c361cdd3703d40f428e26f2319d4f8b4, type: 2}
   buildingNumbers: 250
+  buildingNumbersAfterStart: 30
   buildingLength: 5
   buildingWidth: 5
   buildingHeight: 25
@@ -7485,6 +7546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   building: {fileID: 1989238231815656, guid: c361cdd3703d40f428e26f2319d4f8b4, type: 2}
   buildingNumbers: 250
+  buildingNumbersAfterStart: 30
   buildingLength: 5
   buildingWidth: 5
   buildingHeight: 25
@@ -8313,9 +8375,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddb1d823936d3146bff4806b4ec1821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: {fileID: 1514306454535266, guid: 31ed8c5abba52784eb88e1b71c5b1d48, type: 2}
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   targetsNumber: 2
   targetMinHeight: 1
+  targetsHeight: 0
 --- !u!1 &1200724505
 GameObject:
   m_ObjectHideFlags: 0
@@ -8949,9 +9015,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddb1d823936d3146bff4806b4ec1821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: {fileID: 1514306454535266, guid: 31ed8c5abba52784eb88e1b71c5b1d48, type: 2}
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   targetsNumber: 2
   targetMinHeight: 1
+  targetsHeight: 0
 --- !u!1 &1286243484
 GameObject:
   m_ObjectHideFlags: 0
@@ -9730,9 +9800,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddb1d823936d3146bff4806b4ec1821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: {fileID: 1514306454535266, guid: 31ed8c5abba52784eb88e1b71c5b1d48, type: 2}
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   targetsNumber: 2
   targetMinHeight: 1
+  targetsHeight: 0
 --- !u!1 &1407483449
 GameObject:
   m_ObjectHideFlags: 0
@@ -9919,9 +9993,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddb1d823936d3146bff4806b4ec1821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: {fileID: 1514306454535266, guid: 31ed8c5abba52784eb88e1b71c5b1d48, type: 2}
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   targetsNumber: 2
   targetMinHeight: 1
+  targetsHeight: 0
 --- !u!1 &1436818219
 GameObject:
   m_ObjectHideFlags: 0
@@ -10089,9 +10167,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddb1d823936d3146bff4806b4ec1821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: {fileID: 1514306454535266, guid: 31ed8c5abba52784eb88e1b71c5b1d48, type: 2}
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   targetsNumber: 2
   targetMinHeight: 1
+  targetsHeight: 0
 --- !u!1 &1485594135
 GameObject:
   m_ObjectHideFlags: 0
@@ -10549,6 +10631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   building: {fileID: 1989238231815656, guid: c361cdd3703d40f428e26f2319d4f8b4, type: 2}
   buildingNumbers: 250
+  buildingNumbersAfterStart: 30
   buildingLength: 5
   buildingWidth: 5
   buildingHeight: 25
@@ -11128,9 +11211,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddb1d823936d3146bff4806b4ec1821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: {fileID: 1514306454535266, guid: 31ed8c5abba52784eb88e1b71c5b1d48, type: 2}
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   targetsNumber: 2
   targetMinHeight: 1
+  targetsHeight: 0
 --- !u!1 &1653853277
 GameObject:
   m_ObjectHideFlags: 0
@@ -11410,9 +11497,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddb1d823936d3146bff4806b4ec1821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: {fileID: 1514306454535266, guid: 31ed8c5abba52784eb88e1b71c5b1d48, type: 2}
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   targetsNumber: 2
   targetMinHeight: 1
+  targetsHeight: 0
 --- !u!1 &1684400612
 GameObject:
   m_ObjectHideFlags: 0
@@ -11940,9 +12031,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddb1d823936d3146bff4806b4ec1821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: {fileID: 1514306454535266, guid: 31ed8c5abba52784eb88e1b71c5b1d48, type: 2}
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   targetsNumber: 2
   targetMinHeight: 1
+  targetsHeight: 0
 --- !u!1 &1841795727
 GameObject:
   m_ObjectHideFlags: 0
@@ -12037,9 +12132,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddb1d823936d3146bff4806b4ec1821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: {fileID: 1514306454535266, guid: 31ed8c5abba52784eb88e1b71c5b1d48, type: 2}
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   targetsNumber: 2
   targetMinHeight: 1
+  targetsHeight: 0
 --- !u!1 &1847777401
 GameObject:
   m_ObjectHideFlags: 0
@@ -12310,9 +12409,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddb1d823936d3146bff4806b4ec1821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: {fileID: 1514306454535266, guid: 31ed8c5abba52784eb88e1b71c5b1d48, type: 2}
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   targetsNumber: 2
   targetMinHeight: 1
+  targetsHeight: 0
 --- !u!1 &1869346405
 GameObject:
   m_ObjectHideFlags: 0
@@ -12674,9 +12777,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddb1d823936d3146bff4806b4ec1821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: {fileID: 1514306454535266, guid: 31ed8c5abba52784eb88e1b71c5b1d48, type: 2}
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   targetsNumber: 2
   targetMinHeight: 1
+  targetsHeight: 0
 --- !u!1 &1919857725
 GameObject:
   m_ObjectHideFlags: 0
