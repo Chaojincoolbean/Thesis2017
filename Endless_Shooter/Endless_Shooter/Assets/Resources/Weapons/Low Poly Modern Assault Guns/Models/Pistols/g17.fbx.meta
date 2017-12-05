@@ -3,7 +3,7 @@ guid: 45beeade8107c434dbba1fff6d58adb1
 timeCreated: 1500472070
 licenseType: Store
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
     100002: Magazin
@@ -20,9 +20,6 @@ ModelImporter:
     4300000: G17
     4300002: Slide
     4300004: Magazin
-    6400000: //RootNode
-    6400002: Magazin
-    6400004: Slide
   materials:
     importMaterials: 1
     materialName: 0
@@ -45,18 +42,14 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 0.6594726
     meshCompression: 0
-    addColliders: 1
-    importVisibility: 0
+    addColliders: 0
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -72,7 +65,6 @@ ModelImporter:
     normalSmoothAngle: 0
     normalImportMode: 1
     tangentImportMode: 3
-    normalCalculationMode: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
