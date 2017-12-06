@@ -156,7 +156,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1246598782204806}
   m_LocalRotation: {x: -0.14503427, y: -0, z: -0, w: 0.9894266}
-  m_LocalPosition: {x: 0.055, y: 1.524, z: -0.705}
+  m_LocalPosition: {x: 0.98, y: 1.57, z: 3.8681333}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 4846371462815842}
@@ -426,8 +426,8 @@ MonoBehaviour:
   useOverrideButton: 4
   allowedUseControllers: 0
   usingState: 0
-  muzzleFlash: {fileID: 146992, guid: 24bc114e4759e464eab5d9664127a034, type: 2}
-  M1911A1SFX: {fileID: 8300000, guid: 2923840eb4587ed45bfa5382515d3cb1, type: 3}
+  muzzleFlash: {fileID: 100006, guid: 4e7bc0a8b112c984fb16cf716888808f, type: 2}
+  M1911A1SFX: {fileID: 8300000, guid: c12bc10dadc48864987bf6e62042df18, type: 3}
   impactVFX: {fileID: 108086, guid: e4ed01af280d76248a9d0e72030c40c6, type: 2}
   magazineCapacity: 8
   damage: 9
@@ -448,5 +448,5 @@ MonoBehaviour:
   rightSnapHandle: {fileID: 4452702673331080}
   leftSnapHandle: {fileID: 0}
   throwVelocityWithAttachDistance: 0
-  throwMultiplier: 3
+  throwMultiplier: 1
   onGrabCollisionDelay: 0

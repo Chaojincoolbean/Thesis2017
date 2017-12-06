@@ -119,7 +119,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1436445175661962}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.571, y: 1.36, z: 0}
+  m_LocalPosition: {x: 0.68177104, y: 1.642, z: 3.7599998}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 4879442003088926}
@@ -439,7 +439,7 @@ MonoBehaviour:
   rightSnapHandle: {fileID: 4933553449797878}
   leftSnapHandle: {fileID: 0}
   throwVelocityWithAttachDistance: 0
-  throwMultiplier: 3
+  throwMultiplier: 1
   onGrabCollisionDelay: 0
 --- !u!114 &114992601029285302
 MonoBehaviour:
@@ -453,7 +453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableWhenIdle: 1
-  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlightColor: {r: 0.66569626, g: 0.9411765, b: 0.4013841, a: 0}
   allowedTouchControllers: 0
   ignoredColliders: []
   isGrabbable: 1

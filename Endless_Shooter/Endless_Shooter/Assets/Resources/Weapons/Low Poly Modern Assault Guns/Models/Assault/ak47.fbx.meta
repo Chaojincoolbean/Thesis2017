@@ -3,7 +3,7 @@ guid: 8091920077f58104fa64b3044211eec7
 timeCreated: 1498571158
 licenseType: Store
 ModelImporter:
-  serializedVersion: 19
+  serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
     100002: Magazin
@@ -15,6 +15,8 @@ ModelImporter:
     3300002: Magazin
     4300000: AK47
     4300002: Magazin
+    6400000: //RootNode
+    6400002: Magazin
   materials:
     importMaterials: 1
     materialName: 0
@@ -37,14 +39,18 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.3928334
+    globalScale: 0.05
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -60,6 +66,7 @@ ModelImporter:
     normalSmoothAngle: 0
     normalImportMode: 1
     tangentImportMode: 3
+    normalCalculationMode: 0
   importAnimation: 0
   copyAvatar: 0
   humanDescription:
