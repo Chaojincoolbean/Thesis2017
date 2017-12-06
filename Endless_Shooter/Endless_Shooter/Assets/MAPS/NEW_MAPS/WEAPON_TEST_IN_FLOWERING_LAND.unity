@@ -1182,7 +1182,6 @@ GameObject:
   - component: {fileID: 138971347}
   - component: {fileID: 138971350}
   - component: {fileID: 138971349}
-  - component: {fileID: 138971348}
   m_Layer: 0
   m_Name: ddcontroller
   m_TagString: Untagged
@@ -1206,18 +1205,6 @@ Transform:
   m_Father: {fileID: 1401568269}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &138971348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114000012455637568, guid: 41c0760bd81dd084283814f0c432b466,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 138971346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &138971349
 MeshRenderer:
   m_ObjectHideFlags: 0

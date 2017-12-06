@@ -45,16 +45,18 @@
         public override void StartUsing(VRTK_InteractUse usingObject)
         {
             base.StartUsing(usingObject);
-            if (magazineCapacity > 1)
+            if (magazineCapacity > 0)
             {
                 FireRayCast();
                 VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(controllerEvents.gameObject), 0.63f, 0.2f, 0.01f);
+                
+                if (magazineCapacity == 1)
+                {
+                    slide.DOLocalMove(slideMoveBack, 0.05f);
+                }
                 magazineCapacity -= 1;
             }
-            if (magazineCapacity == 0)
-            {
-                EmptyChamber();   
-            }
+            
         }
 
         private void FireRayCast()
@@ -93,8 +95,8 @@
 
             //Invoke("BeamOff", 0.1f);
 
-            slide.DOLocalMove(slideMoveBack, 0.03f).OnComplete(SlideRetract);
-            Invoke("SlideRetract", 0.03f);
+            slide.DOLocalMove(slideMoveBack, 0.05f).OnComplete(SlideRetract);
+            //Invoke("SlideRetract", 0.1f);
             Instantiate(muzzleFlash, muzzle.position, muzzle.rotation);
             source.clip = M1911A1SFX;
             source.Play();
@@ -102,11 +104,12 @@
 
         private void SlideRetract()
         {
-            slide.DOLocalMove(slideMoveForward, 0.03f);
+            slide.DOLocalMove(slideMoveForward, 0.05f);
         }
         private void EmptyChamber()
         {
-            slide.DOLocalMove(slideMoveBack, 0.03f);
+            Debug.Log("in");
+            slide.DOLocalMove(slideMoveBack, 0.1f);
         }
         public void BeamOff()
         {
