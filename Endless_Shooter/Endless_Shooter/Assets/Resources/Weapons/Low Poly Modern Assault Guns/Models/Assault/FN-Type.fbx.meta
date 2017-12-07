@@ -3,7 +3,7 @@ guid: 8ee462d9460c351408b2b572965f6d6c
 timeCreated: 1500725000
 licenseType: Store
 ModelImporter:
-  serializedVersion: 19
+  serializedVersion: 21
   fileIDToRecycleName:
     100000: Bolt
     100002: Magazin
@@ -25,6 +25,10 @@ ModelImporter:
     4300002: Magazin
     4300004: Bolt
     4300006: Rear_Sight
+    6400000: Bolt
+    6400002: //RootNode
+    6400004: Magazin
+    6400006: Rear_Sight
   materials:
     importMaterials: 1
     materialName: 0
@@ -47,14 +51,18 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -70,6 +78,7 @@ ModelImporter:
     normalSmoothAngle: 0
     normalImportMode: 1
     tangentImportMode: 3
+    normalCalculationMode: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:

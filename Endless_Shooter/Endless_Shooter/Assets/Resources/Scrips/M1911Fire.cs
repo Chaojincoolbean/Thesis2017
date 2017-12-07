@@ -9,10 +9,15 @@
         public GameObject muzzleFlash;
         public AudioClip M1911A1SFX;
         public GameObject impactVFX;
+        public GameObject brass;
         public int magazineCapacity = 8;
         public float damage = 1f;
+        public float range;
+        public float ejectForce;
 
-		public Vector3 slideMoveBack;
+        public float recoil = 1f;
+        public float sway = 0.5f;
+        public Vector3 slideMoveBack;
 		public Vector3 slideMoveForward;
 
         private VRTK_ControllerEvents controllerEvents;
@@ -49,11 +54,9 @@
             {
                 FireRayCast();
                 VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(controllerEvents.gameObject), 0.63f, 0.2f, 0.01f);
-                
-                if (magazineCapacity == 1)
-                {
-                    slide.DOLocalMove(slideMoveBack, 0.05f);
-                }
+                GameObject spentCasing = Instantiate(brass, slide.transform.position, slide.transform.rotation) as GameObject;
+                spentCasing.GetComponent<Rigidbody>().AddForce(-slide.transform.right*ejectForce, ForceMode.Impulse);
+
                 magazineCapacity -= 1;
             }
             
@@ -70,7 +73,7 @@
             RaycastHit Hit;
             //line.SetPosition(0, beamRay.origin);
 
-            if (Physics.Raycast(beamRay, out Hit, 100))
+            if (Physics.Raycast(beamRay, out Hit, range))
             {
                 //line.SetPosition(1, Hit.point);
                 if (Hit.collider.GetComponent<Rigidbody>() != null)
@@ -94,9 +97,15 @@
             }
 
             //Invoke("BeamOff", 0.1f);
-
-            slide.DOLocalMove(slideMoveBack, 0.05f).OnComplete(SlideRetract);
-            //Invoke("SlideRetract", 0.1f);
+            if (magazineCapacity > 1)
+            {
+                slide.DOLocalMove(slideMoveBack, 0.05f).OnComplete(SlideRetract);
+            }
+            else
+            {
+                EmptyChamber();
+            }
+            gameObject.GetComponent<Rigidbody>().AddForceAtPosition(new Vector3(recoil, recoil, sway), muzzle.transform.position);
             Instantiate(muzzleFlash, muzzle.position, muzzle.rotation);
             source.clip = M1911A1SFX;
             source.Play();
@@ -109,7 +118,7 @@
         private void EmptyChamber()
         {
             Debug.Log("in");
-            slide.DOLocalMove(slideMoveBack, 0.1f);
+            slide.DOLocalMove(slideMoveBack, 0.05f);
         }
         public void BeamOff()
         {
