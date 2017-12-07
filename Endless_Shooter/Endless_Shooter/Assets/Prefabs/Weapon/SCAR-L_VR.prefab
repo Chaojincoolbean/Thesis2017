@@ -762,9 +762,9 @@ MonoBehaviour:
   range: 500
   roundsPerMintue: 625
   damage: 25
-  recoil: 300
-  sway: 10
-  ejectForce: 0.03
+  recoil: 350
+  sway: 15
+  ejectForce: 0.05
   boltMoveBackPos: {x: -0.151, y: 0.044, z: 2.151}
   boltResetPos: {x: -0.151, y: 0.044, z: 1.125271}
   bolt: {fileID: 4638232390976930}

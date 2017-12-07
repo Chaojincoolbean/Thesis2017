@@ -280,6 +280,12 @@ MonoBehaviour:
   - {fileID: 198412, guid: 713398a148e185840a055a02d77722cf, type: 2}
   fireSFX:
   - {fileID: 8300000, guid: 1475859eb85bf8f449ce777ad6e11b82, type: 3}
+  drop:
+  - {fileID: 1173279127803022, guid: ef58c3d640d2e014787c0e2130609d09, type: 2}
+  - {fileID: 1436445175661962, guid: e29ac8010eab755458cc2b833b00a73c, type: 2}
+  - {fileID: 1541598124809334, guid: 19886bd2bf66721498a00a4705b51240, type: 2}
+  - {fileID: 1246598782204806, guid: d546688faf8e3c64f9215ebd50191a66, type: 2}
+  - {fileID: 1656877619572476, guid: c1ac50a127b5b28428a4192d6861d2d2, type: 2}
   projectile: {fileID: 1285713894886730, guid: afbe508e651a0d148b6b25188c3c2c73, type: 2}
   value: 20
   projectileForce: 100
@@ -301,3 +307,4 @@ MonoBehaviour:
   timeToNextDestination: 3
   range: 1000
   speed: 15
+  height: 50

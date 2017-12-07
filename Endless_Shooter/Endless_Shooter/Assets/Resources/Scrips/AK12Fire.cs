@@ -36,6 +36,13 @@
             {
                 InvokeRepeating("FireRayCast", 0f, timeToNextRound);
             }
+            else
+            {
+                CancelInvoke();
+                SlideRetract();
+            }
+
+
             /*player = GameObject.Find("[VRTK_SDKManager]");
 			if (player.GetComponent<move>() != null) 
 			{
@@ -96,7 +103,9 @@
 
 			bolt.DOLocalMove (boltMoveBackPos, 0.07f).OnComplete(SlideRetract);
 			//Invoke ("SlideRetract", 0.07f);
-			Instantiate (muzzleFlash, muzzle.position, muzzle.rotation);
+			GameObject fire = Instantiate (muzzleFlash, muzzle.position, muzzle.rotation) as GameObject;
+            fire.transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.07f);
+
             GameObject spentCasing = Instantiate(brass, ejectWindow.position, muzzle.rotation) as GameObject;
             spentCasing.GetComponent<Rigidbody>().AddForce(-ejectWindow.right*ejectForce, ForceMode.Impulse);
             AK12Source.clip = rifleClip[Random.Range(1,rifleClip.Length-1)];

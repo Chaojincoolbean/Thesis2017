@@ -106,7 +106,8 @@
                 EmptyChamber();
             }
             gameObject.GetComponent<Rigidbody>().AddForceAtPosition(new Vector3(recoil, recoil, sway), muzzle.transform.position);
-            Instantiate(muzzleFlash, muzzle.position, muzzle.rotation);
+            GameObject fire = Instantiate(muzzleFlash, muzzle.position, muzzle.rotation) as GameObject;
+            fire.transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.1f);
             source.clip = M1911A1SFX;
             source.Play();
         }
