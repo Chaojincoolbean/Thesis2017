@@ -34,10 +34,12 @@
             {
                 case State.fireSmallPellets:
                     StartCoroutine("fireSmallPellets");
-                    return;
+                    break;
                 case State.fireLargePellets:
                     StartCoroutine("fireLargePellets");
-                    return;
+                    break;
+                default:
+                    break;
             }
         }
 

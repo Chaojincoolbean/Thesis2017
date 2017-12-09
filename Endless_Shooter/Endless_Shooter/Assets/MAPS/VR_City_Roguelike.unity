@@ -5287,8 +5287,10 @@ MonoBehaviour:
   timerMinValue: 90
   score: 0
   playerHit: {fileID: 1157821153}
-  scoreText: {fileID: 0}
-  VRPlayArea: {fileID: 0}
+  scoreText: {fileID: 1238096538}
+  VRPlayArea: {fileID: 1413242080}
+  timer: 0
+  runningPattern: 2
 --- !u!4 &992406331
 Transform:
   m_ObjectHideFlags: 0
@@ -7744,7 +7746,7 @@ Prefab:
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 1034
+      value: 1019
       objectReference: {fileID: 0}
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}

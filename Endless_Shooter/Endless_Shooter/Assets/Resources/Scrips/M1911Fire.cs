@@ -25,12 +25,14 @@
         private Transform slide;
         private Transform muzzle;
         LineRenderer line;
+        Rigidbody rb;
         // Use this for initialization
         void Start()
         {
             slide = gameObject.transform.GetChild(1);
             muzzle = gameObject.transform.GetChild(3);
             source = gameObject.GetComponent<AudioSource>();
+            rb = gameObject.GetComponent<Rigidbody>();
             /*line = gameObject.GetComponent<LineRenderer>();
             line.enabled = false;*/
         }
@@ -105,7 +107,9 @@
             {
                 EmptyChamber();
             }
-            gameObject.GetComponent<Rigidbody>().AddForceAtPosition(new Vector3(recoil, recoil, sway), muzzle.transform.position);
+            rb.AddForceAtPosition(muzzle.forward * recoil, muzzle.transform.position);
+            rb.AddForceAtPosition(muzzle.up * recoil, muzzle.transform.position);
+            rb.AddForceAtPosition(muzzle.right * sway, muzzle.transform.position);
             GameObject fire = Instantiate(muzzleFlash, muzzle.position, muzzle.rotation) as GameObject;
             fire.transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.1f);
             source.clip = M1911A1SFX;

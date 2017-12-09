@@ -6,6 +6,11 @@
     using UnityEngine.UI;
     using UnityEngine.SceneManagement;
 
+    public enum Timer
+    {
+        countUp, countDown, varingRunningSpeed, constantRunningSpeed
+    }
+
     public class scoreManager : MonoBehaviour {
         public float timerMaxValue = 180;
         public float timerMinValue = 90;
@@ -22,6 +27,9 @@
         public Text scoreText;
         [SerializeField]private GameObject VRPlayArea;
         bool isGameEnd = false;
+
+        public Timer timer;
+        public Timer runningPattern;
 
         void Awake() {
             DontDestroyOnLoad(this);
@@ -51,14 +59,26 @@
                 return;
 
             //Debug.Log(VRPlayArea.GetComponent<VRTK_MoveInPlace>().GetSpeed());
-            if (VRPlayArea.GetComponent<VRTK_MoveInPlace>().GetSpeed() > 0f)
+            switch (runningPattern)
             {
-                VRPlayArea.GetComponent<VRTK_MoveInPlace>().speedScale += Time.deltaTime;
-            }else if (VRPlayArea.GetComponent<VRTK_MoveInPlace>().GetSpeed() == 0f)
-            {
-                VRPlayArea.GetComponent<VRTK_MoveInPlace>().speedScale = 5f;
+                case Timer.varingRunningSpeed:
+                    if (VRPlayArea.GetComponent<VRTK_MoveInPlace>().GetSpeed() > 0f)
+                    {
+                        VRPlayArea.GetComponent<VRTK_MoveInPlace>().speedScale += Time.deltaTime;
+                    }
+                    else if (VRPlayArea.GetComponent<VRTK_MoveInPlace>().GetSpeed() == 0f)
+                    {
+                        VRPlayArea.GetComponent<VRTK_MoveInPlace>().speedScale = 5f;
+                    }
+                    break;
+                case Timer.constantRunningSpeed:
+                    VRPlayArea.GetComponent<VRTK_MoveInPlace>().speedScale = 10f;
+                    break;
+                default:
+                    break;
+
             }
-            timeLeft -= Time.deltaTime;
+
             //timerText.text = "Time Left: " + (Mathf.Round (timeLeft));
             secondsCount += Time.deltaTime;
             if (Mathf.RoundToInt(secondsCount) >= 60)
@@ -66,14 +86,28 @@
                 mintueCount++;
                 secondsCount = 0;
             }
-            if (SceneManager.GetActiveScene().name == "VR_City_Single block" || SceneManager.GetActiveScene().name == "Handmade_Map")
+
+            switch (timer)
+            {
+                case Timer.countUp:
+                    playerWatch.GetComponent<VRTK_ControllerTooltips>().UpdateText(VRTK_ControllerTooltips.TooltipButtons.TouchpadTooltip, mintueCount.ToString() + ":" + (Mathf.Round(secondsCount)).ToString());
+                    break;
+                case Timer.countDown:
+                    timeLeft -= Time.deltaTime;
+                    playerWatch.GetComponent<VRTK_ControllerTooltips>().UpdateText(VRTK_ControllerTooltips.TooltipButtons.TouchpadTooltip, "Time Left: " + (Mathf.Round(timeLeft)).ToString());
+                    break;
+                default:
+                    break;
+            }
+
+            /*if (SceneManager.GetActiveScene().name == "VR_City_Single block" || SceneManager.GetActiveScene().name == "Handmade_Map")
             {
                 playerWatch.GetComponent<VRTK_ControllerTooltips>().UpdateText(VRTK_ControllerTooltips.TooltipButtons.TouchpadTooltip, mintueCount.ToString() + ":" + (Mathf.Round(secondsCount)).ToString());
             }
             else
             {
                 playerWatch.GetComponent<VRTK_ControllerTooltips>().UpdateText(VRTK_ControllerTooltips.TooltipButtons.TouchpadTooltip, "Time Left: " + (Mathf.Round(timeLeft)).ToString());
-            }
+            }*/
            // Debug.Log(GameObject.Find("Camera (eye)"));
 
             playerWatch.GetComponent<VRTK_ControllerTooltips>().UpdateText(VRTK_ControllerTooltips.TooltipButtons.ButtonOneTooltip, "Score: " + score.ToString() + '\n' + "Health: " + playerHit.playerHealth.ToString());

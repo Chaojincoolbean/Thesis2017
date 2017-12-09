@@ -98,10 +98,12 @@
 			else{
 				//line.SetPosition(1, beamRay.GetPoint(range));	
 			}
-            rb.AddForceAtPosition(new Vector3(recoil, recoil, sway), muzzle.transform.position);
+            rb.AddForceAtPosition(muzzle.forward * recoil, muzzle.transform.position);
+            rb.AddForceAtPosition(muzzle.up * recoil, muzzle.transform.position);
+            rb.AddForceAtPosition(muzzle.right * sway, muzzle.transform.position);
             //Invoke ("BeamOff", 0.1f);
 
-			bolt.DOLocalMove (boltMoveBackPos, 0.07f).OnComplete(SlideRetract);
+            bolt.DOLocalMove (boltMoveBackPos, 0.07f).OnComplete(SlideRetract);
 			//Invoke ("SlideRetract", 0.07f);
 			GameObject fire = Instantiate (muzzleFlash, muzzle.position, muzzle.rotation) as GameObject;
             fire.transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.07f);

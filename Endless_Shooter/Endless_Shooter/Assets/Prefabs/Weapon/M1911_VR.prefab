@@ -25,8 +25,8 @@ GameObject:
   - component: {fileID: 54248965019668236}
   - component: {fileID: 82018982993682508}
   - component: {fileID: 114025166544253924}
-  - component: {fileID: 114670005558708920}
   - component: {fileID: 114588543547238952}
+  - component: {fileID: 114062629083127694}
   m_Layer: 0
   m_Name: M1911_VR
   m_TagString: Weapon
@@ -418,7 +418,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114670005558708920}
+  grabAttachMechanicScript: {fileID: 114062629083127694}
   secondaryGrabActionScript: {fileID: 0}
   isUsable: 1
   holdButtonToUse: 1
@@ -427,7 +427,7 @@ MonoBehaviour:
   useOverrideButton: 4
   allowedUseControllers: 0
   usingState: 0
-  muzzleFlash: {fileID: 100006, guid: 4e7bc0a8b112c984fb16cf716888808f, type: 2}
+  muzzleFlash: {fileID: 100008, guid: ae12d87e2c868584f91d48cab717fe2b, type: 2}
   M1911A1SFX: {fileID: 8300000, guid: c12bc10dadc48864987bf6e62042df18, type: 3}
   impactVFX: {fileID: 1287066278770538, guid: 5f515bc05f554bf4ab87956f1f8e8cfa, type: 2}
   brass: {fileID: 1187700053699570, guid: d3cba98da279a264a8043e57c8afdfc4, type: 2}
@@ -435,10 +435,30 @@ MonoBehaviour:
   damage: 9
   range: 100
   ejectForce: 0.02
-  recoil: 1
-  sway: 0.5
+  recoil: 120
+  sway: 50
   slideMoveBack: {x: 0, y: 0.807, z: -0.207}
   slideMoveForward: {x: 0, y: 0.9273338, z: -0.6073914}
+--- !u!114 &114062629083127694
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1246598782204806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1ebaa51525b734287157cb3f53f958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 0
+  rightSnapHandle: {fileID: 4452702673331080}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0
+  detachDistance: 1
+  velocityLimit: Infinity
+  angularVelocityLimit: Infinity
 --- !u!114 &114588543547238952
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -456,20 +476,3 @@ MonoBehaviour:
   hideDelayOnGrab: 0
   hideControllerOnUse: 0
   hideDelayOnUse: 0
---- !u!114 &114670005558708920
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1246598782204806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec2ac476f2fc9a45a4e69712580a603, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 0
-  rightSnapHandle: {fileID: 4452702673331080}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1
-  onGrabCollisionDelay: 0
