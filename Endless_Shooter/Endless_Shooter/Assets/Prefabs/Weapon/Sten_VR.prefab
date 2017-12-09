@@ -84,12 +84,12 @@ GameObject:
   - component: {fileID: 4011410126375622}
   - component: {fileID: 33155827586918672}
   - component: {fileID: 23451356303506662}
-  - component: {fileID: 65361272618367594}
   - component: {fileID: 114504365320955910}
   - component: {fileID: 114287219054038668}
   - component: {fileID: 54042022239818920}
   - component: {fileID: 114551589304372286}
   - component: {fileID: 82687097743537330}
+  - component: {fileID: 64112812443401336}
   m_Layer: 0
   m_Name: Sten_VR
   m_TagString: Weapon
@@ -259,8 +259,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65361272618367594
-BoxCollider:
+--- !u!64 &64112812443401336
+MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -269,8 +269,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.42770892, y: 0.41, z: 3.12}
-  m_Center: {x: 0.07593405, y: 0, z: -0.7}
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 4f89bff5d2a0ea54f8ce19e2ea6163cd, type: 3}
 --- !u!65 &65382284034376930
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -395,7 +397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableWhenIdle: 1
-  touchHighlightColor: {r: 0.62619317, g: 0.99264705, b: 0.48172575, a: 0}
+  touchHighlightColor: {r: 0.7647059, g: 1, b: 0.6039216, a: 0}
   allowedTouchControllers: 0
   ignoredColliders: []
   isGrabbable: 1
@@ -415,16 +417,8 @@ MonoBehaviour:
   usingState: 0
   muzzleFlash: {fileID: 100004, guid: b7d03fb0762c75449af69d624547e358, type: 2}
   rifleClip:
-  - {fileID: 8300000, guid: 838078b48ee35d14c962527cec6d680e, type: 3}
-  - {fileID: 8300000, guid: 962639eda6969874b873899955c680c9, type: 3}
-  - {fileID: 8300000, guid: 16df531e981a634499e2139f8fa98d7c, type: 3}
-  - {fileID: 8300000, guid: a714164c49a10b948a776a5470e9267b, type: 3}
-  - {fileID: 8300000, guid: 7bf433fa8e587cb43b85ee0b6d6a1f06, type: 3}
-  - {fileID: 8300000, guid: 7323366eae00b0e469eab6317b718446, type: 3}
-  - {fileID: 8300000, guid: 1a8b7c36c699b924487e829194d53497, type: 3}
-  - {fileID: 8300000, guid: 312c67290804ee64ba77e2cc9f84c1fc, type: 3}
-  - {fileID: 8300000, guid: 97140b21ddd5fe34a9632612b404c14e, type: 3}
-  - {fileID: 8300000, guid: e4cbf3f323b5f3746a9f108214005347, type: 3}
+  - {fileID: 8300000, guid: 4758d794bc041d74db6808b323ea36db, type: 3}
+  - {fileID: 8300000, guid: 4758d794bc041d74db6808b323ea36db, type: 3}
   impactVFX: {fileID: 1287066278770538, guid: 5f515bc05f554bf4ab87956f1f8e8cfa, type: 2}
   brass: {fileID: 1304378575861456, guid: 7517df7680a65e14e8cb2972133ca54c, type: 2}
   magazineCapacity: 32
