@@ -70,6 +70,11 @@
             //print ("gun fired");
             
             //line.enabled = true;
+            if(magazineCapacity <= 0)
+            {
+                CancelInvoke();
+                return;
+            }
 			Vector3 pos = muzzle.position;
 
 			Ray beamRay = new Ray (pos, -muzzle.forward);

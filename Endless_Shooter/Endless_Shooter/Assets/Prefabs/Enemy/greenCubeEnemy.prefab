@@ -70,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1738818560298696}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 32.4, z: 0}
+  m_LocalPosition: {x: 23.198263, y: 0.5, z: -42.230846}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4884625033778398}
@@ -117,7 +117,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 54771a773e6358445a508dce4f93fb71, type: 2}
+  - {fileID: 2100000, guid: 7a8feb6e7906b664f8480b8af612653a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -281,23 +281,17 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 398699a966776724eb8a89d51ffba1e6, type: 3}
   - {fileID: 8300000, guid: c70924b7090a3ec4983b72245a70b5d6, type: 3}
   explosionVFX:
-  - {fileID: 132222, guid: ce9a6b1b3e673b54e8ad5746ee0af87d, type: 2}
-  - {fileID: 196814, guid: d76649cf19d5acf4a83c41295a514487, type: 2}
-  - {fileID: 112618, guid: 6f78e3f2221c21f428fa9f41f18f5392, type: 2}
-  - {fileID: 121360, guid: 0fa68b7a3e2f0664aa60e9db30faeb3a, type: 2}
-  - {fileID: 172038, guid: daa68a184b10b1e498d4227aa3433d9c, type: 2}
-  - {fileID: 193142, guid: 7872bd34536466f488398bd14a88cadd, type: 2}
-  - {fileID: 172614, guid: 0347f162c7ebeae4ea35eeec8f638c1b, type: 2}
-  - {fileID: 146748, guid: 729e3d6ea7dadb643b75250bfc7f3247, type: 2}
-  - {fileID: 112512, guid: 3b154cb7750ef3c42b1e5dc77466bc12, type: 2}
-  - {fileID: 198412, guid: 713398a148e185840a055a02d77722cf, type: 2}
+  - {fileID: 100000, guid: ba2ae40ef979dbf40abf4a61e8b27ce7, type: 2}
   fireSFX:
-  - {fileID: 8300000, guid: 1475859eb85bf8f449ce777ad6e11b82, type: 3}
+  - {fileID: 8300000, guid: fdbc18edd950bf74ba6ef63190b4362c, type: 3}
   drop:
   - {fileID: 1173279127803022, guid: ef58c3d640d2e014787c0e2130609d09, type: 2}
   - {fileID: 1436445175661962, guid: e29ac8010eab755458cc2b833b00a73c, type: 2}
   - {fileID: 1246598782204806, guid: d546688faf8e3c64f9215ebd50191a66, type: 2}
   - {fileID: 1541598124809334, guid: 19886bd2bf66721498a00a4705b51240, type: 2}
+  - {fileID: 1747083234827508, guid: 446805ce0dd309a42b84ff10f8e1d8fc, type: 2}
+  - {fileID: 1656877619572476, guid: c1ac50a127b5b28428a4192d6861d2d2, type: 2}
+  - {fileID: 1742262707406992, guid: f9a6acfaf3ad1d54ba50e8696e514d56, type: 2}
   projectile: {fileID: 1468413911184946, guid: 9143bfa5c33ddeb498b83a45491af378, type: 2}
   value: 5
   projectileForce: 100
@@ -309,3 +303,4 @@ MonoBehaviour:
   bulletMat: {fileID: 2100000, guid: 43e3025e820376d409b0174f10b9f933, type: 2}
   bulletHitSpark: {fileID: 1206465423430768, guid: 214614ff12c611742b7c3298afdcf5c7,
     type: 2}
+  muzzleFlash: {fileID: 123962, guid: 635db4848dc430443ad68734d52dab0d, type: 2}

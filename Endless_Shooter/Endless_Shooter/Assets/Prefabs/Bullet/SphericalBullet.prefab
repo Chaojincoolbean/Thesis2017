@@ -192,11 +192,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   magentaBulletHit: {fileID: 1517121139725594, guid: a1d20dd72a6f8d348b634ad034c0c9f5,
     type: 2}
-  bulletClip: {fileID: 8300000, guid: 6db750008b0835b4dbcb54013e091ff3, type: 3}
+  bulletClip: {fileID: 8300000, guid: a688b479dadac0141ab9356f765067ce, type: 3}
   damage: 5
   bulletSource: {fileID: 0}
   player: {fileID: 0}
   playerCamera: {fileID: 0}
+  targetHit: {fileID: 0}
 --- !u!135 &135046014217039398
 SphereCollider:
   m_ObjectHideFlags: 1

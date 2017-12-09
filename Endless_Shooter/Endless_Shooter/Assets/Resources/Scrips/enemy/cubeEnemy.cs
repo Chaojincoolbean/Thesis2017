@@ -9,6 +9,7 @@
         public float fireDistance = 10f;
         public Material bulletMat;
         public GameObject bulletHitSpark;
+        public GameObject muzzleFlash;
 
         public override void Start()
         {
@@ -44,6 +45,7 @@
             float pellets = Random.Range(1f, 4f);
             for (int i = 1; i <= pellets; i++)
             {
+                Instantiate(muzzleFlash, muzzle.position, muzzle.rotation);
                 GameObject pellet = Instantiate(projectile, muzzle.position, Quaternion.identity) as GameObject;
                 Rigidbody rb = pellet.GetComponent<Rigidbody>();
                 //pellet.transform.parent = gameObject.transform;
