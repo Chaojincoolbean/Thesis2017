@@ -12,6 +12,7 @@ public class playerHit : MonoBehaviour {
     public float cameraShakeStrength = 5f;
     public int cameraVibrate = 5;
     public float cameraShakeRandomness = 40f;
+    public string sceneToLoad;
 
     public float playerHealth = 100f;
 
@@ -31,7 +32,7 @@ public class playerHit : MonoBehaviour {
 	void Update () {
 		if (playerHealth <= 0f)
         {
-            SceneManager.LoadScene("Game_Over", LoadSceneMode.Single);
+            SceneManager.LoadScene(sceneToLoad, LoadSceneMode.Single);
             //Invoke("PlayDeathSound", 0.2f);
         }
         //print(VRPlayArea.GetComponent<>);
