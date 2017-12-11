@@ -43,7 +43,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -8541,7 +8541,7 @@ MonoBehaviour:
   cameraShakeStrength: 20
   cameraVibrate: 10
   cameraShakeRandomness: 40
-  sceneToLoad: CROSSES
+  sceneToLoad: BLACK_WHITE_STRIPE
   playerHealth: 15
 --- !u!114 &1249508034
 MonoBehaviour:
