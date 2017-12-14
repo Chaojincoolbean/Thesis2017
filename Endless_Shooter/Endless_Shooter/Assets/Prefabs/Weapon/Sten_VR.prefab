@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 114551589304372286}
   - component: {fileID: 82687097743537330}
   - component: {fileID: 64112812443401336}
+  - component: {fileID: 114242757211911338}
   m_Layer: 0
   m_Name: Sten_VR
   m_TagString: Weapon
@@ -365,6 +366,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &114242757211911338
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1747083234827508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817f15b2a0426974bb4e88ef34aa22b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideControllerOnTouch: 0
+  hideDelayOnTouch: 0
+  hideControllerOnGrab: 1
+  hideDelayOnGrab: 0
+  hideControllerOnUse: 0
+  hideDelayOnUse: 0
 --- !u!114 &114287219054038668
 MonoBehaviour:
   m_ObjectHideFlags: 1

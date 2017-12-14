@@ -1535,11 +1535,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 38
       objectReference: {fileID: 0}
-    - target: {fileID: 114453833048344122, guid: c1ac50a127b5b28428a4192d6861d2d2,
-        type: 2}
-      propertyPath: touchHighlightColor.a
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1ac50a127b5b28428a4192d6861d2d2, type: 2}
   m_IsPrefabParent: 0
@@ -14209,11 +14204,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114745639491837766, guid: caacc7943f393004d8305635db159735,
-        type: 2}
-      propertyPath: ejectForce
-      value: 0.05
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: caacc7943f393004d8305635db159735, type: 2}
   m_IsPrefabParent: 0
@@ -16863,7 +16853,7 @@ Prefab:
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 960
+      value: 1004
       objectReference: {fileID: 0}
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
@@ -17838,12 +17828,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 42
       objectReference: {fileID: 0}
-    - target: {fileID: 114728807272328278, guid: 19886bd2bf66721498a00a4705b51240,
-        type: 2}
-      propertyPath: impactVFX
-      value: 
-      objectReference: {fileID: 1287066278770538, guid: 5f515bc05f554bf4ab87956f1f8e8cfa,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 19886bd2bf66721498a00a4705b51240, type: 2}
   m_IsPrefabParent: 0

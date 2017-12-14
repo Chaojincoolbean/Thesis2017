@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4805191099663398}
   - component: {fileID: 33682408366371900}
   - component: {fileID: 23750466766420416}
-  - component: {fileID: 64105415754814156}
   m_Layer: 0
   m_Name: Slide
   m_TagString: Untagged
@@ -39,7 +38,6 @@ GameObject:
   - component: {fileID: 4925894671425256}
   - component: {fileID: 33757225400912614}
   - component: {fileID: 23574276671940358}
-  - component: {fileID: 64745271616535548}
   m_Layer: 0
   m_Name: Magazin
   m_TagString: Untagged
@@ -304,34 +302,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64105415754814156
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1093440800368146}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300004, guid: fa425aceac30dc34daf69fcda3b95f4a, type: 3}
---- !u!64 &64745271616535548
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1174795840593374}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300002, guid: fa425aceac30dc34daf69fcda3b95f4a, type: 3}
 --- !u!64 &64955609139580624
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -458,7 +428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableWhenIdle: 1
-  touchHighlightColor: {r: 0.6283037, g: 0.9558824, b: 0.18977077, a: 0}
+  touchHighlightColor: {r: 0.6283037, g: 0.9558824, b: 0.18977077, a: 1}
   allowedTouchControllers: 0
   ignoredColliders: []
   isGrabbable: 1

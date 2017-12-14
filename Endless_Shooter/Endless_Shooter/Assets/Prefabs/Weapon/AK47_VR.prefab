@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4772079547530150}
   - component: {fileID: 33016363226330150}
   - component: {fileID: 23641394047645842}
-  - component: {fileID: 64867079425479182}
   m_Layer: 0
   m_Name: Magazin
   m_TagString: Untagged
@@ -87,12 +86,13 @@ GameObject:
   - component: {fileID: 64692998997804816}
   - component: {fileID: 54594860532884892}
   - component: {fileID: 114677367579267248}
-  - component: {fileID: 114808745165571684}
   - component: {fileID: 114110356684222114}
   - component: {fileID: 82457094010367800}
+  - component: {fileID: 114671453509906244}
+  - component: {fileID: 114875998571532870}
   m_Layer: 0
   m_Name: AK47_VR
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,7 +171,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1742262707406992}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.714, y: 0.941, z: 0}
+  m_LocalPosition: {x: 1.1937575, y: 1.856, z: 3.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4772079547530150}
@@ -188,13 +188,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1563338186676518}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.049, z: -0.095}
+  m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
+  m_LocalPosition: {x: 0, y: -0.11, z: -0.136}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4862327886685860}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
 --- !u!23 &23376433942680642
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -304,20 +304,6 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 8091920077f58104fa64b3044211eec7, type: 3}
---- !u!64 &64867079425479182
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1461981156211444}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300002, guid: 8091920077f58104fa64b3044211eec7, type: 3}
 --- !u!82 &82457094010367800
 AudioSource:
   m_ObjectHideFlags: 1
@@ -412,6 +398,23 @@ MonoBehaviour:
   ungrabDistance: 0.3
   releaseSnapSpeed: 0.05
   lockZRotation: 1
+--- !u!114 &114671453509906244
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1742262707406992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817f15b2a0426974bb4e88ef34aa22b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideControllerOnTouch: 0
+  hideDelayOnTouch: 0
+  hideControllerOnGrab: 1
+  hideDelayOnGrab: 0
+  hideControllerOnUse: 0
+  hideDelayOnUse: 0
 --- !u!114 &114677367579267248
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -433,7 +436,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114808745165571684}
+  grabAttachMechanicScript: {fileID: 114875998571532870}
   secondaryGrabActionScript: {fileID: 114110356684222114}
   isUsable: 1
   holdButtonToUse: 1
@@ -477,7 +480,7 @@ MonoBehaviour:
   bolt: {fileID: 4505037488098512}
   muzzle: {fileID: 4448920241978854}
   ejectWindow: {fileID: 4751803461399918}
---- !u!114 &114808745165571684
+--- !u!114 &114875998571532870
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -485,7 +488,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1742262707406992}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec2ac476f2fc9a45a4e69712580a603, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a1ebaa51525b734287157cb3f53f958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 0
@@ -494,3 +497,6 @@ MonoBehaviour:
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
   onGrabCollisionDelay: 0
+  detachDistance: 1
+  velocityLimit: Infinity
+  angularVelocityLimit: Infinity

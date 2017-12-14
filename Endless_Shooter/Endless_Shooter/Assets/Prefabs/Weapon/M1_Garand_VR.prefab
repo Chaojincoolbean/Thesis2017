@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 114548227954497974}
   - component: {fileID: 114618470565571142}
   - component: {fileID: 82164863298155870}
+  - component: {fileID: 114840535520334668}
   m_Layer: 0
   m_Name: M1_Garand_VR
   m_TagString: Weapon
@@ -101,13 +102,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1065523854351380}
-  m_LocalRotation: {x: -1, y: 0, z: 0, w: 0}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.094, y: 0.267, z: 0.632}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4415180937629644}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: -180, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &4415180937629644
 Transform:
   m_ObjectHideFlags: 1
@@ -131,13 +132,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1839324234418148}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: -0.086, z: 1.445}
+  m_LocalRotation: {x: 0, y: 0.9848078, z: 0.17364825, w: 0}
+  m_LocalPosition: {x: 0, y: -0.3, z: 1.724}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4415180937629644}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: -20, y: 180, z: 0}
 --- !u!4 &4892578625788862
 Transform:
   m_ObjectHideFlags: 1
@@ -406,7 +407,7 @@ MonoBehaviour:
   damage: 55
   recoil: 650
   sway: 70
-  ejectForce: 0.05
+  ejectForce: 0.08
   boltMoveBackPos: {x: 0, y: 0, z: 0.5}
   boltResetPos: {x: 0, y: 0, z: 0}
   bolt: {fileID: 4955744735009096}
@@ -432,3 +433,20 @@ MonoBehaviour:
   detachDistance: 1
   velocityLimit: Infinity
   angularVelocityLimit: Infinity
+--- !u!114 &114840535520334668
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1518445004190022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817f15b2a0426974bb4e88ef34aa22b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideControllerOnTouch: 0
+  hideDelayOnTouch: 0
+  hideControllerOnGrab: 1
+  hideDelayOnGrab: 0
+  hideControllerOnUse: 0
+  hideDelayOnUse: 0
