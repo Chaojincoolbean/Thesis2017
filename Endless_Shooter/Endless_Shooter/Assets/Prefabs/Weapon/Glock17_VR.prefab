@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 54866350265003780}
   - component: {fileID: 114992601029285302}
   - component: {fileID: 82920320212220654}
-  - component: {fileID: 114767333544590476}
+  - component: {fileID: 114141377213474352}
   m_Layer: 0
   m_Name: Glock17_VR
   m_TagString: Weapon
@@ -424,7 +424,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114767333544590476
+--- !u!114 &114141377213474352
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -432,7 +432,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1436445175661962}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec2ac476f2fc9a45a4e69712580a603, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a1ebaa51525b734287157cb3f53f958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 0
@@ -441,6 +441,9 @@ MonoBehaviour:
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
   onGrabCollisionDelay: 0
+  detachDistance: 1
+  velocityLimit: Infinity
+  angularVelocityLimit: Infinity
 --- !u!114 &114992601029285302
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -462,7 +465,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114767333544590476}
+  grabAttachMechanicScript: {fileID: 114141377213474352}
   secondaryGrabActionScript: {fileID: 0}
   isUsable: 1
   holdButtonToUse: 1
@@ -473,13 +476,23 @@ MonoBehaviour:
   usingState: 0
   muzzleFlash: {fileID: 100006, guid: 4e7bc0a8b112c984fb16cf716888808f, type: 2}
   M1911A1SFX: {fileID: 8300000, guid: 2923840eb4587ed45bfa5382515d3cb1, type: 3}
+  grabSounds:
+  - {fileID: 8300000, guid: f2353c45f8f6fab498f0168dd6382adb, type: 3}
+  - {fileID: 8300000, guid: 43015d65ddb783b43b95c3a5a90f64e9, type: 3}
+  - {fileID: 8300000, guid: fab4eced65bbf814c883f874820748d0, type: 3}
+  - {fileID: 8300000, guid: db66ca4dbf765f94bba15dedccaeee7b, type: 3}
+  - {fileID: 8300000, guid: c448219f85080ab40b3204ad40c5a215, type: 3}
+  - {fileID: 8300000, guid: 83d9c3a7d668859449fb398d6426fb0c, type: 3}
+  - {fileID: 8300000, guid: 3de71a5d249766447a2200e014563b28, type: 3}
+  - {fileID: 8300000, guid: 8e004cfd6517cbe44a20db92979c2277, type: 3}
+  - {fileID: 8300000, guid: c3ef90a02af30a94693e477e9c9788aa, type: 3}
   impactVFX: {fileID: 1287066278770538, guid: 5f515bc05f554bf4ab87956f1f8e8cfa, type: 2}
   brass: {fileID: 1304378575861456, guid: 7517df7680a65e14e8cb2972133ca54c, type: 2}
   magazineCapacity: 17
   damage: 5
   range: 100
   ejectForce: 0.05
-  recoil: 1
-  sway: 0.5
+  recoil: 100
+  sway: 10
   slideMoveBack: {x: 0, y: 0, z: 0.404}
   slideMoveForward: {x: 0, y: 0, z: 0}

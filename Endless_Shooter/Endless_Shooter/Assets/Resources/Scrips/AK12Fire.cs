@@ -7,6 +7,7 @@
 		public class AK12Fire : VRTK_InteractableObject {
 		public GameObject muzzleFlash;
 		public AudioClip[] rifleClip;
+        public AudioClip[] grabSounds;
 		public GameObject impactVFX;
         public GameObject brass;
         public float magazineCapacity = 30f;
@@ -20,6 +21,7 @@
         public Vector3 boltMoveBackPos;
         public Vector3 boltResetPos;
 
+        private VRTK_ControllerEvents controllerEvents;
         private float timeToNextRound;
 		private GameObject player;
 		private GameObject world;
@@ -30,6 +32,20 @@
 		//LineRenderer line;
         Rigidbody rb;
 
+        public override void Grabbed(VRTK_InteractGrab currentGrabbingObject)
+        {
+            base.Grabbed(currentGrabbingObject);
+            controllerEvents = currentGrabbingObject.GetComponent<VRTK_ControllerEvents>();
+            AK12Source.clip = grabSounds[Random.Range(0, grabSounds.Length)];
+            AK12Source.Play();
+        }
+
+        public override void Ungrabbed(VRTK_InteractGrab previousGrabbingObject)
+        {
+            base.Ungrabbed(previousGrabbingObject);
+            controllerEvents = null;
+        }
+   
         public override void StartUsing(VRTK_InteractUse usingObject) {
 			base.StartUsing(usingObject);
             if (magazineCapacity > 0)
@@ -68,9 +84,10 @@
 
 		private void FireRayCast () {
             //print ("gun fired");
-            
+
             //line.enabled = true;
-            if(magazineCapacity <= 0)
+            VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(controllerEvents.gameObject), 0.63f);
+            if (magazineCapacity <= 0)
             {
                 CancelInvoke();
                 return;

@@ -8,6 +8,7 @@
     {
         public GameObject muzzleFlash;
         public AudioClip M1911A1SFX;
+        public AudioClip[] grabSounds;
         public GameObject impactVFX;
         public GameObject brass;
         public int magazineCapacity = 8;
@@ -41,6 +42,8 @@
         {
             base.Grabbed(currentGrabbingObject);
             controllerEvents = currentGrabbingObject.GetComponent<VRTK_ControllerEvents>();
+            source.clip = grabSounds[Random.Range(0, grabSounds.Length)];
+            source.Play();
         }
 
         public override void Ungrabbed(VRTK_InteractGrab previousGrabbingObject)
