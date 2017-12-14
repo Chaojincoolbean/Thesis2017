@@ -64,6 +64,10 @@
 
                 magazineCapacity -= 1;
             }
+            else
+            {
+                return;
+            }
 
         }
 
@@ -109,6 +113,7 @@
             else
             {
                 EmptyChamber();
+                Invoke("Destroy", 10f);
             }
             rb.AddForceAtPosition(muzzle.forward * recoil, muzzle.transform.position);
             rb.AddForceAtPosition(muzzle.up * recoil, muzzle.transform.position);
@@ -131,6 +136,12 @@
             rifleSource.Play();
             GameObject spentClip = Instantiate(enblocClip, ejectWindow.transform.position, ejectWindow.transform.rotation) as GameObject;
             spentClip.GetComponent<Rigidbody>().AddForce(-ejectWindow.transform.right * ejectForce, ForceMode.Impulse);
+        }
+
+        private void Destroy()
+        {
+            transform.DOScale(0, 0.5f);
+            Destroy(gameObject, 0.7f);
         }
     }
 }

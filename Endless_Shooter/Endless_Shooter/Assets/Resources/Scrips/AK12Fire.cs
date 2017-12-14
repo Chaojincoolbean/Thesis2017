@@ -54,8 +54,7 @@
             }
             else
             {
-                CancelInvoke();
-                SlideRetract();
+                Invoke("Destroy", 10f);
             }
 
 
@@ -86,10 +85,11 @@
             //print ("gun fired");
 
             //line.enabled = true;
-            VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(controllerEvents.gameObject), 0.63f);
+            VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(controllerEvents.gameObject), 1);
             if (magazineCapacity <= 0)
             {
                 CancelInvoke();
+                StartCoroutine("Destroy");
                 return;
             }
 			Vector3 pos = muzzle.position;
@@ -145,9 +145,15 @@
                 AK12Source.Play();
             }
 		}
+        private IEnumerator Destroy()
+        {
+            yield return new WaitForSeconds(10f);
+            transform.DOScale(0, 0.5f);
+            Destroy(gameObject, 0.7f);
+        }
 
-		/*public void BeamOff() {
+        /*public void BeamOff() {
 			line.enabled = false;
 		}*/
-}
+    }
 }

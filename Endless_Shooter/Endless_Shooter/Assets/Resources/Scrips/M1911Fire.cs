@@ -64,6 +64,10 @@
 
                 magazineCapacity -= 1;
             }
+            else
+            {
+                return;
+            }
             
         }
 
@@ -109,6 +113,7 @@
             else
             {
                 EmptyChamber();
+                Invoke("Destroy", 10f);
             }
             rb.AddForceAtPosition(muzzle.forward * recoil, muzzle.transform.position);
             rb.AddForceAtPosition(muzzle.up * recoil, muzzle.transform.position);
@@ -131,6 +136,11 @@
         public void BeamOff()
         {
             line.enabled = false;
+        }
+        private void Destroy()
+        {
+            transform.DOScale(0, 0.5f);
+            Destroy(gameObject, 0.7f);
         }
     }
 }

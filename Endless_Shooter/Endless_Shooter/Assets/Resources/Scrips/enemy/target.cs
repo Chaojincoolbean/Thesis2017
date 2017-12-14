@@ -11,7 +11,7 @@
         public List<AudioClip> explosionSFX;
         public List<GameObject> explosionVFX;
         public List<AudioClip> fireSFX;
-        public List<GameObject> drop;
+        public GameObject[] drop;
         public GameObject projectile;
         public float value = 20;
         public float projectileForce = 100f;
@@ -80,7 +80,7 @@
         void Die()
         {
             Instantiate(explosionVFX[Random.Range(0, explosionVFX.Count - 1)], gameObject.transform.position, gameObject.transform.rotation);
-            Instantiate(drop[Random.Range(0, drop.Count - 1)], transform.position, Quaternion.identity);
+            Instantiate(drop[Random.Range(0, drop.Length)], transform.position, Quaternion.identity);
             gameObject.transform.DOScale(0f, 0.1f);
             explosionSource.clip = explosionSFX[Random.Range(0, explosionSFX.Count - 1)];
             Debug.Log(explosionSource.clip.name);
