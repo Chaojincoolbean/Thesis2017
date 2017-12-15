@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114612205122063844}
   - component: {fileID: 114225756773680830}
   - component: {fileID: 114160255365550540}
+  - component: {fileID: 65285752533993212}
   m_Layer: 0
   m_Name: G36_VR
   m_TagString: Weapon
@@ -210,13 +211,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1771204218789986}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
   m_LocalPosition: {x: 0.265, y: 0.518, z: -0.127}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4576009106497266}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 180, z: 0}
 --- !u!4 &4978522524777700
 Transform:
   m_ObjectHideFlags: 1
@@ -415,6 +416,18 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: e4b20adca6aa3954891b06557c3c92ca, type: 3}
+--- !u!65 &65285752533993212
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1185877351623340}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.36, y: 0.34, z: 0.52}
+  m_Center: {x: 0.020014001, y: 0.184646, z: -0.0067160125}
 --- !u!82 &82470717607411438
 AudioSource:
   m_ObjectHideFlags: 1

@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 114478021280181014}
   - component: {fileID: 114564551610298236}
   - component: {fileID: 114645683630621146}
+  - component: {fileID: 65390973534780256}
   m_Layer: 0
   m_Name: M16_VR
   m_TagString: Weapon
@@ -483,6 +484,18 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: a1e6fe1f3a6507346be9e1b4c3439905, type: 3}
+--- !u!65 &65390973534780256
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1920521327927950}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.75, y: 0.36, z: 0.27}
+  m_Center: {x: 0, y: 0.201328, z: -0.43}
 --- !u!82 &82550275648743500
 AudioSource:
   m_ObjectHideFlags: 1

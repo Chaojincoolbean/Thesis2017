@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 114521862882294952}
   - component: {fileID: 114236689228702084}
   - component: {fileID: 114960019861677228}
+  - component: {fileID: 65673396169559170}
   m_Layer: 0
   m_Name: M1Garand_VR
   m_TagString: Weapon
@@ -116,13 +117,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1852263817550090}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
   m_LocalPosition: {x: 0.151, y: 0, z: -0.672}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4526855232264808}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 180, z: 0}
 --- !u!4 &4526855232264808
 Transform:
   m_ObjectHideFlags: 1
@@ -273,6 +274,18 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 382f89bfb7b10f741aaa34043fb6a985, type: 3}
+--- !u!65 &65673396169559170
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1693601028169816}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 0.15, z: 0.25}
+  m_Center: {x: -0.0000010021031, y: 0.03, z: 0.03377855}
 --- !u!82 &82023926855472380
 AudioSource:
   m_ObjectHideFlags: 1
