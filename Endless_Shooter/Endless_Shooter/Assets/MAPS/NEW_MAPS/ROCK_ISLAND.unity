@@ -4931,6 +4931,16 @@ Prefab:
       propertyPath: m_ConnectedAnchor.z
       value: -0.00000017694033
       objectReference: {fileID: 0}
+    - target: {fileID: 144492528847116500, guid: da6212e182130b840a25250cc96b1d5d,
+        type: 2}
+      propertyPath: m_BreakForce
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 144492528847116500, guid: da6212e182130b840a25250cc96b1d5d,
+        type: 2}
+      propertyPath: m_BreakTorque
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: da6212e182130b840a25250cc96b1d5d, type: 2}
   m_IsPrefabParent: 0
