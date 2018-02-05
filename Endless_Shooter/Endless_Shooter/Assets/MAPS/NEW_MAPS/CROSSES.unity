@@ -10378,7 +10378,7 @@ MonoBehaviour:
   timerMaxValue: 180
   timerMinValue: 90
   score: 0
-  karmaMax: 100
+  karmaMax: 20
   karmaMin: -100
   playerHit: {fileID: 1806595669}
   scoreText: {fileID: 415816553}
@@ -54897,7 +54897,7 @@ MonoBehaviour:
   cameraShakeStrength: 20
   cameraVibrate: 10
   cameraShakeRandomness: 40
-  playerHealth: 15
+  playerHealth: 0
 --- !u!114 &1806595670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54988,7 +54988,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -55012,7 +55012,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!1 &1808411615
 GameObject:
   m_ObjectHideFlags: 0

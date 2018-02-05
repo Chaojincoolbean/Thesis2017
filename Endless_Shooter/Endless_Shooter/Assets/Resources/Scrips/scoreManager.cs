@@ -64,17 +64,39 @@
             switch (runningPattern)
             {
                 case Timer.varingRunningSpeed:
-                    if (VRPlayArea.GetComponent<VRTK_MoveInPlace>().GetSpeed() > 0f)
+                    if (VRPlayArea != null)
                     {
-                        VRPlayArea.GetComponent<VRTK_MoveInPlace>().speedScale += Time.deltaTime;
+                        if (VRPlayArea.GetComponent<VRTK_MoveInPlace>().GetSpeed() > 0f)
+                        {
+                            VRPlayArea.GetComponent<VRTK_MoveInPlace>().speedScale += Time.deltaTime;
+                        }
+                        else if (VRPlayArea.GetComponent<VRTK_MoveInPlace>().GetSpeed() == 0f)
+                        {
+                            VRPlayArea.GetComponent<VRTK_MoveInPlace>().speedScale = 5f;
+                        }
                     }
-                    else if (VRPlayArea.GetComponent<VRTK_MoveInPlace>().GetSpeed() == 0f)
+                    else
                     {
-                        VRPlayArea.GetComponent<VRTK_MoveInPlace>().speedScale = 5f;
+                        VRPlayArea = GameObject.Find("PlayArea");
+                        if (VRPlayArea.GetComponent<VRTK_MoveInPlace>().GetSpeed() > 0f)
+                        {
+                            VRPlayArea.GetComponent<VRTK_MoveInPlace>().speedScale += Time.deltaTime;
+                        }
+                        else if (VRPlayArea.GetComponent<VRTK_MoveInPlace>().GetSpeed() == 0f)
+                        {
+                            VRPlayArea.GetComponent<VRTK_MoveInPlace>().speedScale = 5f;
+                        }
                     }
                     break;
                 case Timer.constantRunningSpeed:
-                    VRPlayArea.GetComponent<VRTK_MoveInPlace>().speedScale = 10f;
+                    if (VRPlayArea != null)
+                    {
+                        VRPlayArea.GetComponent<VRTK_MoveInPlace>().speedScale = 10f;
+                    } else
+                    {
+                        VRPlayArea = GameObject.Find("PlayArea");
+                        VRPlayArea.GetComponent<VRTK_MoveInPlace>().speedScale = 10f;
+                    }
                     break;
                 default:
                     break;
@@ -104,13 +126,13 @@
 
             //Display karma
             playerWatch.GetComponent<VRTK_ControllerTooltips>().UpdateText(VRTK_ControllerTooltips.TooltipButtons.ButtonOneTooltip, "Karma: " + (score + playerHit.playerHealth).ToString());
-            print(score - playerHit.playerHealth);
+            print(score + playerHit.playerHealth);
             //Load scene depends on how much karma player has
-            if ((score - playerHit.playerHealth) < karmaMin)
+            if ((score + playerHit.playerHealth) < karmaMin)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1, LoadSceneMode.Single);
             }
-            if((score - playerHit.playerHealth) > karmaMax)
+            if((score + playerHit.playerHealth) > karmaMax)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
             }
