@@ -10378,6 +10378,8 @@ MonoBehaviour:
   timerMaxValue: 180
   timerMinValue: 90
   score: 0
+  karmaMax: 100
+  karmaMin: -100
   playerHit: {fileID: 1806595669}
   scoreText: {fileID: 415816553}
   VRPlayArea: {fileID: 1678901180}
@@ -42266,7 +42268,7 @@ Prefab:
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 1097
+      value: 1762
       objectReference: {fileID: 0}
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
@@ -54895,7 +54897,6 @@ MonoBehaviour:
   cameraShakeStrength: 20
   cameraVibrate: 10
   cameraShakeRandomness: 40
-  sceneToLoad: CIRCLED_TREES
   playerHealth: 15
 --- !u!114 &1806595670
 MonoBehaviour:
