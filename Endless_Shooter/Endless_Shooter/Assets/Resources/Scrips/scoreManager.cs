@@ -15,6 +15,8 @@
         public float timerMaxValue = 180;
         public float timerMinValue = 90;
         public float score = 0;
+        public float karmaMax = 100f;
+        public float karmaMin = -100f;
 
         public playerHit playerHit;
         private float timeLeft;
@@ -62,17 +64,39 @@
             switch (runningPattern)
             {
                 case Timer.varingRunningSpeed:
-                    if (VRPlayArea.GetComponent<VRTK_MoveInPlace>().GetSpeed() > 0f)
+                    if (VRPlayArea != null)
                     {
-                        VRPlayArea.GetComponent<VRTK_MoveInPlace>().speedScale += Time.deltaTime;
+                        if (VRPlayArea.GetComponent<VRTK_MoveInPlace>().GetSpeed() > 0f)
+                        {
+                            VRPlayArea.GetComponent<VRTK_MoveInPlace>().speedScale += Time.deltaTime;
+                        }
+                        else if (VRPlayArea.GetComponent<VRTK_MoveInPlace>().GetSpeed() == 0f)
+                        {
+                            VRPlayArea.GetComponent<VRTK_MoveInPlace>().speedScale = 5f;
+                        }
                     }
-                    else if (VRPlayArea.GetComponent<VRTK_MoveInPlace>().GetSpeed() == 0f)
+                    else
                     {
-                        VRPlayArea.GetComponent<VRTK_MoveInPlace>().speedScale = 5f;
+                        VRPlayArea = GameObject.Find("PlayArea");
+                        if (VRPlayArea.GetComponent<VRTK_MoveInPlace>().GetSpeed() > 0f)
+                        {
+                            VRPlayArea.GetComponent<VRTK_MoveInPlace>().speedScale += Time.deltaTime;
+                        }
+                        else if (VRPlayArea.GetComponent<VRTK_MoveInPlace>().GetSpeed() == 0f)
+                        {
+                            VRPlayArea.GetComponent<VRTK_MoveInPlace>().speedScale = 5f;
+                        }
                     }
                     break;
                 case Timer.constantRunningSpeed:
-                    VRPlayArea.GetComponent<VRTK_MoveInPlace>().speedScale = 10f;
+                    if (VRPlayArea != null)
+                    {
+                        VRPlayArea.GetComponent<VRTK_MoveInPlace>().speedScale = 10f;
+                    } else
+                    {
+                        VRPlayArea = GameObject.Find("PlayArea");
+                        VRPlayArea.GetComponent<VRTK_MoveInPlace>().speedScale = 10f;
+                    }
                     break;
                 default:
                     break;
@@ -100,17 +124,18 @@
                     break;
             }
 
-            /*if (SceneManager.GetActiveScene().name == "VR_City_Single block" || SceneManager.GetActiveScene().name == "Handmade_Map")
+            //Display karma
+            playerWatch.GetComponent<VRTK_ControllerTooltips>().UpdateText(VRTK_ControllerTooltips.TooltipButtons.ButtonOneTooltip, "Karma: " + (score + playerHit.playerHealth).ToString());
+            print(score + playerHit.playerHealth);
+            //Load scene depends on how much karma player has
+            if ((score + playerHit.playerHealth) < karmaMin)
             {
-                playerWatch.GetComponent<VRTK_ControllerTooltips>().UpdateText(VRTK_ControllerTooltips.TooltipButtons.TouchpadTooltip, mintueCount.ToString() + ":" + (Mathf.Round(secondsCount)).ToString());
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1, LoadSceneMode.Single);
             }
-            else
+            if((score + playerHit.playerHealth) > karmaMax)
             {
-                playerWatch.GetComponent<VRTK_ControllerTooltips>().UpdateText(VRTK_ControllerTooltips.TooltipButtons.TouchpadTooltip, "Time Left: " + (Mathf.Round(timeLeft)).ToString());
-            }*/
-           // Debug.Log(GameObject.Find("Camera (eye)"));
-
-            playerWatch.GetComponent<VRTK_ControllerTooltips>().UpdateText(VRTK_ControllerTooltips.TooltipButtons.ButtonOneTooltip, "Score: " + score.ToString() + '\n' + "Health: " + playerHit.playerHealth.ToString());
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
+            }
 
             if (SceneManager.GetActiveScene().name == "Game_Over")
             {

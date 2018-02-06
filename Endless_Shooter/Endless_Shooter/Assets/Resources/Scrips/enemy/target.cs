@@ -89,7 +89,7 @@
 
             if (scoreManagement.GetComponent<scoreManager>() != null)
             {
-                scoreManagement.GetComponent<scoreManager>().score += value;
+                scoreManagement.GetComponent<scoreManager>().score -= value;
             }
 
             Destroy(gameObject, 1f);
