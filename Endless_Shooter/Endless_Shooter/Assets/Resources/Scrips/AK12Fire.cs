@@ -114,7 +114,7 @@
 					print(Hit.collider.GetComponent<target>().health);
 				}
 
-                if (Hit.collider.GetComponent<mannequin>() != null)
+                if (Hit.collider.GetComponent<mannequinBase>() != null)
                 {
                     print(Hit.collider.name);
                     Hit.collider.GetComponent<target>().health -= damage;
