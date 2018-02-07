@@ -56,7 +56,7 @@
                     anim.SetBool("isMoving", true);
                     transform.DORotateQuaternion(randomRotation, 0.5f);
                     //transform.rotation = randomRotation;
-                    transform.position = new Vector3(transform.position.x, transform.position.y + 0.05f, transform.position.z);
+                    //transform.position = new Vector3(transform.position.x, transform.position.y + 0.05f, transform.position.z);
                     //Set a randomized timer to swich between cases
                     timer = Random.Range(1f, 3f);
                     break;
