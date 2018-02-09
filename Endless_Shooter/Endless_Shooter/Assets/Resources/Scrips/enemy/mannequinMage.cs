@@ -35,7 +35,7 @@
             base.Update();
             //Decrease timer each frame, switch state once the timer reaches 0
             timer -= Time.deltaTime;
-            if (timer <= 0)
+            if (timer <= 0 && isAttacking == false)
             {
                 s = Random.Range(0, States.GetNames(typeof(States)).Length - 1);
                 print(s);
@@ -57,21 +57,32 @@
             switch (currentState)
             {
                 case States.idle:
+                    if (anim.applyRootMotion == false)
+                    {
+                        anim.applyRootMotion = true;
+                    }
                     anim.SetBool("isMoving", false);
                     //Set a randomized timer to swich between cases
                     timer = Random.Range(1f, 3f);
                     break;
                 case States.walk:
+                    if (anim.applyRootMotion == false)
+                    {
+                        anim.applyRootMotion = true;
+                    }
                     Quaternion randomRotation = Quaternion.Euler(0, Random.Range(0, 180), 0);
                     anim.SetBool("isMoving", true);
-                    transform.DORotateQuaternion(randomRotation, 0.5f);
-
+                    transform.DORotateQuaternion(randomRotation, 0.5f).SetId<Tweener>("RandomMovement");
+                    print("enter");
                     //Set a randomized timer to swich between cases
                     timer = Random.Range(1f, 3f);
                     break;
                 case States.attack:
-
+                    anim.applyRootMotion = false;
                     anim.SetTrigger("isAttacking");
+                    DOTween.Pause("RandomMovement");
+                    //transform.LookAt(player.transform.position);
+                    transform.DOLookAt(player.position, 0.5f, AxisConstraint.Y);
                     break;
             }
         }
@@ -79,7 +90,7 @@
         public void AttackAnimationIsEnded()
         {
             isAttacking = false;
-            print("enter");
+            
         }
 
     }
