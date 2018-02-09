@@ -78,6 +78,11 @@
                     timer = Random.Range(1f, 3f);
                     break;
                 case States.attack:
+                    //Player null check
+                    if (!player)
+                    {
+                        player = GameObject.Find("[VRTK][AUTOGEN][HeadsetColliderContainer]").transform;
+                    }
                     anim.applyRootMotion = false;
                     anim.SetTrigger("isAttacking");
                     DOTween.Pause("RandomMovement");
