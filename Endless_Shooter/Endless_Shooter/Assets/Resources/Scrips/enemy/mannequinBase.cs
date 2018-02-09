@@ -8,10 +8,12 @@
     {
         public GameObject[] drop;
         public float value = 20f;
+        public float attackRange = 20f;
 
         protected Transform player;
         protected Animator anim;
         protected GameObject scoreManagement;
+        protected float distanceToPlayer;
         protected float _health = 5f;
         public float health
         {
@@ -37,7 +39,8 @@
         // Update is called once per frame
         public virtual void Update()
         {
-
+            distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
+            print(distanceToPlayer);
         }
 
         void Die()

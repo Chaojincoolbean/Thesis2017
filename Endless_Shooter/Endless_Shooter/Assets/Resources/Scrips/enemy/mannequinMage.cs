@@ -15,6 +15,7 @@
         public GameObject projectile;
         public GameObject muzzle;
         public States states;
+        private bool isAttacking = false;
         private int s;
         private float timer;
         // Use this for initialization
@@ -31,6 +32,7 @@
         // Update is called once per frame
         public override void Update()
         {
+            base.Update();
             //Decrease timer each frame, switch state once the timer reaches 0
             timer -= Time.deltaTime;
             if (timer <= 0)
@@ -38,6 +40,13 @@
                 s = Random.Range(0, States.GetNames(typeof(States)).Length - 1);
                 print(s);
                 states = (States)s;
+                StateMachine(states);
+            }
+
+            if (distanceToPlayer <= attackRange && isAttacking==false)
+            {
+                isAttacking = true;
+                states = (States)2;
                 StateMachine(states);
             }
         }
@@ -62,6 +71,7 @@
                     break;
                 case States.attack:
 
+                    anim.SetTrigger("isAttacking");
                     break;
             }
         }
