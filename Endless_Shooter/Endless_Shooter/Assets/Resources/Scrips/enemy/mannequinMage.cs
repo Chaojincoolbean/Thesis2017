@@ -15,6 +15,7 @@
         public GameObject projectile;
         public GameObject muzzle;
         public States states;
+
         private bool isAttacking = false;
         private int s;
         private float timer;
@@ -26,7 +27,6 @@
             print(s);
             states = (States)s;
             StateMachine(states);
-   
         }
 
         // Update is called once per frame
@@ -49,6 +49,7 @@
                 states = (States)2;
                 StateMachine(states);
             }
+
         }
 
         protected void StateMachine(States currentState)
@@ -64,8 +65,7 @@
                     Quaternion randomRotation = Quaternion.Euler(0, Random.Range(0, 180), 0);
                     anim.SetBool("isMoving", true);
                     transform.DORotateQuaternion(randomRotation, 0.5f);
-                    //transform.rotation = randomRotation;
-                    //transform.position = new Vector3(transform.position.x, transform.position.y + 0.05f, transform.position.z);
+
                     //Set a randomized timer to swich between cases
                     timer = Random.Range(1f, 3f);
                     break;
@@ -74,6 +74,12 @@
                     anim.SetTrigger("isAttacking");
                     break;
             }
+        }
+
+        public void AttackAnimationIsEnded()
+        {
+            isAttacking = false;
+            print("enter");
         }
 
     }

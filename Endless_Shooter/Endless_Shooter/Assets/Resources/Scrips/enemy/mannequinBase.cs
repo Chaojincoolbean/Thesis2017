@@ -39,8 +39,12 @@
         // Update is called once per frame
         public virtual void Update()
         {
-            distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
-            print(distanceToPlayer);
+            if (player != null)
+            {
+                distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
+            }
+
+            //print(distanceToPlayer);
         }
 
         void Die()
