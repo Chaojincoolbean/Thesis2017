@@ -1,0 +1,204 @@
+fileFormatVersion: 2
+guid: 4c26ecb4743bcda4795f94c2b34e9abf
+timeCreated: 1518003195
+licenseType: Store
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: avant bras
+    100002: avant bras.2
+    100004: body
+    100006: Bolt
+    100008: brasD
+    100010: brasG
+    100012: "Cam\xE9ra"
+    100014: //RootNode
+    100016: M249
+    100018: Magazin
+    100020: Magazin_1
+    100022: Magazin_10
+    100024: Magazin_11
+    100026: Magazin_12
+    100028: Magazin_13
+    100030: Magazin_2
+    100032: Magazin_3
+    100034: Magazin_4
+    100036: Magazin_5
+    100038: Magazin_6
+    100040: Magazin_7
+    100042: Magazin_8
+    100044: Magazin_9
+    100046: Slide
+    400000: avant bras
+    400002: avant bras.2
+    400004: body
+    400006: Bolt
+    400008: brasD
+    400010: brasG
+    400012: "Cam\xE9ra"
+    400014: //RootNode
+    400016: M249
+    400018: Magazin
+    400020: Magazin_1
+    400022: Magazin_10
+    400024: Magazin_11
+    400026: Magazin_12
+    400028: Magazin_13
+    400030: Magazin_2
+    400032: Magazin_3
+    400034: Magazin_4
+    400036: Magazin_5
+    400038: Magazin_6
+    400040: Magazin_7
+    400042: Magazin_8
+    400044: Magazin_9
+    400046: Slide
+    2000000: "Cam\xE9ra"
+    2300000: avant bras
+    2300002: avant bras.2
+    2300004: Bolt
+    2300006: brasD
+    2300008: brasG
+    2300010: M249
+    2300012: Magazin
+    2300014: Magazin_1
+    2300016: Magazin_10
+    2300018: Magazin_11
+    2300020: Magazin_12
+    2300022: Magazin_13
+    2300024: Magazin_2
+    2300026: Magazin_3
+    2300028: Magazin_4
+    2300030: Magazin_5
+    2300032: Magazin_6
+    2300034: Magazin_7
+    2300036: Magazin_8
+    2300038: Magazin_9
+    2300040: Slide
+    3300000: avant bras
+    3300002: avant bras.2
+    3300004: Bolt
+    3300006: brasD
+    3300008: brasG
+    3300010: M249
+    3300012: Magazin
+    3300014: Magazin_1
+    3300016: Magazin_10
+    3300018: Magazin_11
+    3300020: Magazin_12
+    3300022: Magazin_13
+    3300024: Magazin_2
+    3300026: Magazin_3
+    3300028: Magazin_4
+    3300030: Magazin_5
+    3300032: Magazin_6
+    3300034: Magazin_7
+    3300036: Magazin_8
+    3300038: Magazin_9
+    3300040: Slide
+    4300000: M249
+    4300002: Magazin
+    4300004: Magazin_1
+    4300006: Magazin_2
+    4300008: Magazin_3
+    4300010: Magazin_4
+    4300012: Magazin_5
+    4300014: Magazin_6
+    4300016: Magazin_7
+    4300018: Magazin_8
+    4300020: Magazin_9
+    4300022: Magazin_10
+    4300024: Magazin_11
+    4300026: Magazin_12
+    4300028: Magazin_13
+    4300030: Slide
+    4300032: Bolt
+    4300034: brasD
+    4300036: avant bras
+    4300038: brasG
+    4300040: avant bras.2
+    7400000: C4D Animation Take
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 9a040df8a2aa7e64487ca3590d619401, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
