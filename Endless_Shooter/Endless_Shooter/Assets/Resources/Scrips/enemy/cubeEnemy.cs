@@ -21,7 +21,10 @@
         // Update is called once per frame
         public override void Update()
         {
-            gameObject.transform.LookAt(player);
+            if (player != null)
+            {
+                gameObject.transform.LookAt(player.transform);
+            }
             g += Time.deltaTime;
             if ((SceneManager.GetActiveScene().name != "VR_City_Single block") && g >= waitPeriod)
 
@@ -29,7 +32,7 @@
                 //print ("correct scene");
                 f += Time.deltaTime;
                 //print (f);
-                if (f >= attackInterval && Vector3.Distance(player.position, transform.position)<fireDistance)
+                if (f >= attackInterval && Vector3.Distance(player.transform.position, transform.position)<fireDistance)
                 {
                     StartCoroutine(attackPattern);
                     f = 0f;

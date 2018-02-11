@@ -24,7 +24,7 @@
         protected AudioSource explosionSource;
         protected GameObject scoreManagement;
         //protected Component managerOfScore;
-        protected Transform player;
+        protected GameObject player;
         protected Transform muzzle;
         protected float f = 0f;
         protected float g = 0f;
@@ -58,7 +58,7 @@
         // Update is called once per frame
         public virtual void Update()
         {
-            gameObject.transform.LookAt(player);
+            gameObject.transform.LookAt(player.transform);
             g += Time.deltaTime;
 			if ((SceneManager.GetActiveScene().name != "VR_City_Single block") && g >= waitPeriod)
 
@@ -87,9 +87,25 @@
             explosionSource.Play();
             Debug.Log(explosionSource.isPlaying);
 
+            //Sent karma value to score manager
             if (scoreManagement.GetComponent<scoreManager>() != null)
             {
                 scoreManagement.GetComponent<scoreManager>().score -= value;
+            }
+            else
+            {
+                scoreManagement = GameObject.Find("scoreManager");
+                scoreManagement.GetComponent<scoreManager>().score -= value;
+            }
+            //Sent karma value to player health for level traverse purpose
+            if (player.transform.parent.GetComponent<playerHit>() != null)
+            {
+                player.transform.parent.GetComponent<playerHit>().playerHealth -= value;
+            }
+            else
+            {
+                player = GameObject.Find("[VRTK][AUTOGEN][HeadsetColliderContainer]");
+                player.transform.parent.GetComponent<playerHit>().playerHealth -= value;
             }
 
             Destroy(gameObject, 1f);
@@ -97,7 +113,7 @@
 
         public void TargetLockon()
         {
-            player = GameObject.Find("[VRTK][AUTOGEN][HeadsetColliderContainer]").transform;
+            player = GameObject.Find("[VRTK][AUTOGEN][HeadsetColliderContainer]");
         }
 
 		IEnumerator FirePelletsAtPlayer()

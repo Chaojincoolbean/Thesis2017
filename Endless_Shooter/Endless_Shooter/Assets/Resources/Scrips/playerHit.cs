@@ -12,6 +12,8 @@ public class playerHit : MonoBehaviour {
     public float cameraShakeStrength = 5f;
     public int cameraVibrate = 5;
     public float cameraShakeRandomness = 40f;
+    public float karmaMax = 100f;
+    public float karmaMin = -100f;
 
     public float playerHealth = 100f;
 
@@ -29,9 +31,16 @@ public class playerHit : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        //print(VRPlayArea.GetComponent<>);
-	}
+        //Load scene depends on how much karma player has
+        if (playerHealth < karmaMin)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1, LoadSceneMode.Single);
+        }
+        if (playerHealth > karmaMax)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
+        }
+    }
 
     public void CameraShake()
     {

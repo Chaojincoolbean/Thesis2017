@@ -15,10 +15,7 @@
         public float timerMaxValue = 180;
         public float timerMinValue = 90;
         public float score = 0;
-        public float karmaMax = 100f;
-        public float karmaMin = -100f;
 
-        public playerHit playerHit;
         private float timeLeft;
         private float secondsCount;
         private int mintueCount;
@@ -51,7 +48,6 @@
             //Invoke("GetTheFuckingText", 0.2f);
             VRPlayArea = GameObject.Find("PlayArea");
             // Debug.Log(GameObject.Find("Camera (eye)"));
-            // playerHit = GameObject.Find("Camera (eye)").GetComponent<playerHit>();
 
         }
 
@@ -125,17 +121,8 @@
             }
 
             //Display karma
-            playerWatch.GetComponent<VRTK_ControllerTooltips>().UpdateText(VRTK_ControllerTooltips.TooltipButtons.ButtonOneTooltip, "Karma: " + (score + playerHit.playerHealth).ToString());
-            print(score + playerHit.playerHealth);
-            //Load scene depends on how much karma player has
-            if ((score + playerHit.playerHealth) < karmaMin)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1, LoadSceneMode.Single);
-            }
-            if((score + playerHit.playerHealth) > karmaMax)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
-            }
+            playerWatch.GetComponent<VRTK_ControllerTooltips>().UpdateText(VRTK_ControllerTooltips.TooltipButtons.ButtonOneTooltip, "Karma: " + score.ToString());
+            //print(score);
 
             if (SceneManager.GetActiveScene().name == "Game_Over")
             {
@@ -143,13 +130,6 @@
                 scoreText.text = "Body desecrated" + '\n' + "Your Score: " + score;
             }
 
-            /*if (GameObject.FindGameObjectsWithTag("enemy").Length < 5)
-            {
-                print("Enemy eliminated");
-                isGameEnd = true;
-                scoreText.text="Your Time: " + '\n' + mintueCount + ":" + Mathf.RoundToInt(secondsCount);
-                //Time.timeScale=0f;
-            }*/
 
             if (timeLeft <= 0f)
             {
