@@ -16,7 +16,7 @@
         public GameObject muzzle;
         public States states;
 
-        private bool isAttacking = false;
+        [SerializeField]private bool isAttacking = false;
         private int s;
         private float timer;
         // Use this for initialization
@@ -35,6 +35,7 @@
             base.Update();
             //Decrease timer each frame, switch state once the timer reaches 0
             timer -= Time.deltaTime;
+            print(timer);
             if (timer <= 0 && isAttacking == false)
             {
                 s = Random.Range(0, States.GetNames(typeof(States)).Length - 1);
@@ -85,7 +86,7 @@
                     }
                     anim.applyRootMotion = false;
                     anim.SetTrigger("isAttacking");
-                    DOTween.Pause("RandomMovement");
+                    //DOTween.Pause("RandomMovement");
                     //transform.LookAt(player.transform.position);
                     transform.DOLookAt(player.position, 0.5f, AxisConstraint.Y);
                     break;
