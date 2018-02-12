@@ -96,6 +96,12 @@
                     Hit.collider.GetComponent<target>().health -= damage;
                     print(Hit.collider.GetComponent<target>().health);
                 }
+                if (Hit.collider.GetComponent<mannequinBase>() != null)
+                {
+                    print(Hit.collider.name);
+                    Hit.collider.GetComponent<target>().health -= damage;
+                    print(Hit.collider.GetComponent<target>().health);
+                }
 
                 Instantiate(impactVFX, Hit.point, Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360)));
 

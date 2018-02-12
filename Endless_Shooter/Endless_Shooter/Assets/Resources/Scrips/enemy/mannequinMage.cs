@@ -35,7 +35,7 @@
             base.Update();
             //Decrease timer each frame, switch state once the timer reaches 0
             timer -= Time.deltaTime;
-            print(timer);
+            //print(timer);
             if (timer <= 0 && isAttacking == false)
             {
                 s = Random.Range(0, States.GetNames(typeof(States)).Length - 1);
