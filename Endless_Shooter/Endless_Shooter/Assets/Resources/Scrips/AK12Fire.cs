@@ -3,6 +3,7 @@
 	using System.Collections.Generic;
 	using UnityEngine;
 	using DG.Tweening;
+    using RootMotion.Dynamics;
 
 		public class AK12Fire : VRTK_InteractableObject {
 		public GameObject muzzleFlash;
@@ -17,6 +18,8 @@
         public float recoil = 1f;
         public float sway = 1f;
         public float ejectForce = 0.03f;
+        public float unpin = 20f;
+        public float force = 40000f;
 
         public Vector3 boltMoveBackPos;
         public Vector3 boltResetPos;
@@ -101,8 +104,16 @@
 
 			if (Physics.Raycast(beamRay, out Hit, range))
 			{
-				//line.SetPosition(1, Hit.point);
-				if (Hit.collider.GetComponent<Rigidbody>() != null)
+                //Add physic force to puppet and damage the mannequin enemy
+                if (Hit.collider.attachedRigidbody.GetComponent<MuscleCollisionBroadcaster>() != null)
+                {
+                    Hit.collider.attachedRigidbody.GetComponent<MuscleCollisionBroadcaster>().Hit(unpin, beamRay.direction * force, Hit.point);
+                    print(Hit.collider.transform.parent.parent.GetChild(2).name);
+                    Hit.collider.transform.parent.parent.GetChild(2).GetComponent<mannequinBase>().health -= damage;
+                }
+
+                //line.SetPosition(1, Hit.point);
+                if (Hit.collider.GetComponent<Rigidbody>() != null)
 				{
 					Hit.collider.GetComponent<Rigidbody>().AddExplosionForce(5f, Hit.point, 3f, 2f, ForceMode.Impulse);
 				}
@@ -113,13 +124,6 @@
 					Hit.collider.GetComponent<target> ().health -= damage;
 					print(Hit.collider.GetComponent<target>().health);
 				}
-
-                if (Hit.collider.GetComponent<mannequinBase>() != null)
-                {
-                    print(Hit.collider.name);
-                    Hit.collider.GetComponent<target>().health -= damage;
-                    print(Hit.collider.GetComponent<target>().health);
-                }
 
 				Instantiate (impactVFX, Hit.point, Quaternion.Euler(Random.Range(0,360), Random.Range(0, 360), Random.Range(0, 360)));
 

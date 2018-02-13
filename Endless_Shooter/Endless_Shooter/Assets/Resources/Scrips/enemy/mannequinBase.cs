@@ -3,6 +3,7 @@
     using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
+    using RootMotion.Dynamics;
 
     public class mannequinBase : MonoBehaviour
     {
@@ -15,6 +16,7 @@
         protected GameObject scoreManagement;
         protected float distanceToPlayer;
         protected float _health = 5f;
+        protected bool isPlayerFound = false;
         public float health
         {
             get { return _health; }
@@ -53,13 +55,14 @@
             {
                 scoreManagement.GetComponent<scoreManager>().score -= value;
             }
-            anim.enabled = false;
+            gameObject.transform.parent.GetChild(1).GetComponent<PuppetMaster>().Kill();
             GameObject droppedItem = Instantiate(drop[Random.Range(0, drop.Length)], transform.position, Quaternion.identity) as GameObject;
         }
 
         public void TargetLockon()
         {
             player = GameObject.Find("[VRTK][AUTOGEN][HeadsetColliderContainer]").transform;
+            isPlayerFound = true;
         }
     }
 }

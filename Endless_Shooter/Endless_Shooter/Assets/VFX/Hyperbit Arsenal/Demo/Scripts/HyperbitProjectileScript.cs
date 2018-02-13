@@ -7,6 +7,8 @@ public class HyperbitProjectileScript : MonoBehaviour
     public GameObject projectileParticle;
     public GameObject muzzleParticle;
     public GameObject[] trailParticles;
+    [SerializeField] private GameObject playerCamera;
+    public float damage = 10f;
     [HideInInspector]
     public Vector3 impactNormal; //Used to rotate impactparticle.
  
@@ -20,6 +22,7 @@ public class HyperbitProjectileScript : MonoBehaviour
         muzzleParticle = Instantiate(muzzleParticle, transform.position, transform.rotation) as GameObject;
         Destroy(muzzleParticle, 1.5f); // Lifetime of muzzle effect.
 		}
+        playerCamera = GameObject.Find("Camera (eye)");
     }
  
     void OnCollisionEnter(Collision hit)
@@ -60,6 +63,18 @@ public class HyperbitProjectileScript : MonoBehaviour
                 trail.transform.SetParent(null);
                 Destroy(trail.gameObject, 2);
             }
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other.name);
+        if (other.name == "[VRTK][AUTOGEN][HeadsetColliderContainer]" || other.name == "[VRTK][AUTOGEN][BodyColliderContainer]")
+        {
+            print("Player Hit");
+            playerCamera.GetComponent<playerHit>().PlayHitSound();
+            playerCamera.GetComponent<playerHit>().CameraShake();
+            playerCamera.GetComponent<playerHit>().PlayerHealthDecrease(damage);
         }
     }
 }

@@ -1580,8 +1580,8 @@ GameObject:
   - component: {fileID: 124000012904963108}
   - component: {fileID: 114334720813899478}
   - component: {fileID: 114575997934402240}
-  - component: {fileID: 82834615941654258}
-  - component: {fileID: 114148207308767178}
+  - component: {fileID: 82934879715447808}
+  - component: {fileID: 114205936755413330}
   m_Layer: 0
   m_Name: Camera (eye)
   m_TagString: MainCamera
@@ -3413,7 +3413,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BackGroundColor: {r: 0.5058824, g: 0.5058824, b: 0.5058824, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -5139,7 +5139,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!82 &82834615941654258
+--- !u!82 &82934879715447808
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -5194,7 +5194,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -5218,7 +5218,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
 --- !u!92 &92000011644917204
 Behaviour:
   m_ObjectHideFlags: 1
@@ -6637,20 +6637,6 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
---- !u!114 &114148207308767178
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014132296520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bca9ccf900ccc84c887d783321d27e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _head: {fileID: 4000010242415096}
-  _ears: {fileID: 4000013003015800}
-  wireframe: 0
 --- !u!114 &114166232827727896
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6725,6 +6711,20 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114205936755413330
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014132296520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bca9ccf900ccc84c887d783321d27e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _head: {fileID: 4000010242415096}
+  _ears: {fileID: 4000013003015800}
+  wireframe: 0
 --- !u!114 &114220405095341134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7029,7 +7029,7 @@ MonoBehaviour:
   cameraShakeRandomness: 40
   karmaMax: 100
   karmaMin: -100
-  playerHealth: 0
+  playerHealth: 5
 --- !u!114 &114751689080497896
 MonoBehaviour:
   m_ObjectHideFlags: 1

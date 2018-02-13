@@ -44,7 +44,7 @@
                 StateMachine(states);
             }
 
-            if (distanceToPlayer <= attackRange && isAttacking==false)
+            if (distanceToPlayer <= attackRange && isPlayerFound==true && isAttacking==false)
             {
                 isAttacking = true;
                 states = (States)2;
@@ -74,7 +74,6 @@
                     Quaternion randomRotation = Quaternion.Euler(0, Random.Range(0, 180), 0);
                     anim.SetBool("isMoving", true);
                     transform.DORotateQuaternion(randomRotation, 0.5f).SetId<Tweener>("RandomMovement");
-                    print("enter");
                     //Set a randomized timer to swich between cases
                     timer = Random.Range(1f, 3f);
                     break;
@@ -95,8 +94,14 @@
 
         public void AttackAnimationIsEnded()
         {
-            isAttacking = false;
-            
+            isAttacking = false;  
+        }
+
+        public void LaunchProjectile()
+        {
+            GameObject launchedProjectile = Instantiate(projectile, muzzle.transform.position, muzzle.transform.rotation);
+            //launchedProjectile.transform.LookAt(player.transform);
+            launchedProjectile.GetComponent<Rigidbody>().AddForce(launchedProjectile.transform.forward * 1000f);
         }
 
     }
