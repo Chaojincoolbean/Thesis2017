@@ -15,7 +15,7 @@
         protected Animator anim;
         protected GameObject scoreManagement;
         protected float distanceToPlayer;
-        protected float _health = 5f;
+        protected float _health = 100f;
         protected bool isPlayerFound = false;
         public float health
         {
@@ -56,7 +56,7 @@
                 scoreManagement.GetComponent<scoreManager>().score -= value;
             }
             gameObject.transform.parent.GetChild(1).GetComponent<PuppetMaster>().Kill();
-            GameObject droppedItem = Instantiate(drop[Random.Range(0, drop.Length)], transform.position, Quaternion.identity) as GameObject;
+            GameObject droppedItem = Instantiate(drop[Random.Range(0, drop.Length-1)], transform.position, Quaternion.identity) as GameObject;
         }
 
         public void TargetLockon()

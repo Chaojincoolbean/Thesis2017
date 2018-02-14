@@ -1,14 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
+using VRTK;
 
 public class spawnEnemy : MonoBehaviour
 {
     public GameObject enemy;
+    public Transform[] spawns;
     public float timeToNextSpawn;
     // Use this for initialization
     void Start()
     {
-        InvokeRepeating("Spawn", 5f, timeToNextSpawn);
+        InvokeRepeating("SpawnEnemy", 5f, timeToNextSpawn);
     }
 
     // Update is called once per frame
@@ -17,8 +19,9 @@ public class spawnEnemy : MonoBehaviour
 
     }
 
-    void Spawn()
+    void SpawnEnemy()
     {
-        Instantiate(enemy, transform.position, Quaternion.identity);
+        GameObject spwanedEnemy = Instantiate(enemy, spawns[Random.Range(0,spawns.Length-1)].position, Quaternion.identity) as GameObject;
+        spwanedEnemy.transform.GetChild(2).GetComponent<mannequinMage>().projectileSpeed = Random.Range(500f, 3000f);
     }
 }

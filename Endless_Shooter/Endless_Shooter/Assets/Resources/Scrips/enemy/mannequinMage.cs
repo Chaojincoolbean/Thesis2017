@@ -42,6 +42,8 @@
             print(s);
             states = (States)s;
             StateMachine(states);
+            int a = Random.Range(0, AttackPatterns.GetNames(typeof(AttackPatterns)).Length);
+            attackPattern = (AttackPatterns)a;
 
             //Load beam assets from Resources folder
             beam = Resources.Load("VFX/Hyperbit Arsenal/Prefabs/Beam/BasicBeam/LaserBeamYellow") as GameObject;
