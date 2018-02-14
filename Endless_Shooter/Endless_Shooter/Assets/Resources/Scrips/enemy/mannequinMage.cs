@@ -162,7 +162,7 @@
                     break;
                 case AttackPatterns.rapidFire:
                     {
-                        StartCoroutine(Consecutive(10f, 0.02f));
+                        StartCoroutine(Consecutive(10f, 0.05f));
                     }
                     break;
             }
@@ -174,6 +174,8 @@
             {
                 GameObject launchedProjectile = Instantiate(projectile[1], muzzle.transform.position, muzzle.transform.rotation);
                 launchedProjectile.GetComponent<Rigidbody>().AddForce(launchedProjectile.transform.forward * projectileSpeed);
+                Debug.Log("firing bullet number " + i + " at time " + Time.time);
+                //if (i == 3) Debug.Break();
                 yield return new WaitForSeconds(timeToNextProjectile);
             }
         }
