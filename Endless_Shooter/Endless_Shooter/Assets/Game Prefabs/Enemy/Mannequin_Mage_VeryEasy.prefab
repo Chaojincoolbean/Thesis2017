@@ -493,7 +493,7 @@ GameObject:
   - component: {fileID: 4025092172121430}
   - component: {fileID: 95096607648715274}
   - component: {fileID: 114193138363639216}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Mannequin_5_3_Optimized
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -739,7 +739,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4814886523775594}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1918,9 +1918,15 @@ MonoBehaviour:
   drop: []
   value: 20
   attackRange: 20
-  projectile: {fileID: 191804, guid: 03a244ed98279614e84a9c2775eafc7a, type: 2}
+  projectile:
+  - {fileID: 191804, guid: 03a244ed98279614e84a9c2775eafc7a, type: 2}
+  - {fileID: 191804, guid: 226f8603f443ffc4a85cf03b7dac47a5, type: 2}
+  - {fileID: 191804, guid: 428c4db6955cc6548aef2737a4fd818b, type: 2}
   muzzle: {fileID: 1939611726258242}
   states: 0
+  attackPattern: 0
+  spreadFactor: 0.1
+  projectileSpeed: 1000
   isAttacking: 0
 --- !u!114 &114567051514215936
 MonoBehaviour:
