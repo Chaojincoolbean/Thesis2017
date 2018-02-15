@@ -22,7 +22,7 @@
         //private Text timerText;
         //public Text finalScoreText;
         private GameObject playerWatch;
-        private scoreManager managerInstance;
+        private static scoreManager managerInstance;
         public Text scoreText;
         [SerializeField]private GameObject VRPlayArea;
         bool isGameEnd = false;
@@ -39,10 +39,27 @@
             }
         }
 
+        void OnEnable()
+        {
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+
+        // called second
+        void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            playerWatch = GameObject.Find("LeftControllerTooltips");
+        }
+
+
+        // called when the game is terminated
+        void OnDisable()
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
+
         // Use this for initialization
         void Start() {
             timeLeft = Random.Range(timerMinValue, timerMaxValue);
-            playerWatch = GameObject.Find("LeftControllerTooltips");
             //timerText = GameObject.Find ("Timer").GetComponent<Text> ();
             Invoke("LoadGameOverScene", timeLeft + 0.2f);
             //Invoke("GetTheFuckingText", 0.2f);

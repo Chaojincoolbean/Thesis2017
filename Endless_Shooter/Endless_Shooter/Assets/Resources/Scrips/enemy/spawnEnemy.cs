@@ -21,7 +21,7 @@ public class spawnEnemy : MonoBehaviour
 
     void SpawnEnemy()
     {
-        GameObject spwanedEnemy = Instantiate(enemy, spawns[Random.Range(0,spawns.Length-1)].position, Quaternion.identity) as GameObject;
+        GameObject spwanedEnemy = Instantiate(enemy, spawns[Random.Range(0,spawns.Length)].position, Quaternion.identity) as GameObject;
         spwanedEnemy.transform.GetChild(2).GetComponent<mannequinMage>().projectileSpeed = Random.Range(500f, 3000f);
     }
 }

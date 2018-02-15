@@ -87,18 +87,20 @@
 
             if (Physics.Raycast(beamRay, out Hit, range))
             {
-                //Add physic force to puppet
-                if (Hit.collider.attachedRigidbody.GetComponent<MuscleCollisionBroadcaster>() != null)
-                {
-                    Hit.collider.attachedRigidbody.GetComponent<MuscleCollisionBroadcaster>().Hit(unpin, beamRay.direction * force, Hit.point);
-                    print(Hit.collider.transform.parent.parent.GetChild(2).name);
-                    Hit.collider.transform.parent.parent.GetChild(2).GetComponent<mannequinBase>().health -= damage;
-                }
 
                 //line.SetPosition(1, Hit.point);
                 if (Hit.collider.GetComponent<Rigidbody>() != null)
                 {
+
                     Hit.collider.GetComponent<Rigidbody>().AddExplosionForce(5f, Hit.point, 3f, 2f, ForceMode.Impulse);
+
+                    //Add physic force to puppet
+                    if (Hit.collider.attachedRigidbody.GetComponent<MuscleCollisionBroadcaster>() != null)
+                    {
+                        Hit.collider.attachedRigidbody.GetComponent<MuscleCollisionBroadcaster>().Hit(unpin, beamRay.direction * force, Hit.point);
+                        print(Hit.collider.transform.parent.parent.GetChild(2).name);
+                        Hit.collider.transform.parent.parent.GetChild(2).GetComponent<mannequinBase>().health -= damage;
+                    }
                 }
 
                 if (Hit.collider.GetComponent<target>() != null)
