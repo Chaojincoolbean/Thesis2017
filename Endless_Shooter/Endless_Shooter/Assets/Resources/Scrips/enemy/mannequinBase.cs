@@ -54,9 +54,14 @@
             if (scoreManagement.GetComponent<scoreManager>() != null)
             {
                 scoreManagement.GetComponent<scoreManager>().score -= value;
+                player.GetComponent<playerHit>().playerHealth -= value;
             }
             gameObject.transform.parent.GetChild(1).GetComponent<PuppetMaster>().Kill();
-            GameObject droppedItem = Instantiate(drop[Random.Range(0, drop.Length-1)], transform.position, Quaternion.identity) as GameObject;
+
+            if (drop.Length > 0)
+            {
+                GameObject droppedItem = Instantiate(drop[Random.Range(0, drop.Length)], transform.position, Quaternion.identity) as GameObject;
+            }
         }
 
         public void TargetLockon()
