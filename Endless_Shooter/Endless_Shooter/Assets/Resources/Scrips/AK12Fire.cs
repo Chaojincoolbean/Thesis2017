@@ -88,7 +88,6 @@
             //print ("gun fired");
 
             //line.enabled = true;
-            VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(controllerEvents.gameObject), 1);
             if (magazineCapacity <= 0)
             {
                 CancelInvoke();
@@ -147,7 +146,8 @@
             AK12Source.clip = rifleClip[Random.Range(1,rifleClip.Length-1)];
 			AK12Source.Play ();
             magazineCapacity -= 1f;
-		}
+            VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(controllerEvents.gameObject), 1);
+        }
 	
 		private void SlideRetract() {
 			bolt.DOLocalMove (boltResetPos, 0.07f);

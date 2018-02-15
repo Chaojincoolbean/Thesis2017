@@ -17,6 +17,8 @@
         protected float distanceToPlayer;
         protected float _health = 100f;
         protected bool isPlayerFound = false;
+        protected GameObject playerCamera;
+        protected bool dead = false;
         public float health
         {
             get { return _health; }
@@ -51,22 +53,36 @@
 
         void Die()
         {
-            if (scoreManagement.GetComponent<scoreManager>() != null)
+            if (dead == false) //Alone with line 78, If this enemy has already dead it cannot "die again" and give player more points
             {
-                scoreManagement.GetComponent<scoreManager>().score -= value;
-                player.GetComponent<playerHit>().playerHealth -= value;
-            }
-            gameObject.transform.parent.GetChild(1).GetComponent<PuppetMaster>().Kill();
+                if (scoreManagement.GetComponent<scoreManager>() != null)
+                {
+                    scoreManagement.GetComponent<scoreManager>().score -= value;
+                    if (playerCamera != null)
+                    {
+                        playerCamera.GetComponent<playerHit>().playerHealth -= value;
+                    }
+                    else
+                    {
+                        playerCamera = GameObject.Find("Camera (eye)");
+                        playerCamera.GetComponent<playerHit>().playerHealth -= value;
+                    }
+                }
+                gameObject.transform.parent.GetChild(1).GetComponent<PuppetMaster>().Kill();
 
-            if (drop.Length > 0)
-            {
-                GameObject droppedItem = Instantiate(drop[Random.Range(0, drop.Length)], transform.position, Quaternion.identity) as GameObject;
+                if (drop.Length > 0)
+                {
+                    GameObject droppedItem = Instantiate(drop[Random.Range(0, drop.Length)], transform.position, Quaternion.identity) as GameObject;
+                }
+
+                dead = true;
             }
         }
 
         public void TargetLockon()
         {
             player = GameObject.Find("[VRTK][AUTOGEN][HeadsetColliderContainer]").transform;
+            playerCamera = GameObject.Find("Camera (eye)");
             isPlayerFound = true;
         }
     }
