@@ -34,12 +34,23 @@ public class meleeWeapons : VRTK_InteractableObject
             //If this rigidbody is a puppet muscle
             if (collision.collider.attachedRigidbody.GetComponent<MuscleCollisionBroadcaster>() != null)
             {
+                //Damage the mannequin enemy depend on where the player hit and print its remaining health
+                print(collision.collider.name);
+                if(collision.collider.name == "Head")
+                {
+                    collision.collider.transform.parent.parent.GetChild(2).GetComponent<mannequinBase>().health -= damage * 100f;
+                }else if (collision.collider.name == "Chest")
+                {
+                    collision.collider.transform.parent.parent.GetChild(2).GetComponent<mannequinBase>().health -= damage * 100f;
+                }
+                else
+                {
+                    collision.collider.transform.parent.parent.GetChild(2).GetComponent<mannequinBase>().health -= damage;
+                }
+                print(collision.collider.transform.parent.parent.GetChild(2).GetComponent<mannequinBase>().health);
                 //Sever the limb
                 var broadcaster = collision.collider.attachedRigidbody.GetComponent<MuscleCollisionBroadcaster>();
                 broadcaster.puppetMaster.RemoveMuscleRecursive(broadcaster.puppetMaster.muscles[broadcaster.muscleIndex].joint, true, true, removeMuscleMode);
-                //Damage the mannequin enemy and print its remaining health
-                collision.collider.transform.parent.parent.GetChild(2).GetComponent<mannequinBase>().health -= damage;
-                print(collision.collider.transform.parent.parent.GetChild(2).GetComponent<mannequinBase>().health);
             }
             else
             {

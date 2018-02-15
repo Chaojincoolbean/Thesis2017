@@ -10,6 +10,9 @@
         public GameObject[] drop;
         public float value = 20f;
         public float attackRange = 20f;
+        public PuppetMaster puppetMaster;
+        public ConfigurableJoint[] leftLeg;
+        public ConfigurableJoint[] rightLeg;
 
         protected Transform player;
         protected Animator anim;
@@ -19,6 +22,7 @@
         protected bool isPlayerFound = false;
         protected GameObject playerCamera;
         protected bool dead = false;
+        protected bool leftLegRemoved, rightLegRemoved;
         public float health
         {
             get { return _health; }
@@ -35,9 +39,54 @@
         // Use this for initialization
         public virtual void Start()
         {
+            puppetMaster.OnMuscleRemoved += OnMuscleRemoved;
             anim = GetComponent<Animator>();
             scoreManagement = GameObject.Find("scoreManager");
             Invoke("TargetLockon", 0.5f);
+        }
+
+        // Called by PM when a muscle is removed (once for each removed muscle)
+        void OnMuscleRemoved(Muscle m)
+        {
+            bool isLeft = false;
+
+            // If one of the legs is missing, play the "jump on one leg" animation. If both, set PM state to Dead.
+            if (IsLegMuscle(m, out isLeft))
+            {
+                if (isLeft) leftLegRemoved = true;
+                else rightLegRemoved = true;
+
+                if (leftLegRemoved && rightLegRemoved)
+                {
+                    Die();
+                }
+            }
+        }
+
+        // Is the muscle a leg and if so, is it left or right?
+        private bool IsLegMuscle(Muscle m, out bool isLeft)
+        {
+            isLeft = false;
+
+            foreach (ConfigurableJoint j in leftLeg)
+            {
+                if (j == m.joint)
+                {
+                    isLeft = true;
+                    return true;
+                }
+            }
+
+            foreach (ConfigurableJoint j in rightLeg)
+            {
+                if (j == m.joint)
+                {
+                    isLeft = false;
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         // Update is called once per frame

@@ -459,9 +459,11 @@ MonoBehaviour:
   impactVFX: {fileID: 1287066278770538, guid: 5f515bc05f554bf4ab87956f1f8e8cfa, type: 2}
   brass: {fileID: 1304378575861456, guid: 7517df7680a65e14e8cb2972133ca54c, type: 2}
   magazineCapacity: 17
-  damage: 5
+  damage: 9
   range: 100
   ejectForce: 0.05
+  unpin: 20
+  force: 30000
   recoil: 100
   sway: 10
   slideMoveBack: {x: 0, y: 0, z: 0.404}

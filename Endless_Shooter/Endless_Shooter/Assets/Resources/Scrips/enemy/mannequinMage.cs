@@ -34,6 +34,7 @@
         private bool isAttacking = false;
         private int s;
         private float timer;
+        private bool isLostBalance = false;
         // Use this for initialization
         public override void Start()
         {
@@ -66,7 +67,7 @@
                 StateMachine(states);
             }
 
-            if (distanceToPlayer <= attackRange && isPlayerFound==true && isAttacking==false)
+            if (distanceToPlayer <= attackRange && isPlayerFound==true && isAttacking==false && isLostBalance==false)
             {
                 isAttacking = true;
                 states = (States)2;
@@ -214,6 +215,16 @@
             Destroy(newBeamStart);
             Destroy(newBeamEnd);
             Destroy(newBeam);
+        }
+
+        public void BalanceLost()
+        {
+            isLostBalance = true;
+        }
+
+        public void BalanceRegained()
+        {
+            isLostBalance = false;
         }
     }
 }

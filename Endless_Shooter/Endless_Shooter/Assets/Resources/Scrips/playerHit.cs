@@ -34,11 +34,11 @@ public class playerHit : MonoBehaviour {
         //Load scene depends on how much karma player has
         if (playerHealth < karmaMin)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1, LoadSceneMode.Single);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
         }
         if (playerHealth > karmaMax)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1, LoadSceneMode.Single);
         }
     }
 

@@ -408,7 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db2907f0a86b35e408a49b4326d71cdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disableWhenIdle: 1
+  disableWhenIdle: 0
   touchHighlightColor: {r: 0.72125643, g: 0.9264706, b: 0.39511245, a: 1}
   allowedTouchControllers: 0
   ignoredColliders: []
@@ -442,9 +442,11 @@ MonoBehaviour:
   impactVFX: {fileID: 1287066278770538, guid: 5f515bc05f554bf4ab87956f1f8e8cfa, type: 2}
   brass: {fileID: 1187700053699570, guid: d3cba98da279a264a8043e57c8afdfc4, type: 2}
   magazineCapacity: 8
-  damage: 9
+  damage: 15
   range: 100
   ejectForce: 0.02
+  unpin: 20
+  force: 35000
   recoil: 120
   sway: 50
   slideMoveBack: {x: 0, y: 0.807, z: -0.207}

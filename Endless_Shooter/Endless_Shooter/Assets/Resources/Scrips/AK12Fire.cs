@@ -113,8 +113,21 @@
                     if (Hit.collider.attachedRigidbody.GetComponent<MuscleCollisionBroadcaster>() != null)
                     {
                         Hit.collider.attachedRigidbody.GetComponent<MuscleCollisionBroadcaster>().Hit(unpin, beamRay.direction * force, Hit.point);
-                        print(Hit.collider.transform.parent.parent.GetChild(2).name);
-                        Hit.collider.transform.parent.parent.GetChild(2).GetComponent<mannequinBase>().health -= damage;
+                        print(Hit.collider.name);
+
+                        //Apply damage to the mannequin base script decided by where did player hit
+                        if (Hit.collider.name == "Head")
+                        {
+                            Hit.collider.transform.parent.parent.GetChild(2).GetComponent<mannequinBase>().health -= damage * 5f;
+                        }
+                        else if (Hit.collider.name == "Chest")
+                        {
+                            Hit.collider.transform.parent.parent.GetChild(2).GetComponent<mannequinBase>().health -= damage * 3f;
+                        }
+                        else
+                        {
+                            Hit.collider.transform.parent.parent.GetChild(2).GetComponent<mannequinBase>().health -= damage;
+                        }
                     }
                 }
 
