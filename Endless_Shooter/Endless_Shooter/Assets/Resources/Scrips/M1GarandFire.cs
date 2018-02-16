@@ -53,6 +53,8 @@
         {
             base.Ungrabbed(previousGrabbingObject);
             controllerEvents = null;
+            previousGrabbingObject.GetComponent<Rigidbody>().useGravity = enabled;
+            previousGrabbingObject.GetComponent<Rigidbody>().isKinematic = false;
         }
 
         public override void StartUsing(VRTK_InteractUse usingObject)
