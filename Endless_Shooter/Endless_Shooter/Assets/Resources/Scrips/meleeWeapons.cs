@@ -7,6 +7,7 @@ public class meleeWeapons : VRTK_InteractableObject
 {
     public MuscleRemoveMode removeMuscleMode;
     public float damage = 20f;
+    public float damageTherehold = 20f;
     VRTK_ControllerEvents controllerEvents;
     public override void Grabbed(VRTK_InteractGrab currentGrabbingObject)
     {
@@ -31,26 +32,37 @@ public class meleeWeapons : VRTK_InteractableObject
         //If whatever stuff collide with this melee weapon has a rigidbody
         if (collision.collider.GetComponent<Rigidbody>() != null)
         {
+            print(collision.relativeVelocity.magnitude);
             //If this rigidbody is a puppet muscle
             if (collision.collider.attachedRigidbody.GetComponent<MuscleCollisionBroadcaster>() != null)
             {
                 //Damage the mannequin enemy depend on where the player hit and print its remaining health
                 print(collision.collider.name);
-                if(collision.collider.name == "Head")
+                if(collision.relativeVelocity.magnitude > damageTherehold)
                 {
-                    collision.collider.transform.parent.parent.GetChild(2).GetComponent<mannequinBase>().health -= damage * 100f;
-                }else if (collision.collider.name == "Chest")
-                {
-                    collision.collider.transform.parent.parent.GetChild(2).GetComponent<mannequinBase>().health -= damage * 100f;
+                    
+                    if (collision.collider.name == "Head" || collision.collider.name == "Chest")
+                    {
+                        collision.collider.transform.parent.parent.GetChild(2).GetComponent<mannequinBase>().health -= damage * 100f;
+
+                    }
+                    else
+                    {
+                        collision.collider.transform.parent.parent.GetChild(2).GetComponent<mannequinBase>().health -= damage;
+                    }
+
+                    //Sever the limb
+                    var broadcaster = collision.collider.attachedRigidbody.GetComponent<MuscleCollisionBroadcaster>();
+                    broadcaster.puppetMaster.RemoveMuscleRecursive(broadcaster.puppetMaster.muscles[broadcaster.muscleIndex].joint, true, true, removeMuscleMode);
+
                 }
                 else
                 {
-                    collision.collider.transform.parent.parent.GetChild(2).GetComponent<mannequinBase>().health -= damage;
+                    //collision.collider.transform.parent.parent.GetChild(2).GetComponent<mannequinBase>().health -= damage;
                 }
+
                 print(collision.collider.transform.parent.parent.GetChild(2).GetComponent<mannequinBase>().health);
-                //Sever the limb
-                var broadcaster = collision.collider.attachedRigidbody.GetComponent<MuscleCollisionBroadcaster>();
-                broadcaster.puppetMaster.RemoveMuscleRecursive(broadcaster.puppetMaster.muscles[broadcaster.muscleIndex].joint, true, true, removeMuscleMode);
+               
             }
             else
             {

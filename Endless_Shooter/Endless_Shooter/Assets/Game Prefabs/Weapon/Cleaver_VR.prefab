@@ -188,6 +188,7 @@ MonoBehaviour:
   usingState: 0
   removeMuscleMode: 0
   damage: 20
+  damageTherehold: 10
 --- !u!114 &114557152982842768
 MonoBehaviour:
   m_ObjectHideFlags: 1
