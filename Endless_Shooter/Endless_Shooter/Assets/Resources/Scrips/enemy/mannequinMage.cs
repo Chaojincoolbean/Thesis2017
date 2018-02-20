@@ -67,7 +67,7 @@
                 StateMachine(states);
             }
 
-            if (distanceToPlayer <= attackRange && isPlayerFound==true && isAttacking==false && isLostBalance==false)
+            if (distanceToPlayer <= attackRange && isPlayerFound==true && isAttacking==false && isLostBalance==false && legsRemoved==false)
             {
                 isAttacking = true;
                 states = (States)2;

@@ -24,6 +24,7 @@
         protected GameObject playerCamera;
         protected bool dead = false;
         protected bool leftLegRemoved, rightLegRemoved;
+        protected bool legsRemoved = false;
         public float health
         {
             get { return _health; }
@@ -59,7 +60,8 @@
 
                 if (leftLegRemoved && rightLegRemoved)
                 {
-                    Die();
+                    anim.SetTrigger("areLegsRemoved");
+                    legsRemoved = true;
                 }
             }
         }
