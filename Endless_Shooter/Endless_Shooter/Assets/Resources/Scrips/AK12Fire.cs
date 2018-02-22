@@ -158,6 +158,7 @@
 
             GameObject spentCasing = Instantiate(brass, ejectWindow.position, muzzle.rotation) as GameObject;
             spentCasing.GetComponent<Rigidbody>().AddForce(-ejectWindow.right*ejectForce, ForceMode.Impulse);
+            spentCasing.transform.LookAt(muzzle);
             AK12Source.clip = rifleClip[Random.Range(1,rifleClip.Length-1)];
 			AK12Source.Play ();
             magazineCapacity -= 1f;

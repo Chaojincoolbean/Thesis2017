@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4716626396524638}
   - component: {fileID: 33000095783367808}
   - component: {fileID: 23595347309187398}
-  - component: {fileID: 65878905527354706}
   - component: {fileID: 54911154720621822}
   - component: {fileID: 114111499747449016}
+  - component: {fileID: 65062546213831324}
   m_Layer: 0
   m_Name: 30-06 Brass
   m_TagString: Untagged
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1295670251389360}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 3.664936, y: 1.5113227, z: 3.644952}
+  m_LocalPosition: {x: 4.449514, y: 1.757, z: 3.6220236}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,7 +82,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1295670251389360}
-  m_Mesh: {fileID: 4300000, guid: 801607c157fc73b4c86b97b0f578f1e1, type: 3}
+  m_Mesh: {fileID: 4300002, guid: 801607c157fc73b4c86b97b0f578f1e1, type: 3}
 --- !u!54 &54911154720621822
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -98,7 +98,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65878905527354706
+--- !u!65 &65062546213831324
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -108,8 +108,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.37689567, y: 1.7421304, z: 0.377953}
-  m_Center: {x: -0.18897626, y: 0.8710652, z: 0.1889765}
+  m_Size: {x: 0.3769001, y: 0.37790003, z: 1.7421}
+  m_Center: {x: -0.18895005, y: 0.8710502, z: 0.18894997}
 --- !u!114 &114111499747449016
 MonoBehaviour:
   m_ObjectHideFlags: 1

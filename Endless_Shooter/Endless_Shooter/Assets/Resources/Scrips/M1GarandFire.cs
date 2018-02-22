@@ -66,6 +66,7 @@
                 VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(controllerEvents.gameObject), 0.63f, 0.2f, 0.01f);
                 GameObject spentCasing = Instantiate(brass, ejectWindow.transform.position, ejectWindow.transform.rotation) as GameObject;
                 spentCasing.GetComponent<Rigidbody>().AddForce(-ejectWindow.transform.right * ejectForce, ForceMode.Impulse);
+                spentCasing.transform.LookAt(muzzle);
 
                 magazineCapacity -= 1;
             }
