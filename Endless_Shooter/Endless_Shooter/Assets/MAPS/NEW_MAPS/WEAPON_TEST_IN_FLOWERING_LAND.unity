@@ -13930,11 +13930,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114975944633910956, guid: 2115f3225336cb144998217acb7617b4,
-        type: 2}
-      propertyPath: rifleClip.Array.size
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 4522491841737462, guid: 2115f3225336cb144998217acb7617b4, type: 2}
       propertyPath: m_LocalPosition.x
       value: 2.229
@@ -13967,61 +13962,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114975944633910956, guid: 2115f3225336cb144998217acb7617b4,
-        type: 2}
-      propertyPath: rifleClip.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 838078b48ee35d14c962527cec6d680e, type: 3}
-    - target: {fileID: 114975944633910956, guid: 2115f3225336cb144998217acb7617b4,
-        type: 2}
-      propertyPath: rifleClip.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 16df531e981a634499e2139f8fa98d7c, type: 3}
-    - target: {fileID: 114975944633910956, guid: 2115f3225336cb144998217acb7617b4,
-        type: 2}
-      propertyPath: rifleClip.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: a714164c49a10b948a776a5470e9267b, type: 3}
-    - target: {fileID: 114975944633910956, guid: 2115f3225336cb144998217acb7617b4,
-        type: 2}
-      propertyPath: rifleClip.Array.data[4]
-      value: 
-      objectReference: {fileID: 8300000, guid: 7bf433fa8e587cb43b85ee0b6d6a1f06, type: 3}
-    - target: {fileID: 114975944633910956, guid: 2115f3225336cb144998217acb7617b4,
-        type: 2}
-      propertyPath: rifleClip.Array.data[5]
-      value: 
-      objectReference: {fileID: 8300000, guid: 7323366eae00b0e469eab6317b718446, type: 3}
-    - target: {fileID: 114975944633910956, guid: 2115f3225336cb144998217acb7617b4,
-        type: 2}
-      propertyPath: rifleClip.Array.data[6]
-      value: 
-      objectReference: {fileID: 8300000, guid: 1a8b7c36c699b924487e829194d53497, type: 3}
-    - target: {fileID: 114975944633910956, guid: 2115f3225336cb144998217acb7617b4,
-        type: 2}
-      propertyPath: rifleClip.Array.data[7]
-      value: 
-      objectReference: {fileID: 8300000, guid: 312c67290804ee64ba77e2cc9f84c1fc, type: 3}
-    - target: {fileID: 114975944633910956, guid: 2115f3225336cb144998217acb7617b4,
-        type: 2}
-      propertyPath: rifleClip.Array.data[8]
-      value: 
-      objectReference: {fileID: 8300000, guid: 97140b21ddd5fe34a9632612b404c14e, type: 3}
-    - target: {fileID: 114975944633910956, guid: 2115f3225336cb144998217acb7617b4,
-        type: 2}
-      propertyPath: rifleClip.Array.data[9]
-      value: 
-      objectReference: {fileID: 8300000, guid: e4cbf3f323b5f3746a9f108214005347, type: 3}
-    - target: {fileID: 114975944633910956, guid: 2115f3225336cb144998217acb7617b4,
-        type: 2}
-      propertyPath: rifleClip.Array.data[10]
-      value: 
-      objectReference: {fileID: 8300000, guid: e4cbf3f323b5f3746a9f108214005347, type: 3}
-    - target: {fileID: 114975944633910956, guid: 2115f3225336cb144998217acb7617b4,
-        type: 2}
-      propertyPath: rifleClip.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 962639eda6969874b873899955c680c9, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2115f3225336cb144998217acb7617b4, type: 2}
   m_IsPrefabParent: 0
@@ -17724,7 +17664,7 @@ Prefab:
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 1054
+      value: 1055
       objectReference: {fileID: 0}
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}

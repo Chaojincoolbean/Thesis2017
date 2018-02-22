@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 114412613657514182}
   m_Layer: 0
   m_Name: PPSH_VR
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -506,8 +506,16 @@ MonoBehaviour:
   usingState: 0
   muzzleFlash: {fileID: 100004, guid: e5727721799e00f44906e7af53883073, type: 2}
   rifleClip:
-  - {fileID: 8300000, guid: 4758d794bc041d74db6808b323ea36db, type: 3}
-  - {fileID: 8300000, guid: 4758d794bc041d74db6808b323ea36db, type: 3}
+  - {fileID: 8300000, guid: 838078b48ee35d14c962527cec6d680e, type: 3}
+  - {fileID: 8300000, guid: 962639eda6969874b873899955c680c9, type: 3}
+  - {fileID: 8300000, guid: 16df531e981a634499e2139f8fa98d7c, type: 3}
+  - {fileID: 8300000, guid: a714164c49a10b948a776a5470e9267b, type: 3}
+  - {fileID: 8300000, guid: 7bf433fa8e587cb43b85ee0b6d6a1f06, type: 3}
+  - {fileID: 8300000, guid: 7323366eae00b0e469eab6317b718446, type: 3}
+  - {fileID: 8300000, guid: 1a8b7c36c699b924487e829194d53497, type: 3}
+  - {fileID: 8300000, guid: 312c67290804ee64ba77e2cc9f84c1fc, type: 3}
+  - {fileID: 8300000, guid: 97140b21ddd5fe34a9632612b404c14e, type: 3}
+  - {fileID: 8300000, guid: e4cbf3f323b5f3746a9f108214005347, type: 3}
   grabSounds:
   - {fileID: 8300000, guid: f2353c45f8f6fab498f0168dd6382adb, type: 3}
   - {fileID: 8300000, guid: 43015d65ddb783b43b95c3a5a90f64e9, type: 3}
