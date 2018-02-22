@@ -9,44 +9,46 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1943672165841626}
+  m_RootGameObject: {fileID: 1893662284434092}
   m_IsPrefabParent: 1
---- !u!1 &1943672165841626
+--- !u!1 &1893662284434092
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4488314340826254}
-  - component: {fileID: 33241417655625884}
-  - component: {fileID: 23015207836963906}
+  - component: {fileID: 4847497172802694}
+  - component: {fileID: 33565256936467978}
+  - component: {fileID: 23090637108584110}
+  - component: {fileID: 54371956897536628}
+  - component: {fileID: 65995859206351454}
   m_Layer: 0
-  m_Name: PM-40_Magazine
+  m_Name: 7.62Tokarev Brass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4488314340826254
+--- !u!4 &4847497172802694
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1943672165841626}
+  m_GameObject: {fileID: 1893662284434092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.28529054, y: -49.7, z: -163.6}
-  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+  m_LocalPosition: {x: 2.113, y: 1.8717, z: 3.4927}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23015207836963906
+--- !u!23 &23090637108584110
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1943672165841626}
+  m_GameObject: {fileID: 1893662284434092}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -54,7 +56,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 953e7b7d3d9b0e345ab53f3eb82b044f, type: 2}
+  - {fileID: 2100000, guid: 15a9f87a0af5d4d448e2ab9dbc34f827, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -73,10 +75,37 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33241417655625884
+--- !u!33 &33565256936467978
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1943672165841626}
-  m_Mesh: {fileID: 4300006, guid: 45b08677cbcfc414f937226fbf703901, type: 3}
+  m_GameObject: {fileID: 1893662284434092}
+  m_Mesh: {fileID: 4300000, guid: f0932d494505b2a408623b634908b218, type: 3}
+--- !u!54 &54371956897536628
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1893662284434092}
+  serializedVersion: 2
+  m_Mass: 0.003
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &65995859206351454
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1893662284434092}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.009895492, y: 0.00995, z: 0.025}
+  m_Center: {x: -2.3283064e-10, y: 0, z: 0}
