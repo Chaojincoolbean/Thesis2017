@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using VRTK;
 
 public class playerHit : MonoBehaviour {
     public AudioClip playerHitClip;
@@ -17,6 +18,7 @@ public class playerHit : MonoBehaviour {
 
     public float playerHealth = 100f;
 
+    protected GameObject scoreManagement;
     private Camera cam;
     private GameObject headColliderContainer;
     private AudioSource playerSource;
@@ -26,8 +28,9 @@ public class playerHit : MonoBehaviour {
         headColliderContainer = GameObject.Find("[VRTK][AUTOGEN][HeadsetColliderContainer]");
         cam = gameObject.GetComponent<Camera>();
         playerSource = gameObject.GetComponent<AudioSource>();
+        scoreManagement = GameObject.Find("scoreManager");
         //rb = headColliderContainer.GetComponent<Rigidbody>();
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -56,6 +59,15 @@ public class playerHit : MonoBehaviour {
     public void PlayerHealthDecrease(float value)
     {
         playerHealth += value;
+        if (scoreManagement.GetComponent<scoreManager>() != null)
+        {
+            scoreManagement.GetComponent<scoreManager>().score += value;
+        }
+        else
+        {
+            scoreManagement = GameObject.Find("scoreManager");
+            scoreManagement.GetComponent<scoreManager>().score += value;
+        }
     }
 
     public void PlayDeathSound()
