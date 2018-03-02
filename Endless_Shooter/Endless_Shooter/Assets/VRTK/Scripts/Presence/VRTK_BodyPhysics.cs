@@ -193,7 +193,7 @@ namespace VRTK
         protected bool isMoving = false;
         protected bool isLeaning = false;
         protected bool onGround = true;
-        protected bool preventSnapToFloor = false;
+        protected bool preventSnapToFloor = true;
         protected bool generateRigidbody = false;
         protected Vector3 playAreaVelocity = Vector3.zero;
         protected string footColliderContainerNameCheck;
@@ -918,7 +918,7 @@ namespace VRTK
             {
                 return;
             }
-
+            Debug.Log("set up ignore collision");
             for (int i = 0; i < ignoreCollisionsWith.Length; i++)
             {
                 Collider[] objectColliders = ignoreCollisionsWith[i].GetComponentsInChildren<Collider>();
@@ -938,6 +938,7 @@ namespace VRTK
         {
             Physics.IgnoreCollision(bodyCollider, collider, state);
             Physics.IgnoreCollision(footCollider, collider, state);
+            //Debug.Log(footCollider.name + " ignore " + collider.name);
         }
 
         protected virtual void CheckStepUpCollision(Collision collision)
@@ -1050,6 +1051,10 @@ namespace VRTK
                 {
                     footColliderContainer = CreateColliderContainer(FOOT_COLLIDER_CONTAINER_NAME, bodyColliderContainer.transform);
                     footColliderContainer.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+
+                    //Attach collision name report script to foot collider container
+                    //fuckingFuckTellMeWhatTheFuckingFootIsTouching fuckYou = Resources.Load("Scrips") as fuckingFuckTellMeWhatTheFuckingFootIsTouching;
+                    footColliderContainer.AddComponent<fuckingFuckTellMeWhatTheFuckingFootIsTouching>();
                 }
 
                 footCollider = GenerateCapsuleCollider(footColliderContainer, 0f);

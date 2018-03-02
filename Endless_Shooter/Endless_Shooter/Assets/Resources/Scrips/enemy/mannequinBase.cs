@@ -15,6 +15,7 @@
         public ConfigurableJoint[] leftLeg;
         public ConfigurableJoint[] rightLeg;
 
+        GameObject puppetLimb;
         protected Transform player;
         protected Animator anim;
         protected GameObject scoreManagement;
@@ -45,6 +46,11 @@
             anim = GetComponent<Animator>();
             scoreManagement = GameObject.Find("scoreManager");
             Invoke("TargetLockon", 0.5f);
+            VRTK_BodyPhysics currentBodyPhysics = GameObject.Find("PlayArea").GetComponent<VRTK_BodyPhysics>();
+            puppetLimb = puppetMaster.gameObject;
+            scoreManagement.GetComponent<scoreManager>().ignoreColliders.Add(puppetLimb);
+            currentBodyPhysics.ignoreCollisionsWith = scoreManagement.GetComponent<scoreManager>().ignoreColliders.ToArray();
+            currentBodyPhysics.SendMessage("SetupIgnoredCollisions");
         }
 
         // Called by PM when a muscle is removed (once for each removed muscle)
@@ -139,6 +145,14 @@
             player = GameObject.Find("[VRTK][AUTOGEN][HeadsetColliderContainer]").transform;
             playerCamera = GameObject.Find("Camera (eye)");
             isPlayerFound = true;
+
+            GameObject playerFoot = GameObject.Find("[VRTK][AUTOGEN][FootColliderContainer]");
+            Collider[] ignorecolliders = puppetLimb.transform.GetComponentsInChildren<Collider>();
+            foreach (Collider coll in ignorecolliders)
+            {
+                Physics.IgnoreCollision(coll,playerFoot.GetComponent<CapsuleCollider>(), true);
+                Physics.IgnoreCollision(coll, GameObject.Find("PlayArea").GetComponent<VRTK_BodyPhysics>().GetFootColliderContainer().GetComponent<CapsuleCollider>());
+            }
         }
     }
 }

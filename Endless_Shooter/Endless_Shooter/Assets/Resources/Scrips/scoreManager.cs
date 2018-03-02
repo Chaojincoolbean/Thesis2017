@@ -29,6 +29,7 @@
 
         public Timer timer;
         public Timer runningPattern;
+        public List<GameObject> ignoreColliders;
 
         void Awake() {
             DontDestroyOnLoad(this);
@@ -48,6 +49,8 @@
         void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
             playerWatch = GameObject.Find("LeftControllerTooltips");
+            VRTK_BodyPhysics currentBodyPhysics = GameObject.Find("PlayArea").GetComponent<VRTK_BodyPhysics>();
+            currentBodyPhysics.ignoreCollisionsWith = new GameObject[1000];
         }
 
 
@@ -65,7 +68,7 @@
             //Invoke("GetTheFuckingText", 0.2f);
             VRPlayArea = GameObject.Find("PlayArea");
             // Debug.Log(GameObject.Find("Camera (eye)"));
-
+            ignoreColliders = new List<GameObject>();
         }
 
         // Update is called once per frame
