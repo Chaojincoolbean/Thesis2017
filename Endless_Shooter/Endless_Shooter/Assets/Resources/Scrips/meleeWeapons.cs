@@ -32,7 +32,7 @@ public class meleeWeapons : VRTK_InteractableObject
         //If whatever stuff collide with this melee weapon has a rigidbody
         if (collision.collider.GetComponent<Rigidbody>() != null)
         {
-            print(collision.relativeVelocity.magnitude);
+            //print(collision.relativeVelocity.magnitude);
             //If this rigidbody is a puppet muscle
             if (collision.collider.attachedRigidbody.GetComponent<MuscleCollisionBroadcaster>() != null)
             {

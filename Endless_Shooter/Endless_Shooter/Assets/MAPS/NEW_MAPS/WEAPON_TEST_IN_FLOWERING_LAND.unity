@@ -1865,7 +1865,7 @@ MonoBehaviour:
   grabButton: 7
   grabPrecognition: 0
   throwMultiplier: 2
-  createRigidBodyWhenNotTouching: 0
+  createRigidBodyWhenNotTouching: 1
   controllerAttachPoint: {fileID: 0}
   controllerEvents: {fileID: 0}
   interactTouch: {fileID: 0}
@@ -7242,6 +7242,7 @@ MonoBehaviour:
   VRPlayArea: {fileID: 394654935}
   timer: 0
   runningPattern: 3
+  ignoreColliders: []
 --- !u!4 &619368399
 Transform:
   m_ObjectHideFlags: 0
@@ -18066,7 +18067,7 @@ Prefab:
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 1037
+      value: 792
       objectReference: {fileID: 0}
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
@@ -22598,7 +22599,7 @@ MonoBehaviour:
   grabButton: 7
   grabPrecognition: 0
   throwMultiplier: 2
-  createRigidBodyWhenNotTouching: 0
+  createRigidBodyWhenNotTouching: 1
   controllerAttachPoint: {fileID: 0}
   controllerEvents: {fileID: 0}
   interactTouch: {fileID: 0}

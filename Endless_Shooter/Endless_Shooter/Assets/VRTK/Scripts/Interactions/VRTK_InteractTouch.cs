@@ -507,6 +507,12 @@ namespace VRTK
                 controllerCollisionDetector.transform.SetParent(transform);
                 controllerCollisionDetector.transform.localScale = transform.localScale;
                 controllerCollisionDetector.name = VRTK_SharedMethods.GenerateVRTKObjectName(true, "Controller", "CollidersContainer");
+
+                //Add script that hurt enemies when player punches it
+                foreach(Transform child in controllerCollisionDetector.transform)
+                {
+                    child.gameObject.AddComponent<fuckingFuckTellMeWhatTheFuckingFootIsTouching>();
+                }
                 destroyColliderOnDisable = true;
             }
             else
@@ -544,6 +550,7 @@ namespace VRTK
             }
             else
             {
+                //Debug.Log("")
                 OnControllerRigidbodyDeactivated(SetControllerInteractEvent(null));
             }
         }

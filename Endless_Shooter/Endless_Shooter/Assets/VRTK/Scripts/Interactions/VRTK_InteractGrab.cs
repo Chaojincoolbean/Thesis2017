@@ -619,6 +619,7 @@ namespace VRTK
             {
                 if (!interactTouch.IsRigidBodyForcedActive() && interactTouch.IsRigidBodyActive() != grabPressed)
                 {
+                    Debug.Log("ToggleControllerRigidBody" + grabPressed);
                     interactTouch.ToggleControllerRigidBody(grabPressed);
                 }
             }
