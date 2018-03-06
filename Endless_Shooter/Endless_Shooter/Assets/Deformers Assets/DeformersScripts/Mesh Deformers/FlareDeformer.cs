@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEditor;
+//using UnityEditor;
 
 [RequireComponent(typeof(MeshFilter))]
 public class FlareDeformer : MonoBehaviour {

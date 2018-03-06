@@ -16,7 +16,7 @@ public class HyperbitProjectileScript : MonoBehaviour
  
     void Start()
     {
-        projectileParticle = Instantiate(projectileParticle, transform.position, transform.rotation) as GameObject;
+       projectileParticle = Instantiate(projectileParticle, transform.position, transform.rotation) as GameObject;
         projectileParticle.transform.parent = transform;
 		if (muzzleParticle){
         muzzleParticle = Instantiate(muzzleParticle, transform.position, transform.rotation) as GameObject;
