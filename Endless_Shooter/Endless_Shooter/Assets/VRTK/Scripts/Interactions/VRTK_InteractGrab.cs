@@ -472,6 +472,7 @@ namespace VRTK
         {
             if (grabbedObject != null && interactTouch != null)
             {
+                grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
                 OnControllerStartUngrabInteractableObject(interactTouch.SetControllerInteractEvent(grabbedObject));
                 VRTK_InteractableObject grabbedObjectScript = grabbedObject.GetComponent<VRTK_InteractableObject>();
                 if (grabbedObjectScript != null)
@@ -493,6 +494,7 @@ namespace VRTK
             grabEnabledState = 0;
             grabbedObject = null;
         }
+    
 
         protected virtual GameObject GetGrabbableObject()
         {

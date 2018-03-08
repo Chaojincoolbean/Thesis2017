@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4772079547530150}
   - component: {fileID: 33016363226330150}
   - component: {fileID: 23641394047645842}
+  - component: {fileID: 64225092502186606}
   m_Layer: 0
   m_Name: Magazin
   m_TagString: Untagged
@@ -90,7 +91,6 @@ GameObject:
   - component: {fileID: 82457094010367800}
   - component: {fileID: 114671453509906244}
   - component: {fileID: 114875998571532870}
-  - component: {fileID: 65389047728263164}
   m_Layer: 0
   m_Name: AK47_VR
   m_TagString: Weapon
@@ -321,6 +321,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &64225092502186606
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1461981156211444}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300002, guid: 8091920077f58104fa64b3044211eec7, type: 3}
 --- !u!64 &64692998997804816
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -347,18 +361,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.21, y: 0.32925078, z: 1.33}
   m_Center: {x: 0.018953532, y: -0.22533752, z: 0.047382534}
---- !u!65 &65389047728263164
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1742262707406992}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.07, z: 0.09}
-  m_Center: {x: 0, y: -0.03427112, z: 0.17222665}
 --- !u!82 &82457094010367800
 AudioSource:
   m_ObjectHideFlags: 1

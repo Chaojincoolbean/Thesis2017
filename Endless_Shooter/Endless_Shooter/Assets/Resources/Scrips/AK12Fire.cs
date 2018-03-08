@@ -45,10 +45,13 @@
 
         public override void Ungrabbed(VRTK_InteractGrab previousGrabbingObject)
         {
+            //print("ungrabbed"); // position 1
             base.Ungrabbed(previousGrabbingObject);
             controllerEvents = null;
-            previousGrabbingObject.GetComponent<Rigidbody>().useGravity = enabled;
+            //print("ungrabbed"); //position 2
+            //previousGrabbingObject.GetComponent<Rigidbody>().useGravity = enabled;
             previousGrabbingObject.GetComponent<Rigidbody>().isKinematic = false;
+            print("ungrabbed"); //position 3
         }
    
         public override void StartUsing(VRTK_InteractUse usingObject) {
