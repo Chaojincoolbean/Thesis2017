@@ -26,8 +26,6 @@
         public Vector3 boltResetPos;
 
         private VRTK_ControllerEvents controllerEvents;
-        private GameObject player;
-        private GameObject world;
         private AudioSource rifleSource;
         public Transform bolt;
         public Transform muzzle;
