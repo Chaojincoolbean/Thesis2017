@@ -4,13 +4,23 @@ using DG.Tweening;
 
 public class floatAndSpin : MonoBehaviour
 {
-    bool isRisen = false;
-    Vector3 RisenPos;
-    // Use this for initialization
-    void Start()
+    GameObject leftController;
+    GameObject rightController;
+
+    //Called when this instance is initialized, once in a life time
+    void Awake()
     {
         Rise();
 
+    }
+
+    // Called when this instance is enabled
+    void Start()
+    {
+
+        gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        leftController = GameObject.Find("Controller (left)");
+        rightController = GameObject.Find("Controller (right)");
     }
 
     // Update is called once per frame
@@ -20,23 +30,28 @@ public class floatAndSpin : MonoBehaviour
         {
             gameObject.GetComponent<Rigidbody>().AddForce(-Physics.gravity * gameObject.GetComponent<Rigidbody>().mass);
         }*/
-        if (isRisen == true)
+        float distanceToLeftController = Vector3.Distance(leftController.transform.position, transform.position);
+        float distanceToRightController = Vector3.Distance(rightController.transform.position, transform.position);
+        if (distanceToLeftController<=0.5f||distanceToRightController<=0.5f)
         {
-            transform.position = RisenPos;
+            gameObject.GetComponent<Rigidbody>().AddForce(-Physics.gravity * gameObject.GetComponent<Rigidbody>().mass*1.1f);
+            print("Controller is close");
+            if (gameObject.GetComponent<Rigidbody>().isKinematic == true)
+            {
+                gameObject.GetComponent<Rigidbody>().isKinematic = false;
+                print("This weapon is no longer kinematic");
+            }
+
         }
 
     }
 
     void Rise()
     {
-        transform.DOMoveY(transform.position.y + 1f, 0.5f).OnComplete(Freeze);
+        gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        transform.DOMoveY(transform.position.y + 1f, 0.5f);
         //transform.DOLocalRotate(new Vector3(0, 359, 0), 1f,RotateMode.LocalAxisAdd).SetLoops(-1,LoopType.Restart);
     }
 
-    void Freeze()
-    {
-        RisenPos = transform.position;
-        isRisen = true;
-    }
 
 }

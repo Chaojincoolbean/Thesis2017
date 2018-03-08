@@ -549,7 +549,7 @@ MonoBehaviour:
   damage: 9
   recoil: 300
   sway: 100
-  ejectForce: 0.03
+  ejectForce: 0.01
   unpin: 20
   force: 30000
   boltMoveBackPos: {x: 0, y: 0, z: 0.1}

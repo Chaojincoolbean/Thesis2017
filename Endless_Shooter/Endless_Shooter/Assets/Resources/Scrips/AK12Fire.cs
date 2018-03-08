@@ -34,6 +34,7 @@
         public Transform ejectWindow;
 		//LineRenderer line;
         Rigidbody rb;
+        bool isMagazineEmpty = false;
 
         public override void Grabbed(VRTK_InteractGrab currentGrabbingObject)
         {
@@ -49,13 +50,22 @@
 
         public override void Ungrabbed(VRTK_InteractGrab previousGrabbingObject)
         {
-            //print("ungrabbed"); // position 1
             base.Ungrabbed(previousGrabbingObject);
             controllerEvents = null;
-            //print("ungrabbed"); //position 2
-            //previousGrabbingObject.GetComponent<Rigidbody>().useGravity = enabled;
-            previousGrabbingObject.GetComponent<Rigidbody>().isKinematic = false;
-            print("ungrabbed"); //position 3
+            if (isMagazineEmpty == true)
+            {
+                if (GetComponent<floatAndSpin>() != null)
+                {
+                    GetComponent<floatAndSpin>().enabled = false;
+                }
+            }
+            else
+            {
+                if (GetComponent<floatAndSpin>() != null)
+                {
+                    GetComponent<floatAndSpin>().enabled = true;
+                }
+            }
         }
    
         public override void StartUsing(VRTK_InteractUse usingObject) {
@@ -66,15 +76,9 @@
             }
             else
             {
-                Invoke("Destroy", 10f);
+                isMagazineEmpty = true;
+                StartCoroutine("Destroy");
             }
-
-
-            /*player = GameObject.Find("[VRTK_SDKManager]");
-			if (player.GetComponent<move>() != null) 
-			{
-				player.GetComponent<move>().speed = player.GetComponent<move>().speed * slowMutiplier;
-			}*/
         }
 
         public override void StopUsing(VRTK_InteractUse usingObject)
@@ -101,6 +105,7 @@
             {
                 CancelInvoke();
                 StartCoroutine("Destroy");
+                isMagazineEmpty = true;
                 return;
             }
 			Vector3 pos = muzzle.position;

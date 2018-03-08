@@ -47,6 +47,10 @@
             controllerEvents = currentGrabbingObject.GetComponent<VRTK_ControllerEvents>();
             rifleSource.clip = grabSounds[Random.Range(0, grabSounds.Length)];
             rifleSource.Play();
+            if (GetComponent<floatAndSpin>() != null)
+            {
+                GetComponent<floatAndSpin>().enabled = false;
+            }
         }
 
         public override void Ungrabbed(VRTK_InteractGrab previousGrabbingObject)
