@@ -41,6 +41,10 @@
             controllerEvents = currentGrabbingObject.GetComponent<VRTK_ControllerEvents>();
             AK12Source.clip = grabSounds[Random.Range(0, grabSounds.Length)];
             AK12Source.Play();
+            if (GetComponent<floatAndSpin>() != null)
+            {
+                GetComponent<floatAndSpin>().enabled = false;
+            }
         }
 
         public override void Ungrabbed(VRTK_InteractGrab previousGrabbingObject)

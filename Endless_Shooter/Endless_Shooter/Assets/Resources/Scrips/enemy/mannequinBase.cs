@@ -132,8 +132,9 @@
                 {
                     GameObject droppedItem = Instantiate(drop[Random.Range(0, drop.Length)], transform.position, Quaternion.identity) as GameObject;
                     //droppedItem.GetComponent<Rigidbody>().useGravity = false;
-                    droppedItem.GetComponent<Rigidbody>().isKinematic = true;
-                    droppedItem.transform.DOMoveY(droppedItem.transform.position.y + 1f, 0.5f);
+                    //droppedItem.GetComponent<Rigidbody>().isKinematic = true;
+                    //droppedItem.transform.DOMoveY(droppedItem.transform.position.y + 1f, 0.5f);
+                    droppedItem.AddComponent<floatAndSpin>();
                 }
 
                 dead = true;
