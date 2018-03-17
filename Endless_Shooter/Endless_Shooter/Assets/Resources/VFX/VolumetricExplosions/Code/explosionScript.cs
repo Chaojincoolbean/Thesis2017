@@ -31,7 +31,7 @@ public class explosionScript : MonoBehaviour {
                     //Sever the limb
                     var broadcaster = hitCollider.attachedRigidbody.GetComponent<MuscleCollisionBroadcaster>();
                     broadcaster.puppetMaster.RemoveMuscleRecursive(broadcaster.puppetMaster.muscles[broadcaster.muscleIndex].joint, true, true, MuscleRemoveMode.Explode);
-                    hitCollider.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRange, 2F);
+                    //hitCollider.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRange, 2F);
                 }
                 else
                 {
@@ -39,9 +39,6 @@ public class explosionScript : MonoBehaviour {
                     var joint = hitCollider.attachedRigidbody.GetComponent<ConfigurableJoint>();
                     if (joint != null) Destroy(joint);
                 }
-            }
-            else
-            {
                 hitCollider.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRange, 2F);
             }
         }

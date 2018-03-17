@@ -7,11 +7,11 @@ public class rocket : MonoBehaviour {
     public float torque;
 
     GameObject trail;
-    GameObject[] explosions;
+    Object[] explosions;
 
     // Use this for initialization
     void Start () {
-        explosions = Resources.LoadAll("VFX/VolumetricExplosions/Explosion Prefabs/RocketExplosions") as GameObject[];
+        explosions = Resources.LoadAll("VFX/VolumetricExplosions/Explosion Prefabs/RocketExplosions", typeof(GameObject));
         trail = Resources.Load("VFX/Rocket Flame Tail") as GameObject;
 
         GetComponent<ConstantForce>().force = transform.forward * 100;
@@ -33,11 +33,14 @@ public class rocket : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
-        ContactPoint contact = collision.contacts[0];
-        Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
-        Vector3 pos = contact.point;
-        Instantiate(explosions[Random.Range(0,explosions.Length)], pos, rot);
-        print("Rocket hit");
-        Destroy(gameObject);
+        if (collision.gameObject.tag != "Weapon")
+        {
+            ContactPoint contact = collision.contacts[0];
+            Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
+            Vector3 pos = contact.point;
+            Instantiate(explosions[Random.Range(0, explosions.Length)], pos, rot);
+            print("Rocket hit");
+            Destroy(gameObject);
+        }
     }
 }
