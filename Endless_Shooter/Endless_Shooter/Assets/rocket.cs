@@ -7,22 +7,23 @@ public class rocket : MonoBehaviour {
     public float torque;
 
     GameObject trail;
-    GameObject[] explosions = new GameObject[3];
+    GameObject[] explosions;
 
     // Use this for initialization
     void Start () {
-        explosions[0] = Resources.Load("VFX/VolumetricExplosions/21StylizedExplosion_Small") as GameObject;
-        explosions[1] = Resources.Load("VFX/VolumetricExplosions/21StylizedExplosion_Small2") as GameObject;
-        explosions[2] = Resources.Load("VFX/VolumetricExplosions/21StylizedExplosion_Small3") as GameObject;
+        explosions = Resources.LoadAll("VFX/VolumetricExplosions/Explosion Prefabs/RocketExplosions") as GameObject[];
         trail = Resources.Load("VFX/Rocket Flame Tail") as GameObject;
 
         GetComponent<ConstantForce>().force = transform.forward * 100;
         GetComponent<ConstantForce>().relativeTorque = transform.right * 5;
 
         Transform tail = transform.GetChild(0);
+        Transform beacon = transform.GetChild(1);
         GameObject rocketTrail = Instantiate(trail, tail.position, tail.rotation) as GameObject;
         rocketTrail.transform.parent = transform;
-        //rocketTrail.transform.LookAt(gameObject.transform);
+        rocketTrail.transform.LookAt(beacon);
+
+        print(explosions);
     }
 	
 	// Update is called once per frame
@@ -36,6 +37,7 @@ public class rocket : MonoBehaviour {
         Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
         Vector3 pos = contact.point;
         Instantiate(explosions[Random.Range(0,explosions.Length)], pos, rot);
+        print("Rocket hit");
         Destroy(gameObject);
     }
 }

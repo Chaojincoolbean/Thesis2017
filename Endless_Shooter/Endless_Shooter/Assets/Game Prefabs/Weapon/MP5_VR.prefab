@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4194084683833092}
   - component: {fileID: 33760419748473962}
   - component: {fileID: 23267495895486522}
+  - component: {fileID: 54559199709031446}
   m_Layer: 0
   m_Name: MP5_VR
   m_TagString: Weapon
@@ -70,7 +71,7 @@ Transform:
   m_GameObject: {fileID: 1082662709621060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.05, y: 1.8004, z: 9.569}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children:
   - {fileID: 4688958699645832}
   - {fileID: 4477094413832180}
@@ -220,3 +221,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1082662709621060}
   m_Mesh: {fileID: 4300010, guid: ee34450b5a1ff664691ca2131395bf9f, type: 3}
+--- !u!54 &54559199709031446
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1082662709621060}
+  serializedVersion: 2
+  m_Mass: 3.1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

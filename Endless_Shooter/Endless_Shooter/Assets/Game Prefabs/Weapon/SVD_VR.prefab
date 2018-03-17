@@ -182,7 +182,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1041663927654858}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0.075006485, y: 3.7999988, z: -1.8344879}
+  m_LocalPosition: {x: 0.075, y: 3.8, z: -1.8}
   m_LocalScale: {x: 7.5000005, y: 7.5000005, z: 7.5000005}
   m_Children:
   - {fileID: 4900160760085608}
@@ -649,8 +649,8 @@ MonoBehaviour:
   force: 50000
   recoil: 850
   sway: 80
-  slideMoveBack: {x: 0, y: 0, z: 0}
-  slideMoveForward: {x: 0, y: 0, z: 0}
+  slideMoveBack: {x: 0.075, y: 3.8, z: -1.8}
+  slideMoveForward: {x: 0.075, y: 3.8, z: -1.8}
 --- !u!114 &114265557230828208
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -54,7 +54,7 @@ public class rocketLauncherFire : VRTK_InteractableObject
     public override void StartUsing(VRTK_InteractUse usingObject)
     {
         base.StartUsing(usingObject);
-        if (rocketIndex<rockets.Length)
+        if (rocketIndex < rockets.Length)
         {
             InvokeRepeating("FireRocket", 0f, timeToNextRound);
         }
@@ -81,13 +81,14 @@ public class rocketLauncherFire : VRTK_InteractableObject
 	
     void FireRocket()
     {
-        if (rocketIndex < rockets.Length)
+        if (rocketIndex > rockets.Length)
         {
             CancelInvoke();
             StartCoroutine("Destroy");
             return;
         }
-
+        print(rocketIndex);
+        print(rockets[rocketIndex]);
         rockets[rocketIndex].transform.position += rocketStartPos;
         rockets[rocketIndex].transform.parent = null;
         rockets[rocketIndex].AddComponent<Rigidbody>();
