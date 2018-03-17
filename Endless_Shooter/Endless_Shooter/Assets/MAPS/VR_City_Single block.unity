@@ -4333,7 +4333,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   propellingForce: 0
   torque: 0
-  tail: {fileID: 0}
+  trail: {fileID: 0}
+  explosions: []
 --- !u!1 &852099986
 GameObject:
   m_ObjectHideFlags: 0

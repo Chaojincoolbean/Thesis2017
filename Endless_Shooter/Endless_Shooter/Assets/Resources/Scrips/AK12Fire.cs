@@ -158,6 +158,8 @@
 			else{
 				//line.SetPosition(1, beamRay.GetPoint(range));	
 			}
+
+            //Recoil
             rb.AddForceAtPosition(muzzle.forward * recoil, muzzle.transform.position);
             rb.AddForceAtPosition(muzzle.up * recoil, muzzle.transform.position);
             rb.AddForceAtPosition(muzzle.right * sway, muzzle.transform.position);

@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
-using RootMotion.Dynamics;
+using DG.Tweening;
 
 public class rocketLauncherFire : VRTK_InteractableObject
 {
     public AudioClip[] grabClips;
     public AudioClip fireClip;
-    public AudioClip launcherClip;
     public GameObject[] rockets;
+    public GameObject tailFlash;
+    public Transform tailPipe;
     public Vector3 rocketStartPos;
     public float roundPerMintue = 900f;
 
@@ -34,8 +35,20 @@ public class rocketLauncherFire : VRTK_InteractableObject
     {
         base.Ungrabbed(previousGrabbingObject);
         controllerEvents = null;
-        previousGrabbingObject.GetComponent<Rigidbody>().useGravity = enabled;
-        previousGrabbingObject.GetComponent<Rigidbody>().isKinematic = false;
+        if (rocketIndex < rockets.Length)
+        {
+            if (GetComponent<floatAndSpin>() != null)
+            {
+                GetComponent<floatAndSpin>().enabled = false;
+            }
+        }
+        else
+        {
+            if (GetComponent<floatAndSpin>() != null)
+            {
+                GetComponent<floatAndSpin>().enabled = true;
+            }
+        }
     }
 
     public override void StartUsing(VRTK_InteractUse usingObject)
@@ -68,6 +81,13 @@ public class rocketLauncherFire : VRTK_InteractableObject
 	
     void FireRocket()
     {
+        if (rocketIndex < rockets.Length)
+        {
+            CancelInvoke();
+            StartCoroutine("Destroy");
+            return;
+        }
+
         rockets[rocketIndex].transform.position += rocketStartPos;
         rockets[rocketIndex].transform.parent = null;
         rockets[rocketIndex].AddComponent<Rigidbody>();
@@ -75,6 +95,17 @@ public class rocketLauncherFire : VRTK_InteractableObject
         rockets[rocketIndex].AddComponent<rocket>();
         launcherSource.clip = fireClip;
         launcherSource.Play();
+        GameObject flash = Instantiate(tailFlash, tailPipe.position, tailPipe.rotation);
+        //flash.transform.LookAt(transform);
         rocketIndex += 1;
+
+        VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(controllerEvents.gameObject), 1);
+    }
+
+    private IEnumerator Destroy()
+    {
+        yield return new WaitForSeconds(10f);
+        transform.DOScale(0, 0.5f);
+        Destroy(gameObject, 0.7f);
     }
 }

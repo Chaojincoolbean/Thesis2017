@@ -55,8 +55,20 @@
         {
             base.Ungrabbed(previousGrabbingObject);
             controllerEvents = null;
-            previousGrabbingObject.GetComponent<Rigidbody>().useGravity = enabled;
-            previousGrabbingObject.GetComponent<Rigidbody>().isKinematic = false;
+            if (magazineCapacity<=0)
+            {
+                if (GetComponent<floatAndSpin>() != null)
+                {
+                    GetComponent<floatAndSpin>().enabled = false;
+                }
+            }
+            else
+            {
+                if (GetComponent<floatAndSpin>() != null)
+                {
+                    GetComponent<floatAndSpin>().enabled = true;
+                }
+            }
         }
 
         public override void StartUsing(VRTK_InteractUse usingObject)
