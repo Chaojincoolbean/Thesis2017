@@ -123,7 +123,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4440463778025216}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
 --- !u!4 &4440463778025216
 Transform:
@@ -137,8 +137,8 @@ Transform:
   m_Children:
   - {fileID: 4243272168906822}
   - {fileID: 4880503605251780}
-  - {fileID: 4863692226758304}
   - {fileID: 4269531673061430}
+  - {fileID: 4863692226758304}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -153,7 +153,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4440463778025216}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4880503605251780
 Transform:
@@ -369,7 +369,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -393,7 +393,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!114 &114296686907126430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -457,14 +457,10 @@ MonoBehaviour:
   usingState: 0
   muzzleFlash: {fileID: 100008, guid: 7b4c09739930d43458b94e59aa06933a, type: 2}
   M1911A1SFX:
-  - {fileID: 8300000, guid: 6defd15a95db03e43bcc46161de9a5d8, type: 3}
-  - {fileID: 8300000, guid: 78d8e8e1e69068041beb3d52a8f320de, type: 3}
-  - {fileID: 8300000, guid: 1ef531b5677829043b6d50699cb7d098, type: 3}
-  - {fileID: 8300000, guid: 34824e8a3ae788e448fa6219f3022ce3, type: 3}
-  - {fileID: 8300000, guid: 325ce9a19b449034bb650772416a3043, type: 3}
-  - {fileID: 8300000, guid: cbccf146d7213ac40a5719284d55a82c, type: 3}
-  - {fileID: 8300000, guid: 9eddef166a1233344ba00f372c7dbbea, type: 3}
-  - {fileID: 8300000, guid: 36760748b1a2b3a43b6e7943bcd12099, type: 3}
+  - {fileID: 8300000, guid: 50581fdf10ddad24d992acd4eac16b75, type: 3}
+  - {fileID: 8300000, guid: 4f696f98f2271c4438c955918cd1bdb0, type: 3}
+  - {fileID: 8300000, guid: c35c04d8c98f75047a7f65cd23152f47, type: 3}
+  - {fileID: 8300000, guid: 147487ed428e8684e81544d4bcbc1eb0, type: 3}
   grabSounds:
   - {fileID: 8300000, guid: f2353c45f8f6fab498f0168dd6382adb, type: 3}
   - {fileID: 8300000, guid: 43015d65ddb783b43b95c3a5a90f64e9, type: 3}

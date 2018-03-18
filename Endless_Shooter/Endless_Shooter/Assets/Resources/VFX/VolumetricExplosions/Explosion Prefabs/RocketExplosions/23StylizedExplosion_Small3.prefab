@@ -382,8 +382,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 086e75894c94ae441921b73f05b0c7c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 500
-  explosionRange: 20
+  explosionForce: 250
+  explosionRange: 5
   explosionDamage: 500
   Looping: 0
   destroyOnEnd: 1

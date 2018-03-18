@@ -147,7 +147,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1263104846784504}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.428, y: 1.883, z: 3.25}
+  m_LocalPosition: {x: 4.847, y: 1.883, z: 3.832}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 4103349992329366}
@@ -474,7 +474,7 @@ MonoBehaviour:
   magazineCapacity: 7
   damage: 45
   range: 200
-  ejectForce: 0.02
+  ejectForce: 0.05
   unpin: 20
   force: 45000
   recoil: 170

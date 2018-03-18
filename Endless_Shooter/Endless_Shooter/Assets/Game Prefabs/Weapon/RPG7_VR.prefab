@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 114551291542676558}
   - component: {fileID: 114757912358189846}
   - component: {fileID: 82250042405601064}
+  - component: {fileID: 114563174081340368}
   m_Layer: 0
   m_Name: RPG7_VR
   m_TagString: Weapon
@@ -105,7 +106,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1524641377297238}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.892, y: 1.806, z: 9.569}
+  m_LocalPosition: {x: -0.040082667, y: 0.22614554, z: 1.4208965}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 4596302857246032}
@@ -430,8 +431,19 @@ MonoBehaviour:
   - {fileID: 1721022449920040}
   tailFlash: {fileID: 1323320662865074, guid: 271a6d6419ce846478453f954642b932, type: 2}
   tailPipe: {fileID: 4263476058898336}
-  rocketStartPos: {x: 0, y: 0, z: 13.7}
+  rocketStartPos: {x: 0, y: 0, z: 0}
   roundPerMintue: 900
+--- !u!114 &114563174081340368
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1524641377297238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c868cd5bbec69142a0e3120870dcc12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114757912358189846
 MonoBehaviour:
   m_ObjectHideFlags: 1

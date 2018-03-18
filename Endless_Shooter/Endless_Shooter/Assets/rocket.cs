@@ -22,8 +22,6 @@ public class rocket : MonoBehaviour {
         GameObject rocketTrail = Instantiate(trail, tail.position, tail.rotation) as GameObject;
         rocketTrail.transform.parent = transform;
         rocketTrail.transform.LookAt(beacon);
-
-        print(explosions);
     }
 	
 	// Update is called once per frame

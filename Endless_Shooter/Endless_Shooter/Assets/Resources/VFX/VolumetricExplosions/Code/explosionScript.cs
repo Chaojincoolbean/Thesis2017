@@ -21,12 +21,9 @@ public class explosionScript : MonoBehaviour {
         explosionSource.Play();
 
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, explosionRange);
-        print(hitColliders);
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(transform.position, explosionRange);
         foreach (Collider hitCollider in hitColliders)
         {
-            print(hitCollider);
+            print(hitCollider + "Within explosion range");
             if (hitCollider.GetComponent<Rigidbody>() != null) //If colliders in this overlap sphere has a rigidbody
             {
                 if (hitCollider.attachedRigidbody.GetComponent<MuscleCollisionBroadcaster>() != null) //If this rigidbody is a puppet muscle
@@ -35,15 +32,16 @@ public class explosionScript : MonoBehaviour {
                     //Sever the limb
                     var broadcaster = hitCollider.attachedRigidbody.GetComponent<MuscleCollisionBroadcaster>();
                     broadcaster.puppetMaster.RemoveMuscleRecursive(broadcaster.puppetMaster.muscles[broadcaster.muscleIndex].joint, true, true, MuscleRemoveMode.Explode);
-                    hitCollider.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRange, 2F);
+                    hitCollider.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRange, 2F, ForceMode.Impulse);
                 }
                 else
                 {
                     // Not a muscle (any more)
                     var joint = hitCollider.attachedRigidbody.GetComponent<ConfigurableJoint>();
                     if (joint != null) Destroy(joint);
+                    hitCollider.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRange, 2F, ForceMode.Impulse);
                 }
-                hitCollider.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRange, 2F);
+                hitCollider.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRange, 2F, ForceMode.Impulse);
             }
         }
 
@@ -66,6 +64,12 @@ public class explosionScript : MonoBehaviour {
 
 
 	}
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(transform.position, explosionRange);
+    }
 
 
 }

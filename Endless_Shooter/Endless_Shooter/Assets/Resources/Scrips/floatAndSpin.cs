@@ -26,10 +26,16 @@ public class floatAndSpin : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        /*if (gameObject.GetComponent<Rigidbody>() != null)
+        //Define controller again if they are null
+        if (!leftController)
         {
-            gameObject.GetComponent<Rigidbody>().AddForce(-Physics.gravity * gameObject.GetComponent<Rigidbody>().mass);
-        }*/
+            leftController = GameObject.Find("Controller (left)");
+        }
+        if (!rightController)
+        {
+            rightController = GameObject.Find("Controller (right)");
+        }
+
         float distanceToLeftController = Vector3.Distance(leftController.transform.position, transform.position);
         float distanceToRightController = Vector3.Distance(rightController.transform.position, transform.position);
         if (distanceToLeftController<=0.5f||distanceToRightController<=0.5f)
