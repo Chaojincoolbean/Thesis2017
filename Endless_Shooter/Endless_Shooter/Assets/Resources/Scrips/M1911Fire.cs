@@ -8,7 +8,7 @@
     public class M1911Fire : VRTK_InteractableObject
     {
         public GameObject muzzleFlash;
-        public AudioClip M1911A1SFX;
+        public AudioClip[] M1911A1SFX;
         public AudioClip[] grabSounds;
         public GameObject impactVFX;
         public GameObject brass;
@@ -160,7 +160,7 @@
             rb.AddForceAtPosition(muzzle.right * sway, muzzle.transform.position);
             GameObject fire = Instantiate(muzzleFlash, muzzle.position, muzzle.rotation) as GameObject;
             fire.transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.1f);
-            source.clip = M1911A1SFX;
+            source.clip = M1911A1SFX[Random.Range(0,M1911A1SFX.Length)];
             source.Play();
         }
 

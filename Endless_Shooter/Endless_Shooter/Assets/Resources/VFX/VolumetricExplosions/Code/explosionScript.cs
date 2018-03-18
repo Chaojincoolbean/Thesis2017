@@ -21,8 +21,12 @@ public class explosionScript : MonoBehaviour {
         explosionSource.Play();
 
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, explosionRange);
-        foreach(Collider hitCollider in hitColliders)
+        print(hitColliders);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(transform.position, explosionRange);
+        foreach (Collider hitCollider in hitColliders)
         {
+            print(hitCollider);
             if (hitCollider.GetComponent<Rigidbody>() != null) //If colliders in this overlap sphere has a rigidbody
             {
                 if (hitCollider.attachedRigidbody.GetComponent<MuscleCollisionBroadcaster>() != null) //If this rigidbody is a puppet muscle
@@ -31,7 +35,7 @@ public class explosionScript : MonoBehaviour {
                     //Sever the limb
                     var broadcaster = hitCollider.attachedRigidbody.GetComponent<MuscleCollisionBroadcaster>();
                     broadcaster.puppetMaster.RemoveMuscleRecursive(broadcaster.puppetMaster.muscles[broadcaster.muscleIndex].joint, true, true, MuscleRemoveMode.Explode);
-                    //hitCollider.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRange, 2F);
+                    hitCollider.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRange, 2F);
                 }
                 else
                 {

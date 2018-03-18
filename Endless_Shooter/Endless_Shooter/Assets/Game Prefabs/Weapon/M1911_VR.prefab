@@ -428,7 +428,12 @@ MonoBehaviour:
   allowedUseControllers: 0
   usingState: 0
   muzzleFlash: {fileID: 100008, guid: ae12d87e2c868584f91d48cab717fe2b, type: 2}
-  M1911A1SFX: {fileID: 8300000, guid: c12bc10dadc48864987bf6e62042df18, type: 3}
+  M1911A1SFX:
+  - {fileID: 8300000, guid: c12bc10dadc48864987bf6e62042df18, type: 3}
+  - {fileID: 8300000, guid: c5e279d29d5c329478a25a6af3c72c04, type: 3}
+  - {fileID: 8300000, guid: 07556fb1dfcbf0f48b3aee5615b9b10e, type: 3}
+  - {fileID: 8300000, guid: 4b904538a7c5e9742a2b7d494742134a, type: 3}
+  - {fileID: 8300000, guid: 983b67587918a904789f72aded615608, type: 3}
   grabSounds:
   - {fileID: 8300000, guid: f2353c45f8f6fab498f0168dd6382adb, type: 3}
   - {fileID: 8300000, guid: 43015d65ddb783b43b95c3a5a90f64e9, type: 3}
