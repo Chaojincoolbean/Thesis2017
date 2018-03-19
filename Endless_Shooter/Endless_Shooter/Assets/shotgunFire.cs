@@ -16,7 +16,7 @@ public class shotgunFire : VRTK_InteractableObject
     public AudioClip[] grabSounds;
     public int magazineCapacity = 8;
     public float damage = 1f;
-    public float pelletCount = 9f;
+    public int pelletCount = 9;
     public float spread = 0.5f;
     public float range;
     public float ejectForce;
@@ -92,19 +92,20 @@ public class shotgunFire : VRTK_InteractableObject
     {
         //print("gun fired");
         //line.enabled = true;
-        Vector3 pos = muzzle.position;
+        //Vector3 pos = muzzle.position;
+        //Ray beamRay = new Ray(pos, -muzzle.forward);
 
-        Ray beamRay = new Ray(pos, -muzzle.forward);
-
-        RaycastHit Hit;
         //line.SetPosition(0, beamRay.origin);
         for (int i = 0; i < pelletCount; i++)
         {
             Vector3 randomDirection = -muzzle.forward * Random.Range(-spread, spread);
-            if (Physics.Raycast(muzzle.position, -muzzle.forward+randomDirection, out Hit, range))
+            Ray beamRay = new Ray(muzzle.position, -muzzle.forward+randomDirection);
+            print(-muzzle.forward + randomDirection + "From shotgun script");
+            RaycastHit Hit;
+            Debug.DrawRay(muzzle.position, -muzzle.forward + randomDirection, Color.green, 10);
+            if (Physics.Raycast(beamRay, out Hit, range))
             {
-                print(-muzzle.forward + randomDirection + "From shotgun script");
-                Debug.DrawRay(muzzle.position, -muzzle.forward + randomDirection, Color.green, 10);
+                
                 if (Hit.collider.GetComponent<Rigidbody>() != null)
                 {
 
