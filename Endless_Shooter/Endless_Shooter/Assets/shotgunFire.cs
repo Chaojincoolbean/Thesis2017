@@ -98,11 +98,18 @@ public class shotgunFire : VRTK_InteractableObject
         //line.SetPosition(0, beamRay.origin);
         for (int i = 0; i < pelletCount; i++)
         {
-            Vector3 randomDirection = -muzzle.forward * Random.Range(-spread, spread);
-            Ray beamRay = new Ray(muzzle.position, -muzzle.forward+randomDirection);
-            print(-muzzle.forward + randomDirection + "From shotgun script");
+            float spreadVariableX = Random.Range(-spread, spread);
+            float spreadVariableY = Random.Range(-spread, spread);
+            Vector3 randomSpread = new Vector3(spreadVariableX, spreadVariableY);
+            Ray beamRay = new Ray(muzzle.position, - muzzle.forward + randomSpread);
+
+            //print((-muzzle.forward + randomSpread).normalized + "From shotgun script");
+            //print("Beam " + i + " Dir: " + beamRay.direction);
+
             RaycastHit Hit;
-            Debug.DrawRay(muzzle.position, -muzzle.forward + randomDirection, Color.green, 10);
+            
+            Debug.DrawRay(muzzle.position, -muzzle.forward + randomSpread, Color.green, 82, true);
+
             if (Physics.Raycast(beamRay, out Hit, range))
             {
                 
@@ -144,6 +151,9 @@ public class shotgunFire : VRTK_InteractableObject
 
                 Instantiate(impactVFX, Hit.point, Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360)));
 
+                /*GameObject thing = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                thing.transform.position = Hit.point;
+                thing.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);*/
             }
             else
             {
