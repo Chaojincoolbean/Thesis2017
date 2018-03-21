@@ -191,15 +191,15 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.6327945
-        functionName: LaunchProjectile
+      - time: 0.60785687
+        functionName: LaunchFireBall
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.9976905
-        functionName: FireBallEnded
+        functionName: AttackAnimationIsEnded
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

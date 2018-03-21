@@ -143,7 +143,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1860577195379520}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.722, y: 1.686, z: 9.438}
+  m_LocalPosition: {x: 0, y: 0.464, z: 0}
   m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
   m_Children:
   - {fileID: 4999671180005568}
@@ -419,7 +419,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3de71a5d249766447a2200e014563b28, type: 3}
   - {fileID: 8300000, guid: 8e004cfd6517cbe44a20db92979c2277, type: 3}
   - {fileID: 8300000, guid: c3ef90a02af30a94693e477e9c9788aa, type: 3}
-  magazineCapacity: 50
+  magazineCapacity: 8
   damage: 30
   pelletCount: 9
   spread: 0.7

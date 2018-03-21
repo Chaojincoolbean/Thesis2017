@@ -18,11 +18,14 @@
     public class mannequinMage : mannequinBase
     {
         public GameObject[] projectile;
+        public GameObject[] waveAttackProjectiles;
+        public GameObject[] fireBallProjectiles;
         public GameObject muzzle;
         public States states;
         public AttackPatterns attackPattern;
         public float spreadFactor = 0.2f;
         public float projectileSpeed = 1000f;
+        public string[] triggerStrings;
 
         private GameObject beam;
         private GameObject beamStart;
@@ -107,7 +110,7 @@
                         player = GameObject.Find("[VRTK][AUTOGEN][HeadsetColliderContainer]").transform;
                     }
                     anim.applyRootMotion = false;
-                    anim.SetTrigger("isAttacking");
+                    anim.SetTrigger(triggerStrings[Random.Range(0,triggerStrings.Length)]);
                     //DOTween.Pause("RandomMovement");
                     //transform.LookAt(player.transform.position);
                     transform.DOLookAt(player.position, 0.5f, AxisConstraint.Y);
@@ -215,6 +218,39 @@
             Destroy(newBeamStart);
             Destroy(newBeamEnd);
             Destroy(newBeam);
+        }
+
+        public IEnumerator WaveAttack()
+        {
+            float fasterProjectileSpeed = projectileSpeed * 1.5f;
+            //Assign where should bullets come out from, which are left and right hand
+            Transform leftHand = transform.GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild(0).GetChild(0);
+            Transform rightHand = transform.GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetChild(2).GetChild(0).GetChild(0).GetChild(0).GetChild(0);
+
+            //Instantiate bullets and give them speed
+            for (int i = 0; i < 6; i++)
+            {
+                GameObject launchedProjectileLeft = Instantiate(waveAttackProjectiles[Random.Range(0,waveAttackProjectiles.Length)], leftHand.position, muzzle.transform.rotation);
+                launchedProjectileLeft.GetComponent<Rigidbody>().AddForce(muzzle.transform.forward * fasterProjectileSpeed);
+                GameObject launchedProjectileRight = Instantiate(waveAttackProjectiles[Random.Range(0, waveAttackProjectiles.Length)], rightHand.position, muzzle.transform.rotation);
+                launchedProjectileRight.GetComponent<Rigidbody>().AddForce(muzzle.transform.forward * fasterProjectileSpeed);
+                yield return new WaitForSeconds(0.1f);
+            }
+
+            /*Print left hand and right hand to check if they are null
+            print(leftHand);
+            print(rightHand);*/
+            
+        }
+
+        public IEnumerator LaunchFireBall()
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                GameObject launchedFireBall = Instantiate(fireBallProjectiles[Random.Range(0, fireBallProjectiles.Length)], muzzle.transform.position, muzzle.transform.rotation);
+                launchedFireBall.GetComponent<Rigidbody>().AddForce(muzzle.transform.forward * projectileSpeed);
+                yield return new WaitForSeconds(0.5f);
+            }
         }
 
         public void BalanceLost()
