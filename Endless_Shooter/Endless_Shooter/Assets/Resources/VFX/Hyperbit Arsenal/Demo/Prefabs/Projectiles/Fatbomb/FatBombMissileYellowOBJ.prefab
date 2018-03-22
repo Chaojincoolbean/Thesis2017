@@ -70,7 +70,7 @@ MonoBehaviour:
   muzzleParticle: {fileID: 102892, guid: dc096a67ab7bee64ea0bfe0628a90fbf, type: 2}
   trailParticles: []
   playerCamera: {fileID: 0}
-  damage: 10
+  damage: 5
   impactNormal: {x: 0, y: 0, z: 0}
 --- !u!135 &13543806
 SphereCollider:
