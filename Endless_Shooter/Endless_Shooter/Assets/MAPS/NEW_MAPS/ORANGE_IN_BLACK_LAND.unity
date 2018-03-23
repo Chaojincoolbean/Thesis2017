@@ -10458,12 +10458,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 933039037}
-  m_LocalRotation: {x: -0.012006641, y: 0.9768099, z: -0.2060545, w: -0.056918554}
-  m_LocalPosition: {x: 0.5315399, y: 1.9249034, z: 2.1294212}
+  m_LocalRotation: {x: -0.012006642, y: 0.97681, z: -0.20605451, w: -0.056918558}
+  m_LocalPosition: {x: 0.5315399, y: 1.9249034, z: -4.7605786}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1512272484}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &933039043
 MonoBehaviour:
@@ -10723,7 +10723,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1.5
-  m_Range: 15
+  m_Range: 20
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -15240,11 +15240,6 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: e00cf33fa633b664da04854166fb8211, type: 3}
---- !u!4 &1512272484 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4005511959409990, guid: 1a30bbceddacfaf4ab8960581f576440,
-    type: 2}
-  m_PrefabInternal: {fileID: 72237532}
 --- !u!1001 &1515442600
 Prefab:
   m_ObjectHideFlags: 0

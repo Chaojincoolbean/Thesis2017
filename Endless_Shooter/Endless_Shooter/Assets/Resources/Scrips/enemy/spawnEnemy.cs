@@ -4,12 +4,13 @@ using VRTK;
 
 public class spawnEnemy : MonoBehaviour
 {
-    public GameObject enemy;
+    public GameObject[] enemies;
+    public GameObject[] spawnParticles;
     public Transform[] spawns;
     public float timeToNextSpawn;
     public int enemyCountLimit = 20;
     private bool enemyCountLimitReached = false;
-    private GameObject[] enemies;
+    private GameObject[] enemiesInScene;
     // Use this for initialization
     void Start()
     {
@@ -19,8 +20,8 @@ public class spawnEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        enemies = GameObject.FindGameObjectsWithTag("enemy");
-        if (enemies.Length > 20)
+        enemiesInScene = GameObject.FindGameObjectsWithTag("enemy");
+        if (enemiesInScene.Length > 20)
         {
             enemyCountLimitReached = true;
         }
@@ -34,8 +35,10 @@ public class spawnEnemy : MonoBehaviour
     {
         if (enemyCountLimitReached == false)
         {
-            GameObject spwanedEnemy = Instantiate(enemy, spawns[Random.Range(0, spawns.Length)].position, Quaternion.identity) as GameObject;
+            GameObject spwanedEnemy = Instantiate(enemies[Random.Range(0,enemies.Length)], spawns[Random.Range(0, spawns.Length)].position, Quaternion.identity) as GameObject;
             spwanedEnemy.transform.GetChild(2).GetComponent<mannequinMage>().projectileSpeed = Random.Range(500f, 3000f);
+
+            GameObject spawnParticle = Instantiate(spawnParticles[Random.Range(0, spawnParticles.Length)], spwanedEnemy.transform.position, Quaternion.identity);
         }
     }
 }
