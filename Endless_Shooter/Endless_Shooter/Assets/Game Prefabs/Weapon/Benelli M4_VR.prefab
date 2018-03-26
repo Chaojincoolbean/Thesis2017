@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 114857529119142214}
   - component: {fileID: 114256361207105964}
   - component: {fileID: 114907346173942962}
+  - component: {fileID: 114925162745318248}
   m_Layer: 0
   m_Name: Benelli M4_VR
   m_TagString: Weapon
@@ -143,7 +144,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1860577195379520}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.722, y: 1.686, z: 9.438}
+  m_LocalPosition: {x: 0, y: 0.464, z: 0}
   m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
   m_Children:
   - {fileID: 4999671180005568}
@@ -419,10 +420,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3de71a5d249766447a2200e014563b28, type: 3}
   - {fileID: 8300000, guid: 8e004cfd6517cbe44a20db92979c2277, type: 3}
   - {fileID: 8300000, guid: c3ef90a02af30a94693e477e9c9788aa, type: 3}
-  magazineCapacity: 50
+  magazineCapacity: 8
   damage: 30
   pelletCount: 9
-  spread: 0.7
+  spread: 0.1
   range: 50
   ejectForce: 0.1
   unpin: 50
@@ -466,3 +467,14 @@ MonoBehaviour:
   hideDelayOnGrab: 0
   hideControllerOnUse: 0
   hideDelayOnUse: 0
+--- !u!114 &114925162745318248
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1860577195379520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c868cd5bbec69142a0e3120870dcc12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

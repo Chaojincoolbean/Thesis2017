@@ -6506,7 +6506,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67710082d3da0724abd3d60165acb29b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1794413616480220, guid: 3f89bc4319cf58f43b2ebeb816105396, type: 2}
+  enemies:
+  - {fileID: 1296938001946356, guid: f4d2328813f1cec448632a03d9e89301, type: 2}
+  - {fileID: 1511099954874528, guid: c824f89d1a59b4947a70d490b4e66d64, type: 2}
+  spawnParticles:
+  - {fileID: 100000, guid: d5a81ff52f3118c41a846824d15c1c1f, type: 2}
   spawns:
   - {fileID: 925033444}
   - {fileID: 1459194183}
@@ -6515,7 +6519,7 @@ MonoBehaviour:
   - {fileID: 1165560315}
   - {fileID: 1739238057}
   timeToNextSpawn: 5
-  enemyCountLimit: 20
+  enemyCountLimit: 25
 --- !u!1 &937182291
 GameObject:
   m_ObjectHideFlags: 0
@@ -7615,7 +7619,7 @@ Prefab:
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 792
+      value: 1396
       objectReference: {fileID: 0}
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
