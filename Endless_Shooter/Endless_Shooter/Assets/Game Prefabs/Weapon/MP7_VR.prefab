@@ -11,6 +11,23 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1868240242456760}
   m_IsPrefabParent: 1
+--- !u!1 &1021941057359518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4528880092419422}
+  - component: {fileID: 33857012007290550}
+  - component: {fileID: 23896090722921362}
+  m_Layer: 0
+  m_Name: sight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1049154059635434
 GameObject:
   m_ObjectHideFlags: 0
@@ -54,6 +71,23 @@ GameObject:
   - component: {fileID: 4621383762146154}
   m_Layer: 0
   m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1774729050855328
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4811239968575640}
+  - component: {fileID: 33988938863186238}
+  - component: {fileID: 23345912794144020}
+  m_Layer: 0
+  m_Name: Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,6 +159,7 @@ Transform:
   - {fileID: 4674909479171290}
   - {fileID: 4083460827563454}
   - {fileID: 4621383762146154}
+  - {fileID: 4528880092419422}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -142,6 +177,20 @@ Transform:
   m_Father: {fileID: 4382512180986404}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4528880092419422
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1021941057359518}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -0.0061548674, y: 0.48153767, z: -0.23153745}
+  m_LocalScale: {x: 3.8461537, y: 3.8461537, z: 3.8461537}
+  m_Children:
+  - {fileID: 4811239968575640}
+  m_Father: {fileID: 4382512180986404}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4621383762146154
 Transform:
   m_ObjectHideFlags: 1
@@ -168,6 +217,19 @@ Transform:
   m_Father: {fileID: 4382512180986404}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+--- !u!4 &4811239968575640
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1774729050855328}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0.070556514, z: -0.0226}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_Children: []
+  m_Father: {fileID: 4528880092419422}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23050295480234144
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -182,6 +244,38 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 13b9bbb654a84c2439034e0da9d35d03, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &23345912794144020
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1774729050855328}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: b0cdcf36318d8694eac9144271b6c694, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -232,6 +326,38 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!23 &23896090722921362
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1021941057359518}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 13b9bbb654a84c2439034e0da9d35d03, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!33 &33689921347857800
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -239,6 +365,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1868240242456760}
   m_Mesh: {fileID: 4300010, guid: 0b7e0ec802072e744999f33fd3332274, type: 3}
+--- !u!33 &33857012007290550
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1021941057359518}
+  m_Mesh: {fileID: 4300000, guid: b812d8e8163d87a46a3a2c52701169d6, type: 3}
 --- !u!33 &33977337634424102
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -246,6 +379,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1049154059635434}
   m_Mesh: {fileID: 4300004, guid: 0b7e0ec802072e744999f33fd3332274, type: 3}
+--- !u!33 &33988938863186238
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1774729050855328}
+  m_Mesh: {fileID: 4300002, guid: b812d8e8163d87a46a3a2c52701169d6, type: 3}
 --- !u!54 &54461661219017968
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -438,7 +578,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3de71a5d249766447a2200e014563b28, type: 3}
   - {fileID: 8300000, guid: 8e004cfd6517cbe44a20db92979c2277, type: 3}
   - {fileID: 8300000, guid: c3ef90a02af30a94693e477e9c9788aa, type: 3}
-  impactVFX: {fileID: 1287066278770538, guid: 5f515bc05f554bf4ab87956f1f8e8cfa, type: 2}
+  impactVFX: {fileID: 1106568428581494, guid: 6e296c14e494cf949a6b07a30a1b7450, type: 2}
   brass: {fileID: 1025600989307524, guid: 2bfd8a0c4747e6a4cb906a2e1901b63f, type: 2}
   magazineCapacity: 40
   range: 200
