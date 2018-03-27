@@ -10,6 +10,8 @@ public class throwingKnifeBlade : MonoBehaviour {
     // Use this for initialization
     void Start () {
         playerCamera = GameObject.Find("Camera (eye)");
+        print(transform.parent);
+        
     }
 	
 	// Update is called once per frame
@@ -30,7 +32,8 @@ public class throwingKnifeBlade : MonoBehaviour {
     IEnumerator ChildMyself(GameObject hitted)
     {
         yield return new WaitForSeconds(parentDelay);
-        transform.parent.parent = hitted.transform;
+        transform.parent = hitted.transform;
+        print(gameObject.name + " Is a child of " + hitted.name);
     }
 
     void OnTriggerEnter(Collider other)
