@@ -20,11 +20,13 @@
         public GameObject[] projectile;
         public GameObject[] waveAttackProjectiles;
         public GameObject[] fireBallProjectiles;
+        public GameObject[] daggerProjectiles;
         public GameObject muzzle;
         public States states;
         public AttackPatterns attackPattern;
         public float spreadFactor = 0.2f;
         public float projectileSpeed = 1000f;
+        public int daggerCounts = 10;
         public string[] triggerStrings;
 
         private GameObject beam;
@@ -250,6 +252,17 @@
                 GameObject launchedFireBall = Instantiate(fireBallProjectiles[Random.Range(0, fireBallProjectiles.Length)], muzzle.transform.position, muzzle.transform.rotation);
                 launchedFireBall.GetComponent<Rigidbody>().AddForce(muzzle.transform.forward * projectileSpeed);
                 yield return new WaitForSeconds(0.5f);
+            }
+        }
+
+        public IEnumerator ThrowingDaggers()
+        {
+            for (int i = 0; i < daggerCounts; i++)
+            {
+                GameObject thrownDagger = Instantiate(daggerProjectiles[Random.Range(0, daggerProjectiles.Length)], muzzle.transform.position, muzzle.transform.rotation);
+                thrownDagger.GetComponent<Rigidbody>().useGravity = false;
+                thrownDagger.GetComponent<Rigidbody>().AddForce(transform.forward * projectileSpeed * 10);
+                yield return new WaitForSeconds(0.1f);
             }
         }
 

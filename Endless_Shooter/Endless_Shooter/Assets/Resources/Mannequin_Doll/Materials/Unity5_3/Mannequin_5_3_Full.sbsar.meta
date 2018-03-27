@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 2b16ab19a8704f04b844c8ec91370530
-timeCreated: 1518583034
+timeCreated: 1522180497
 licenseType: Free
 SubstanceImporter:
   serializedVersion: 5
@@ -23,7 +23,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: $randomseed
       value:
-        scalar[0]: 7523
+        scalar[0]: 3476
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -98,7 +98,7 @@ SubstanceImporter:
           offset: {x: 0, y: 0}
       - _MainTex:
           texture: {fileID: 2800000, guid: 5a40fc1b8b15d78458715849149cd34c, type: 3}
-          scale: {x: 1, y: 1}
+          scale: {x: 1.12, y: 1}
           offset: {x: 0, y: 0}
       - _PixelTex:
           texture: {instanceID: 0}
@@ -115,6 +115,7 @@ SubstanceImporter:
       floats:
       - _BUMP_LABEL: 0
       - _BumpScale: 1
+      - _BumpStrength: 1
       - _CubeIsHDR: 0
       - _Cutoff: 0.5
       - _DetailNormalMapScale: 1
@@ -170,6 +171,7 @@ SubstanceImporter:
       - _VertexColor: 0
       - _ZWrite: 1
       colors:
+      - _BumpTex_Scroll: {r: 0, g: 0, b: 0, a: 0}
       - _Color: {r: 1, g: 1, b: 1, a: 1}
       - _DisplaceTex_1_Scroll: {r: 0, g: 0, b: 0, a: 0}
       - _DisplaceTex_2_Scroll: {r: 0, g: 0, b: 0, a: 0}
