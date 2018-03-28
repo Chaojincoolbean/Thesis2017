@@ -19,8 +19,8 @@ public class HyperbitProjectileScript : MonoBehaviour
        projectileParticle = Instantiate(projectileParticle, transform.position, transform.rotation) as GameObject;
         projectileParticle.transform.parent = transform;
 		if (muzzleParticle){
-        muzzleParticle = Instantiate(muzzleParticle, transform.position, transform.rotation) as GameObject;
-        Destroy(muzzleParticle, 1.5f); // Lifetime of muzzle effect.
+        GameObject spawnedMuzzleParticle = Instantiate(muzzleParticle, transform.position, transform.rotation) as GameObject;
+        Destroy(spawnedMuzzleParticle, 1.5f); // Lifetime of muzzle effect.
 		}
         playerCamera = GameObject.Find("Camera (eye)");
     }
