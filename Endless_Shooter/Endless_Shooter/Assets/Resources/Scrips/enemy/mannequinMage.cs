@@ -21,6 +21,7 @@
         public GameObject[] waveAttackProjectiles;
         public GameObject[] fireBallProjectiles;
         public GameObject[] daggerProjectiles;
+        public Transform[] magicTriangleMuzzles;
         public GameObject muzzle;
         public States states;
         public AttackPatterns attackPattern;
@@ -36,6 +37,7 @@
         private GameObject newBeamEnd;
         private GameObject newBeamStart;
         private GameObject newBeam;
+        private GameObject magicTriangle;
         private LineRenderer line;
         private bool isAttacking = false;
         private int s;
@@ -57,6 +59,11 @@
             beamStart = Resources.Load("VFX/Hyperbit Arsenal/Prefabs/Beam/BasicBeam/LaserBeamYellowStart") as GameObject;
             beamEnd = Resources.Load("VFX/Hyperbit Arsenal/Prefabs/Beam/BasicBeam/LaserBeamYellowEnd") as GameObject;
 
+            /*if (magicTriangleMuzzles != null)
+            {
+                magicTriangle = magicTriangleMuzzles[0].parent.gameObject;
+                magicTriangle.SetActive(false);
+            }*/
         }
 
         // Update is called once per frame
@@ -128,6 +135,10 @@
         public void AttackAnimationIsEnded()
         {
             isAttacking = false;  
+            if (magicTriangleMuzzles != null)
+            {
+                magicTriangleMuzzles[0].parent.gameObject.SetActive(false);
+            }
         }
 
         public void LaunchProjectile()
@@ -270,6 +281,31 @@
                 thrownDagger.GetComponent<Rigidbody>().AddForce(transform.forward * projectileSpeed * 10);
                 yield return new WaitForSeconds(0.02f);
             }
+        }
+
+        public IEnumerator MagicSpellCasting()
+        {
+            magicTriangleMuzzles[0].parent.gameObject.SetActive(true);
+            //magicTriangleMuzzles[0].parent.LookAt(player.position);
+            for (int i = 0; i < daggerCounts; i++)
+            {
+                GameObject thrownDagger1 = Instantiate(daggerProjectiles[Random.Range(0, daggerProjectiles.Length)], magicTriangleMuzzles[0].position, magicTriangleMuzzles[0].rotation);
+                thrownDagger1.GetComponent<Rigidbody>().useGravity = false;
+                thrownDagger1.GetComponent<Rigidbody>().AddForce(magicTriangleMuzzles[0].forward * projectileSpeed * 10);
+                thrownDagger1.transform.rotation = Quaternion.LookRotation(thrownDagger1.GetComponent<Rigidbody>().velocity);
+
+                GameObject thrownDagger2 = Instantiate(daggerProjectiles[Random.Range(0, daggerProjectiles.Length)], magicTriangleMuzzles[1].position, magicTriangleMuzzles[1].rotation);
+                thrownDagger2.GetComponent<Rigidbody>().useGravity = false;
+                thrownDagger2.GetComponent<Rigidbody>().AddForce(magicTriangleMuzzles[1].forward * projectileSpeed * 10);
+                thrownDagger2.transform.rotation = Quaternion.LookRotation(thrownDagger2.GetComponent<Rigidbody>().velocity);
+
+                GameObject thrownDagger3 = Instantiate(daggerProjectiles[Random.Range(0, daggerProjectiles.Length)], magicTriangleMuzzles[2].position, magicTriangleMuzzles[2].rotation);
+                thrownDagger3.GetComponent<Rigidbody>().useGravity = false;
+                thrownDagger3.GetComponent<Rigidbody>().AddForce(magicTriangleMuzzles[2].forward * projectileSpeed * 10);
+                thrownDagger3.transform.rotation = Quaternion.LookRotation(thrownDagger3.GetComponent<Rigidbody>().velocity);
+                yield return new WaitForSeconds(0.02f);
+            }
+            
         }
 
         public void BalanceLost()

@@ -1462,7 +1462,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1460372417371126}
-  m_LocalRotation: {x: -0.7028751, y: 0.0022243187, z: 0.71130645, w: 0.0022260821}
+  m_LocalRotation: {x: -0.702875, y: 0.0022243185, z: 0.7113064, w: 0.002226082}
   m_LocalPosition: {x: 0.07360506, y: 0.9220495, z: -0.0072402954}
   m_LocalScale: {x: 1.0000021, y: 0.9999998, z: 1.000062}
   m_Children: []
@@ -1829,7 +1829,7 @@ MonoBehaviour:
   attackPattern: 0
   spreadFactor: 0.1
   projectileSpeed: 1000
-  daggerCounts: 30
+  daggerCounts: 20
   triggerStrings:
   - throwingDagger
 --- !u!114 &114102377723843592
@@ -2485,7 +2485,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: -381740987, guid: 2b16ab19a8704f04b844c8ec91370530, type: 3}
+  - {fileID: 2100000, guid: eacc33e3b3f3d2e46826160b720125a6, type: 2}
   - {fileID: 2100000, guid: e6d3ea28a11a859408170f25f3f5a765, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0

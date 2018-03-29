@@ -8,14 +8,18 @@ public class throwingKnifeBlade : MonoBehaviour {
     public float damage = 15f;
     public AudioClip[] clips;
     public int bounceCount;
+    public bool forceRotation = true;
 
     private int i;
     private AudioSource source;
+    private Rigidbody rb;
+    private bool isFlying = true;
     [SerializeField] private GameObject playerCamera;
     // Use this for initialization
     void Start () {
         playerCamera = GameObject.Find("Camera (eye)");
         source = gameObject.GetComponent<AudioSource>();
+        rb = GetComponent<Rigidbody>();
 
         //Play the throwing sound effect
         source.clip = clips[Random.Range(0, clips.Length)];
@@ -23,16 +27,20 @@ public class throwingKnifeBlade : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void LateUpdate () {
+        if (isFlying == true && forceRotation == true)
+        {
+            transform.rotation = Quaternion.LookRotation(rb.velocity);
+        }
 	}
 
     void OnCollisionEnter(Collision collision)
     {
         i += 1;
-
+        StartCoroutine(ApplyForceAfterBounce());
         if (i > bounceCount)
         {
+            isFlying = false;
             GetComponent<Rigidbody>().useGravity = true;
             GameObject objectHit = collision.collider.gameObject;
             if (collision.relativeVelocity.magnitude > collisionMagnitude)
@@ -54,6 +62,12 @@ public class throwingKnifeBlade : MonoBehaviour {
         }
     }
 
+    IEnumerator ApplyForceAfterBounce()
+    {
+        yield return new WaitForSeconds(0.1f);
+        transform.rotation = Quaternion.LookRotation(rb.velocity);
+        rb.AddForce(rb.velocity * 1.5f);
+    }
 
     void OnTriggerEnter(Collider other)
     {
