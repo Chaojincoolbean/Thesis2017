@@ -29,6 +29,7 @@
         public int daggerCounts = 10;
         public string[] triggerStrings;
 
+        private Ray ray;
         private GameObject beam;
         private GameObject beamStart;
         private GameObject beamEnd;
@@ -55,6 +56,7 @@
             beam = Resources.Load("VFX/Hyperbit Arsenal/Prefabs/Beam/BasicBeam/LaserBeamYellow") as GameObject;
             beamStart = Resources.Load("VFX/Hyperbit Arsenal/Prefabs/Beam/BasicBeam/LaserBeamYellowStart") as GameObject;
             beamEnd = Resources.Load("VFX/Hyperbit Arsenal/Prefabs/Beam/BasicBeam/LaserBeamYellowEnd") as GameObject;
+
         }
 
         // Update is called once per frame
@@ -78,6 +80,9 @@
                 states = (States)2;
                 StateMachine(states);
             }
+            ray = new Ray(transform.position + new Vector3(0, 1.5f, 0), transform.forward);
+            Physics.Raycast(ray, 100);
+            Debug.DrawRay(transform.position + new Vector3(0, 1.5f, 0), transform.forward * 100, Color.red);
 
         }
 
@@ -261,8 +266,9 @@
             {
                 GameObject thrownDagger = Instantiate(daggerProjectiles[Random.Range(0, daggerProjectiles.Length)], muzzle.transform.position, muzzle.transform.rotation);
                 thrownDagger.GetComponent<Rigidbody>().useGravity = false;
+                thrownDagger.transform.LookAt(ray.GetPoint(100));
                 thrownDagger.GetComponent<Rigidbody>().AddForce(transform.forward * projectileSpeed * 10);
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.02f);
             }
         }
 

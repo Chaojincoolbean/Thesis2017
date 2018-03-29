@@ -831,12 +831,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1562769594808000}
-  m_LocalRotation: {x: 0.5527183, y: 0.44104707, z: 0.55269074, w: 0.44103622}
-  m_LocalPosition: {x: 0.712261, y: -0.7288511, z: -0.18183492}
+  m_LocalRotation: {x: 0.5527184, y: 0.4410469, z: 0.5526907, w: 0.44103637}
+  m_LocalPosition: {x: 0, y: 0.322, z: 0.073}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4790717447159214}
-  m_RootOrder: 1
+  m_Father: {fileID: 4324525232852196}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4061902554680164
 Transform:
@@ -1041,7 +1041,8 @@ Transform:
   m_LocalRotation: {x: -0.5527183, y: -0.44104695, z: -0.5526907, w: 0.44103634}
   m_LocalPosition: {x: 0.8040159, y: 1.5205216, z: -0.007277012}
   m_LocalScale: {x: 1.0000007, y: 1.0000012, z: 1.0000012}
-  m_Children: []
+  m_Children:
+  - {fileID: 4038246594877558}
   m_Father: {fileID: 4178085012595258}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: -12.855, y: 0.0026999998, z: -0.0007}
@@ -1311,7 +1312,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4779387042364220}
-  - {fileID: 4038246594877558}
   m_Father: {fileID: 4194883964944210}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -12.855, y: 0.0026999998, z: -0.0007}
@@ -1822,11 +1822,14 @@ MonoBehaviour:
   - {fileID: 191804, guid: 428c4db6955cc6548aef2737a4fd818b, type: 2}
   waveAttackProjectiles: []
   fireBallProjectiles: []
+  daggerProjectiles:
+  - {fileID: 1772632222377016, guid: c0de9d6e292e6d6418049d3146e36335, type: 2}
   muzzle: {fileID: 1562769594808000}
   states: 0
   attackPattern: 0
   spreadFactor: 0.1
   projectileSpeed: 1000
+  daggerCounts: 30
   triggerStrings:
   - throwingDagger
 --- !u!114 &114102377723843592
