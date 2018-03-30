@@ -20,7 +20,7 @@
         protected Animator anim;
         protected GameObject scoreManagement;
         protected float distanceToPlayer;
-        protected float _health = 100f;
+        [SerializeField]protected float _health = 100f;
         protected bool isPlayerFound = false;
         protected GameObject playerCamera;
         protected bool dead = false;

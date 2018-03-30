@@ -15,6 +15,11 @@
         singleFire, consecutiveFire, rapidFire, multipleFire, beam
     }
 
+    public enum SuperhumanChokeLiftPatterns
+    {
+        riseHolyBlades
+    }
+
     public class mannequinMage : mannequinBase
     {
         public GameObject[] projectile;
@@ -25,6 +30,7 @@
         public GameObject muzzle;
         public States states;
         public AttackPatterns attackPattern;
+        public SuperhumanChokeLiftPatterns liftPattern;
         public float spreadFactor = 0.2f;
         public float projectileSpeed = 1000f;
         public int daggerCounts = 10;
@@ -111,6 +117,7 @@
                     {
                         anim.applyRootMotion = true;
                     }
+                    print(anim.applyRootMotion);
                     Quaternion randomRotation = Quaternion.Euler(0, Random.Range(0, 180), 0);
                     anim.SetBool("isMoving", true);
                     transform.DORotateQuaternion(randomRotation, 0.5f).SetId<Tweener>("RandomMovement");
@@ -306,6 +313,45 @@
                 yield return new WaitForSeconds(0.02f);
             }
             
+        }
+
+        public void SuperhumanChokeLift()
+        {
+            switch (liftPattern)
+            {
+                case SuperhumanChokeLiftPatterns.riseHolyBlades:
+                    {
+                        StartCoroutine(HolyBlades());
+                    }
+                    break;
+            }
+
+        }
+
+        IEnumerator HolyBlades()
+        {
+            for (int i = 0; i < daggerCounts; i++)
+            {
+                float holyBladeSpreadFactor = spreadFactor * 6;
+                Vector3 muzzleReference = transform.position + new Vector3(0, 1, -1.5f);
+                muzzleReference.x += Random.Range(-holyBladeSpreadFactor, holyBladeSpreadFactor);
+                //muzzleReference.y += Random.Range(-holyBladeSpreadFactor, holyBladeSpreadFactor);
+                //muzzleReference.z += Random.Range(-holyBladeSpreadFactor, holyBladeSpreadFactor);
+
+                Quaternion holyBladeRotation = transform.rotation;
+                holyBladeRotation.x += Random.Range(-spreadFactor, spreadFactor);
+                holyBladeRotation.y += Random.Range(-spreadFactor, spreadFactor);
+                //holyBladeRotation.z += Random.Range(-spreadFactor, spreadFactor);
+
+                GameObject holyBlade = Instantiate(daggerProjectiles[Random.Range(0, daggerProjectiles.Length)], muzzleReference, holyBladeRotation);
+                //holyBlade.GetComponent<Rigidbody>().useGravity = false;
+                holyBlade.GetComponent<Rigidbody>().AddForce(holyBlade.transform.up * projectileSpeed * 10);
+                holyBlade.name = "Holy Blade" + i.ToString();
+                //holyBlade.GetComponent<throwingKnifeBlade>().forceRotation = false;
+                holyBlade.AddComponent<homing>();
+
+                yield return new WaitForSeconds(0.02f);
+            }
         }
 
         public void BalanceLost()

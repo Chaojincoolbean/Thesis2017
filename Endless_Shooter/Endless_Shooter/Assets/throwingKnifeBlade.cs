@@ -45,19 +45,21 @@ public class throwingKnifeBlade : MonoBehaviour {
             GameObject objectHit = collision.collider.gameObject;
             if (collision.relativeVelocity.magnitude > collisionMagnitude)
             {
+                if (gameObject.GetComponent<homing>() != null)
+                {
+                    //gameObject.GetComponent<homing>().enabled = false;
+                }
                 if (gameObject.GetComponent<FixedJoint>() == null)
                 {
                     FixedJoint fixedJoint = gameObject.AddComponent<FixedJoint>();
                     fixedJoint.connectedBody = objectHit.GetComponent<Rigidbody>();
-                    print(gameObject.name + " Is a child of " + objectHit.name);
+                    //sprint(gameObject.name + " Is a child of " + objectHit.name);
                 }
 
                 //Throwing knife attaching by parenting, not used now
                 /*Rigidbody rb = gameObject.GetComponent<Rigidbody>();
                 Destroy(rb);
                 transform.parent = hitted.transform;*/
-
-
             }
         }
     }

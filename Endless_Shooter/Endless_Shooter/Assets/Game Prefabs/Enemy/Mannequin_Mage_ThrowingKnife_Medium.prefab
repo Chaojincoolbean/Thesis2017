@@ -636,7 +636,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1641824583237222
 GameObject:
   m_ObjectHideFlags: 1
@@ -1406,8 +1406,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1149203735825854}
-  m_LocalRotation: {x: -0, y: 0.3826829, z: -0, w: 0.9238798}
-  m_LocalPosition: {x: 0.879, y: 1.305, z: 0.592}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.383, y: 1.338, z: 1.543}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4202918068309754}
@@ -1415,7 +1415,7 @@ Transform:
   - {fileID: 4545701766944136}
   m_Father: {fileID: 4406105863883408}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 45.000004, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4805336644700700
 Transform:
   m_ObjectHideFlags: 1
@@ -2485,6 +2485,7 @@ MonoBehaviour:
   rightLeg:
   - {fileID: 153704342193230216}
   - {fileID: 153629927360447448}
+  _health: 125
   projectile:
   - {fileID: 191804, guid: 03a244ed98279614e84a9c2775eafc7a, type: 2}
   - {fileID: 191804, guid: 226f8603f443ffc4a85cf03b7dac47a5, type: 2}
@@ -2502,6 +2503,7 @@ MonoBehaviour:
   muzzle: {fileID: 1279228327026908}
   states: 0
   attackPattern: 0
+  liftPattern: 0
   spreadFactor: 0.1
   projectileSpeed: 1000
   daggerCounts: 15
