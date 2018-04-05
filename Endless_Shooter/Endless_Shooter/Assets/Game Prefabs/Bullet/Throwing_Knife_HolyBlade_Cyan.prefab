@@ -558,6 +558,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 31b4fe21854d14b458e3dc8adfd17560, type: 3}
   bounceCount: 0
   forceRotation: 1
+  destroyParticle: {fileID: 100000, guid: 840bfe7f41118fe48b771627d1ea4164, type: 2}
   playerCamera: {fileID: 0}
 --- !u!114 &114916992710754274
 MonoBehaviour:

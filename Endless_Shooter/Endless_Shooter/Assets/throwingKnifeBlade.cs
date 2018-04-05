@@ -9,6 +9,7 @@ public class throwingKnifeBlade : MonoBehaviour {
     public AudioClip[] clips;
     public int bounceCount;
     public bool forceRotation = true;
+    public GameObject destroyParticle;
 
     private int i;
     private AudioSource source;
@@ -24,6 +25,8 @@ public class throwingKnifeBlade : MonoBehaviour {
         //Play the throwing sound effect
         source.clip = clips[Random.Range(0, clips.Length)];
         source.Play();
+
+        Invoke("DeathParticle", 15f);
     }
 	
 	// Update is called once per frame
@@ -80,5 +83,14 @@ public class throwingKnifeBlade : MonoBehaviour {
             playerCamera.GetComponent<playerHit>().CameraShake();
             playerCamera.GetComponent<playerHit>().PlayerHealthDecrease(damage);
         }
+    }
+
+    void DeathParticle()
+    {
+        GameObject particle = Instantiate(destroyParticle, gameObject.transform.position, gameObject.transform.rotation);
+        ParticleSystem particleSystem = particle.GetComponent<ParticleSystem>();
+
+        Destroy(gameObject);
+        Destroy(particle, 5f);
     }
 }
