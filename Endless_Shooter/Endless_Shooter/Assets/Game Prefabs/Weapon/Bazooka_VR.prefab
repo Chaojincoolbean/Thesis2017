@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4959605065916106}
   m_Layer: 0
   m_Name: Tail Pipe
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 64306014692620830}
   m_Layer: 0
   m_Name: Rocket M72 (1)
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 114235271363162174}
   - component: {fileID: 114148982992651588}
   - component: {fileID: 64134016551161682}
+  - component: {fileID: 114068296826214448}
   m_Layer: 0
   m_Name: Bazooka_VR
   m_TagString: Weapon
@@ -78,7 +79,7 @@ GameObject:
   - component: {fileID: 4472192091781018}
   m_Layer: 0
   m_Name: Snap Handle
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,7 +94,7 @@ GameObject:
   - component: {fileID: 4978163636676734}
   m_Layer: 0
   m_Name: Tail
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,7 +109,7 @@ GameObject:
   - component: {fileID: 4361645146223232}
   m_Layer: 0
   m_Name: beacon
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,7 +147,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1468351981223424}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.828, y: 1.842, z: 9.683}
+  m_LocalPosition: {x: -0.345, y: 1.24, z: 2.473}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 4982720993862976}
@@ -400,6 +401,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114068296826214448
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1468351981223424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c868cd5bbec69142a0e3120870dcc12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114148982992651588
 MonoBehaviour:
   m_ObjectHideFlags: 1
