@@ -109,7 +109,6 @@ GameObject:
   - component: {fileID: 114338308622897030}
   - component: {fileID: 114058416928447174}
   - component: {fileID: 114584754818738588}
-  - component: {fileID: 114698139464521810}
   m_Layer: 0
   m_Name: MP40_VR
   m_TagString: Weapon
@@ -590,14 +589,3 @@ MonoBehaviour:
   bolt: {fileID: 4109013508993256}
   muzzle: {fileID: 4564432432171884}
   ejectWindow: {fileID: 4719662416678778}
---- !u!114 &114698139464521810
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1562124809717546}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c868cd5bbec69142a0e3120870dcc12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

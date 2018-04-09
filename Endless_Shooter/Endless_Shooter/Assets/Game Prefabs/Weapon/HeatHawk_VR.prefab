@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 114372782878670424}
   - component: {fileID: 114525369844248094}
   - component: {fileID: 114693584879781120}
-  - component: {fileID: 114068200284951842}
+  - component: {fileID: 114664790525271152}
   m_Layer: 0
   m_Name: HeatHawk_VR
   m_TagString: Untagged
@@ -155,23 +155,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.02918414, y: 0.03531372, z: 1.3621995}
   m_Center: {x: 0.0010380845, y: -0.0024307827, z: 0.631099}
---- !u!114 &114068200284951842
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1847933463818118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec2ac476f2fc9a45a4e69712580a603, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 0
-  rightSnapHandle: {fileID: 4880111928475572}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1
-  onGrabCollisionDelay: 0
 --- !u!114 &114372782878670424
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -203,6 +186,25 @@ MonoBehaviour:
   hideDelayOnGrab: 0
   hideControllerOnUse: 0
   hideDelayOnUse: 0
+--- !u!114 &114664790525271152
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1847933463818118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 0
+  rightSnapHandle: {fileID: 4880111928475572}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0
+  destroyImmediatelyOnThrow: 1
+  breakForce: Infinity
 --- !u!114 &114693584879781120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -224,7 +226,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114068200284951842}
+  grabAttachMechanicScript: {fileID: 114664790525271152}
   secondaryGrabActionScript: {fileID: 114372782878670424}
   isUsable: 0
   holdButtonToUse: 1
