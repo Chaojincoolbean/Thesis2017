@@ -3171,12 +3171,6 @@ Transform:
   m_Father: {fileID: 563585194}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &453114391 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114193138363639216, guid: 3f89bc4319cf58f43b2ebeb816105396,
-    type: 2}
-  m_PrefabInternal: {fileID: 463326903}
-  m_Script: {fileID: 11500000, guid: 294cd19504bfdee45831da16dfee6e20, type: 3}
 --- !u!1001 &463326903
 Prefab:
   m_ObjectHideFlags: 0
@@ -3184,36 +3178,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: groupOverrides.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: onGetUpProne.animations.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: collisionResistance.curve.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: groupOverrides.Array.data[4].groups.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: onLoseBalance.unityEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: onRegainBalance.unityEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4922791805418938, guid: 3f89bc4319cf58f43b2ebeb816105396, type: 2}
       propertyPath: m_LocalPosition.x
       value: 4.4796658
@@ -3246,6 +3210,22 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4967677444285522, guid: 3f89bc4319cf58f43b2ebeb816105396, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.7028751
+      objectReference: {fileID: 0}
+    - target: {fileID: 4967677444285522, guid: 3f89bc4319cf58f43b2ebeb816105396, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.0022243187
+      objectReference: {fileID: 0}
+    - target: {fileID: 4967677444285522, guid: 3f89bc4319cf58f43b2ebeb816105396, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.71130645
+      objectReference: {fileID: 0}
+    - target: {fileID: 4967677444285522, guid: 3f89bc4319cf58f43b2ebeb816105396, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.0022260821
+      objectReference: {fileID: 0}
     - target: {fileID: 153246321009706042, guid: 3f89bc4319cf58f43b2ebeb816105396,
         type: 2}
       propertyPath: m_ConnectedAnchor.x
@@ -3260,282 +3240,6 @@ Prefab:
         type: 2}
       propertyPath: m_ConnectedAnchor.z
       value: 0.00000003212864
-      objectReference: {fileID: 0}
-    - target: {fileID: 1303590506182160, guid: 3f89bc4319cf58f43b2ebeb816105396, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4854662076011166, guid: 3f89bc4319cf58f43b2ebeb816105396, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: collisionLayers.m_Bits
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: collisionResistance.floatValue
-      value: 700
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: masterProps.normalMode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: masterProps.mappingBlendSpeed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: onLoseBalance.switchToBehaviour
-      value: BehaviourFall
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: collisionResistance.curve.m_Curve.Array.data[0].value
-      value: 56.68847
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: collisionResistance.curve.m_Curve.Array.data[1].time
-      value: 5.1236973
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: collisionResistance.curve.m_Curve.Array.data[1].value
-      value: 140.30418
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: defaults.unpinParents
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: defaults.unpinChildren
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: defaults.knockOutDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: groupOverrides.Array.data[0].props.collisionResistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: groupOverrides.Array.data[0].props.knockOutDistance
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: groupOverrides.Array.data[1].props.collisionResistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: groupOverrides.Array.data[2].props.unpinParents
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: groupOverrides.Array.data[2].props.unpinChildren
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: groupOverrides.Array.data[2].props.regainPinSpeed
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: groupOverrides.Array.data[2].props.collisionResistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: groupOverrides.Array.data[2].props.knockOutDistance
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: groupOverrides.Array.data[3].props.unpinParents
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: groupOverrides.Array.data[3].props.collisionResistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: groupOverrides.Array.data[3].props.knockOutDistance
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: groupOverrides.Array.data[4].name
-      value: Prop
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: groupOverrides.Array.data[4].groups.Array.data[0]
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: groupOverrides.Array.data[4].props.unpinParents
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: groupOverrides.Array.data[4].props.unpinChildren
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: groupOverrides.Array.data[4].props.minMappingWeight
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: groupOverrides.Array.data[4].props.maxMappingWeight
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: groupOverrides.Array.data[4].props.regainPinSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: groupOverrides.Array.data[4].props.collisionResistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: groupOverrides.Array.data[4].props.knockOutDistance
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: knockOutDistance
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: unpinnedMuscleWeightMlp
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: getUpDelay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: minGetUpDuration
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: onGetUpProne.animations.Array.data[0].animationState
-      value: GetUpProne
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: onGetUpProne.animations.Array.data[0].crossfadeTime
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: onGetUpProne.animations.Array.data[0].resetNormalizedTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: onLoseBalance.unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 453114391}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: onLoseBalance.unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BalanceLost
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: onLoseBalance.unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: onLoseBalance.unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: onLoseBalance.unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: onRegainBalance.unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 453114391}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: onRegainBalance.unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BalanceRegained
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: onRegainBalance.unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: onRegainBalance.unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121341971485118, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: onRegainBalance.unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1303590506182160, guid: 3f89bc4319cf58f43b2ebeb816105396, type: 2}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 95096607648715274, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: m_UpdateMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 95096607648715274, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: m_CullingMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114567051514215936, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: angularLimits
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114567051514215936, guid: 3f89bc4319cf58f43b2ebeb816105396,
-        type: 2}
-      propertyPath: supportTranslationAnimation
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1303590506182160, guid: 3f89bc4319cf58f43b2ebeb816105396, type: 2}
-      propertyPath: m_Name
-      value: Puppet (with Fall)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3f89bc4319cf58f43b2ebeb816105396, type: 2}
@@ -3733,71 +3437,6 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 400118, guid: 959d14bf134f54a6e993fe6ca6e063c0, type: 3}
   m_PrefabInternal: {fileID: 1528366055}
---- !u!1 &502703240
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 502703241}
-  - component: {fileID: 502703242}
-  m_Layer: 0
-  m_Name: Fall
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &502703241
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 502703240}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1716769688}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &502703242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 502703240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 367e952422ba44b82a0206d3b9cf12c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puppetMaster: {fileID: 0}
-  deactivated: 0
-  stateName: Falling
-  transitionDuration: 0.7
-  layer: 0
-  fixedTime: 0
-  raycastLayers:
-    serializedVersion: 2
-    m_Bits: 19
-  blendParameter: FallBlend
-  writheHeight: 2.5
-  writheYVelocity: 1
-  blendSpeed: 3
-  blendMappingSpeed: 1
-  canEnd: 1
-  minTime: 1
-  maxEndVelocity: 0.4
-  onEnd:
-    switchToBehaviour: BehaviourPuppet
-    animations: []
-    unityEvent:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
 --- !u!1 &507910114
 GameObject:
   m_ObjectHideFlags: 0
@@ -4658,6 +4297,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11466454, guid: bdc15cb97660141638eaeea7afbe7591, type: 2}
+      propertyPath: collisionLayers.m_Bits
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bdc15cb97660141638eaeea7afbe7591, type: 2}
   m_IsPrefabParent: 0
@@ -4740,7 +4383,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &899196376
 AudioListener:
   m_ObjectHideFlags: 0
@@ -6466,11 +6109,6 @@ Transform:
   m_Father: {fileID: 868348538}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1716769688 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4886666608981808, guid: 3f89bc4319cf58f43b2ebeb816105396,
-    type: 2}
-  m_PrefabInternal: {fileID: 463326903}
 --- !u!1 &1733499165
 GameObject:
   m_ObjectHideFlags: 0

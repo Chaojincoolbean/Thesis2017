@@ -12,6 +12,7 @@
         public float value = 20f;
         public float attackRange = 20f;
         public PuppetMaster puppetMaster;
+        public BehaviourPuppet behaviourPuppet;
         public ConfigurableJoint[] leftLeg;
         public ConfigurableJoint[] rightLeg;
 
@@ -26,6 +27,7 @@
         protected bool dead = false;
         protected bool leftLegRemoved, rightLegRemoved;
         protected bool legsRemoved = false;
+        protected int layerMask;
         public float health
         {
             get { return _health; }
@@ -39,6 +41,7 @@
 
             }
         }
+
         // Use this for initialization
         public virtual void Start()
         {
@@ -46,11 +49,14 @@
             anim = GetComponent<Animator>();
             scoreManagement = GameObject.Find("scoreManager");
             Invoke("TargetLockon", 0.5f);
+            layerMask = 1 << 4;
+            print(layerMask);
             VRTK_BodyPhysics currentBodyPhysics = GameObject.Find("PlayArea").GetComponent<VRTK_BodyPhysics>();
             puppetLimb = puppetMaster.gameObject;
             scoreManagement.GetComponent<scoreManager>().ignoreColliders.Add(puppetLimb);
             currentBodyPhysics.ignoreCollisionsWith = scoreManagement.GetComponent<scoreManager>().ignoreColliders.ToArray();
             currentBodyPhysics.SendMessage("SetupIgnoredCollisions");
+            
         }
 
         // Called by PM when a muscle is removed (once for each removed muscle)
@@ -107,6 +113,21 @@
             }
 
             //print(distanceToPlayer);
+
+            //Raycast to ground to see if this puppet should fall
+            Ray groundRay = new Ray(transform.position + new Vector3(0,1,0), -transform.up);
+            RaycastHit groundHit;
+            Debug.DrawRay(transform.position + new Vector3(0, 1, 0), -transform.up * 1.2f, Color.green);
+            if (Physics.Raycast(groundRay, out groundHit, 1.2f, layerMask))
+            {
+                print(groundHit.collider.gameObject.name);
+            }
+            else
+            {
+                print("Mannequin Fall");
+                behaviourPuppet.SetState(BehaviourPuppet.State.Unpinned);
+            }
+
         }
 
         void Die()
