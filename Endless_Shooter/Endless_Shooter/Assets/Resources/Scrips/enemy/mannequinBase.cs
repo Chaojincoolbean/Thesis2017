@@ -51,12 +51,12 @@
             Invoke("TargetLockon", 0.5f);
             layerMask = 1 << 4;
             print(layerMask);
-            VRTK_BodyPhysics currentBodyPhysics = GameObject.Find("PlayArea").GetComponent<VRTK_BodyPhysics>();
-            puppetLimb = puppetMaster.gameObject;
             scoreManagement.GetComponent<scoreManager>().ignoreColliders.Add(puppetLimb);
-            currentBodyPhysics.ignoreCollisionsWith = scoreManagement.GetComponent<scoreManager>().ignoreColliders.ToArray();
-            currentBodyPhysics.SendMessage("SetupIgnoredCollisions");
-            
+            //VRTK_BodyPhysics currentBodyPhysics = GameObject.Find("PlayArea").GetComponent<VRTK_BodyPhysics>();
+            //puppetLimb = puppetMaster.gameObject;
+            //currentBodyPhysics.ignoreCollisionsWith = scoreManagement.GetComponent<scoreManager>().ignoreColliders.ToArray();
+            //currentBodyPhysics.SendMessage("SetupIgnoredCollisions");
+
         }
 
         // Called by PM when a muscle is removed (once for each removed muscle)
@@ -120,7 +120,7 @@
             Debug.DrawRay(transform.position + new Vector3(0, 1, 0), -transform.up * 1.2f, Color.green);
             if (Physics.Raycast(groundRay, out groundHit, 1.2f, layerMask))
             {
-                print(groundHit.collider.gameObject.name);
+                //print(groundHit.collider.gameObject.name);
             }
             else
             {
@@ -169,12 +169,12 @@
             isPlayerFound = true;
 
             GameObject playerFoot = GameObject.Find("[VRTK][AUTOGEN][FootColliderContainer]");
-            Collider[] ignorecolliders = puppetLimb.transform.GetComponentsInChildren<Collider>();
+            /*Collider[] ignorecolliders = puppetLimb.transform.GetComponentsInChildren<Collider>();
             foreach (Collider coll in ignorecolliders)
             {
                 Physics.IgnoreCollision(coll,playerFoot.GetComponent<CapsuleCollider>(), true);
                 Physics.IgnoreCollision(coll, GameObject.Find("PlayArea").GetComponent<VRTK_BodyPhysics>().GetFootColliderContainer().GetComponent<CapsuleCollider>());
-            }
+            }*/
         }
     }
 }

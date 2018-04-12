@@ -117,7 +117,7 @@
                     {
                         anim.applyRootMotion = true;
                     }
-                    //print(anim.applyRootMotion);
+                    print("Mannequin animation rootmotion State: " + anim.applyRootMotion);
                     Quaternion randomRotation = Quaternion.Euler(0, Random.Range(0, 180), 0);
                     anim.SetBool("isMoving", true);
                     transform.DORotateQuaternion(randomRotation, 0.5f).SetId<Tweener>("RandomMovement");

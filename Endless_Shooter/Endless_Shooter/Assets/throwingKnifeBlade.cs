@@ -50,19 +50,22 @@ public class throwingKnifeBlade : MonoBehaviour {
             {
                 if (gameObject.GetComponent<homing>() != null)
                 {
-                    //gameObject.GetComponent<homing>().enabled = false;
+                    gameObject.GetComponent<homing>().enabled = false;
                 }
-                if (gameObject.GetComponent<FixedJoint>() == null)
+
+                //Throwing knife attaching by Fixed Joint, seems causing bug
+                /*if (gameObject.GetComponent<FixedJoint>() == null)
                 {
                     FixedJoint fixedJoint = gameObject.AddComponent<FixedJoint>();
                     fixedJoint.connectedBody = objectHit.GetComponent<Rigidbody>();
                     //sprint(gameObject.name + " Is a child of " + objectHit.name);
-                }
+                }*/
 
-                //Throwing knife attaching by parenting, not used now
-                /*Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+                //Throwing knife attaching by parenting
                 Destroy(rb);
-                transform.parent = hitted.transform;*/
+                GameObject emptyObject = new GameObject();
+                emptyObject.transform.parent = objectHit.transform;
+                transform.parent = emptyObject.transform;
             }
         }
     }
@@ -70,8 +73,11 @@ public class throwingKnifeBlade : MonoBehaviour {
     IEnumerator ApplyForceAfterBounce()
     {
         yield return new WaitForSeconds(0.1f);
-        transform.rotation = Quaternion.LookRotation(rb.velocity);
-        rb.AddForce(rb.velocity * 1.5f);
+        if (rb != null)
+        {
+            transform.rotation = Quaternion.LookRotation(rb.velocity);
+            rb.AddForce(rb.velocity * 1.5f);
+        }
     }
 
     void OnTriggerEnter(Collider other)
