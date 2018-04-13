@@ -11,13 +11,20 @@ public enum States
 
 public enum SuperhumanChokeLiftPatterns
 {
-    bombMortar, clusterMortar
+    bombMortar, bulletRadiance
+}
+
+public enum CastingSpellPatterns
+{
+    shootCluster
 }
 
 public class mannequinBossGreen : mannequinBase {
     public States states;
     public string[] triggerStrings;
     public GameObject mortarPos;
+    public float projectileSpeed = 3000f;
+    public float spreadFactor = 0.1f;
 
     private Ray ray;
     private bool isAttacking = false;
@@ -25,14 +32,21 @@ public class mannequinBossGreen : mannequinBase {
     private float timer;
     private bool isLostBalance = false;
     public SuperhumanChokeLiftPatterns liftPattern;
+    public CastingSpellPatterns castingSpellPatterns;
 
     //Bullets used by this boss
     private GameObject greenBomb;
     private GameObject greenCluster;
+    private GameObject greenFraction;
+    private GameObject greenBullet;
+
+    GameObject[] fractions;
 
     // Use this for initialization
     public override void Start () {
         base.Start();
+
+        fractions = new GameObject[3];
         s = Random.Range(0, States.GetNames(typeof(States)).Length - 1);
         print(s);
         states = (States)s;
@@ -42,6 +56,8 @@ public class mannequinBossGreen : mannequinBase {
 
         greenBomb = Resources.Load("VFX/Hyperbit Arsenal/Demo/Prefabs/Projectiles/Fatbomb/FatBombMissileGreenOBJ") as GameObject;
         greenCluster = Resources.Load("VFX/Hyperbit Arsenal/Demo/Prefabs/Projectiles/ClusterBomb/ClusterBombGreenOBJ") as GameObject;
+        greenFraction = Resources.Load("VFX/GeometryFXParticles/Prefabs/NaturePlayerEffects_Update1.1/FractionColorsEffects/GreenFraction") as GameObject;
+        greenBullet = Resources.Load("VFX/Hyperbit Arsenal/Demo/Prefabs/Projectiles/Bullets/BulletGreenOBJ") as GameObject;
     }
 
     // Update is called once per frame
@@ -128,7 +144,20 @@ public class mannequinBossGreen : mannequinBase {
                     StartCoroutine(Mortar(flowerStem));
                 }
                 break;
-            case SuperhumanChokeLiftPatterns.clusterMortar:
+            case SuperhumanChokeLiftPatterns.bulletRadiance:
+                {
+                    Vector3 fractionBase = transform.position - transform.right*2 + transform.up*3.5f;
+                    StartCoroutine(BulletRadiance(fractionBase));
+                }
+                break;
+        }
+    }
+
+    public void CastingSpell()
+    {
+        switch (castingSpellPatterns)
+        {
+            case CastingSpellPatterns.shootCluster:
                 {
 
                 }
@@ -136,24 +165,61 @@ public class mannequinBossGreen : mannequinBase {
         }
     }
 
+    #region coroutines used in the SuperhumanChokeLift function
     IEnumerator Mortar(Vector3 muzzlePos)
     {
-        float projectileSpeed = 3000f;
-        float spreadFactor = 0.1f;
         for (int c = 0; c < 5; c++)
         {
+            Vector3 flowerPos = muzzlePos + new Vector3(0, c * 1f, 0);
             for (int i = 0; i < 9; i++)
             {
                 Quaternion pelletRotation = transform.rotation;
                 pelletRotation.x += Random.Range(-spreadFactor, spreadFactor);
                 pelletRotation.y += Random.Range(-spreadFactor, spreadFactor);
                 pelletRotation.z += Random.Range(-spreadFactor, spreadFactor);
-                GameObject pellet = Instantiate(greenBomb, muzzlePos, pelletRotation);
+                GameObject pellet = Instantiate(greenBomb, flowerPos, pelletRotation);
                 //pellet.transform.GetChild(0).GetComponent<AudioSource>().volume = 0.0625f;
-                pellet.GetComponent<Rigidbody>().AddForce(transform.up * projectileSpeed);
+                pellet.GetComponent<Rigidbody>().AddForce(pellet.transform.up * projectileSpeed);
                 pellet.GetComponent<Rigidbody>().useGravity = true;
             }
             yield return new WaitForSeconds(0.1f);
         }
     }
+
+    IEnumerator BulletRadiance(Vector3 fractionPos)
+    {
+        
+        for(int i = 0; i< fractions.Length; i++)
+        {
+            if(fractions[i] == null)
+            {
+                GameObject newFraction = Instantiate(greenFraction, transform.position, transform.rotation);
+                Destroy(newFraction, 2f);
+                newFraction.transform.DOMove(fractionPos + transform.right*i*2 , 0.2f);
+                fractions[i] = newFraction;
+            }
+            
+        }
+        
+        while (fractions[0] != null)
+        {
+            float f = spreadFactor * 20f;
+            for (int i = 0; i < fractions.Length; i++)
+            {
+                Quaternion pelletRotation = transform.rotation;
+                pelletRotation.x += Random.Range(-f, f);
+                pelletRotation.y += Random.Range(-f, f);
+                pelletRotation.z += Random.Range(-f, f);
+                GameObject pellet = Instantiate(greenBullet, fractions[i].transform.position, pelletRotation);
+                pellet.GetComponent<Rigidbody>().AddForce(pellet.transform.forward * projectileSpeed);
+            }
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
+    #endregion
+
+    #region coroutines used in the CastingSpell function
+
+    #endregion
 }

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 19995912}
   - component: {fileID: 8265498}
   - component: {fileID: 114746157488989918}
-  - component: {fileID: 114850688862494076}
   m_Layer: 0
   m_Name: FatExplosionBlue
   m_TagString: Untagged
@@ -6761,17 +6760,3 @@ MonoBehaviour:
   explosionForce: 100
   explosionRange: 3
   explosionDamage: 20
---- !u!114 &114850688862494076
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 106842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 216c9a0931ba7d943b2182df0a6389ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionForce: 0
-  explosionRange: 0
-  explosionDamage: 0

@@ -10872,6 +10872,16 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 0.002226082
       objectReference: {fileID: 0}
+    - target: {fileID: 114838712283354070, guid: 24b564a71fc24a0439c2e405a9372968,
+        type: 2}
+      propertyPath: projectileSpeed
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114838712283354070, guid: 24b564a71fc24a0439c2e405a9372968,
+        type: 2}
+      propertyPath: liftPattern
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 24b564a71fc24a0439c2e405a9372968, type: 2}
   m_IsPrefabParent: 0

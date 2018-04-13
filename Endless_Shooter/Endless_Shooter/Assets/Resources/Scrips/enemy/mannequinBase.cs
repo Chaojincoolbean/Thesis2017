@@ -50,13 +50,12 @@
             scoreManagement = GameObject.Find("scoreManager");
             Invoke("TargetLockon", 0.5f);
             layerMask = 1 << 4;
-            print(layerMask);
-            scoreManagement.GetComponent<scoreManager>().ignoreColliders.Add(puppetLimb);
+
+            //scoreManagement.GetComponent<scoreManager>().ignoreColliders.Add(puppetLimb);
             //VRTK_BodyPhysics currentBodyPhysics = GameObject.Find("PlayArea").GetComponent<VRTK_BodyPhysics>();
             //puppetLimb = puppetMaster.gameObject;
             //currentBodyPhysics.ignoreCollisionsWith = scoreManagement.GetComponent<scoreManager>().ignoreColliders.ToArray();
             //currentBodyPhysics.SendMessage("SetupIgnoredCollisions");
-
         }
 
         // Called by PM when a muscle is removed (once for each removed muscle)
