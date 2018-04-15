@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 13543806}
   - component: {fileID: 3354032}
   - component: {fileID: 11495262}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SphereMissileGreenOBJ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 191804}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -5.122362, y: 4.15, z: -1.9313345}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -69,6 +69,8 @@ MonoBehaviour:
   projectileParticle: {fileID: 146768, guid: 1987e136824b71f448e62feb87aab3cc, type: 2}
   muzzleParticle: {fileID: 141902, guid: 90460e426d15f034c84a5b47df5c880c, type: 2}
   trailParticles: []
+  playerCamera: {fileID: 0}
+  damage: 10
   impactNormal: {x: 0, y: 0, z: 0}
 --- !u!135 &13543806
 SphereCollider:
@@ -80,7 +82,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:

@@ -16,7 +16,12 @@ public enum SuperhumanChokeLiftPatterns
 
 public enum CastingSpellPatterns
 {
-    shootCluster
+    shootCluster, shootShells
+}
+
+public enum LaunchProjectilePatterns
+{
+    shotgun, fraction
 }
 
 public class mannequinBossGreen : mannequinBase {
@@ -33,20 +38,22 @@ public class mannequinBossGreen : mannequinBase {
     private bool isLostBalance = false;
     public SuperhumanChokeLiftPatterns liftPattern;
     public CastingSpellPatterns castingSpellPatterns;
+    public LaunchProjectilePatterns launchProjectilePatterns;
 
     //Bullets used by this boss
     private GameObject greenBomb;
     private GameObject greenCluster;
     private GameObject greenFraction;
     private GameObject greenBullet;
-
-    GameObject[] fractions;
+    private GameObject greenSphere;
+    private GameObject greenTriangle;
+    private GameObject[] fractions;
 
     // Use this for initialization
     public override void Start () {
         base.Start();
 
-        fractions = new GameObject[3];
+        fractions = new GameObject[5];
         s = Random.Range(0, States.GetNames(typeof(States)).Length - 1);
         print(s);
         states = (States)s;
@@ -58,6 +65,8 @@ public class mannequinBossGreen : mannequinBase {
         greenCluster = Resources.Load("VFX/Hyperbit Arsenal/Demo/Prefabs/Projectiles/ClusterBomb/ClusterBombGreenOBJ") as GameObject;
         greenFraction = Resources.Load("VFX/GeometryFXParticles/Prefabs/NaturePlayerEffects_Update1.1/FractionColorsEffects/GreenFraction") as GameObject;
         greenBullet = Resources.Load("VFX/Hyperbit Arsenal/Demo/Prefabs/Projectiles/Bullets/BulletGreenOBJ") as GameObject;
+        greenSphere = Resources.Load("VFX/Hyperbit Arsenal/Demo/Prefabs/Projectiles/Missiles/Sphere/SphereMissileGreenOBJ") as GameObject;
+        greenTriangle = Resources.Load("VFX/Hyperbit Arsenal/Demo/Prefabs/Projectiles/Missiles/Triangle/TriangleMissileGreenOBJ") as GameObject;
     }
 
     // Update is called once per frame
@@ -146,7 +155,7 @@ public class mannequinBossGreen : mannequinBase {
                 break;
             case SuperhumanChokeLiftPatterns.bulletRadiance:
                 {
-                    Vector3 fractionBase = transform.position - transform.right*2 + transform.up*3.5f;
+                    Vector3 fractionBase = transform.position - transform.right*4 + transform.up*3.5f;
                     StartCoroutine(BulletRadiance(fractionBase));
                 }
                 break;
@@ -158,6 +167,23 @@ public class mannequinBossGreen : mannequinBase {
         switch (castingSpellPatterns)
         {
             case CastingSpellPatterns.shootCluster:
+                {
+                    StartCoroutine(ShootCluster());
+                }
+                break;
+            case CastingSpellPatterns.shootShells:
+                {
+                    StartCoroutine(ShootShells());
+                }
+                break;
+        }
+    }
+
+    public void LaunchProjectile()
+    {
+        switch (launchProjectilePatterns)
+        {
+            case LaunchProjectilePatterns.shotgun:
                 {
 
                 }
@@ -188,8 +214,14 @@ public class mannequinBossGreen : mannequinBase {
 
     IEnumerator BulletRadiance(Vector3 fractionPos)
     {
-        
-        for(int i = 0; i< fractions.Length; i++)
+        GameObject pivot = new GameObject();
+        pivot.transform.position = transform.position + transform.up * 3.5f;
+        pivot.AddComponent<keepRotating>();
+        pivot.GetComponent<keepRotating>().XAxisRotatingSpeed = 0f;
+        pivot.GetComponent<keepRotating>().XAxisRotatingSpeed = 150f;
+        pivot.GetComponent<keepRotating>().ZAxisRotatingSpeed = 0f;
+        Destroy(pivot, 2.1f);
+        for (int i = 0; i< fractions.Length; i++)
         {
             if(fractions[i] == null)
             {
@@ -197,6 +229,7 @@ public class mannequinBossGreen : mannequinBase {
                 Destroy(newFraction, 2f);
                 newFraction.transform.DOMove(fractionPos + transform.right*i*2 , 0.2f);
                 fractions[i] = newFraction;
+                newFraction.transform.parent = pivot.transform;
             }
             
         }
@@ -220,6 +253,52 @@ public class mannequinBossGreen : mannequinBase {
     #endregion
 
     #region coroutines used in the CastingSpell function
+    IEnumerator ShootCluster()
+    {
+        float spreadFactorMultiplier = 2f;
+        GameObject bigBomb = Instantiate(greenBomb, mortarPos.transform.position, mortarPos.transform.rotation);
+        bigBomb.transform.DOScale(new Vector3(2.5f, 2.5f, 2.5f), 0.2f);
+        bigBomb.GetComponent<Rigidbody>().AddForce(bigBomb.transform.forward * projectileSpeed * 1.5f);
+        yield return new WaitForSeconds(0.1f);
+        for (int o = 0; o < 12; o++)
+        {
+                Quaternion pelletRotation = transform.rotation;
+                pelletRotation.x += Random.Range(-spreadFactor/ spreadFactorMultiplier, spreadFactor/ spreadFactorMultiplier);
+                pelletRotation.y += Random.Range(-spreadFactor/ spreadFactorMultiplier, spreadFactor/ spreadFactorMultiplier);
+                pelletRotation.z += Random.Range(-spreadFactor/ spreadFactorMultiplier, spreadFactor/ spreadFactorMultiplier);
+                GameObject pellet = Instantiate(greenSphere, mortarPos.transform.position, pelletRotation);
+                pellet.GetComponent<Rigidbody>().AddForce(pellet.transform.forward * projectileSpeed * 1.5f);
+        }
+        for (int p = 0; p < 30; p++)
+        {
+                Quaternion pelletRotation = transform.rotation;
+                pelletRotation.x += Random.Range(-spreadFactor, spreadFactor);
+                pelletRotation.y += Random.Range(-spreadFactor, spreadFactor);
+                pelletRotation.z += Random.Range(-spreadFactor, spreadFactor);
+                GameObject pellet = Instantiate(greenBullet, mortarPos.transform.position, pelletRotation);
+                pellet.GetComponent<Rigidbody>().AddForce(pellet.transform.forward * projectileSpeed * 1.5f);
+        }
+    }
+
+    IEnumerator ShootShells()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            Quaternion pelletRotation = transform.rotation;
+            pelletRotation.x += Random.Range(-spreadFactor/2, spreadFactor/2);
+            pelletRotation.y += Random.Range(-spreadFactor/2, spreadFactor/2);
+            pelletRotation.z += Random.Range(-spreadFactor/2, spreadFactor/2);
+            GameObject shell = Instantiate(greenCluster, mortarPos.transform.position, pelletRotation);
+            shell.GetComponent<Rigidbody>().AddForce(shell.transform.forward * projectileSpeed);
+            shell.AddComponent<proximityDetonation>();
+            shell.GetComponent<proximityDetonation>().sharpenal = greenTriangle;
+            yield return new WaitForSeconds(0.1f);
+        }
+
+    }
+    #endregion
+
+    #region coroutines used in the LaunchProjectile function
 
     #endregion
 }

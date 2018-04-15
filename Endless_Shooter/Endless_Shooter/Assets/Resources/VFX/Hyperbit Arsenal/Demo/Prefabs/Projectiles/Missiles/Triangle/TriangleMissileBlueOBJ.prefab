@@ -69,6 +69,8 @@ MonoBehaviour:
   projectileParticle: {fileID: 144550, guid: 7e2e254f44ecbe14c9b01c4b5fd075c5, type: 2}
   muzzleParticle: {fileID: 119210, guid: e9d0ac071c6577644817ccb26136a655, type: 2}
   trailParticles: []
+  playerCamera: {fileID: 0}
+  damage: 10
   impactNormal: {x: 0, y: 0, z: 0}
 --- !u!135 &13543806
 SphereCollider:
@@ -80,7 +82,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:

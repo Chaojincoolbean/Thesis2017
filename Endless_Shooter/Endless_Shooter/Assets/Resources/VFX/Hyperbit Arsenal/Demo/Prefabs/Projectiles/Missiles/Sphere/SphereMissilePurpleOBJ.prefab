@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 13543806}
   - component: {fileID: 3354032}
   - component: {fileID: 11497692}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SphereMissilePurpleOBJ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,6 +69,8 @@ MonoBehaviour:
   projectileParticle: {fileID: 105206, guid: b931c9305f9ed8246b8d20e3091b9d98, type: 2}
   muzzleParticle: {fileID: 195586, guid: 2ee112da62288814b9f7b34ca9574ef5, type: 2}
   trailParticles: []
+  playerCamera: {fileID: 0}
+  damage: 10
   impactNormal: {x: 0, y: 0, z: 0}
 --- !u!135 &13543806
 SphereCollider:
@@ -80,7 +82,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
