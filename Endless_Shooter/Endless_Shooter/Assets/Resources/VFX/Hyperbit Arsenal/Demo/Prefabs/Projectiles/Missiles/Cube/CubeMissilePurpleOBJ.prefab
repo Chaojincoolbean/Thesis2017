@@ -9,10 +9,10 @@ GameObject:
   m_Component:
   - component: {fileID: 448424}
   - component: {fileID: 5430274}
-  - component: {fileID: 13543806}
   - component: {fileID: 3354032}
   - component: {fileID: 11465720}
-  m_Layer: 0
+  - component: {fileID: 65356663461371766}
+  m_Layer: 8
   m_Name: CubeMissilePurpleOBJ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,19 +69,9 @@ MonoBehaviour:
   projectileParticle: {fileID: 131614, guid: d8bcda2db1fd39d429f3c83977a9bf42, type: 2}
   muzzleParticle: {fileID: 195586, guid: 2ee112da62288814b9f7b34ca9574ef5, type: 2}
   trailParticles: []
+  playerCamera: {fileID: 0}
+  damage: 5
   impactNormal: {x: 0, y: 0, z: 0}
---- !u!135 &13543806
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 191804}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -121,3 +111,15 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 191804}
   m_IsPrefabParent: 1
+--- !u!65 &65356663461371766
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 191804}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.3}
+  m_Center: {x: 0, y: 0, z: 0}

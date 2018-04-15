@@ -47,6 +47,7 @@ public class mannequinBossGreen : mannequinBase {
     private GameObject greenBullet;
     private GameObject greenSphere;
     private GameObject greenTriangle;
+    private GameObject greenCube;
     private GameObject[] fractions;
 
     // Use this for initialization
@@ -67,6 +68,7 @@ public class mannequinBossGreen : mannequinBase {
         greenBullet = Resources.Load("VFX/Hyperbit Arsenal/Demo/Prefabs/Projectiles/Bullets/BulletGreenOBJ") as GameObject;
         greenSphere = Resources.Load("VFX/Hyperbit Arsenal/Demo/Prefabs/Projectiles/Missiles/Sphere/SphereMissileGreenOBJ") as GameObject;
         greenTriangle = Resources.Load("VFX/Hyperbit Arsenal/Demo/Prefabs/Projectiles/Missiles/Triangle/TriangleMissileGreenOBJ") as GameObject;
+        greenCube = Resources.Load("VFX/Hyperbit Arsenal/Demo/Prefabs/Projectiles/Missiles/Cube/CubeMissileGreenOBJ") as GameObject;
     }
 
     // Update is called once per frame
@@ -145,6 +147,8 @@ public class mannequinBossGreen : mannequinBase {
 
     public void SuperhumanChokeLift()
     {
+        int a = Random.Range(0, SuperhumanChokeLiftPatterns.GetNames(typeof(SuperhumanChokeLiftPatterns)).Length);
+        liftPattern = (SuperhumanChokeLiftPatterns)a;
         switch (liftPattern)
         {
             case SuperhumanChokeLiftPatterns.bombMortar:
@@ -164,6 +168,8 @@ public class mannequinBossGreen : mannequinBase {
 
     public void CastingSpell()
     {
+        int a = Random.Range(0, CastingSpellPatterns.GetNames(typeof(CastingSpellPatterns)).Length);
+        castingSpellPatterns = (CastingSpellPatterns)a;
         switch (castingSpellPatterns)
         {
             case CastingSpellPatterns.shootCluster:
@@ -181,11 +187,18 @@ public class mannequinBossGreen : mannequinBase {
 
     public void LaunchProjectile()
     {
+        int a = Random.Range(0, LaunchProjectilePatterns.GetNames(typeof(LaunchProjectilePatterns)).Length);
+        launchProjectilePatterns = (LaunchProjectilePatterns)a;
         switch (launchProjectilePatterns)
         {
             case LaunchProjectilePatterns.shotgun:
                 {
-
+                    StartCoroutine(Shotgun());
+                }
+                break;
+            case LaunchProjectilePatterns.fraction:
+                {
+                    Fraction();
                 }
                 break;
         }
@@ -299,6 +312,38 @@ public class mannequinBossGreen : mannequinBase {
     #endregion
 
     #region coroutines used in the LaunchProjectile function
+    IEnumerator Shotgun()
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            for (int c = 0; c < 12; c++)
+            {
+                Quaternion pelletRotation = transform.rotation;
+                pelletRotation.x += Random.Range(-spreadFactor, spreadFactor);
+                pelletRotation.y += Random.Range(-spreadFactor, spreadFactor);
+                pelletRotation.z += Random.Range(-spreadFactor, spreadFactor);
+                GameObject pellet = Instantiate(greenTriangle, mortarPos.transform.position, pelletRotation);
+                pellet.GetComponent<Rigidbody>().AddForce(pellet.transform.forward * projectileSpeed * 1.5f);
+            }
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
 
+    void Fraction()
+    {
+        GameObject movingFraction = Instantiate(greenFraction, mortarPos.transform.position, mortarPos.transform.rotation);
+        //Add sphere collider and set necessary values
+        movingFraction.AddComponent<SphereCollider>();
+        movingFraction.GetComponent<SphereCollider>().radius = 2f;
+        //Add rigid body and set necessary values
+        movingFraction.AddComponent<Rigidbody>();
+        movingFraction.GetComponent<Rigidbody>().useGravity = false;
+        movingFraction.GetComponent<Rigidbody>().AddForce(transform.forward * projectileSpeed / 2);
+        //Add script to make this ball fire a bullet every frame and set necessary values
+        movingFraction.AddComponent<keepFiring>();
+        movingFraction.GetComponent<keepFiring>().bullet = greenCube;
+        movingFraction.GetComponent<keepFiring>().impactEffect = Resources.Load("VFX/GeometryFXParticles/Prefabs/NaturePlayerEffects_Update1.1/FractionColorsEffects/GreenFractionExplosion") as GameObject;
+        movingFraction.GetComponent<keepFiring>().projectileSpeed = 1000f;
+    }
     #endregion
 }

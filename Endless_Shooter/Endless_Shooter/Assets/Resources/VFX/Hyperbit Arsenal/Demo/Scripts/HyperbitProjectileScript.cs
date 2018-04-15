@@ -9,7 +9,6 @@ public class HyperbitProjectileScript : MonoBehaviour
     public GameObject[] trailParticles;
     [SerializeField] private GameObject playerCamera;
     public float damage = 10f;
-    [HideInInspector]
     public Vector3 impactNormal; //Used to rotate impactparticle.
  
     private bool hasCollided = false;

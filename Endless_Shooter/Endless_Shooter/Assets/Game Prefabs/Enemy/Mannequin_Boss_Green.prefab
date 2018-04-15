@@ -1684,7 +1684,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1202820568902574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.051, y: 1.202, z: 1.089}
+  m_LocalPosition: {x: 0.051, y: 1.202, z: 1.404}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 4925937317448706}
@@ -3030,11 +3030,13 @@ MonoBehaviour:
   triggerStrings:
   - superhumanChokeLift
   - castingSpell
+  - twoHandSpellCasting
   mortarPos: {fileID: 1202820568902574}
   projectileSpeed: 2000
   spreadFactor: 0.1
   liftPattern: 1
-  castingSpellPatterns: 0
+  castingSpellPatterns: 1
+  launchProjectilePatterns: 1
 --- !u!136 &136130087144631844
 CapsuleCollider:
   m_ObjectHideFlags: 1
