@@ -150,11 +150,8 @@
 
                 if (drop.Length > 0)
                 {
-                    GameObject droppedItem = Instantiate(drop[Random.Range(0, drop.Length)], transform.position, Quaternion.identity) as GameObject;
-                    //droppedItem.GetComponent<Rigidbody>().useGravity = false;
-                    //droppedItem.GetComponent<Rigidbody>().isKinematic = true;
-                    //droppedItem.transform.DOMoveY(droppedItem.transform.position.y + 1f, 0.5f);
-                    droppedItem.AddComponent<floatAndSpin>();
+                    GameObject spawnManager = GameObject.Find("Enemy Spawn");
+                    spawnManager.GetComponent<dropManager>().DropItem(transform.position);
                 }
 
                 dead = true;
