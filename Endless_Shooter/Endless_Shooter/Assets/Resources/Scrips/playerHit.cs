@@ -13,8 +13,8 @@ public class playerHit : MonoBehaviour {
     public float cameraShakeStrength = 5f;
     public int cameraVibrate = 5;
     public float cameraShakeRandomness = 40f;
-    public float karmaMax = 100f;
-    public float karmaMin = -100f;
+    [HideInInspector]public float karmaMax = 260f;
+    [HideInInspector]public float karmaMin = -100f;
 
     public float playerHealth = 100f;
 
@@ -25,6 +25,8 @@ public class playerHit : MonoBehaviour {
     //private Rigidbody rb;
 	// Use this for initialization
 	void Start () {
+        karmaMax = 250f;
+        print(karmaMax);
         headColliderContainer = GameObject.Find("[VRTK][AUTOGEN][HeadsetColliderContainer]");
         cam = gameObject.GetComponent<Camera>();
         playerSource = gameObject.GetComponent<AudioSource>();

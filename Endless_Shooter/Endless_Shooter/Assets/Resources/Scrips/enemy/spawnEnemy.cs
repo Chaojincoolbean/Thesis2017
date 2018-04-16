@@ -28,6 +28,7 @@ public class spawnEnemy : MonoBehaviour
         else
         {
             enemyCountLimitReached = false;
+            Invoke("EnemyCountLimitReset", 10f);
         }
     }
 
@@ -41,5 +42,10 @@ public class spawnEnemy : MonoBehaviour
             Vector3 spawnParticlePos = spwanedEnemy.transform.position + new Vector3(0, 1, 0);
             GameObject spawnParticle = Instantiate(spawnParticles[Random.Range(0, spawnParticles.Length)], spawnParticlePos, Quaternion.identity);
         }
+    }
+
+    void EnemyCountLimitReset()
+    {
+        enemyCountLimitReached = false;
     }
 }
