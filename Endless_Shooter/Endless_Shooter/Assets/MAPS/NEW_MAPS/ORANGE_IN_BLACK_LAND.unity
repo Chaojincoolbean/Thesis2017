@@ -4108,7 +4108,7 @@ MonoBehaviour:
   scoreText: {fileID: 2033935435}
   VRPlayArea: {fileID: 2054393478}
   timer: 0
-  runningPattern: 3
+  runningPattern: 2
   ignoreColliders: []
 --- !u!4 &375793366
 Transform:
@@ -11050,7 +11050,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 949737322}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd904f4ca6767424eaf8e050bc174741, type: 3}
   m_Name: 
@@ -20906,7 +20906,7 @@ Prefab:
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 1360
+      value: 1466
       objectReference: {fileID: 0}
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
