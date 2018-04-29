@@ -4,6 +4,7 @@
     using System.Collections;
     using DG.Tweening;
     using RootMotion.Dynamics;
+    using System.Linq;
 
     public class M1911Fire : VRTK_InteractableObject
     {
@@ -28,6 +29,7 @@
         private AudioSource source;
         private Transform slide;
         private Transform muzzle;
+        [SerializeField]private AudioClip[] impactClips;
         LineRenderer line;
         Rigidbody rb;
         // Use this for initialization
@@ -37,6 +39,7 @@
             muzzle = gameObject.transform.GetChild(3);
             source = gameObject.GetComponent<AudioSource>();
             rb = gameObject.GetComponent<Rigidbody>();
+            impactClips = Resources.LoadAll("Bullets", typeof(AudioClip)).Cast<AudioClip>().ToArray();
             /*line = gameObject.GetComponent<LineRenderer>();
             line.enabled = false;*/
         }
@@ -150,7 +153,14 @@
                 }
 
                 Instantiate(impactVFX, Hit.point, Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360)));
-
+                if (Hit.collider.gameObject.tag == "PuppetLimb")
+                {
+                    AudioSource.PlayClipAtPoint(impactClips[Random.Range(47, 55)], Hit.point);
+                }
+                else
+                {
+                    AudioSource.PlayClipAtPoint(impactClips[Random.Range(63, 72)], Hit.point);
+                }
             }
             else
             {

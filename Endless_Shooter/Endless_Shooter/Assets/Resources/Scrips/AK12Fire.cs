@@ -4,8 +4,10 @@
 	using UnityEngine;
 	using DG.Tweening;
     using RootMotion.Dynamics;
+    using System.Linq;
 
-		public class AK12Fire : VRTK_InteractableObject {
+    [RequireComponent(typeof(AudioSource))]
+    public class AK12Fire : VRTK_InteractableObject {
 		public GameObject muzzleFlash;
 		public AudioClip[] rifleClip;
         public AudioClip[] grabSounds;
@@ -30,6 +32,7 @@
 		private GameObject world;
 		private AudioSource AK12Source;
         private AudioSource impactSource;
+        private AudioClip[] impactClips;
 		public Transform bolt;
 		public Transform muzzle;
         public Transform ejectWindow;
@@ -93,13 +96,11 @@
         void Start () {
             rb = gameObject.GetComponent<Rigidbody>();
             timeToNextRound = 60f / roundsPerMintue;
-            gameObject.AddComponent<AudioSource>();
-            AK12Source = gameObject.GetComponents<AudioSource>()[0];
-            impactSource = gameObject.GetComponents<AudioSource>()[1];
-
-			//line = gameObject.GetComponent<LineRenderer> ();
-			//line.enabled = false;
-			}
+            AK12Source = gameObject.GetComponent<AudioSource>();
+            impactClips = Resources.LoadAll("Bullets", typeof(AudioClip)).Cast<AudioClip>().ToArray();
+            //line = gameObject.GetComponent<LineRenderer> ();
+            //line.enabled = false;
+        }
 
 		private void FireRayCast () {
             //print ("gun fired");
@@ -157,6 +158,14 @@
 				}
 
 				Instantiate (impactVFX, Hit.point, Quaternion.Euler(Random.Range(0,360), Random.Range(0, 360), Random.Range(0, 360)));
+                if (Hit.collider.gameObject.tag == "PuppetLimb")
+                {
+                    AudioSource.PlayClipAtPoint(impactClips[Random.Range(47, 55)], Hit.point);
+                }
+                else
+                {
+                    AudioSource.PlayClipAtPoint(impactClips[Random.Range(63, 72)], Hit.point);
+                }
 
 			}
 			else{

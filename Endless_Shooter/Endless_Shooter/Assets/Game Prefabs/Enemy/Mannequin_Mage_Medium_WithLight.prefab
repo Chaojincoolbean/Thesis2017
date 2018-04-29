@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 153670601433873338}
   m_Layer: 0
   m_Name: Chest
-  m_TagString: Untagged
+  m_TagString: PuppetLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 153289125785852002}
   m_Layer: 0
   m_Name: Spine_01
-  m_TagString: Untagged
+  m_TagString: PuppetLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 153896277284886992}
   m_Layer: 0
   m_Name: Upper_Arm_L
-  m_TagString: Untagged
+  m_TagString: PuppetLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 153378632441566226}
   m_Layer: 0
   m_Name: Hips
-  m_TagString: Untagged
+  m_TagString: PuppetLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 153114627608117026}
   m_Layer: 0
   m_Name: ForeArm_L
-  m_TagString: Untagged
+  m_TagString: PuppetLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 153576920175900952}
   m_Layer: 0
   m_Name: Shin_L
-  m_TagString: Untagged
+  m_TagString: PuppetLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 153185874243757068}
   m_Layer: 0
   m_Name: Shin_R
-  m_TagString: Untagged
+  m_TagString: PuppetLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -364,7 +364,7 @@ GameObject:
   - component: {fileID: 153558718091588538}
   m_Layer: 0
   m_Name: Upper_Arm_R
-  m_TagString: Untagged
+  m_TagString: PuppetLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -505,7 +505,7 @@ GameObject:
   - component: {fileID: 153430185390377146}
   m_Layer: 0
   m_Name: Calf_L
-  m_TagString: Untagged
+  m_TagString: PuppetLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -538,7 +538,7 @@ GameObject:
   - component: {fileID: 153134181133944294}
   m_Layer: 0
   m_Name: ForeArm_R
-  m_TagString: Untagged
+  m_TagString: PuppetLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -662,7 +662,7 @@ GameObject:
   - component: {fileID: 153225186016287358}
   m_Layer: 0
   m_Name: Hand_R
-  m_TagString: Untagged
+  m_TagString: PuppetLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -680,7 +680,7 @@ GameObject:
   - component: {fileID: 153119119830867252}
   m_Layer: 0
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: PuppetLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -821,7 +821,7 @@ GameObject:
   - component: {fileID: 153259603637070132}
   m_Layer: 0
   m_Name: Calf_R
-  m_TagString: Untagged
+  m_TagString: PuppetLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -839,7 +839,7 @@ GameObject:
   - component: {fileID: 153594009717589534}
   m_Layer: 0
   m_Name: Hand_L
-  m_TagString: Untagged
+  m_TagString: PuppetLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

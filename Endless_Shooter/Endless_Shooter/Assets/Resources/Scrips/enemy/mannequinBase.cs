@@ -5,6 +5,7 @@
     using UnityEngine;
     using RootMotion.Dynamics;
     using DG.Tweening;
+    using VRTK.GrabAttachMechanics;
 
     public class mannequinBase : MonoBehaviour
     {
@@ -113,18 +114,21 @@
 
             //print(distanceToPlayer);
 
-            //Raycast to ground to see if this puppet should fall
-            Ray groundRay = new Ray(transform.position + new Vector3(0,1,0), -transform.up);
-            RaycastHit groundHit;
-            Debug.DrawRay(transform.position + new Vector3(0, 1, 0), -transform.up * 1.2f, Color.green);
-            if (Physics.Raycast(groundRay, out groundHit, 1.2f, layerMask))
+            if (dead == false)
             {
-                //print(groundHit.collider.gameObject.name);
-            }
-            else
-            {
-                print("Mannequin Fall");
-                behaviourPuppet.SetState(BehaviourPuppet.State.Unpinned);
+                //Raycast to ground to see if this puppet should fall
+                Ray groundRay = new Ray(transform.position + new Vector3(0, 1, 0), -transform.up);
+                RaycastHit groundHit;
+                Debug.DrawRay(transform.position + new Vector3(0, 1, 0), -transform.up * 1.2f, Color.green);
+                if (Physics.Raycast(groundRay, out groundHit, 1.2f, layerMask))
+                {
+                    //print(groundHit.collider.gameObject.name);
+                }
+                else
+                {
+                    //print("Mannequin Fall");
+                    behaviourPuppet.SetState(BehaviourPuppet.State.Unpinned);
+                }
             }
 
         }
@@ -154,6 +158,8 @@
                     spawnManager.GetComponent<dropManager>().DropItem(transform.position);
                 }
 
+                Invoke("AssignVRGrabAttachMechanic", 3);
+
                 dead = true;
             }
         }
@@ -171,6 +177,23 @@
                 Physics.IgnoreCollision(coll,playerFoot.GetComponent<CapsuleCollider>(), true);
                 Physics.IgnoreCollision(coll, GameObject.Find("PlayArea").GetComponent<VRTK_BodyPhysics>().GetFootColliderContainer().GetComponent<CapsuleCollider>());
             }*/
+        }
+
+        void AssignVRGrabAttachMechanic()
+        {
+            //Codes to Assign VRTK interacble object script to mannequin limbs when a mannequin dies
+            GameObject[] mannequinLimbs = new GameObject[transform.parent.GetChild(1).childCount];
+            for (int c = 0; c < transform.parent.GetChild(1).childCount; c++)
+            {
+                mannequinLimbs[c] = transform.parent.GetChild(1).GetChild(c).gameObject;
+                //Add VRTK_InteractableObject and configer it
+                mannequinLimbs[c].AddComponent<VRTK_InteractableObject>();
+                mannequinLimbs[c].AddComponent<VRTK_TrackObjectGrabAttach>();
+                mannequinLimbs[c].GetComponent<VRTK_InteractableObject>().touchHighlightColor = new Color(195, 255, 154, 255);
+                mannequinLimbs[c].GetComponent<VRTK_InteractableObject>().isGrabbable = true;
+                mannequinLimbs[c].GetComponent<VRTK_InteractableObject>().holdButtonToGrab = false;
+                mannequinLimbs[c].GetComponent<VRTK_InteractableObject>().grabAttachMechanicScript = GetComponent<VRTK_TrackObjectGrabAttach>();
+            }
         }
     }
 }

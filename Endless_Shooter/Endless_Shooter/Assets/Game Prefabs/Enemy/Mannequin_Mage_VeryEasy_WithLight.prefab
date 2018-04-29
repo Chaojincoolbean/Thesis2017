@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 153192687556753526}
   m_Layer: 0
   m_Name: Chest
-  m_TagString: Untagged
+  m_TagString: PuppetLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 153490574008816094}
   m_Layer: 0
   m_Name: Shin_L
-  m_TagString: Untagged
+  m_TagString: PuppetLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 153247615839331848}
   m_Layer: 0
   m_Name: Spine_01
-  m_TagString: Untagged
+  m_TagString: PuppetLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 153965161532761304}
   m_Layer: 0
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: PuppetLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 153939234888543266}
   m_Layer: 0
   m_Name: Hand_L
-  m_TagString: Untagged
+  m_TagString: PuppetLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 153019262413867832}
   m_Layer: 0
   m_Name: Shin_R
-  m_TagString: Untagged
+  m_TagString: PuppetLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 153016707503296782}
   m_Layer: 0
   m_Name: Upper_Arm_L
-  m_TagString: Untagged
+  m_TagString: PuppetLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -453,7 +453,7 @@ GameObject:
   - component: {fileID: 153467335281537436}
   m_Layer: 0
   m_Name: Calf_R
-  m_TagString: Untagged
+  m_TagString: PuppetLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -501,7 +501,7 @@ GameObject:
   - component: {fileID: 153753742378287842}
   m_Layer: 0
   m_Name: ForeArm_R
-  m_TagString: Untagged
+  m_TagString: PuppetLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -564,7 +564,7 @@ GameObject:
   - component: {fileID: 153124636079179994}
   m_Layer: 0
   m_Name: Calf_L
-  m_TagString: Untagged
+  m_TagString: PuppetLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -597,7 +597,7 @@ GameObject:
   - component: {fileID: 153309453842814996}
   m_Layer: 0
   m_Name: Hips
-  m_TagString: Untagged
+  m_TagString: PuppetLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -692,7 +692,7 @@ GameObject:
   - component: {fileID: 153887744123327674}
   m_Layer: 0
   m_Name: Upper_Arm_R
-  m_TagString: Untagged
+  m_TagString: PuppetLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -740,7 +740,7 @@ GameObject:
   - component: {fileID: 153622196568228954}
   m_Layer: 0
   m_Name: Hand_R
-  m_TagString: Untagged
+  m_TagString: PuppetLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -775,7 +775,7 @@ GameObject:
   - component: {fileID: 153544340556989866}
   m_Layer: 0
   m_Name: ForeArm_L
-  m_TagString: Untagged
+  m_TagString: PuppetLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1806,21 +1806,29 @@ MonoBehaviour:
   value: 20
   attackRange: 20
   puppetMaster: {fileID: 114502889587732670}
+  behaviourPuppet: {fileID: 0}
   leftLeg:
   - {fileID: 153124636079179994}
   - {fileID: 153490574008816094}
   rightLeg:
   - {fileID: 153467335281537436}
   - {fileID: 153019262413867832}
+  _health: 100
   projectile:
   - {fileID: 191804, guid: 03a244ed98279614e84a9c2775eafc7a, type: 2}
   - {fileID: 191804, guid: 226f8603f443ffc4a85cf03b7dac47a5, type: 2}
   - {fileID: 191804, guid: 428c4db6955cc6548aef2737a4fd818b, type: 2}
+  waveAttackProjectiles: []
+  fireBallProjectiles: []
+  daggerProjectiles: []
+  magicTriangleMuzzles: []
   muzzle: {fileID: 1990298988800110}
   states: 0
   attackPattern: 0
+  liftPattern: 0
   spreadFactor: 0.1
   projectileSpeed: 1000
+  daggerCounts: 10
   triggerStrings:
   - isAttacking
 --- !u!114 &114443651916791984

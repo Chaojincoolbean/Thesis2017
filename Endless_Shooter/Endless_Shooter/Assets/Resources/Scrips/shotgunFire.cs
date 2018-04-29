@@ -4,6 +4,7 @@ using UnityEngine;
 using VRTK;
 using RootMotion.Dynamics;
 using DG.Tweening;
+using System.Linq;
 
 public class shotgunFire : VRTK_InteractableObject
 {
@@ -25,6 +26,7 @@ public class shotgunFire : VRTK_InteractableObject
     public float recoil = 1f;
     public float sway = 0.5f;
 
+    AudioClip[] impactClips;
     VRTK_ControllerEvents controllerEvents;
     Rigidbody rb;
     AudioSource source;
@@ -65,6 +67,7 @@ public class shotgunFire : VRTK_InteractableObject
     void Start () {
         source = gameObject.GetComponent<AudioSource>();
         rb = gameObject.GetComponent<Rigidbody>();
+        impactClips = Resources.LoadAll("Bullets", typeof(AudioClip)).Cast<AudioClip>().ToArray();
     }
 
     public override void StartUsing(VRTK_InteractUse usingObject)
@@ -150,6 +153,15 @@ public class shotgunFire : VRTK_InteractableObject
 
 
                 Instantiate(impactVFX, Hit.point, Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360)));
+
+                if (Hit.collider.gameObject.tag == "PuppetLimb")
+                {
+                    AudioSource.PlayClipAtPoint(impactClips[Random.Range(47, 55)], Hit.point);
+                }
+                else
+                {
+                    AudioSource.PlayClipAtPoint(impactClips[Random.Range(63, 72)], Hit.point);
+                }
 
                 /*GameObject thing = GameObject.CreatePrimitive(PrimitiveType.Sphere);
                 thing.transform.position = Hit.point;
