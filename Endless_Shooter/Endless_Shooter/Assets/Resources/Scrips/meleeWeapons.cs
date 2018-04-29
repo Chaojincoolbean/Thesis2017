@@ -40,8 +40,8 @@ public class meleeWeapons : VRTK_InteractableObject
             if (collision.collider.attachedRigidbody.GetComponent<MuscleCollisionBroadcaster>() != null)
             {
                 //Play melee weapon SFX
-                meleeSource.clip = meleeClips[Random.Range(0, meleeClips.Length)];
-                meleeSource.Play();
+                /*meleeSource.clip = meleeClips[Random.Range(0, meleeClips.Length)];
+                meleeSource.Play();*/
 
                 //Damage the mannequin enemy depend on where the player hit and print its remaining health
                 print(collision.collider.name);

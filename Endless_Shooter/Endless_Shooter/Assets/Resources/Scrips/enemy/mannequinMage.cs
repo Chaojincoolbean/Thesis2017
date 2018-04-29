@@ -144,7 +144,7 @@
             isAttacking = false;  
 
             //Following 3 line are only used to disable the triagle muzzle flash VFX if it is assigned
-            if (magicTriangleMuzzles != null)
+            if (magicTriangleMuzzles.Length>0)
             {
                 magicTriangleMuzzles[0].parent.gameObject.SetActive(false);
             }
