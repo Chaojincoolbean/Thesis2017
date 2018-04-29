@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 114109164098982954}
   - component: {fileID: 114557152982842768}
   - component: {fileID: 114668398865427292}
+  - component: {fileID: 82478808996659758}
   m_Layer: 0
   m_Name: Cleaver_VR
   m_TagString: Untagged
@@ -156,6 +157,86 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.01, y: 0.01, z: 0.03}
   m_Center: {x: 0.027729087, y: -0.014755428, z: 0.009704187}
+--- !u!82 &82478808996659758
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1969381354311024}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114109164098982954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -189,6 +270,14 @@ MonoBehaviour:
   removeMuscleMode: 0
   damage: 20
   damageTherehold: 10
+  meleeClips:
+  - {fileID: 8300000, guid: 1cbea69ffad026c448fbdf47f4d34f3b, type: 3}
+  - {fileID: 8300000, guid: d5b16a0c44ad6dc45a168cfd6e9bef82, type: 3}
+  - {fileID: 8300000, guid: 89371f48456c92445b358a10deedd6b4, type: 3}
+  - {fileID: 8300000, guid: 204714c2c1cc4164eb3385de295cb08c, type: 3}
+  - {fileID: 8300000, guid: d1256636b10306449b7a8bf6f5295a0c, type: 3}
+  - {fileID: 8300000, guid: 36ba22c9b31890b48b185a2d3ff1504c, type: 3}
+  - {fileID: 8300000, guid: 72290ae1f8166324797e737ba08b56de, type: 3}
 --- !u!114 &114557152982842768
 MonoBehaviour:
   m_ObjectHideFlags: 1

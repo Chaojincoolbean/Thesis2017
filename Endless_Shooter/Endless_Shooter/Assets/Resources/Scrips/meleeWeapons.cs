@@ -8,7 +8,10 @@ public class meleeWeapons : VRTK_InteractableObject
     public MuscleRemoveMode removeMuscleMode;
     public float damage = 20f;
     public float damageTherehold = 20f;
+    public AudioClip[] meleeClips;
     VRTK_ControllerEvents controllerEvents;
+    AudioSource meleeSource;
+
     public override void Grabbed(VRTK_InteractGrab currentGrabbingObject)
     {
         base.Grabbed(currentGrabbingObject);
@@ -24,7 +27,7 @@ public class meleeWeapons : VRTK_InteractableObject
     // Use this for initialization
     void Start()
     {
-
+        meleeSource = gameObject.GetComponent<AudioSource>();
     }
 
     void OnCollisionEnter(Collision collision)
@@ -36,6 +39,10 @@ public class meleeWeapons : VRTK_InteractableObject
             //If this rigidbody is a puppet muscle
             if (collision.collider.attachedRigidbody.GetComponent<MuscleCollisionBroadcaster>() != null)
             {
+                //Play melee weapon SFX
+                meleeSource.clip = meleeClips[Random.Range(0, meleeClips.Length)];
+                meleeSource.Play();
+
                 //Damage the mannequin enemy depend on where the player hit and print its remaining health
                 print(collision.collider.name);
                 if(collision.relativeVelocity.magnitude > damageTherehold)
