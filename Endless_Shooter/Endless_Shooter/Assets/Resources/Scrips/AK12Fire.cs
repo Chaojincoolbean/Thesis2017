@@ -29,6 +29,7 @@
 		private GameObject player;
 		private GameObject world;
 		private AudioSource AK12Source;
+        private AudioSource impactSource;
 		public Transform bolt;
 		public Transform muzzle;
         public Transform ejectWindow;
@@ -92,7 +93,10 @@
         void Start () {
             rb = gameObject.GetComponent<Rigidbody>();
             timeToNextRound = 60f / roundsPerMintue;
-			AK12Source = gameObject.GetComponent<AudioSource> ();
+            gameObject.AddComponent<AudioSource>();
+            AK12Source = gameObject.GetComponents<AudioSource>()[0];
+            impactSource = gameObject.GetComponents<AudioSource>()[1];
+
 			//line = gameObject.GetComponent<LineRenderer> ();
 			//line.enabled = false;
 			}
