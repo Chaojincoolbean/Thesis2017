@@ -31,7 +31,7 @@ public class throwingKnifeBlade : MonoBehaviour {
 	
 	// Update is called once per frame
 	void LateUpdate () {
-        if (isFlying == true && forceRotation == true)
+        if (isFlying == true && forceRotation == true && rb != null)
         {
             transform.rotation = Quaternion.LookRotation(rb.velocity);
         }
