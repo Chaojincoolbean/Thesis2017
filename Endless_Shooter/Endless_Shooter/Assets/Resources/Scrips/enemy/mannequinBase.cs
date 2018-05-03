@@ -29,6 +29,7 @@
         protected bool leftLegRemoved, rightLegRemoved;
         protected bool legsRemoved = false;
         protected int layerMask;
+        protected GameObject[] mannequinLimbs;
         public float health
         {
             get { return _health; }
@@ -51,6 +52,13 @@
             scoreManagement = GameObject.Find("scoreManager");
             Invoke("TargetLockon", 0.5f);
             layerMask = 1 << 4;
+
+            //Add all limbs in this mannequin into an array
+            mannequinLimbs = new GameObject[transform.parent.GetChild(1).childCount];
+            for (int c = 0; c < mannequinLimbs.Length; c++)
+            {
+                mannequinLimbs[c] = transform.parent.GetChild(1).GetChild(c).gameObject;
+            }
 
             //scoreManagement.GetComponent<scoreManager>().ignoreColliders.Add(puppetLimb);
             //VRTK_BodyPhysics currentBodyPhysics = GameObject.Find("PlayArea").GetComponent<VRTK_BodyPhysics>();
@@ -155,7 +163,22 @@
                 if (drop.Length > 0)
                 {
                     GameObject spawnManager = GameObject.Find("Enemy Spawn");
-                    spawnManager.GetComponent<dropManager>().DropItem(transform.position);
+                    if (spawnManager)
+                    {
+                        if (spawnManager.GetComponent<dropManager>())
+                        {
+                            spawnManager.GetComponent<dropManager>().DropItem(transform.position);
+                        }
+                        else
+                        {
+                            Debug.LogError("no dropmanager");
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogError("no spawnmanager");
+                    }
+                    
                 }
 
                 Invoke("AssignVRGrabAttachMechanic", 3);
@@ -182,10 +205,8 @@
         void AssignVRGrabAttachMechanic()
         {
             //Codes to Assign VRTK interacble object script to mannequin limbs when a mannequin dies
-            GameObject[] mannequinLimbs = new GameObject[transform.parent.GetChild(1).childCount];
-            for (int c = 0; c < transform.parent.GetChild(1).childCount; c++)
+            for (int c = 0; c < mannequinLimbs.Length; c++)
             {
-                mannequinLimbs[c] = transform.parent.GetChild(1).GetChild(c).gameObject;
                 //Add VRTK_InteractableObject and configer it
                 mannequinLimbs[c].AddComponent<VRTK_InteractableObject>();
                 mannequinLimbs[c].AddComponent<VRTK_TrackObjectGrabAttach>();

@@ -39,10 +39,6 @@ public class meleeWeapons : VRTK_InteractableObject
             //If this rigidbody is a puppet muscle
             if (collision.collider.attachedRigidbody.GetComponent<MuscleCollisionBroadcaster>() != null)
             {
-                //Play melee weapon SFX
-                /*meleeSource.clip = meleeClips[Random.Range(0, meleeClips.Length)];
-                meleeSource.Play();*/
-
                 //Damage the mannequin enemy depend on where the player hit and print its remaining health
                 print(collision.collider.name);
                 if(collision.relativeVelocity.magnitude > damageTherehold)
@@ -69,7 +65,7 @@ public class meleeWeapons : VRTK_InteractableObject
                 }
 
                 print(collision.collider.transform.parent.parent.GetChild(2).GetComponent<mannequinBase>().health);
-               
+
             }
             else
             {
@@ -77,6 +73,13 @@ public class meleeWeapons : VRTK_InteractableObject
                 var joint = collision.collider.attachedRigidbody.GetComponent<ConfigurableJoint>();
                 if (joint != null) Destroy(joint);
             }
+        }
+
+        if (collision.collider.gameObject.tag == "PuppetLimb")
+        {
+            //Play melee weapon SFX
+            meleeSource.clip = meleeClips[Random.Range(0, meleeClips.Length)];
+            meleeSource.Play();
         }
     }
 

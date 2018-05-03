@@ -656,7 +656,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4911903542767414, guid: 1a30bbceddacfaf4ab8960581f576440, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -13.67
+      value: -27.5
       objectReference: {fileID: 0}
     - target: {fileID: 4911903542767414, guid: 1a30bbceddacfaf4ab8960581f576440, type: 2}
       propertyPath: m_LocalPosition.y
@@ -664,7 +664,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4911903542767414, guid: 1a30bbceddacfaf4ab8960581f576440, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 24.34
+      value: 29.2
       objectReference: {fileID: 0}
     - target: {fileID: 4911903542767414, guid: 1a30bbceddacfaf4ab8960581f576440, type: 2}
       propertyPath: m_LocalRotation.x
@@ -11021,7 +11021,6 @@ GameObject:
   - component: {fileID: 949737326}
   - component: {fileID: 949737325}
   - component: {fileID: 949737324}
-  - component: {fileID: 949737330}
   - component: {fileID: 949737331}
   m_Layer: 0
   m_Name: RightController
@@ -11202,42 +11201,6 @@ MonoBehaviour:
   uiClickPressed: 0
   menuPressed: 0
   controllerVisible: 1
---- !u!108 &949737330
-Light:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 949737322}
-  m_Enabled: 1
-  serializedVersion: 8
-  m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.5
-  m_Range: 20
-  m_SpotAngle: 30
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 4
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
 --- !u!114 &949737331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11266,7 +11229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 960389049}
   m_Layer: 0
-  m_Name: Enemy Spawn
+  m_Name: Spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20906,7 +20869,7 @@ Prefab:
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 1466
+      value: 1077
       objectReference: {fileID: 0}
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
