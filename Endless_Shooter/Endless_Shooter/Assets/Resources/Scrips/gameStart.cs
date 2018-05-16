@@ -8,6 +8,7 @@ using VRTK.UnityEventHelper;
 
 public class gameStart : MonoBehaviour {
     private VRTK_Button_UnityEvents buttonEvents;
+    public bool isStartGame = false;
     // Use this for initialization
     void Start () {
         buttonEvents = GetComponent<VRTK_Button_UnityEvents>();
@@ -23,6 +24,9 @@ public class gameStart : MonoBehaviour {
         VRTK_Logger.Info("Pushed");
         print("Pushed");
         gameObject.GetComponent<AudioSource>().Play();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
+        if (isStartGame == true)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
+        }
     }
 }

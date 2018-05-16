@@ -67,7 +67,7 @@ public class shotgunFire : VRTK_InteractableObject
     void Start () {
         source = gameObject.GetComponent<AudioSource>();
         rb = gameObject.GetComponent<Rigidbody>();
-        impactClips = Resources.LoadAll("Bullets", typeof(AudioClip)).Cast<AudioClip>().ToArray();
+        //impactClips = Resources.LoadAll("Bullets", typeof(AudioClip)).Cast<AudioClip>().ToArray();
     }
 
     public override void StartUsing(VRTK_InteractUse usingObject)
@@ -154,18 +154,15 @@ public class shotgunFire : VRTK_InteractableObject
 
                 Instantiate(impactVFX, Hit.point, Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360)));
 
-                if (Hit.collider.gameObject.tag == "PuppetLimb")
+                /*if (Hit.collider.gameObject.tag == "PuppetLimb")
                 {
                     AudioSource.PlayClipAtPoint(impactClips[Random.Range(47, 55)], Hit.point);
                 }
                 else
                 {
                     AudioSource.PlayClipAtPoint(impactClips[Random.Range(63, 72)], Hit.point);
-                }
+                }*/
 
-                /*GameObject thing = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-                thing.transform.position = Hit.point;
-                thing.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);*/
             }
             else
             {

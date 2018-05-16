@@ -39,7 +39,7 @@
             muzzle = gameObject.transform.GetChild(3);
             source = gameObject.GetComponent<AudioSource>();
             rb = gameObject.GetComponent<Rigidbody>();
-            impactClips = Resources.LoadAll("Bullets", typeof(AudioClip)).Cast<AudioClip>().ToArray();
+            //impactClips = Resources.LoadAll("Bullets", typeof(AudioClip)).Cast<AudioClip>().ToArray();
             /*line = gameObject.GetComponent<LineRenderer>();
             line.enabled = false;*/
         }
@@ -153,14 +153,15 @@
                 }
 
                 Instantiate(impactVFX, Hit.point, Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360)));
-                if (Hit.collider.gameObject.tag == "PuppetLimb")
+
+                /*if (Hit.collider.gameObject.tag == "PuppetLimb")
                 {
                     AudioSource.PlayClipAtPoint(impactClips[Random.Range(47, 55)], Hit.point);
                 }
                 else
                 {
                     AudioSource.PlayClipAtPoint(impactClips[Random.Range(63, 72)], Hit.point);
-                }
+                }*/
             }
             else
             {

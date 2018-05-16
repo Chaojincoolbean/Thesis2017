@@ -39,7 +39,7 @@
         {
             rb = gameObject.GetComponent<Rigidbody>();
             rifleSource = gameObject.GetComponent<AudioSource>();
-            impactClips = Resources.LoadAll("Bullets", typeof(AudioClip)).Cast<AudioClip>().ToArray();
+            //impactClips = Resources.LoadAll("Bullets", typeof(AudioClip)).Cast<AudioClip>().ToArray();
         }
 
         public override void Grabbed(VRTK_InteractGrab currentGrabbingObject)
@@ -142,14 +142,15 @@
                 }
 
                 Instantiate(impactVFX, Hit.point, Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360)));
-                if (Hit.collider.gameObject.tag == "PuppetLimb")
+
+                /*if (Hit.collider.gameObject.tag == "PuppetLimb")
                 {
                     AudioSource.PlayClipAtPoint(impactClips[Random.Range(47, 55)], Hit.point);
                 }
                 else
                 {
                     AudioSource.PlayClipAtPoint(impactClips[Random.Range(63, 72)], Hit.point);
-                }
+                }*/
 
             }
             else

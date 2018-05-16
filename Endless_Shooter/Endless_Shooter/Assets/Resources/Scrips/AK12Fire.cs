@@ -97,7 +97,10 @@
             rb = gameObject.GetComponent<Rigidbody>();
             timeToNextRound = 60f / roundsPerMintue;
             AK12Source = gameObject.GetComponent<AudioSource>();
-            impactClips = Resources.LoadAll("Bullets", typeof(AudioClip)).Cast<AudioClip>().ToArray();
+
+            //Load SFX for bullet impact
+            //impactClips = Resources.LoadAll("Bullets", typeof(AudioClip)).Cast<AudioClip>().ToArray();
+            
             //line = gameObject.GetComponent<LineRenderer> ();
             //line.enabled = false;
         }
@@ -158,14 +161,15 @@
 				}
 
 				Instantiate (impactVFX, Hit.point, Quaternion.Euler(Random.Range(0,360), Random.Range(0, 360), Random.Range(0, 360)));
-                if (Hit.collider.gameObject.tag == "PuppetLimb")
+
+                /*if (Hit.collider.gameObject.tag == "PuppetLimb")
                 {
                     AudioSource.PlayClipAtPoint(impactClips[Random.Range(47, 55)], Hit.point);
                 }
                 else
                 {
                     AudioSource.PlayClipAtPoint(impactClips[Random.Range(63, 72)], Hit.point);
-                }
+                }*/
 
 			}
 			else{
